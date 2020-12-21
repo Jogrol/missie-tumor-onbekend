@@ -1,45 +1,93 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
-
-// You can delete this file if you're not using it
+const { resolve } = require(`path`)
 const path = require(`path`)
-const { slash } = require(`gatsby-core-utils`)
+const glob = require(`glob`)
+const chunk = require(`lodash/chunk`)
+const { dd } = require(`dumper.js`)
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+const getTemplates = () => {
+  const sitePath = path.resolve(`./`)
+  return glob.sync(`./src/templates/*.js`, { cwd: sitePath })
+}
 
-  // query content for WordPress posts
+// @todo move this to gatsby-theme-wordpress
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const templates = getTemplates()
+
   const {
     data: {
-      allWpPost: { nodes: allPosts },
+      allWpPage: { nodes: contentNodes },
     },
-  } = await graphql(`
-    query {
-      allWpPost {
+  } = await graphql(/* GraphQL */ `
+    query ALL_CONTENT_NODES {
+      allWpPage {
         nodes {
-          id
           uri
+          nodeType
+          id
         }
       }
     }
   `)
 
-  const postTemplate = path.resolve(`./src/components/post.js`)
+  const contentTypeTemplateDirectory = `./src/templates/`
+  const contentTypeTemplates = templates.filter(path =>
+    path.includes(contentTypeTemplateDirectory)
+  )
 
-  allPosts.forEach(post => {
-    createPage({
-      // will be the url for the page
-      path: post.uri,
-      // specify the component template of your choice
-      component: slash(postTemplate),
-      // In the ^template's GraphQL query, 'id' will be available
-      // as a GraphQL variable to query for this post's data.
-      context: {
-        id: post.id,
-      },
+  await Promise.all(
+    contentNodes.map(async (node, index) => {
+      const { nodeType, uri, id } = node
+      // this is a super super basic template hierarchy
+      // this doesn't reflect what our hierarchy will look like.
+      // this is for testing/demo purposes
+      console.log("check", nodeType)
+      const templatePath = `${contentTypeTemplateDirectory}Page.js`
+
+      const contentTypeTemplate = contentTypeTemplates.find(
+        path => path === templatePath
+      )
+
+      if (!contentTypeTemplate) {
+        return
+      }
+
+      const perPage = 10
+      const page = index + 1
+      const offset = perPage * index
+
+      await actions.createPage({
+        component: resolve(`./src/templates/index.js`),
+        path: page === 1 ? `/` : `${uri}`,
+        context: {
+          firstId: node.id,
+          page: page,
+          offset: offset,
+          totalPages: contentNodes.length,
+        },
+      })
     })
-  })
+  )
+
+  // const perPage = 10
+  // const chunkedContentNodes = chunk(allWpPost.nodes, perPage)
+
+  //   await Promise.all(
+  //     chunkedContentNodes.map(async (nodesChunk, index) => {
+  //       const firstNode = nodesChunk[0]
+  //       const page = index + 1
+  //       const offset = perPage * index
+
+  //       await actions.createPage({
+  //         component: resolve(`./src/templates/index.js`),
+  //         path: page === 1 ? `/` : `/${page}/`,
+  //         context: {
+  //           firstId: firstNode.id,
+  //           page: page,
+  //           offset: offset,
+  //           totalPages: chunkedContentNodes.length,
+  //           perPage,
+  //         },
+  //       })
+  //     })
+  //   )
 }
