@@ -1,93 +1,44 @@
 const { resolve } = require(`path`)
-const path = require(`path`)
-const glob = require(`glob`)
-const chunk = require(`lodash/chunk`)
-const { dd } = require(`dumper.js`)
 
-const getTemplates = () => {
-  const sitePath = path.resolve(`./`)
-  return glob.sync(`./src/templates/*.js`, { cwd: sitePath })
-}
-
-// @todo move this to gatsby-theme-wordpress
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const templates = getTemplates()
-
   const {
     data: {
       allWpPage: { nodes: contentNodes },
     },
-  } = await graphql(/* GraphQL */ `
+  } = await graphql(`
     query ALL_CONTENT_NODES {
       allWpPage {
         nodes {
           uri
           nodeType
           id
+          title
+          content
         }
       }
     }
   `)
 
-  const contentTypeTemplateDirectory = `./src/templates/`
-  const contentTypeTemplates = templates.filter(path =>
-    path.includes(contentTypeTemplateDirectory)
-  )
-
   await Promise.all(
     contentNodes.map(async (node, index) => {
-      const { nodeType, uri, id } = node
-      // this is a super super basic template hierarchy
-      // this doesn't reflect what our hierarchy will look like.
-      // this is for testing/demo purposes
-      console.log("check", nodeType)
-      const templatePath = `${contentTypeTemplateDirectory}Page.js`
-
-      const contentTypeTemplate = contentTypeTemplates.find(
-        path => path === templatePath
-      )
-
-      if (!contentTypeTemplate) {
-        return
-      }
+      const { uri, title, content, id } = node
 
       const perPage = 10
       const page = index + 1
       const offset = perPage * index
 
       await actions.createPage({
-        component: resolve(`./src/templates/index.js`),
-        path: page === 1 ? `/` : `${uri}`,
+        component: resolve(`./src/pages/page.js`),
+        path: `${uri}`,
         context: {
-          firstId: node.id,
+          firstId: id,
           page: page,
           offset: offset,
           totalPages: contentNodes.length,
+          title,
+          content,
         },
       })
     })
   )
-
-  // const perPage = 10
-  // const chunkedContentNodes = chunk(allWpPost.nodes, perPage)
-
-  //   await Promise.all(
-  //     chunkedContentNodes.map(async (nodesChunk, index) => {
-  //       const firstNode = nodesChunk[0]
-  //       const page = index + 1
-  //       const offset = perPage * index
-
-  //       await actions.createPage({
-  //         component: resolve(`./src/templates/index.js`),
-  //         path: page === 1 ? `/` : `/${page}/`,
-  //         context: {
-  //           firstId: firstNode.id,
-  //           page: page,
-  //           offset: offset,
-  //           totalPages: chunkedContentNodes.length,
-  //           perPage,
-  //         },
-  //       })
-  //     })
-  //   )
 }
