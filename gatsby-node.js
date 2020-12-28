@@ -13,6 +13,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           nodeType
           id
           title
+          isFrontPage
           content
         }
       }
@@ -21,22 +22,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   await Promise.all(
     contentNodes.map(async (node, index) => {
-      const { uri, title, content, id } = node
+      const { uri, title, content, id, isFrontPage } = node
 
       const perPage = 10
       const page = index + 1
       const offset = perPage * index
 
+      const defaultPage = resolve(`./src/pages/defaultPage.js`)
+      const homePage = resolve(`./src/pages/homePage.js`)
+
+      console.log("check", id, isFrontPage)
       await actions.createPage({
-        component: resolve(`./src/pages/page.js`),
+        component: isFrontPage ? homePage : defaultPage,
         path: `${uri}`,
         context: {
-          firstId: id,
-          page: page,
-          offset: offset,
-          totalPages: contentNodes.length,
-          title,
-          content,
+          id: id,
+          // page: page,
+          // offset: offset,
+          // totalPages: contentNodes.length,
+          // title,
+          // content,
         },
       })
     })

@@ -7,6 +7,7 @@ export default ({ data, pageContext }) => (
     <div>
       <h2>{pageContext.title}</h2>
       <div dangerouslySetInnerHTML={{ __html: pageContext.content }} />
+      <div>{JSON.stringify(data)}</div>
     </div>
   </Layout>
 )
