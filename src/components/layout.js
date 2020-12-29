@@ -16,9 +16,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <header className="border-4 border-light-blue-500 border-opacity-100">
-        <div className="container mx-auto px-4">
+        <div className="container px-4">
           <div className="flex p-4 w-full">
-            <span className="text-yellow-600 p-0 w-1/3">
+            <span className="text-yellow-600 p-0">
               <Link to="/">{"STO"}</Link>
             </span>
             <nav className="flex-1">
@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
         </div>
       </header>
       <div>
-        <main className="container mx-auto px-4">{children}</main>
+        <main className="container max-w-screen-xl px-4">{children}</main>
         <footer></footer>
       </div>
     </>
