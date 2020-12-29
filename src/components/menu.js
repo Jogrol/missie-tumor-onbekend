@@ -23,12 +23,12 @@ const Menu = () => {
     }
   `)
   return (
-    <ul>
+    <ul className="flex h-full">
       {data.wpMenu.menuItems.nodes.map(item => {
         const path = item.connectedNode.node.uri ?? item.url
 
         return (
-          <li>
+          <li className="flex-1 text-center items-center">
             <Link to={path}>
               <button> {item.label}</button>
             </Link>
