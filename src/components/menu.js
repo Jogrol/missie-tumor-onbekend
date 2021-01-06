@@ -39,14 +39,9 @@ const Menu = () => {
           const path = item.connectedNode.node.uri ?? item.url
 
           if (item.label === DONATIE_LABEL) {
-            const donateProps = {
-              path,
-              title: item.label,
-            }
-
             return (
               <li key={item.id} className="ml-12">
-                <DonateButton {...donateProps} />
+                <DonateButton path={path} title={item.label} />
               </li>
             )
           }

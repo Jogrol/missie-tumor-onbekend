@@ -1,6 +1,9 @@
 const { resolve } = require(`path`)
 
 exports.createPages = async ({ actions, graphql }) => {
+  // TODO, Create template in WP for support page
+  const SUPPORT_TITLE = "Steun ons"
+
   const {
     data: {
       allWpPage: { nodes: contentNodes },
@@ -15,6 +18,7 @@ exports.createPages = async ({ actions, graphql }) => {
           title
           isFrontPage
           content
+          status
         }
       }
     }
@@ -22,13 +26,18 @@ exports.createPages = async ({ actions, graphql }) => {
 
   await Promise.all(
     contentNodes.map(async node => {
-      const { uri, id, isFrontPage } = node
+      const { uri, id, isFrontPage, title } = node
 
+      const donatePage = resolve(`./src/pages/donatePage.js`)
       const defaultPage = resolve(`./src/pages/defaultPage.js`)
       const homePage = resolve(`./src/pages/homePage.js`)
 
+      const createComponentFactory = title => {
+        return title === SUPPORT_TITLE ? donatePage : defaultPage
+      }
+
       await actions.createPage({
-        component: isFrontPage ? homePage : defaultPage,
+        component: isFrontPage ? homePage : createComponentFactory(title),
         path: `${uri}`,
         context: {
           id: id,

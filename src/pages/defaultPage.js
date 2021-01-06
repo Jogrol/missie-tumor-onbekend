@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 
 const DefaultPage = ({ data }) => (
   <Layout siteTitle={data.page.title}>
-    <div>
+    <div className="container sm:max-w-screen-md">
       <h1>{data.page.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
     </div>

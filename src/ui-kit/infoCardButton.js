@@ -4,10 +4,10 @@ import PropTypes from "prop-types"
 
 import DonateIcon from "../assets/donateIcon.svg"
 
-const DonateButton = ({ path, title }) => {
+const InfoCardButton = ({ path, title }) => {
   return (
     <Link to={path}>
-      <button className="flex flex-row items-center uppercase px-4 py-3 font-black rounded-lg border bg-yellow-500">
+      <button className="flex p-4 flex-row items-center justify-center rounded-xl shadow-sm border bg-yellow-300 w-full hover:scale-150">
         {title}
         <DonateIcon className="ml-3 h-4" />
       </button>
@@ -15,9 +15,9 @@ const DonateButton = ({ path, title }) => {
   )
 }
 
-DonateButton.propTypes = {
+InfoCardButton.propTypes = {
   path: PropTypes.string,
   title: PropTypes.string.isRequired,
 }
 
-export default DonateButton
+export default InfoCardButton
