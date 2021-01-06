@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import DonateIcon from "../assets/donateIcon.svg"
 import MobileMenu from "./mobileMenu"
+import DonateButton from "../ui-kit/donateButton"
 
 const Menu = () => {
   const data = useStaticQuery(graphql`
@@ -27,25 +27,26 @@ const Menu = () => {
   const DONATIE_LABEL = "Steun ons"
 
   return (
-    <div>
+    <>
       {/* mobile view */}
       <ul className="md:hidden flex justify-end">
         <MobileMenu />
       </ul>
+
       {/* desktop view */}
       <ul className="hidden md:flex flex-wrap h-full items-center justify-end">
         {data.wpMenu.menuItems.nodes.map(item => {
           const path = item.connectedNode.node.uri ?? item.url
 
           if (item.label === DONATIE_LABEL) {
+            const donateProps = {
+              path,
+              title: item.label,
+            }
+
             return (
               <li key={item.id} className="ml-12">
-                <Link to={path}>
-                  <button className="flex flex-row items-center uppercase px-4 py-3 font-black rounded border">
-                    {item.label}
-                    <DonateIcon className="ml-3 h-4" />
-                  </button>
-                </Link>
+                <DonateButton {...donateProps} />
               </li>
             )
           }
@@ -59,7 +60,7 @@ const Menu = () => {
           )
         })}
       </ul>
-    </div>
+    </>
   )
 }
 
