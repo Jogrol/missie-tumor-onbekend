@@ -41,11 +41,11 @@ const MobileMenu = () => {
       <div
         className={
           menuIsOpen
-            ? "visible fixed top-0  right-0 w-screen h-screen opacity-100 bg-yellow-300 duration-200 delay-200"
+            ? "visible fixed top-0  right-0 w-screen h-screen opacity-100 bg-yellow-500 duration-200 delay-200"
             : "invisible fixed top-0 -mt-80 opacity-0 right-0 w-screen h-screen transition-all duration-200"
         }
       >
-        <div className="flex justify-center items-center w-full h-full">
+        <div className="flex justify-center items-center w-full h-full text-wh">
           <ul className="">
             {data.wpMenu.menuItems.nodes.map(item => {
               const path = item.connectedNode.node.uri ?? item.url

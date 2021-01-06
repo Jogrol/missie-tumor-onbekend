@@ -9,8 +9,8 @@ import "./layout.css"
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <header className="shadow border-light-blue-500 border-opacity-100">
+    <body className="flex flex-col min-h-screen">
+      <header className="fixed top-0 left-0 shadow border-light-blue-500 border-opacity-100 opacity-100 bg-white w-full h-18">
         <div className="container w-full sm:max-w-screen-xl px-4">
           <div className="flex py-2 w-full">
             <Link to="/">
@@ -22,13 +22,21 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </header>
-      <div>
-        <main className="container w-full sm:max-w-screen-xl p-4">
-          {children}
-        </main>
-        <footer></footer>
-      </div>
-    </>
+      <main className="flex-grow container w-full sm:max-w-screen-xl p-4 mt-20">
+        {children}
+      </main>
+      <footer className="text-center w-full border-t-2 bg-yellow-500 p-4 rounded">
+        {/* Should come from WP */}
+        <div className="p-2">© 2011 Missie Tumor Onbekend</div>
+        <ul className="flex p-2 justify-center text-xs">
+          <li className="p-1 text-xs">
+            NFK Patiëntenplatform Zeldzame Kankers
+          </li>
+          <li className="p-1 text-xs">Stichting Sterren</li>
+          <li className="p-1 text-xs">Stichting Vrienden van Hederik</li>
+        </ul>
+      </footer>
+    </body>
   )
 }
 
