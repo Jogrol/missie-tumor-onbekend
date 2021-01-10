@@ -11,6 +11,7 @@ const Menu = () => {
           nodes {
             label
             url
+            order
             connectedNode {
               node {
                 ... on WpContentNode {
@@ -36,6 +37,9 @@ const Menu = () => {
       {/* desktop view */}
       <ul className="hidden md:flex flex-wrap h-full items-center justify-end">
         {data.wpMenu.menuItems.nodes.map(item => {
+          if (item.order === 1) {
+            return null
+          }
           const path = item.connectedNode.node.uri ?? item.url
 
           if (item.label === DONATIE_LABEL) {

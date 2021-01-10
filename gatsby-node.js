@@ -37,7 +37,7 @@ exports.createPages = async ({ actions, graphql }) => {
       }
 
       await actions.createPage({
-        component: isFrontPage ? homePage : createComponentFactory(title),
+        component: createComponentFactory(title),
         path: `${uri}`,
         context: {
           id: id,

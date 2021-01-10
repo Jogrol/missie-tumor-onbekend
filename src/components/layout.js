@@ -10,7 +10,7 @@ import "./layout.css"
 const Layout = ({ children }) => {
   return (
     <body className="flex flex-col min-h-screen">
-      <header className="fixed top-0 left-0 border-opacity-100 opacity-100 bg-white w-full h-18 shadow-lg">
+      <header className="fixed top-0 left-0 border-opacity-100 opacity-100 bg-white w-full h-18 shadow-lg z-50">
         <div className="container w-full sm:max-w-screen-xl px-4">
           <div className="flex py-2 w-full">
             <Link to="/">
