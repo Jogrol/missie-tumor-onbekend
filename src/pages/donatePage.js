@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import InfoCard from "../ui-kit/infoCard"
+import DonateAmountCard from "../components/donateAmountCard"
+import ProjectInfo from "../components/projectInfo"
 
 const DonatePage = ({ data }) => {
   const donateOptions = data.page.donateOptions
@@ -13,8 +15,12 @@ const DonatePage = ({ data }) => {
         <h1>{data.page.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
       </div>
+      <div className="container sm:max-w-screen-lg">
+        <DonateAmountCard />
+      </div>
       {donateOptions && (
         <div className="container sm:max-w-screen-lg">
+          <h2>Doneer mogelijkheden</h2>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 ">
             <InfoCard {...donateOptions.tikkie} />
             <InfoCard {...donateOptions.form} />
@@ -22,6 +28,10 @@ const DonatePage = ({ data }) => {
           </div>
         </div>
       )}
+      <div className="container sm:max-w-screen-lg">
+        <h2>Projecten die je kan steunen</h2>
+        <ProjectInfo />
+      </div>
     </Layout>
   )
 }

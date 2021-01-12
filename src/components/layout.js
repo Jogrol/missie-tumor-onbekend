@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </header>
-      <main className="flex-grow container w-full sm:max-w-screen-xl p-4 mt-20">
+      <main className="flex-grow container w-full sm:max-w-screen-xl px-4 py-6 mt-20 space-y-12">
         {children}
       </main>
       <footer className="text-center w-full border-t-2 bg-yellow-500 p-4 rounded">

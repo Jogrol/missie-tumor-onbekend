@@ -1,0 +1,11 @@
+{
+    "donation" : {
+        "options": [
+           { "amount" : 10 , "description" : "Met een donatie van 10 euro kunnen we 1 extra huisarts onze digitale folder laten ontvangen."},
+           { "amount" : 50 , "description" : "Met een donatie van 50 euro kunnen we 5 extra huisartsen onze digitale folder laten ontvangen."},
+           { "amount" : 100 , "description" : "Met een donatie van 100 euro kunnen we huisartsen trainen over PTO."},
+           { "amount" : 250 , "description" : "Met een donatie 250 euro steunt u het dichterbij brengen van de FAPI-PET-CT scan voor PTO patiënten naar Nederland."},
+           { "amount" : 0 , "description" : "Kies uw eigen bedrag om dit project te ondersteunen."}
+        ]
+    }
+}
