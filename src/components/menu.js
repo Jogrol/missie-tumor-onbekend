@@ -11,6 +11,7 @@ const Menu = () => {
           nodes {
             label
             url
+            id
             order
             connectedNode {
               node {
@@ -37,21 +38,26 @@ const Menu = () => {
       {/* desktop view */}
       <ul className="hidden md:flex flex-wrap h-full items-center justify-end">
         {data.wpMenu.menuItems.nodes.map(item => {
+          const path = item.connectedNode.node.uri ?? item.url
+          const key = item.id
+
           if (item.order === 1) {
             return null
           }
-          const path = item.connectedNode.node.uri ?? item.url
 
           if (item.label === DONATIE_LABEL) {
             return (
-              <li key={item.id} className="ml-12">
+              <li key={key} className="ml-12">
                 <DonateButton path={path} title={item.label} />
               </li>
             )
           }
 
           return (
-            <li className="px-2 align-middle border-transparent border-b-2 hover:border-gray-400 transition duration-300 ease-in-out">
+            <li
+              key={key}
+              className="px-2 align-middle border-transparent border-b-2 hover:border-gray-400 transition duration-300 ease-in-out"
+            >
               <Link to={path}>
                 <button className="font-black py-2 px-4">{item.label}</button>
               </Link>

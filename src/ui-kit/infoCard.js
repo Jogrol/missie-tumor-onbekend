@@ -1,29 +1,28 @@
 import React from "react"
 import InfoCardButton from "./infoCardButton"
+import PropTypes from "prop-types"
 
-const InfoCard = () => {
+const InfoCard = ({ title, description, ctaTitle, ctalink }) => {
   return (
-    <div className="border-transparant shadow-lg border-gray-100 w-full rounded-xl">
-      <div className="bg-gray-100 w-full pt-2 px-4 rounded-t-xl">
-        <h4 className="py-2">Optie 1</h4>
+    <div className="border-transparant shadow-lg border-gray-100 w-full rounded-xl flex flex-col">
+      <div className="bg-gray-100 w-full pt-2 px-4 rounded-t-xl flex-none">
+        <h4 className="py-2">{title}</h4>
       </div>
-      <div className="px-4 py-2">
-        <p>
-          Modernipsum dolor sit amet synthetism abstract expressionism
-          deformalism new objectivity relational art, hudson river school
-          post-structuralism naturalism cubo-futurism postmodern art naturalism.
-        </p>
+      <div className="px-4 py-2 flex-grow">
+        <p>{description}</p>
       </div>
-      <div className="pb-2 px-4">
-        <InfoCardButton title="Schrijf je nu in" />
+      <div className="pb-2 px-4 flex-none">
+        <InfoCardButton title={ctaTitle} path={ctalink.uri} />
       </div>
     </div>
   )
 }
 
 InfoCard.propTypes = {
-  //   path: PropTypes.string.isRequired,
-  //   title: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  ctaTitle: PropTypes.string.isRequired,
+  ctalink: PropTypes.object,
 }
 
 export default InfoCard

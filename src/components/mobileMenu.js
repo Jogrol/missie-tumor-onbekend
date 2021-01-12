@@ -11,6 +11,7 @@ const MobileMenu = () => {
           nodes {
             label
             url
+            id
             connectedNode {
               node {
                 ... on WpContentNode {
@@ -46,11 +47,13 @@ const MobileMenu = () => {
         }
       >
         <div className="flex justify-center items-center w-full h-full text-wh">
-          <ul className="">
+          <ul>
             {data.wpMenu.menuItems.nodes.map(item => {
               const path = item.connectedNode.node.uri ?? item.url
+              const key = item.id
+
               return (
-                <li className="mb-8">
+                <li key={key} className="mb-8">
                   <Link onClick={() => toggleMenuIsOpen(!menuIsOpen)} to={path}>
                     <button className="text-5xl">{item.label}</button>
                   </Link>
