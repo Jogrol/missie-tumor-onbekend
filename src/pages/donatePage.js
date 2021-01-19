@@ -15,12 +15,13 @@ const DonatePage = ({ data }) => {
         <h1>{data.page.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
       </div>
+
       <div className="container sm:max-w-screen-lg">
         <DonateAmountCard />
       </div>
       {donateOptions && (
         <div className="container sm:max-w-screen-lg">
-          <h2>Doneer mogelijkheden</h2>
+          <h2>Donatie mogelijkheden</h2>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 ">
             <InfoCard {...donateOptions.tikkie} />
             <InfoCard {...donateOptions.form} />
@@ -28,9 +29,21 @@ const DonatePage = ({ data }) => {
           </div>
         </div>
       )}
-      <div className="container sm:max-w-screen-lg">
-        <h2>Projecten die je kan steunen</h2>
-        <ProjectInfo />
+      <div className="container sm:max-w-screen-xl">
+        <h2 className="container sm:max-w-screen-lg">
+          Projecten die je kan steunen
+        </h2>
+        <div className="grid grid-cols-4 gap-6">
+          <div className="col-span-2">
+            <ProjectInfo />
+          </div>
+          <div className="col-span-2">
+            <ProjectInfo />
+          </div>
+          <div className="col-span-2">
+            <ProjectInfo />
+          </div>
+        </div>
       </div>
     </Layout>
   )

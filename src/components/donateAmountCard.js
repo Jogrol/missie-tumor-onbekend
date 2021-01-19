@@ -3,14 +3,19 @@ import Layout from "./layout"
 import content from "../content.json"
 
 const DonateAmountCard = () => {
-  console.log(content)
   return (
-    <ul>
+    <ul className="w-full">
       {content.donation.options.map(({ amount, description }) => {
         return (
-          <li>
-            <span>€ {amount},-</span>
-            <span>{description}</span>
+          <li className="my-8">
+            <div className="flex flex-wrap items-center">
+              <span className="border-2 rounded-full h-36 w-36 text-4xl flex items-center justify-center shadow-2xl z-10 bg-yellow-400">
+                € {amount},-
+              </span>
+              <span className="-ml-4 border-2 rounded-xl shadow-sm p-4 bg-yellow-100">
+                {description}
+              </span>
+            </div>
           </li>
         )
       })}
