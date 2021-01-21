@@ -1,8 +1,8 @@
 import React from "react"
-import InfoCardButton from "./infoCardButton"
+import InfoCardButton from "../ui-kit/infoCardButton"
 import PropTypes from "prop-types"
 
-const InfoCard = ({ title, description, ctaTitle, ctalink }) => {
+const DonateInfoCard = ({ title, description, ctaTitle, ctalink }) => {
   return (
     <div className="border-transparant shadow-lg border-gray-100 w-full rounded-xl flex flex-col">
       <div className="bg-yellow-500 w-full pt-2 px-4 rounded-t-xl flex-none">
@@ -12,17 +12,17 @@ const InfoCard = ({ title, description, ctaTitle, ctalink }) => {
         <p>{description}</p>
       </div>
       <div className="pb-2 px-4 flex-none">
-        <InfoCardButton title={ctaTitle} path={ctalink.uri} />
+        <InfoCardButton title={ctaTitle} path={ctalink.uri ?? null} />
       </div>
     </div>
   )
 }
 
-InfoCard.propTypes = {
+DonateInfoCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   ctaTitle: PropTypes.string.isRequired,
   ctalink: PropTypes.object,
 }
 
-export default InfoCard
+export default DonateInfoCard

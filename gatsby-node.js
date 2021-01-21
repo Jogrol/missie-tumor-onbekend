@@ -3,6 +3,9 @@ const { resolve } = require(`path`)
 exports.createPages = async ({ actions, graphql }) => {
   // TODO, Create template in WP for support page
   const SUPPORT_TITLE = "Steun ons"
+  const isSupportProjectPage = title => {
+    return title.includes("project")
+  }
 
   const {
     data: {
@@ -28,12 +31,15 @@ exports.createPages = async ({ actions, graphql }) => {
     contentNodes.map(async node => {
       const { uri, id, isFrontPage, title } = node
 
+      const donateProjectPage = resolve(`./src/pages/donatePage.js`)
       const donatePage = resolve(`./src/pages/donatePage.js`)
       const defaultPage = resolve(`./src/pages/defaultPage.js`)
       const homePage = resolve(`./src/pages/homePage.js`)
 
       const createComponentFactory = title => {
-        return title === SUPPORT_TITLE ? donatePage : defaultPage
+        return title === SUPPORT_TITLE || isSupportProjectPage(title)
+          ? donatePage
+          : defaultPage
       }
 
       await actions.createPage({

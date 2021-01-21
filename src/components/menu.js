@@ -58,8 +58,8 @@ const Menu = () => {
               key={key}
               className="px-2 align-middle border-transparent border-b-2 hover:border-gray-400 transition duration-300 ease-in-out"
             >
-              <Link to={path}>
-                <button className="font-black py-2 px-4">{item.label}</button>
+              <Link className="font-black py-6 px-6" to={path}>
+                {item.label}
               </Link>
             </li>
           )

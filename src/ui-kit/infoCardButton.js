@@ -6,11 +6,12 @@ import DonateIcon from "../assets/donateIcon.svg"
 
 const InfoCardButton = ({ path, title }) => {
   return (
-    <Link to={path}>
-      <button className="flex p-4 flex-row items-center justify-center rounded-xl shadow-sm border w-full hover:scale-150">
-        {title}
-        <DonateIcon className="ml-3 h-4" />
-      </button>
+    <Link
+      className="flex p-4 flex-row items-center justify-center rounded-xl shadow-sm border w-full hover:scale-150"
+      to={path}
+    >
+      {title}
+      <DonateIcon className="ml-3 h-4" />
     </Link>
   )
 }
