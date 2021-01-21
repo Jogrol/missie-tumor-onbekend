@@ -1,19 +1,19 @@
 import React from "react"
-import Layout from "./layout"
-import content from "../content.json"
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
 
-const ProjectInfo = () => {
+const ProjectInfoCard = ({ title, description, buttontitle, pagelink }) => {
   return (
     <div className="flex border-gray-200 shadow-lg border rounded-xl h-full w-full">
-      <div className="p-6 w-2/3">
-        <h4>Project 1 </h4>
-        <span className="">
-          Li Europan lingues es membres del sam familie. Lor separat existentie
-          es un myth. Por scientie, musica, sport etc, litot Europa usa li sam
-          vocabular. Li lingues differe solmen in li grammatica, li
-          pronunciation e li plu commun vocabules. Omnicos directe al
-          desirabilit
-        </span>
+      <div className="p-6 w-2/3 flex flex-col">
+        <h4>{title ?? "Titel mist"}</h4>
+        <span>{description ?? "uitleg mist"}</span>
+        {/* <Link
+          className="mt-2 text-center border-b-2 border-transparent hover:border-black inline-block w1/2"
+          href={pagelink.uri ?? null}
+        >
+          {buttontitle ?? "button title mist"}
+        </Link> */}
       </div>
       <img
         className="objec-cover w-1/2 border rounded-xl"
@@ -23,4 +23,11 @@ const ProjectInfo = () => {
   )
 }
 
-export default ProjectInfo
+ProjectInfoCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  buttontitle: PropTypes.string.isRequired,
+  pagelink: PropTypes.object,
+}
+
+export default ProjectInfoCard
