@@ -4,11 +4,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import DonateInformation from "../components/donateInformation"
-import DonateAmountCard from "../components/donateAmountCard"
-import ProjectInfo from "../components/projectInformationCard"
 import ProjectInformationList from "../components/projectInformationList"
 
-const DonatePage = ({ data }) => {
+const ProjectPage = ({ data }) => {
   const donateOptions = data.page.donateOptions
   const projectInfo = data.page.projectInfo
 
@@ -37,7 +35,7 @@ const DonatePage = ({ data }) => {
 }
 
 export const query = graphql`
-  query donatePage($id: String) {
+  query projectPage($id: String) {
     page: wpPage(id: { eq: $id }) {
       uri
       title
@@ -102,4 +100,4 @@ export const query = graphql`
   }
 `
 
-export default DonatePage
+export default ProjectPage

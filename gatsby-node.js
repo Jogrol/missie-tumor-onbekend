@@ -31,15 +31,20 @@ exports.createPages = async ({ actions, graphql }) => {
     contentNodes.map(async node => {
       const { uri, id, isFrontPage, title } = node
 
-      const donateProjectPage = resolve(`./src/pages/donatePage.js`)
+      const projectPage = resolve(`./src/pages/projectPage.js`)
       const donatePage = resolve(`./src/pages/donatePage.js`)
       const defaultPage = resolve(`./src/pages/defaultPage.js`)
       const homePage = resolve(`./src/pages/homePage.js`)
 
       const createComponentFactory = title => {
-        return title === SUPPORT_TITLE || isSupportProjectPage(title)
-          ? donatePage
-          : defaultPage
+        if (title === SUPPORT_TITLE) {
+          return donatePage
+        }
+        if (isSupportProjectPage(title)) {
+          return projectPage
+        }
+
+        return defaultPage
       }
 
       await actions.createPage({
