@@ -5,13 +5,16 @@ import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import DonateInformation from "../components/donateInformation"
 import ProjectInformationList from "../components/projectInformationList"
+import PageHero from "../components/pageHero"
 
 const DonatePage = ({ data }) => {
   const donateOptions = data.page.donateOptions
   const projectInfo = data.page.projectInfo
+  const pageHero = data.page.hero
 
   return (
     <Layout>
+      <PageHero {...pageHero} />
       <PageSection>
         <div
           className="container sm:max-w-screen-md"
@@ -40,6 +43,14 @@ export const query = graphql`
       uri
       title
       content
+      hero {
+        title
+        subtitle
+        description
+        image {
+          uri
+        }
+      }
       projectInfo {
         firstproject {
           title
