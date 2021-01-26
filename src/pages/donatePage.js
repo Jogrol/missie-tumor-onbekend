@@ -4,8 +4,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import DonateInformation from "../components/donateInformation"
-import DonateAmountCard from "../components/donateAmountCard"
-import ProjectInfo from "../components/projectInformationCard"
 import ProjectInformationList from "../components/projectInformationList"
 
 const DonatePage = ({ data }) => {
