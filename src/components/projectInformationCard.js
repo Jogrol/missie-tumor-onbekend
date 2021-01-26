@@ -10,7 +10,7 @@ const ProjectInfoCard = ({ title, description, buttontitle, pagelink }) => {
         <span>{description ?? "uitleg mist"}</span>
         <Link
           className="mt-2 text-center border-b-2 border-transparent hover:border-black inline-block w1/2"
-          href={pagelink?.uri ?? "ontbreekt"}
+          to={pagelink?.uri ?? "/"}
         >
           {buttontitle ?? "button title mist"}
         </Link>

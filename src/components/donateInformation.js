@@ -1,6 +1,5 @@
 import React from "react"
 import DonateInformationCard from "./donateInformationCard"
-import PropTypes from "prop-types"
 
 const DonateInformation = info => {
   const infoArray = Object.values(info).filter(item => item.title)
@@ -11,15 +10,11 @@ const DonateInformation = info => {
 
   return (
     <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-      {infoArray.map(item => {
-        return <DonateInformationCard {...item} />
+      {infoArray.map((item, index) => {
+        return <DonateInformationCard key={index} {...item} />
       })}
     </div>
   )
 }
 
 export default DonateInformation
-
-DonateInformation.propTypes = {
-  info: PropTypes.object.isRequired,
-}
