@@ -49,6 +49,13 @@ export const query = graphql`
         description
         image {
           uri
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1280) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
+            }
+          }
         }
       }
       projectInfo {

@@ -5,11 +5,13 @@ import Img from "gatsby-image"
 const PageHero = ({ title, subtitle, description, image }) => {
   console.log(image)
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{subtitle}</p>
-      <div>{description}</div>
-      <img src={image.uri} />
+    <div className="w-full">
+      <Img
+        fluid={image.localFile.childImageSharp.fluid}
+        alt="header"
+        fadeIn
+        className="h-screen bg-fixed"
+      />
     </div>
   )
 }
@@ -18,7 +20,7 @@ PageHero.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   description: PropTypes.string,
-  image: PropTypes.object,
+  image: PropTypes.object.isRequired,
 }
 
 export default PageHero

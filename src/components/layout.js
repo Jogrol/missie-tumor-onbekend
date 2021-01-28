@@ -22,9 +22,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </header>
-      <main className="flex-grow container w-full sm:max-w-screen-xl px-4 py-6 mt-20 space-y-20">
-        {children}
-      </main>
+      <main className="flex-grow space-y-20">{children}</main>
       <footer className="text-center w-full border-t-2 bg-yellow-500 p-4 rounded">
         {/* Should come from WP */}
         <div className="p-2">© 2021 Missie Tumor Onbekend</div>
