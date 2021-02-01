@@ -6,6 +6,7 @@ import PageSection from "../components/pageSection"
 import DonateInformation from "../components/donateInformation"
 import ProjectInformationList from "../components/projectInformationList"
 import PageHero from "../components/pageHero"
+import StatsInformation from "../components/statsInformation"
 
 const DonatePage = ({ data }) => {
   const donateOptions = data.page.donateOptions
@@ -15,6 +16,7 @@ const DonatePage = ({ data }) => {
   return (
     <Layout>
       <PageHero {...pageHero} />
+      <StatsInformation />
       <PageSection>
         <div
           className="container sm:max-w-screen-md"
