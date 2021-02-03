@@ -8,12 +8,6 @@ const ProjectInfoCard = ({ title, description, buttontitle, pagelink }) => {
       <div className="p-6 w-2/3 flex flex-col">
         <h4>{title ?? "Titel mist"}</h4>
         <span>{description ?? "uitleg mist"}</span>
-        <Link
-          className="mt-2 text-center border-b-2 border-transparent hover:border-black inline-block w1/2"
-          to={pagelink?.uri ?? "/"}
-        >
-          {buttontitle ?? "button title mist"}
-        </Link>
       </div>
       <img
         className="objec-cover w-1/2 border rounded-xl"

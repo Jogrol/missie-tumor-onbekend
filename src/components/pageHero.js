@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import Img from "gatsby-image"
 
 const PageHero = ({ title, subtitle, description, image }) => {
-  console.log(image)
   return (
     <div className="w-full">
       <Img

@@ -4,34 +4,36 @@ import StatInfoCard from "./statInfoCard"
 
 const StatsInformation = () => {
   return (
-    <div className="container max-w-screen-lg">
-      <div className="text-center">
-        <h1>Samen moet het lukken</h1>
-        <p>Help mee en doneer nu</p>
-      </div>
-
-      <div className="grid grid-cols-3 gap-8">
-        <div>
-          <StatInfoCard />
+    <div className="container sm:max-w-screen-lg px-4 h-full">
+      <div className="flex flex-col flex-no-wrap justify-between  w-full h-full">
+        <div className="flex-1 flex items-center">
+          <h1 className="text-4xl sm:text-8xl pt-4">Samen moet het lukken</h1>
         </div>
-        <div>
-          <StatInfoCard />
+        <div className="flex-grow w-full flex items-center">
+          <div className="flex flex-wrap gap-6 ">
+            <div className="w-24 h-24 sm:w-52 sm:h-52">
+              <StatInfoCard />
+            </div>
+            <div className="w-24 h-24 sm:w-52 sm:h-52">
+              <StatInfoCard />
+            </div>
+            <div className="w-24 h-24 sm:w-52 sm:h-52">
+              <StatInfoCard />
+            </div>
+            <div className="w-24 h-24 sm:w-52 sm:h-52">
+              <StatInfoCard />
+            </div>
+            <div className="w-24 h-24 sm:w-52 sm:h-52">
+              <StatInfoCard />
+            </div>
+            <div className="w-24 h-24 sm:w-52 sm:h-52">
+              <StatInfoCard />
+            </div>
+          </div>
         </div>
-        <div>
-          <StatInfoCard />
+        <div className="flex-1 pb-2 flex flex-col justify-end sm:justify-center items-center">
+          <DonateButton title="Doneer online" />
         </div>
-        <div>
-          <StatInfoCard />
-        </div>
-        <div>
-          <StatInfoCard />
-        </div>
-        <div>
-          <StatInfoCard />
-        </div>
-      </div>
-      <div className="flex w-full justify-center mt-12">
-        <DonateButton title="Doneer online" />
       </div>
     </div>
   )

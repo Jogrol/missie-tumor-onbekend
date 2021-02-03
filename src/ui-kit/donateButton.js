@@ -7,7 +7,7 @@ import DonateIcon from "../assets/donateIcon.svg"
 const DonateButton = ({ path, title }) => {
   return (
     <Link
-      to={path}
+      to={path ?? "/"}
       className="flex flex-row items-center uppercase px-4 py-3 font-black rounded-lg border bg-yellow-500"
     >
       {title}
