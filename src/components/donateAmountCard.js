@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "./layout"
 import content from "../content.json"
 
 const DonateAmountCard = () => {

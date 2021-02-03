@@ -4,11 +4,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import DonateInformation from "../components/donateInformation"
-import ProjectInformationList from "../components/projectInformationList"
 
 const ProjectPage = ({ data }) => {
   const donateOptions = data.page.donateOptions
-  const projectInfo = data.page.projectInfo
 
   return (
     <Layout>
@@ -24,12 +22,6 @@ const ProjectPage = ({ data }) => {
           <DonateInformation {...donateOptions} />
         </PageSection>
       )}
-
-      {projectInfo && (
-        <PageSection width="xl">
-          <ProjectInformationList {...projectInfo} />
-        </PageSection>
-      )}
     </Layout>
   )
 }
@@ -40,30 +32,6 @@ export const query = graphql`
       uri
       title
       content
-      projectInfo {
-        firstproject {
-          title
-          buttontitle
-          description
-          fieldGroupName
-          pagelink {
-            ... on WpPage {
-              uri
-            }
-          }
-        }
-        secondproject {
-          buttontitle
-          description
-          fieldGroupName
-          title
-          pagelink {
-            ... on WpPage {
-              uri
-            }
-          }
-        }
-      }
       donateOptions {
         tikkie {
           title

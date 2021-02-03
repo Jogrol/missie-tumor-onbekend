@@ -5,31 +5,41 @@ import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import DonateInformation from "../components/donateInformation"
 import ProjectInformationList from "../components/projectInformationList"
+import PageHero from "../components/pageHero"
+import StatsInformation from "../components/statsInformation"
+import useIntersect from "../hooks/useIntersect"
 
 const DonatePage = ({ data }) => {
+  const { observable, inView } = useIntersect({ threshold: 1 })
+
   const donateOptions = data.page.donateOptions
   const projectInfo = data.page.projectInfo
+  const pageHero = data.page.hero
 
   return (
-    <Layout>
-      <PageSection>
-        <div
-          className="container sm:max-w-screen-md"
-          dangerouslySetInnerHTML={{ __html: data.page.content }}
-        />
-      </PageSection>
+    <Layout pageHeroInview={inView}>
+      <div ref={observable} className="relative h-screen w-screen">
+        <div className="absolute left-0 top-0 h-full w-full z-0">
+          <PageHero {...pageHero} />
+        </div>
+        <div className="relative w-full h-full pt-20 z-10">
+          <StatsInformation />
+        </div>
+      </div>
 
       {donateOptions && (
-        <PageSection>
-          <DonateInformation {...donateOptions} />
-        </PageSection>
+        <div id="scroll-to-donate" className="sm:h-screen pt-20">
+          <PageSection>
+            <DonateInformation {...donateOptions} />
+          </PageSection>
+        </div>
       )}
-
+      {/* 
       {projectInfo && (
         <PageSection width="xl">
           <ProjectInformationList {...projectInfo} />
         </PageSection>
-      )}
+      )} */}
     </Layout>
   )
 }
@@ -40,6 +50,21 @@ export const query = graphql`
       uri
       title
       content
+      hero {
+        title
+        subtitle
+        description
+        image {
+          uri
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1280) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
+            }
+          }
+        }
+      }
       projectInfo {
         firstproject {
           title

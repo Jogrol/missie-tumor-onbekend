@@ -12,7 +12,7 @@ const DonateInformationCard = ({ title, description, ctaTitle, ctalink }) => {
         <p>{description}</p>
       </div>
       <div className="pb-2 px-4 flex-none">
-        <InfoCardButton title={ctaTitle} path={ctalink.uri ?? null} />
+        <InfoCardButton title={ctaTitle} path={ctalink.uri ?? "/"} />
       </div>
     </div>
   )
@@ -22,7 +22,7 @@ DonateInformationCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   ctaTitle: PropTypes.string.isRequired,
-  ctalink: PropTypes.object,
+  ctalink: PropTypes.object.isRequired,
 }
 
 export default DonateInformationCard
