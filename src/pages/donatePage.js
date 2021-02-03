@@ -26,17 +26,13 @@ const DonatePage = ({ data }) => {
           <StatsInformation />
         </div>
       </div>
-      <PageSection>
-        <div
-          className="container sm:max-w-screen-md"
-          dangerouslySetInnerHTML={{ __html: data.page.content }}
-        />
-      </PageSection>
 
       {donateOptions && (
-        <PageSection>
-          <DonateInformation {...donateOptions} />
-        </PageSection>
+        <div id="scroll-to-donate" className="sm:h-screen pt-20">
+          <PageSection>
+            <DonateInformation {...donateOptions} />
+          </PageSection>
+        </div>
       )}
       {/* 
       {projectInfo && (
