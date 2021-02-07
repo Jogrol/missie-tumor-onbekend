@@ -12,6 +12,7 @@ module.exports = {
   },
   variants: {
     extend: {
+      divideColor: ["group-hover"],
       margin: ["last"],
     },
   },

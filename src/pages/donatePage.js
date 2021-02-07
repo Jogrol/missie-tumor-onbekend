@@ -27,8 +27,20 @@ const DonatePage = ({ data }) => {
         </div>
       </div>
 
+      <PageSection color="bg-gray-200">
+        <div className="w-full flex justify-center">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/KowXBc6nDnI"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </PageSection>
       {donateOptions && (
-        <div id="scroll-to-donate" className="sm:h-screen pt-20">
+        <div id="scroll-to-donate" className="sm:h-screen">
           <PageSection>
             <DonateInformation {...donateOptions} />
           </PageSection>

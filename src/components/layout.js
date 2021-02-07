@@ -26,7 +26,7 @@ const Layout = props => {
           </div>
         </div>
       </header>
-      <main className="flex-grow space-y-20">{props.children}</main>
+      <main className="flex-grow">{props.children}</main>
       <footer className="text-center w-full border-t-2 bg-yellow-500 p-4 rounded">
         {/* Should come from WP */}
         <div className="p-2">© 2021 Missie Tumor Onbekend</div>
