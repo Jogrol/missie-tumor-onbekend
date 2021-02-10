@@ -18,13 +18,8 @@ const DonatePage = ({ data }) => {
 
   return (
     <Layout pageHeroInview={inView}>
-      <div ref={observable} className="relative h-screen w-screen">
-        <div className="absolute left-0 top-0 h-full w-full z-0">
-          <PageHero {...pageHero} />
-        </div>
-        <div className="relative w-full h-full pt-20 z-10">
-          <StatsInformation />
-        </div>
+      <div ref={observable} className="relative  w-screen">
+        <PageHero {...pageHero} />
       </div>
 
       <PageSection color="bg-gray-200">

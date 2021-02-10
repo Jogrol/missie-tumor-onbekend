@@ -1,17 +1,21 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
+import StatsInformation from "../components/statsInformation"
 
 const PageHero = ({ title, subtitle, description, image }) => {
   return (
-    <div className="w-full">
-      <div className="h-1/4 w-full absolute left-0 bottom-0 z-10"></div>
-      <Img
-        fluid={image.localFile.childImageSharp.fluid}
-        alt="header"
-        fadeIn
-        className="h-screen bg-fixed bg-gradient-to-b from-current to-current"
-      />
+    <div className="relative">
+      <div className="absolute left-0 top-0 h-3/4 w-full z-0">
+        <Img
+          fluid={image.localFile.childImageSharp.fluid}
+          alt="header"
+          className="h-full w-full"
+        />
+      </div>
+      <div className="relative w-full h-full pt-20 z-10">
+        <StatsInformation />
+      </div>
     </div>
   )
 }
