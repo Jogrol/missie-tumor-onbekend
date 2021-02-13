@@ -2,6 +2,15 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      height: {
+        md: "50vh",
+      },
+      spacing: {
+        "2/3": "66.666667%",
+        "56%": "56.25%;",
+      },
+    },
     fontFamily: {
       Quicksand: ["Quicksand", "sans-serif"],
       Raleway: ["Raleway", "serif"],
