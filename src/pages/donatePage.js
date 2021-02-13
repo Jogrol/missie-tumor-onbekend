@@ -6,6 +6,7 @@ import PageSection from "../components/pageSection"
 import DonateInformation from "../components/donateInformation"
 import PageHero from "../components/pageHero"
 import useIntersect from "../hooks/useIntersect"
+import VideoSection from "../components/videoSection"
 
 const DonatePage = ({ data }) => {
   const { observable, inView } = useIntersect({ threshold: 1 })
@@ -20,16 +21,7 @@ const DonatePage = ({ data }) => {
       </div>
 
       <PageSection color="bg-gray-200">
-        <div className="w-full flex justify-center">
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/KowXBc6nDnI"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
+        <VideoSection />
       </PageSection>
       {donateOptions && (
         <div id="scroll-to-donate" className="sm:h-screen">

@@ -5,8 +5,6 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 import ScrollIcon from "../assets/ScrollIcon.svg"
 
 const PageHero = ({ title, subtitle, description, image }) => {
-  const stats = ["item-1", "item-2", "item-3", "item-4", "item-5", "item-6"]
-
   return (
     <div className="relative h-full sm:h-screen w-screen">
       <div className="absolute left-0 top-0 h-full sm:h-screen min-h-screen w-screen z-0">
