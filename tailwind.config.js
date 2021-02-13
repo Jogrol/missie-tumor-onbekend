@@ -8,7 +8,6 @@ module.exports = {
       },
       spacing: {
         "2/3": "66.666667%",
-        "56%": "56.25%;",
       },
     },
     fontFamily: {
