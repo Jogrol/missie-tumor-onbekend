@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
-import DonateInformation from "../components/donateInformation"
+import DonateSection from "../components/donateSection"
 
 const ProjectPage = ({ data }) => {
   const donateOptions = data.page.donateOptions
@@ -19,7 +19,7 @@ const ProjectPage = ({ data }) => {
 
       {donateOptions && (
         <PageSection>
-          <DonateInformation {...donateOptions} />
+          <DonateSection {...donateOptions} />
         </PageSection>
       )}
     </Layout>

@@ -2,7 +2,7 @@ import React from "react"
 
 const VideoSection = () => {
   return (
-    <div className="container max-w-screen-lg flex justify-center">
+    <div className="flex justify-center">
       <div className="w-full sm:w-2/3">
         <div className="relative overflow-hidden pb-2/3 h-full">
           <iframe

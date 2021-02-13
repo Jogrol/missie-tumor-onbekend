@@ -15,6 +15,8 @@ const DonateInformation = info => {
     setOption(item)
   }
 
+  // REFACTOR
+
   return (
     <div className="flex flex-wrap w-full bg-gray-100">
       <div className="w-full sm:w-1/3">

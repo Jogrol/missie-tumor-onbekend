@@ -1,5 +1,4 @@
 import React from "react"
-import InfoCardButton from "../ui-kit/infoCardButton"
 import PropTypes from "prop-types"
 
 const DonateInformationCard = ({

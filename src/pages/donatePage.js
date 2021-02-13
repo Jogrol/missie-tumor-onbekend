@@ -3,15 +3,17 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
-import DonateInformation from "../components/donateInformation"
+import DonateSection from "../components/donateSection"
 import PageHero from "../components/pageHero"
 import useIntersect from "../hooks/useIntersect"
 import VideoSection from "../components/videoSection"
+import ProjectSection from "../components/projectSection"
 
 const DonatePage = ({ data }) => {
   const { observable, inView } = useIntersect({ threshold: 1 })
 
   const donateOptions = data.page.donateOptions
+  const projectInfo = data.page.projectInfo
   const pageHero = data.page.hero
 
   return (
@@ -19,23 +21,21 @@ const DonatePage = ({ data }) => {
       <div ref={observable} className="relative  w-screen">
         <PageHero {...pageHero} />
       </div>
-
       <PageSection color="bg-gray-200">
         <VideoSection />
       </PageSection>
+      {projectInfo && (
+        <PageSection width="xl">
+          <ProjectSection {...projectInfo} />
+        </PageSection>
+      )}
       {donateOptions && (
-        <div id="scroll-to-donate" className="sm:h-screen">
+        <div id="scroll-to-donate">
           <PageSection>
-            <DonateInformation {...donateOptions} />
+            <DonateSection {...donateOptions} />
           </PageSection>
         </div>
       )}
-      {/* 
-      {projectInfo && (
-        <PageSection width="xl">
-          <ProjectInformationList {...projectInfo} />
-        </PageSection>
-      )} */}
     </Layout>
   )
 }
