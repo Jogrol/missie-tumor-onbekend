@@ -4,16 +4,13 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import DonateInformation from "../components/donateInformation"
-import ProjectInformationList from "../components/projectInformationList"
 import PageHero from "../components/pageHero"
-import StatsInformation from "../components/statsInformation"
 import useIntersect from "../hooks/useIntersect"
 
 const DonatePage = ({ data }) => {
   const { observable, inView } = useIntersect({ threshold: 1 })
 
   const donateOptions = data.page.donateOptions
-  const projectInfo = data.page.projectInfo
   const pageHero = data.page.hero
 
   return (
