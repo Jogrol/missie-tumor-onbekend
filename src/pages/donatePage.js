@@ -31,7 +31,7 @@ const DonatePage = ({ data }) => {
       )}
       {donateOptions && (
         <div id="scroll-to-donate">
-          <PageSection>
+          <PageSection color="bg-yellow-300">
             <DonateSection {...donateOptions} />
           </PageSection>
         </div>
