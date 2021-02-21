@@ -16,6 +16,14 @@ const ProjectInfoCard = ({
         //   alt="header"
         className="w-full h-52 rounded-t-lg"
       />
+      <div className="overflow-hidden h-8 mb-4 text-xs flex  bg-green-200">
+        <div
+          style={{ width: "70%" }}
+          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
+        >
+          <div className="text-xl font-bold">70%</div>
+        </div>
+      </div>
       <div className="flex p-4 flex-col">
         <h3>{title}</h3>
         <p>{description}</p>
