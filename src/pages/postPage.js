@@ -7,7 +7,7 @@ import PageSection from "../components/pageSection"
 const PostPage = ({ data }) => (
   <Layout siteTitle={data.page.title}>
     <PageSection width="lg">
-      <div className="grid  sm:grid-cols-3">
+      <div className="grid sm:grid-cols-3">
         <div className="col-span-2">
           <h1>{data.page.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: data.page.content }} />

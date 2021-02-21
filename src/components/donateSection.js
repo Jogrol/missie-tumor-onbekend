@@ -19,7 +19,6 @@ const DonateInformation = info => {
 
   return (
     <>
-      <h2 className="text-center py-12">Doneer nu</h2>
       <div className="flex flex-wrap w-full bg-gray-100">
         <div className="w-full sm:w-1/3">
           <div className="p-4">

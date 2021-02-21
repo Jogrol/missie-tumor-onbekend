@@ -30,12 +30,16 @@ const DonatePage = ({ data }) => {
       </PageSection>
       {projectInfo && (
         <PageSection width="xl" color="bg-yellow-600">
+          <h2 className="text-center text-white pb-12">
+            Projecten die we steunen
+          </h2>
           <ProjectSection {...projectInfo} />
         </PageSection>
       )}
       {donateOptions && (
         <div id="scroll-to-donate">
           <PageSection>
+            <h2 className="text-center pb-12">Doneer nu</h2>
             <DonateSection {...donateOptions} />
           </PageSection>
         </div>

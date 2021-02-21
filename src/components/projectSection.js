@@ -10,7 +10,6 @@ const ProjectSection = projects => {
 
   return (
     <>
-      <h2 className="text-center text-white py-12">Projecten die we steunen</h2>
       <ul className="sm:flex gap-8 justify-center">
         {projectsArray.map((item, index) => {
           return (

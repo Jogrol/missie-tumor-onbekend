@@ -2,16 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
-import DonateIcon from "../assets/donateIcon.svg"
-
 const DonateButton = ({ path, title }) => {
   return (
     <Link
-      to={path ?? "/"}
-      className="flex flex-row items-center uppercase px-4 py-3 font-black rounded-lg border bg-yellow-500"
+      to={path}
+      className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-yellow-300"
     >
       {title}
-      <DonateIcon className="ml-3 h-4" />
     </Link>
   )
 }
