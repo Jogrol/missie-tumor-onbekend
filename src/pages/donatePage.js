@@ -29,13 +29,13 @@ const DonatePage = ({ data }) => {
         <VideoSection />
       </PageSection>
       {projectInfo && (
-        <PageSection width="xl">
+        <PageSection width="xl" color="bg-yellow-600">
           <ProjectSection {...projectInfo} />
         </PageSection>
       )}
       {donateOptions && (
         <div id="scroll-to-donate">
-          <PageSection color="bg-yellow-300">
+          <PageSection>
             <DonateSection {...donateOptions} />
           </PageSection>
         </div>
@@ -66,7 +66,7 @@ export const query = graphql`
         }
       }
       projectInfo {
-        firstproject {
+        projecta {
           title
           buttontitle
           description
@@ -76,8 +76,18 @@ export const query = graphql`
               uri
             }
           }
+          image {
+            uri
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+          }
         }
-        secondproject {
+        projectb {
           buttontitle
           description
           fieldGroupName
@@ -85,6 +95,16 @@ export const query = graphql`
           pagelink {
             ... on WpPage {
               uri
+            }
+          }
+          image {
+            uri
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
             }
           }
         }
