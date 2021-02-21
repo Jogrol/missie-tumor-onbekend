@@ -8,6 +8,7 @@ import PageHero from "../components/pageHero"
 import useIntersect from "../hooks/useIntersect"
 import VideoSection from "../components/videoSection"
 import ProjectSection from "../components/projectSection"
+import FactSection from "../components/factsSection"
 
 const DonatePage = ({ data }) => {
   const { observable, inView } = useIntersect({ threshold: 1 })
@@ -21,7 +22,10 @@ const DonatePage = ({ data }) => {
       <div ref={observable} className="relative  w-screen">
         <PageHero {...pageHero} />
       </div>
-      <PageSection color="bg-gray-200">
+      <PageSection width="xl" color="bg-yellow-600">
+        <FactSection />
+      </PageSection>
+      <PageSection color="bg-white-200">
         <VideoSection />
       </PageSection>
       {projectInfo && (

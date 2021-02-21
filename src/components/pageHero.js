@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import scrollTo from "gatsby-plugin-smoothscroll"
-import ScrollIcon from "../assets/ScrollIcon.svg"
 
 const PageHero = ({ title, description, image }) => {
   return (
