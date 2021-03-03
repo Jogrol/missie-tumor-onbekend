@@ -15,12 +15,12 @@ const DonatePage = ({ data }) => {
 
   const donateOptions = data.page.donateOptions
   const projectInfo = data.page.projectInfo
-  const pageHero = data.page.hero
+  const pageHeroInfo = data.page.hero
 
   return (
     <Layout pageHeroInview={inView}>
       <div ref={observable} className="relative  w-screen">
-        <PageHero {...pageHero} />
+        <PageHero {...pageHeroInfo} />
       </div>
       <PageSection width="xl" color="bg-yellow-600">
         <FactSection />
@@ -58,6 +58,7 @@ export const query = graphql`
         title
         subtitle
         description
+        donationcta
         image {
           uri
           localFile {

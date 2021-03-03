@@ -66,8 +66,13 @@ exports.createPages = async ({ actions, graphql }) => {
         if (title === SUPPORT_TITLE) {
           return donatePage
         }
+
         if (isSupportProjectPage(title)) {
           return projectPage
+        }
+
+        if (title === "Home") {
+          return homePage
         }
 
         return defaultPage
