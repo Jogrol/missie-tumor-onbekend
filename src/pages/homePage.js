@@ -4,9 +4,9 @@ import PageSection from "../components/pageSection"
 import useIntersect from "../hooks/useIntersect"
 import Layout from "../components/layout"
 import PageHero from "../components/pageHero"
+import LatestNewsSection from "../components/latestNewsSection"
 
 const HomePage = ({ data }) => {
-  console.log("data", data)
   const { observable, inView } = useIntersect({ threshold: 1 })
   const pageHeroInfo = data.page.hero
 
@@ -17,6 +17,9 @@ const HomePage = ({ data }) => {
       </div>
       <PageSection>
         <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
+      </PageSection>
+      <PageSection width="xl" color="bg-yellow-200">
+        <LatestNewsSection />
       </PageSection>
     </Layout>
   )

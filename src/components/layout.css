@@ -13,22 +13,24 @@ h4,
 h5,
 h6 {
   font-family: Quicksand;
-  padding-bottom: 1rem;
 }
 
 h1 {
   font-size: 4rem;
   line-height: 1;
+  padding-bottom: 1rem;
 }
 
 h2 {
   font-size: 3rem;
   line-height: 3rem;
+  padding-bottom: 1rem;
 }
 
 h3 {
   font-size: 1.875rem;
   line-height: 2.25rem;
+  padding-bottom: 1rem;
 }
 
 h4 {
