@@ -19,7 +19,7 @@ const PageHero = ({ center, title, description, image, donationcta }) => {
         }`}
       >
         <div className={`w-full sm:w-1/2 animate-fade-up delay-700`}>
-          <h1 className="text-white font-black  text-5xl sm:text-8xl">
+          <h1 className="text-white font-black  text-5xl sm:text-6xl md:text-8xl">
             {title}
           </h1>
           {description && (
