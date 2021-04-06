@@ -1,6 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
+import PropTypes from "prop-types"
 
 const ProjectInfoCard = ({
   title,
@@ -13,10 +14,9 @@ const ProjectInfoCard = ({
     <div className="bg-white border-transparent rounded-lg shadow-lg">
       <Img
         fluid={image.localFile.childImageSharp.fluid}
-        //   alt="header"
         className="w-full h-52 rounded-t-lg"
       />
-      <div className="overflow-hidden h-8 mb-4 text-xs flex  bg-green-200">
+      <div className="overflow-hidden h-8 mb-4 text-xs flex bg-green-200">
         <div
           style={{ width: "70%" }}
           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
@@ -42,6 +42,14 @@ const ProjectInfoCard = ({
       </div>
     </div>
   )
+}
+
+ProjectInfoCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  buttontitle: PropTypes.string.isRequired,
+  pagelink: PropTypes.string.isRequired,
 }
 
 export default ProjectInfoCard

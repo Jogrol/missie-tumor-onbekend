@@ -1,6 +1,8 @@
 import React from "react"
 
-const DonateActionForm = ({ title, description, ctaTitle, ctalink }) => {
+// REFACTOR
+
+const DonateActionForm = ({ title, description }) => {
   return (
     <div className="w-full h-full p-4">
       <div className="bg-gray-200 h-full w-full p-8">

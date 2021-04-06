@@ -37,33 +37,35 @@ const Menu = () => {
 
       {/* desktop view */}
       <ul className="hidden md:flex flex-wrap h-full items-center justify-end">
-        {data.wpMenu.menuItems.nodes.map(item => {
-          const path = item.connectedNode.node.uri ?? item.url
-          const key = item.id
+        {data.wpMenu.menuItems.nodes.map(
+          ({ connectedNode, id, label, url, order }) => {
+            const path = connectedNode.node.uri ?? url
+            const key = id
 
-          if (item.order === 1) {
-            return null
-          }
+            if (order === 1) {
+              return null
+            }
 
-          if (item.label === DONATIE_LABEL) {
+            if (label === DONATIE_LABEL) {
+              return (
+                <li key={key} className="ml-12">
+                  <DonateButton path={path} title={label} />
+                </li>
+              )
+            }
+
             return (
-              <li key={key} className="ml-12">
-                <DonateButton path={path} title={item.label} />
+              <li
+                key={key}
+                className="px-2 align-middle border-transparent border-b-2 hover:border-gray-400 transition duration-300 ease-in-out"
+              >
+                <Link className="font-black py-6 px-6" to={path}>
+                  {label}
+                </Link>
               </li>
             )
           }
-
-          return (
-            <li
-              key={key}
-              className="px-2 align-middle border-transparent border-b-2 hover:border-gray-400 transition duration-300 ease-in-out"
-            >
-              <Link className="font-black py-6 px-6" to={path}>
-                {item.label}
-              </Link>
-            </li>
-          )
-        })}
+        )}
       </ul>
     </>
   )

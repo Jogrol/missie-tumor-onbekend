@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 const PageSection = ({ children, width = "lg", color = "bg-white" }) => {
   return (
@@ -8,6 +9,12 @@ const PageSection = ({ children, width = "lg", color = "bg-white" }) => {
       </div>
     </section>
   )
+}
+
+PageSection.propTypes = {
+  children: PropTypes.node.isRequired,
+  width: PropTypes.string,
+  color: PropTypes.string,
 }
 
 export default PageSection

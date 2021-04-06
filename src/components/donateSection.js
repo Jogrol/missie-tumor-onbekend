@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import DonateActionForm from "./donateActionForm"
 import DonateInformationCard from "./donateInformationCard"
 
+// REFACTOR
+
 const DonateInformation = info => {
   const infoArray = Object.values(info).filter(item => item.title)
 
@@ -14,8 +16,6 @@ const DonateInformation = info => {
   const handleClick = item => {
     setOption(item)
   }
-
-  // REFACTOR
 
   return (
     <>

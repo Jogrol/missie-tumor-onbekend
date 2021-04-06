@@ -3,7 +3,7 @@ import ProjectInfoCard from "./projectInfoCard"
 
 const ProjectSection = projects => {
   const projectsArray = Object.values(projects).filter(item => item.title)
-  console.log(projectsArray)
+
   if (!projectsArray.length) {
     return null
   }

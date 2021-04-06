@@ -1,14 +1,6 @@
 const { resolve } = require(`path`)
 
 exports.createPages = async ({ actions, graphql }) => {
-  // TODO, Create template in WP for support page
-  const SUPPORT_TITLE = "Steun ons"
-
-  // Helpers
-  const isSupportProjectPage = title => {
-    return title.includes("project")
-  }
-
   const {
     data: {
       allWpPage: { nodes: contentPages },
@@ -53,33 +45,21 @@ exports.createPages = async ({ actions, graphql }) => {
       })
     }),
 
-    contentPages.map(async node => {
-      const { uri, id, isFrontPage, title } = node
-
+    contentPages.map(async ({ uri, id, title }) => {
       const projectPage = resolve(`./src/pages/projectPage.js`)
       const donatePage = resolve(`./src/pages/donatePage.js`)
       const defaultPage = resolve(`./src/pages/defaultPage.js`)
       const homePage = resolve(`./src/pages/homePage.js`)
 
-      // should be better
-      const createComponentFactory = title => {
-        if (title === SUPPORT_TITLE) {
-          return donatePage
-        }
-
-        if (isSupportProjectPage(title)) {
-          return projectPage
-        }
-
-        if (title === "Home") {
-          return homePage
-        }
-
-        return defaultPage
+      // Todo, should come from WP
+      const pageType = {
+        Home: homePage,
+        "Steun ons": donatePage,
+        "PROJECT A": projectPage,
       }
 
       await actions.createPage({
-        component: createComponentFactory(title),
+        component: pageType[title] ?? defaultPage,
         path: `${uri}`,
         context: {
           id: id,

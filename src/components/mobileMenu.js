@@ -48,18 +48,23 @@ const MobileMenu = () => {
       >
         <div className="flex justify-center items-center w-full h-full text-wh">
           <ul>
-            {data.wpMenu.menuItems.nodes.map(item => {
-              const path = item.connectedNode.node.uri ?? item.url
-              const key = item.id
+            {data.wpMenu.menuItems.nodes.map(
+              ({ connectedNode, id, label, url }) => {
+                const path = connectedNode.node.uri ?? url
+                const key = id
 
-              return (
-                <li key={key} className="mb-8">
-                  <Link onClick={() => toggleMenuIsOpen(!menuIsOpen)} to={path}>
-                    <button className="text-5xl">{item.label}</button>
-                  </Link>
-                </li>
-              )
-            })}
+                return (
+                  <li key={key} className="mb-8">
+                    <Link
+                      onClick={() => toggleMenuIsOpen(!menuIsOpen)}
+                      to={path}
+                    >
+                      <button className="text-5xl">{label}</button>
+                    </Link>
+                  </li>
+                )
+              }
+            )}
           </ul>
         </div>
       </div>

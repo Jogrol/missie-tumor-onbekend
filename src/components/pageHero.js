@@ -46,6 +46,7 @@ PageHero.propTypes = {
   subtitle: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.object.isRequired,
+  donationcta: PropTypes.bool,
 }
 
 export default PageHero

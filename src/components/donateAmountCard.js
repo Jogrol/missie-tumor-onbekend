@@ -1,6 +1,8 @@
 import React from "react"
 import content from "../content.json"
 
+// REFACTOR
+
 const DonateAmountCard = () => {
   return (
     <ul className="w-full">

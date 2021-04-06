@@ -19,7 +19,7 @@ const NewsItem = ({ title, date, slug, content }) => {
 }
 
 NewsItem.prototype = {
-  title: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
   date: PropTypes.bool.isRequired,
   slug: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,

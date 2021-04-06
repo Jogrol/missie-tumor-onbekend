@@ -24,16 +24,16 @@ const LatestNewsSection = () => {
   const latestArtciles = data.allWpPost.edges.slice(0, 3)
 
   return (
-    <div className="">
+    <>
       <h2>Laatste nieuws</h2>
       <div className="grid sm:grid-cols-3 gap-8">
-        {latestArtciles.map(article => (
-          <div key={article.node.id} className="h-56">
-            <NewsItem {...article.node} />
+        {latestArtciles.map(({ node }) => (
+          <div key={node.id} className="h-56">
+            <NewsItem {...node} />
           </div>
         ))}
       </div>
-    </div>
+    </>
   )
 }
 

@@ -7,7 +7,6 @@ const useIntersect = (options, once = false) => {
   const [viewRatio, setViewRatio] = useState(0)
 
   useEffect(() => {
-    // check if intersectionObserver is supported, return
     if ("IntersectionObserver" in window === false) return
 
     if (!observer) {
