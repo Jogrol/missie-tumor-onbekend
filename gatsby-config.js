@@ -35,16 +35,15 @@ module.exports = {
        */
       resolve: `gatsby-source-wordpress`,
       options: {
-        // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `https://www.missietumoronbekend.nl/wordpress/gatsby/graphql`,
-
         debug: {
           graphql: {
             copyHtmlResponseOnError: true,
           },
         },
+        // the only required plugin option for WordPress is the GraphQL url.
+        url:
+          process.env.WPGRAPHQL_URL ||
+          `https://www.missietumoronbekend.nl/wordpress/gatsby/graphql`,
       },
 
       // this (optional) plugin enables Progressive Web App + Offline functionality
