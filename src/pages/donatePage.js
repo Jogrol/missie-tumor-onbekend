@@ -15,12 +15,12 @@ const DonatePage = ({ data }) => {
 
   const donateOptions = data.page.donateOptions
   const projectInfo = data.page.projectInfo
-  const pageHeroInfo = data.page.hero
+  // const pageHeroInfo = data.page.hero
 
   return (
     <Layout pageHeroInview={inView}>
       <div ref={observable} className="relative  w-screen">
-        <PageHero {...pageHeroInfo} />
+        {/* <PageHero {...pageHeroInfo} /> */}
       </div>
       <PageSection width="xl" color="bg-yellow-600">
         <FactSection />
@@ -36,14 +36,14 @@ const DonatePage = ({ data }) => {
           <ProjectSection {...projectInfo} />
         </PageSection>
       )}
-      {donateOptions && (
+      {/* {donateOptions && (
         <div id="scroll-to-donate">
           <PageSection>
             <h2 className="text-center pb-12">Doneer nu</h2>
             <DonateSection {...donateOptions} />
           </PageSection>
         </div>
-      )}
+      )} */}
     </Layout>
   )
 }
@@ -54,98 +54,6 @@ export const query = graphql`
       uri
       title
       content
-      hero {
-        title
-        subtitle
-        description
-        donationcta
-        image {
-          uri
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1280) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-            }
-          }
-        }
-      }
-      projectInfo {
-        projecta {
-          title
-          buttontitle
-          description
-          fieldGroupName
-          pagelink {
-            ... on WpPage {
-              uri
-            }
-          }
-          image {
-            uri
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
-              }
-            }
-          }
-        }
-        projectb {
-          buttontitle
-          description
-          fieldGroupName
-          title
-          pagelink {
-            ... on WpPage {
-              uri
-            }
-          }
-          image {
-            uri
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
-              }
-            }
-          }
-        }
-      }
-      donateOptions {
-        tikkie {
-          title
-          description
-          ctaTitle
-          ctalink {
-            ... on WpPage {
-              uri
-            }
-          }
-        }
-        form {
-          title
-          description
-          ctaTitle
-          ctalink {
-            ... on WpPage {
-              uri
-            }
-          }
-        }
-        digicollect {
-          title
-          description
-          ctaTitle
-          ctalink {
-            ... on WpPage {
-              uri
-            }
-          }
-        }
-      }
     }
   }
 `

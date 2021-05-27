@@ -32,38 +32,6 @@ export const query = graphql`
       uri
       title
       content
-      donateOptions {
-        tikkie {
-          title
-          description
-          ctaTitle
-          ctalink {
-            ... on WpPage {
-              uri
-            }
-          }
-        }
-        form {
-          title
-          description
-          ctaTitle
-          ctalink {
-            ... on WpPage {
-              uri
-            }
-          }
-        }
-        digicollect {
-          title
-          description
-          ctaTitle
-          ctalink {
-            ... on WpPage {
-              uri
-            }
-          }
-        }
-      }
     }
   }
 `
