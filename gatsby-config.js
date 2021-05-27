@@ -25,33 +25,31 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      /**
+       * First up is the WordPress source plugin that connects Gatsby
+       * to your WordPress site.
+       *
+       * visit the plugin docs to learn more
+       * https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/README.md
+       *
+       */
+      resolve: `gatsby-source-wordpress`,
       options: {
+        // the only required plugin option for WordPress is the GraphQL url.
         url:
-          // allows a fallback url if WPGRAPHQL_URL is not set in the env, this may be a local or remote WP instance.
-          process.env.WPGRAPHQL_URL || `http://localhost:8000/graphql`,
-        schema: {
-          //Prefixes all WP Types with "Wp" so "Post and allPost" become "WpPost and allWpPost".
-          typePrefix: `Wp`,
-        },
-        develop: {
-          //caches media files outside of Gatsby's default cache an thus allows them to persist through a cache reset.
-          hardCacheMediaFiles: true,
-        },
-        type: {
-          Post: {
-            limit:
-              process.env.NODE_ENV === `development`
-                ? // Lets just pull 50 posts in development to make it easy on ourselves (aka. faster).
-                  50
-                : // and we don't actually need more than 5000 in production for this particular site
-                  5000,
+          process.env.WPGRAPHQL_URL ||
+          `https://www.missietumoronbekend.nl/wordpress/gatsby/graphql`,
+
+        debug: {
+          graphql: {
+            copyHtmlResponseOnError: true,
           },
         },
       },
+
+      // this (optional) plugin enables Progressive Web App + Offline functionality
+      // To learn more, visit: https://gatsby.dev/offline
+      // `gatsby-plugin-offline`,
     },
   ],
-  // this (optional) plugin enables Progressive Web App + Offline functionality
-  // To learn more, visit: https://gatsby.dev/offline
-  // `gatsby-plugin-offline`,
 }

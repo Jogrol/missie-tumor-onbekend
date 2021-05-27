@@ -8,12 +8,12 @@ import LatestNewsSection from "../components/latestNewsSection"
 
 const HomePage = ({ data }) => {
   const { observable, inView } = useIntersect({ threshold: 1 })
-  const pageHeroInfo = data.page.hero
+  // const pageHeroInfo = data.page.hero
 
   return (
     <Layout pageHeroInview={inView}>
       <div ref={observable} className="relative  w-screen">
-        <PageHero center {...pageHeroInfo} />
+        {/* <PageHero center {...pageHeroInfo} /> */}
       </div>
       <PageSection>
         <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
@@ -31,24 +31,6 @@ export const query = graphql`
       uri
       title
       content
-      hero {
-        title
-        subtitle
-        description
-        image {
-          uri
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1280) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-            }
-          }
-        }
-      }
-      mainContent {
-        richttextfield
-      }
     }
   }
 `
