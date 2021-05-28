@@ -24,6 +24,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-gatsby-cloud`,
     {
       /**
        * First up is the WordPress source plugin that connects Gatsby
