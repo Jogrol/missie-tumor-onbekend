@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import MenuIcon from "../assets/menuIcon.svg"
-import CloseIcon from "../assets/CloseIcon.svg"
+import CloseIcon from "../assets/closeIcon.svg"
 
 const MobileMenu = () => {
   const data = useStaticQuery(graphql`
