@@ -59,7 +59,7 @@ exports.createPages = async ({ actions, graphql }) => {
       }
 
       await actions.createPage({
-        component: pageType[title] ?? defaultPage,
+        component: pageType[title] ? pageType[title] : defaultPage,
         path: `${uri}`,
         context: {
           id: id,
