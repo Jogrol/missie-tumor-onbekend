@@ -8,17 +8,17 @@ import LatestNewsSection from "../components/latestNewsSection"
 
 const HomePage = ({ data }) => {
   const { observable, inView } = useIntersect({ threshold: 1 })
-  // const pageHeroInfo = data.page.hero
+  const pageHeroInfo = data.page.hero
 
   return (
     <Layout pageHeroInview={inView}>
       <div ref={observable} className="relative  w-screen">
-        {/* <PageHero center {...pageHeroInfo} /> */}
+        <PageHero center {...pageHeroInfo} />
       </div>
-      <PageSection>
+      <PageSection width="sm">
         <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
       </PageSection>
-      <PageSection width="xl" color="bg-yellow-200">
+      <PageSection width="xl" color="bg-brown-100">
         <LatestNewsSection />
       </PageSection>
     </Layout>
@@ -31,6 +31,20 @@ export const query = graphql`
       uri
       title
       content
+      hero {
+        title
+        description
+        donationcta
+        image {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 2560, quality: 92) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+      }
     }
   }
 `

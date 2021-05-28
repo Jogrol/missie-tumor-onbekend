@@ -11,7 +11,7 @@ const Layout = ({ pageHeroInview, children }) => {
         <Header pageHeroInview={pageHeroInview} />
       </header>
       <main className="flex-grow">{children}</main>
-      <footer className="text-center w-full border-t-2 bg-yellow-500 p-4 rounded">
+      <footer className="text-center w-full bg-brown-200 p-4 rounded">
         <Footer />
       </footer>
     </div>

@@ -7,6 +7,7 @@ const PageHero = ({ center, title, description, image, donationcta }) => {
   return (
     <div className="relative sm:h-screen w-screen">
       <div className="absolute left-0 top-0 h-screen w-screen z-0">
+        {console.log(center, title, description, image, donationcta)}
         <Img
           fluid={image.localFile.childImageSharp.fluid}
           alt="header"
