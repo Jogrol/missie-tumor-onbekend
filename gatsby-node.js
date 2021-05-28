@@ -1,6 +1,6 @@
-import { resolve } from `path`
+const { resolve } = require(`path`)
 
-export async function createPages({ actions, graphql }) {
+exports.createPages = async ({ actions, graphql }) => {
   const {
     data: {
       allWpPage: { nodes: contentPages },
@@ -33,7 +33,7 @@ export async function createPages({ actions, graphql }) {
   `)
 
   await Promise.all(
-    contentPosts.map(async (edge) => {
+    contentPosts.map(async edge => {
       const { id, uri } = edge.node
 
       await actions.createPage({
