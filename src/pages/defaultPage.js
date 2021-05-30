@@ -3,15 +3,18 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
+import PageHeroSmall from "../components/pageHeroSmall"
 
 const DefaultPage = ({ data }) => {
+  const pageTitle = data.page.title
+  const pageContent = data.page.content
+  const pageHero = data.page.heroSmall
+
   return (
-    <Layout siteTitle={data.page.title}>
-      <PageSection>
-        <div
-          className="pt-8"
-          dangerouslySetInnerHTML={{ __html: data.page.content }}
-        />
+    <Layout siteTitle={pageTitle}>
+      {pageHero && <PageHeroSmall {...pageHero} />}
+      <PageSection width="md">
+        <div dangerouslySetInnerHTML={{ __html: pageContent }} />
       </PageSection>
     </Layout>
   )
@@ -23,6 +26,18 @@ export const query = graphql`
       uri
       title
       content
+      heroSmall {
+        title
+        image {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 2560, quality: 92) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+      }
     }
   }
 `

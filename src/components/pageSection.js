@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 const PageSection = ({ children, width = "lg", color = "bg-white" }) => {
   return (
-    <section className={`py-16 ${color}`}>
+    <section className={`py-8 ${color}`}>
       <div className={`container px-4 w-full sm:max-w-screen-${width}`}>
         {children}
       </div>

@@ -27,9 +27,9 @@ const Header = ({ pageHeroInview }) => {
       </div>
       <div className="absolute sm:top-0 mt-20 left-0 z-40 w-full">
         {/* TODO: fix mobile styling */}
-        <div className="bg-transparant">
+        {/* <div className="bg-transparant">
           <ListOfLinks />
-        </div>
+        </div> */}
       </div>
     </>
   )

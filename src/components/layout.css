@@ -30,7 +30,9 @@ h2 {
 h3 {
   font-size: 1.875rem;
   line-height: 2.25rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
+  color: #977921;
 }
 
 h4 {
@@ -64,4 +66,21 @@ li {
 
 a {
   font-weight: 900;
+}
+
+ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+a {
+  color: #37167f;
+}
+a:hover {
+  text-decoration: underline;
 }

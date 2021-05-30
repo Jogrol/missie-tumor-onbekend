@@ -7,6 +7,7 @@ module.exports = {
         "green-100": "#A17D23",
         "brown-100": "#DDD6BD",
         "brown-200": "#977921",
+        "blue-500": "#37167F",
       },
       height: {
         md: "50vh",
