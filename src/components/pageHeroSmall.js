@@ -1,13 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const PageHeroSmall = ({ title, image }) => {
+  const pageHeroImage = getImage(image?.localFile)
+
   return (
     <div className="relative h-64 w-full">
       <div className="absolute left-0 top-0 h-64 w-full z-0">
-        <Img
-          fluid={image.localFile.childImageSharp.fluid}
+        <GatsbyImage
+          image={pageHeroImage}
           alt="header"
           className="h-full w-full"
         />

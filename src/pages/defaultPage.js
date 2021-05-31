@@ -31,9 +31,11 @@ export const query = graphql`
         image {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 2560, quality: 92) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(
+                width: 1400
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
         }

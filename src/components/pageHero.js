@@ -1,15 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Img from "gatsby-image"
 import scrollTo from "gatsby-plugin-smoothscroll"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const PageHero = ({ center, title, description, image, donationcta }) => {
+  const pageHeroImage = getImage(image?.localFile)
+
   return (
     <div className="relative sm:h-screen w-screen">
       <div className="absolute left-0 top-0 h-screen w-screen z-0">
-        {console.log(center, title, description, image, donationcta)}
-        <Img
-          fluid={image.localFile.childImageSharp.fluid}
+        <GatsbyImage
+          image={pageHeroImage}
           alt="header"
           className="h-full w-full"
         />
