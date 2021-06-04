@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import PageHeroSmall from "../components/pageHeroSmall"
-import StoriesSection from "../components/StoriesSection"
+import StoriesSection from "../components/storiesSection"
 
 const StoriesPage = ({ data }) => {
   const pageTitle = data.page.title
