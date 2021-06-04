@@ -46,20 +46,16 @@ exports.createPages = async ({ actions, graphql }) => {
     }),
 
     contentPages.map(async ({ uri, id, title }) => {
-      const projectPage = resolve(`./src/pages/projectPage.js`)
-      const donatePage = resolve(`./src/pages/donatePage.js`)
-      const defaultPage = resolve(`./src/pages/defaultPage.js`)
-      const homePage = resolve(`./src/pages/homePage.js`)
-
-      // Todo, should come from WP
       const pageType = {
-        Home: homePage,
-        "Steun ons": donatePage,
-        "PROJECT A": projectPage,
+        Home: resolve(`./src/pages/homePage.js`),
+        "Steun ons": resolve(`./src/pages/donatePage.js`),
+        "PROJECT A": resolve(`./src/pages/projectPage.js`),
+        Patiëntenverhalen: resolve("./src/pages/storiesPage.js"),
+        default: resolve(`./src/pages/defaultPage.js`),
       }
 
       await actions.createPage({
-        component: pageType[title] ? pageType[title] : defaultPage,
+        component: pageType[title] ? pageType[title] : pageType.default,
         path: `${uri}`,
         context: {
           id: id,

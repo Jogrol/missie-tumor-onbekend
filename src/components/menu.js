@@ -38,13 +38,9 @@ const Menu = () => {
       {/* desktop view */}
       <ul className="hidden md:flex flex-wrap h-full items-center justify-end list-none">
         {data.wpMenu.menuItems.nodes.map(
-          ({ connectedNode, id, label, url, order }) => {
+          ({ connectedNode, id, label, url }) => {
             const path = connectedNode.node.uri ?? url
             const key = id
-
-            if (order === 1) {
-              return null
-            }
 
             if (label === DONATIE_LABEL) {
               return (
