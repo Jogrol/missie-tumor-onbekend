@@ -1,21 +1,36 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
+import LatestNewsList from "../components/latestNewsList"
+import PageHeroSmall from "../components/pageHeroSmall"
 
-const PostPage = ({ data }) => (
-  <Layout siteTitle={data.page.title}>
-    <PageSection width="lg">
-      <div className="grid sm:grid-cols-3">
-        <div className="col-span-2">
-          <h1>{data.page.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
+const PostPage = ({ data }) => {
+  const image = getImage(data.page.featuredImage?.node?.localFile)
+  const pageHero = data.header.heroSmall
+
+  return (
+    <Layout siteTitle={data.page.title}>
+      {pageHero && <PageHeroSmall {...pageHero} />}
+      <PageSection width="lg">
+        <div className="w-full sm:grid sm:grid-cols-3">
+          <div className="sm:col-span-2 sm:pr-12">
+            {image && (
+              <GatsbyImage image={image} alt="header" className="w-full" />
+            )}
+            <h1>{data.page.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
+          </div>
+          <div className="sm:col-span-">
+            <LatestNewsList />
+          </div>
         </div>
-      </div>
-    </PageSection>
-  </Layout>
-)
+      </PageSection>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query postPage($id: String) {
@@ -23,6 +38,36 @@ export const query = graphql`
       uri
       title
       content
+      featuredImage {
+        node {
+          id
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1400
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
+        }
+      }
+    }
+    header: wpPage(id: { eq: "cG9zdDo0NzA=" }) {
+      heroSmall {
+        title
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1400
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
+        }
+      }
     }
   }
 `

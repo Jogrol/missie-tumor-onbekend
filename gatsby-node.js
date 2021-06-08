@@ -51,6 +51,7 @@ exports.createPages = async ({ actions, graphql }) => {
         "Steun ons": resolve(`./src/pages/donatePage.js`),
         "PROJECT A": resolve(`./src/pages/projectPage.js`),
         Patiëntenverhalen: resolve("./src/pages/storiesPage.js"),
+        Actueel: resolve("./src/pages/newsPage.js"),
         default: resolve(`./src/pages/defaultPage.js`),
       }
 

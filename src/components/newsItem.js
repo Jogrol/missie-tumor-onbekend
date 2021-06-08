@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import "./newsItem.css"
 
-const NewsItem = ({ title, date, slug, content }) => {
+const NewsItem = ({ title, date, uri, content }) => {
   return (
     <div className="h-full flex flex-col">
       <span>{date}</span>
@@ -12,7 +12,7 @@ const NewsItem = ({ title, date, slug, content }) => {
         className="flex-grow overflow-hidden news-item"
         dangerouslySetInnerHTML={{ __html: content }}
       />
-      <Link className="text-right m-4" to={slug}>
+      <Link className="text-right m-4" to={uri}>
         Lees meer
       </Link>
     </div>
