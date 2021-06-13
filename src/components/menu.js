@@ -31,12 +31,12 @@ const Menu = () => {
   return (
     <>
       {/* mobile view */}
-      <ul className="md:hidden flex justify-end">
+      <ul className="lg:hidden flex justify-end">
         <MobileMenu />
       </ul>
 
       {/* desktop view */}
-      <ul className="hidden md:flex flex-wrap h-full items-center justify-end list-none">
+      <ul className="hidden lg:flex flex-wrap h-full items-center justify-end list-none">
         {data.wpMenu.menuItems.nodes.map(
           ({ connectedNode, id, label, url }) => {
             const path = connectedNode.node.uri ?? url
@@ -56,7 +56,7 @@ const Menu = () => {
                 className="px-2 align-middle border-transparent border-b-2 hover:border-gray-400 transition duration-300 ease-in-out"
               >
                 <Link
-                  className="font-black text-black no-underline py-6 px-6 font-"
+                  className="font-black text-black no-underline py-6 px-6"
                   to={path}
                 >
                   {label}

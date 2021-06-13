@@ -16,7 +16,7 @@ const ProjectInfoCard = ({
     <div className="bg-white border-transparent rounded-lg shadow-lg">
       <GatsbyImage
         image={projectImage}
-        alt={image.alt}
+        alt="image"
         className="w-full h-52 rounded-t-lg"
       />
 
@@ -51,9 +51,9 @@ const ProjectInfoCard = ({
 ProjectInfoCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
   buttontitle: PropTypes.string.isRequired,
-  pagelink: PropTypes.string.isRequired,
+  pagelink: PropTypes.object.isRequired,
 }
 
 export default ProjectInfoCard

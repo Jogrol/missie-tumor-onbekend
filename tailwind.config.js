@@ -11,6 +11,7 @@ module.exports = {
       },
       height: {
         md: "50vh",
+        lg: "80vh",
       },
       spacing: {
         "2/3": "66.666667%",
