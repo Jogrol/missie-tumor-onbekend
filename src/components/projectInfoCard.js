@@ -1,7 +1,7 @@
 import React from "react"
-import Img from "gatsby-image"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const ProjectInfoCard = ({
   title,
@@ -10,12 +10,16 @@ const ProjectInfoCard = ({
   buttontitle,
   pagelink,
 }) => {
+  const projectImage = getImage(image?.localFile)
+
   return (
     <div className="bg-white border-transparent rounded-lg shadow-lg">
-      <Img
-        fluid={image.localFile.childImageSharp.fluid}
+      <GatsbyImage
+        image={projectImage}
+        alt={image.alt}
         className="w-full h-52 rounded-t-lg"
       />
+
       <div className="overflow-hidden h-8 mb-4 text-xs flex bg-green-200">
         <div
           style={{ width: "70%" }}
@@ -29,8 +33,8 @@ const ProjectInfoCard = ({
         <p>{description}</p>
         <div className="flex justify-between">
           <Link
-            to={pagelink.uri}
-            className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-yellow-300"
+            to={pagelink.uri ? pagelink.uri : "/"}
+            className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-brown-200 hover:bg-brown-100 hover:text-brown-200"
           >
             {buttontitle}
           </Link>

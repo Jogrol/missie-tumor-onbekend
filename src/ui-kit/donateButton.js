@@ -6,7 +6,7 @@ const DonateButton = ({ path, title }) => {
   return (
     <Link
       to={path}
-      className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-yellow-300"
+      className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-brown-200 hover:bg-brown-100 hover:text-brown-200"
     >
       {title}
     </Link>

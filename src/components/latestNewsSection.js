@@ -11,7 +11,7 @@ const LatestNewsSection = () => {
             id
             title
             date(fromNow: false, formatString: "DD MMMM, YYYY", locale: "NL")
-            slug
+            uri
             content
           }
         }
