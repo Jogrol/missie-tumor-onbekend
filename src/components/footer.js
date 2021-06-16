@@ -22,16 +22,16 @@ const Footer = () => {
       <div className="p-2 text-white text-bold">
         © 2021 Missie Tumor Onbekend
       </div>
-      <ul className="flex flex-col sm:flex-row p-2 justify-center text-xs list-none text-white sm:divide-x-2">
+      <ul className="flex flex-col sm:flex-row p-2 justify-center list-none text-white sm:divide-x-2">
         {linksArray.map(({ url, title, isExternal }, index) => {
           return (
-            <li className="text-xs sm:px-6 sm:py-2" key={index}>
+            <li className="text-xs sm:px-4 sm:py-2" key={index}>
               {!isExternal ? (
-                <Link className="text-white" to={url}>
+                <Link className="text-white text-xs" to={url}>
                   {title}
                 </Link>
               ) : (
-                <a className="text-white" href={url} target="_blank">
+                <a className="text-white text-xs" href={url} target="_blank">
                   {title}
                 </a>
               )}

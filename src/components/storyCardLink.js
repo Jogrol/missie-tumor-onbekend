@@ -8,7 +8,14 @@ const StoryCardLink = ({ title, label, image, pagelink }) => {
   // TODO: fix alt for images
   return (
     <div className="bg-brown-100 rounded-md shadow-md flex h-40">
-      <GatsbyImage image={storyLinkImage} className="w-1/3 h-full" alt="" />
+      <div className="w-1/3 h-full">
+        <GatsbyImage
+          objectPosition
+          image={storyLinkImage}
+          alt=""
+          className="h-full w-full"
+        />
+      </div>
       <div className="flex flex-col justify-center p-4">
         <h3>{title}</h3>
         <Link to={pagelink.uri}>{label}</Link>

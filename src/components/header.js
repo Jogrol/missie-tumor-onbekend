@@ -9,19 +9,19 @@ const Header = ({ pageHeroInview }) => {
   const data = useStaticQuery(graphql`
     {
       image: allImageSharp(
-        filter: { id: { eq: "7df350ea-7764-585d-9de8-58350248b4b7" } }
+        filter: { id: { eq: "71c655a5-e4cb-5358-bb8a-324a468c9d6c" } }
       ) {
         edges {
           node {
             id
-            gatsbyImageData(width: 500, placeholder: NONE)
+            gatsbyImageData(width: 300, placeholder: NONE)
           }
         }
       }
     }
   `)
 
-  const logoImage = getImage(data.image.edges[0].node)
+  const logoImage = getImage(data.image.edges[0]?.node)
 
   return (
     <>
@@ -32,8 +32,11 @@ const Header = ({ pageHeroInview }) => {
       >
         <div className="container w-full sm:max-w-screen-xl px-4">
           <div className="flex py-2 w-full">
-            <Link className="h-16 inline-block w-2/3 sm:w-1/4" to="/">
-              <GatsbyImage image={logoImage} alt="logo" className="h-full" />
+            <Link
+              className="h-16 w-1/2 sm:w-1/4 flex justify-center items-center"
+              to="/"
+            >
+              <GatsbyImage image={logoImage} alt="logo" className="w-full" />
             </Link>
             <nav className="flex-1">
               <Menu />

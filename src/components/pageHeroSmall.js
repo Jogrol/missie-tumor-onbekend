@@ -14,8 +14,8 @@ const PageHeroSmall = ({ title, image }) => {
           className="h-full w-full"
         />
       </div>
-      <div className="absolute pt-16 w-full h-full flex justify-center items-center">
-        <h1 className="text-white font-black text-3xl sm:text-6xl md:text-8xl">
+      <div className="absolute pt-20 w-full h-64 flex justify-center items-center">
+        <h1 className="text-white font-black text-3xl sm:text-4xl md:text-6xl">
           {title}
         </h1>
       </div>
