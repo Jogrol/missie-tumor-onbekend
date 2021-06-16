@@ -33,7 +33,7 @@ const ProjectInfoCard = ({
         <p>{description}</p>
         <div className="flex justify-between">
           <Link
-            to={pagelink.uri ? pagelink.uri : "/"}
+            to={"/"}
             className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-brown-200 hover:bg-brown-100 hover:text-brown-200"
           >
             {buttontitle}
