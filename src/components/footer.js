@@ -31,7 +31,12 @@ const Footer = () => {
                   {title}
                 </Link>
               ) : (
-                <a className="text-white text-xs" href={url} target="_blank">
+                <a
+                  className="text-white text-xs"
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {title}
                 </a>
               )}

@@ -1,13 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const DonateInformationCard = ({
-  title,
-  description,
-  ctaTitle,
-  ctalink,
-  onClickFn,
-}) => {
+const DonateInformationCard = ({ title, onClickFn }) => {
   return (
     <div
       onClick={onClickFn}

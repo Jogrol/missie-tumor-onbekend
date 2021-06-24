@@ -8,20 +8,16 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const Header = ({ pageHeroInview }) => {
   const data = useStaticQuery(graphql`
     {
-      image: allImageSharp(
-        filter: { id: { eq: "71c655a5-e4cb-5358-bb8a-324a468c9d6c" } }
-      ) {
-        edges {
-          node {
-            id
-            gatsbyImageData(width: 300, placeholder: NONE)
-          }
+      image: file(name: { eq: "MTO_Logo_rgb-e1623591053682" }) {
+        id
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }
   `)
 
-  const logoImage = getImage(data.image.edges[0]?.node)
+  const logoImage = getImage(data.image.childImageSharp)
 
   return (
     <>
@@ -31,7 +27,7 @@ const Header = ({ pageHeroInview }) => {
         }`}
       >
         <div className="container w-full sm:max-w-screen-xl px-4">
-          <div className="flex py-2 w-full">
+          <div className="flexg py-2 w-full">
             <Link
               className="h-16 w-1/2 sm:w-1/4 flex justify-center items-center"
               to="/"
