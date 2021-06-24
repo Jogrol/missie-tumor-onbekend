@@ -17,7 +17,7 @@ const Header = ({ pageHeroInview }) => {
     }
   `)
 
-  const logoImage = getImage(data.image.childImageSharp)
+  const logoImage = getImage(data.image?.childImageSharp)
 
   return (
     <>
@@ -32,8 +32,11 @@ const Header = ({ pageHeroInview }) => {
               className="h-16 w-1/2 sm:w-1/4 flex justify-center items-center"
               to="/"
             >
-              {/* <img src={logo} alt="A dog smiling in a party hat" /> */}
-              <GatsbyImage image={logoImage} alt="logo" className="w-full" />
+              <img
+                src="https://www.missietumoronbekend.nl/wordpress/gatsby/wp-content/uploads/2021/06/mto_logo-1.png"
+                alt="logo"
+              ></img>
+              {/* <GatsbyImage image={logoImage} alt="logo" className="w-full" /> */}
             </Link>
             <nav className="flex-1">
               <Menu />
