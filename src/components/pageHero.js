@@ -31,7 +31,7 @@ const PageHero = ({ center, title, description, image, donationcta }) => {
             <div className="pt-4 inline-block">
               <button
                 onClick={() => scrollTo("#scroll-to-donate")}
-                className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-brown-200 hover:bg-brown-100 hover:text-brown-200"
+                className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-brown-100 hover:text-brown-200 hover:no-underline"
               >
                 Doneer nu
               </button>

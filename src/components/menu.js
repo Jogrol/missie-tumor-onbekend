@@ -53,10 +53,10 @@ const Menu = () => {
             return (
               <li
                 key={key}
-                className="px-2 align-middle border-transparent border-b-2 hover:border-gray-400 transition duration-300 ease-in-out"
+                className="px-2 align-middle border-transparent border-b-4 hover:border-gray-400 transition duration-300 ease-in-out"
               >
                 <Link
-                  className="font-black text-black no-underline py-6 px-6"
+                  className="font-black text-black hover:no-underline py-6 px-6"
                   to={path}
                 >
                   {label}

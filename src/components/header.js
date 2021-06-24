@@ -27,11 +27,12 @@ const Header = ({ pageHeroInview }) => {
         }`}
       >
         <div className="container w-full sm:max-w-screen-xl px-4">
-          <div className="flexg py-2 w-full">
+          <div className="flex py-2 w-full">
             <Link
               className="h-16 w-1/2 sm:w-1/4 flex justify-center items-center"
               to="/"
             >
+              {/* <img src={logo} alt="A dog smiling in a party hat" /> */}
               <GatsbyImage image={logoImage} alt="logo" className="w-full" />
             </Link>
             <nav className="flex-1">

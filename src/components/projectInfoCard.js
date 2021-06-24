@@ -34,7 +34,7 @@ const ProjectInfoCard = ({
         <div className="flex justify-between">
           <Link
             to={"/"}
-            className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-brown-200 hover:bg-brown-100 hover:text-brown-200"
+            className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-brown-100 hover:text-brown-200 hover:no-underline"
           >
             {buttontitle}
           </Link>
