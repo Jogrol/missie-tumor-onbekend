@@ -1,5 +1,5 @@
 module.exports = {
-  purge: [],
+  purge: ["./src/**/*.js"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -11,6 +11,7 @@ module.exports = {
       },
       height: {
         md: "50vh",
+        lg: "80vh",
       },
       spacing: {
         "2/3": "66.666667%",

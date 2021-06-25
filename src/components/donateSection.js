@@ -19,25 +19,8 @@ const DonateInformation = info => {
 
   return (
     <>
-      <div className="flex flex-wrap w-full bg-brown-100 rounded-lg shadow-md">
-        <div className="w-full sm:w-1/3">
-          <div className="p-4">
-            {infoArray.map((item, index) => {
-              return (
-                <DonateInformationCard
-                  key={index}
-                  {...item}
-                  onClickFn={() => handleClick(item)}
-                />
-              )
-            })}
-          </div>
-        </div>
-        <div className="w-full sm:w-2/3">
-          <div className="w-full h-full">
-            <DonateActionForm {...currentOption} />
-          </div>
-        </div>
+      <div className="flex flex-wrap w-full bg-brown-100 rounded-lg shadow-md p-8">
+        <DonateActionForm />
       </div>
     </>
   )
