@@ -42,24 +42,29 @@ const MobileMenu = () => {
       <div
         className={
           menuIsOpen
-            ? "visible fixed top-0  right-0 w-screen h-screen opacity-100 bg-yellow-500 duration-200 delay-200"
+            ? "visible fixed top-0  right-0 w-screen h-screen opacity-100 bg-white duration-200 delay-200"
             : "invisible fixed top-0 -mt-80 opacity-0 right-0 w-screen h-screen transition-all duration-200"
         }
       >
-        <div className="flex justify-center items-center w-full h-full text-wh">
-          <ul>
+        <div className="flex justify-center items-center w-full h-full">
+          <ul className="list-none p-8">
+            <li className="">
+              <Link onClick={() => toggleMenuIsOpen(!menuIsOpen)} to="/">
+                <button className="text-4xl">Home</button>
+              </Link>
+            </li>
             {data.wpMenu.menuItems.nodes.map(
               ({ connectedNode, id, label, url }) => {
                 const path = connectedNode.node.uri ?? url
                 const key = id
 
                 return (
-                  <li key={key} className="mb-8">
+                  <li key={key} className="">
                     <Link
                       onClick={() => toggleMenuIsOpen(!menuIsOpen)}
                       to={path}
                     >
-                      <button className="text-5xl">{label}</button>
+                      <button className="text-4xl">{label}</button>
                     </Link>
                   </li>
                 )

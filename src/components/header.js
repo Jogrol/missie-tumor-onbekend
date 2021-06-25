@@ -3,27 +3,21 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import Menu from "./menu"
-import LogoIcon from "../assets/logoIcon.svg"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Header = ({ pageHeroInview }) => {
   const data = useStaticQuery(graphql`
     {
-      file: allFile(
-        filter: { id: { eq: "78ca368d-39f7-5f83-b868-5065807debc1" } }
-      ) {
-        edges {
-          node {
-            childImageSharp {
-              gatsbyImageData(width: 500, placeholder: NONE)
-            }
-          }
+      image: file(name: { eq: "MTO_Logo_rgb-e1623591053682" }) {
+        id
+        childImageSharp {
+          gatsbyImageData
         }
       }
     }
   `)
 
-  const logoImage = getImage(data.file.edges[0].node)
+  const logoImage = getImage(data.image?.childImageSharp)
 
   return (
     <>
@@ -34,14 +28,15 @@ const Header = ({ pageHeroInview }) => {
       >
         <div className="container w-full sm:max-w-screen-xl px-4">
           <div className="flex py-2 w-full">
-            <Link className="h-20 inline-block w-1/4" to="/">
-              <GatsbyImage
-                fadeIn
-                image={logoImage}
+            <Link
+              className="h-16 w-1/2 sm:w-1/4 flex justify-center items-center"
+              to="/"
+            >
+              <img
+                src="https://www.missietumoronbekend.nl/wordpress/gatsby/wp-content/uploads/2021/06/mto_logo-1.png"
                 alt="logo"
-                className="h-full"
-              />
-              {/* <LogoIcon className="h-12" /> */}
+              ></img>
+              {/* <GatsbyImage image={logoImage} alt="logo" className="w-full" /> */}
             </Link>
             <nav className="flex-1">
               <Menu />

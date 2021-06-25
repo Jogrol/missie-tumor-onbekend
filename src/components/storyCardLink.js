@@ -7,11 +7,17 @@ const StoryCardLink = ({ title, label, image, pagelink }) => {
   const storyLinkImage = getImage(image?.localFile)
   // TODO: fix alt for images
   return (
-    <div className="bg-brown-100 rounded-md shadow-md flex h-40">
-      <GatsbyImage image={storyLinkImage} className="w-1/3 h-full" alt="" />
-      <div className="flex flex-col justify-center p-4">
-        <h3>{title}</h3>
-        <Link to={pagelink.uri}>{label}</Link>
+    <div className="bg-brown-100 rounded-md shadow-lg">
+      <div className="flex h-40">
+        <GatsbyImage
+          object="cover"
+          image={storyLinkImage}
+          className="w-1/3 h-full"
+        />
+        <div className="w-2/3 flex flex-col p-4">
+          <h3>{title}</h3>
+          <Link to={pagelink.uri}>{label}</Link>
+        </div>
       </div>
     </div>
   )

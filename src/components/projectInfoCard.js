@@ -16,7 +16,7 @@ const ProjectInfoCard = ({
     <div className="bg-white border-transparent rounded-lg shadow-lg">
       <GatsbyImage
         image={projectImage}
-        alt={image.alt}
+        alt="image"
         className="w-full h-52 rounded-t-lg"
       />
 
@@ -33,8 +33,8 @@ const ProjectInfoCard = ({
         <p>{description}</p>
         <div className="flex justify-between">
           <Link
-            to={pagelink.uri ? pagelink.uri : "/"}
-            className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-brown-200 hover:bg-brown-100 hover:text-brown-200"
+            to={"/"}
+            className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-brown-100 hover:text-brown-200 hover:no-underline"
           >
             {buttontitle}
           </Link>
@@ -51,9 +51,9 @@ const ProjectInfoCard = ({
 ProjectInfoCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
   buttontitle: PropTypes.string.isRequired,
-  pagelink: PropTypes.string.isRequired,
+  pagelink: PropTypes.object.isRequired,
 }
 
 export default ProjectInfoCard
