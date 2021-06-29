@@ -6,13 +6,15 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand:wght@700&family=Raleway&display=swap");
 
-h1,
+h1 {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: Quicksand;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
@@ -52,6 +54,7 @@ a {
   font-family: Raleway;
   font-size: 1rem;
   line-height: 1.5rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 p {

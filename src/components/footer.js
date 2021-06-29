@@ -4,17 +4,17 @@ import { Link } from "gatsby"
 const Footer = () => {
   const linksArray = [
     {
+      title: "NFK Patiëntenplatform Zeldzame Kankers ",
+      url: "https://zeldzamekankers.nl/",
+      isExternal: "_blank",
+    },
+    {
       title: "Stichting Sterren",
       url: "/de-onzichtbare-vijand",
     },
     {
       title: "Stichting Vrienden van Hederik",
       url: "/hederiks-verhaal",
-    },
-    {
-      title: "NFK",
-      url: "https://zeldzamekankers.nl/",
-      isExternal: "_blank",
     },
   ]
   return (

@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import DonateActionForm from "./donateActionForm"
-import DonateInformationCard from "./donateInformationCard"
+import DonateOptionTab from "./donateOptionTab"
 
 // REFACTOR
 
-const DonateInformation = info => {
+const DonateSection = info => {
   const infoArray = Object.values(info).filter(item => item.title)
 
   const [currentOption, setOption] = useState(infoArray[0])
@@ -24,7 +24,7 @@ const DonateInformation = info => {
           <div className="p-4">
             {infoArray.map((item, index) => {
               return (
-                <DonateInformationCard
+                <DonateOptionTab
                   key={index}
                   {...item}
                   onClickFn={() => handleClick(item)}
@@ -43,4 +43,4 @@ const DonateInformation = info => {
   )
 }
 
-export default DonateInformation
+export default DonateSection

@@ -1,10 +1,10 @@
 import React from "react"
 
-const VideoSection = () => {
+const VideoSection = ({ introductiontext, videolink}) => {
   return (
-    <div className="sm:flex gap-4 justify-center items-center">
-      <blockquote className="w-full text-2xl sm:w-1/3 sm:text-6xl italic">
-        "Lorem ipsums upsus baram bo"
+    <div className="sm:flex gap-4 justify-center items-center py-8">
+      <blockquote className="w-full sm:w-1/3 italic">
+        "{introductiontext}"
       </blockquote>
       <div className="w-full sm:w-2/3 mt-4 sm:mt-0">
         <div className="relative overflow-hidden pb-2/3 h-full">

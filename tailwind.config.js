@@ -10,8 +10,9 @@ module.exports = {
         "blue-500": "#37167F",
       },
       height: {
+        hero: '448px',
         md: "50vh",
-        lg: "80vh",
+        lg: "70vh",
       },
       spacing: {
         "2/3": "66.666667%",
@@ -27,8 +28,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      Quicksand: ["Quicksand", "sans-serif"],
-      Raleway: ["Raleway", "serif"],
+      // Quicksand: ["Quicksand", "sans-serif"],
+      // Raleway: ["Raleway", "serif"],
     },
     container: {
       center: true,

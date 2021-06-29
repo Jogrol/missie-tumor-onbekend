@@ -9,6 +9,7 @@ import LatestNewsSection from "../components/latestNewsSection"
 const HomePage = ({ data }) => {
   const { observable, inView } = useIntersect({ threshold: 1 })
   const pageHeroInfo = data.page.hero
+  const pageContent = data.page.content
 
   return (
     <Layout pageHeroInview={inView}>
@@ -16,9 +17,9 @@ const HomePage = ({ data }) => {
         <PageHero center {...pageHeroInfo} />
       </div>
       <PageSection width="sm">
-        <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
+        <div dangerouslySetInnerHTML={{ __html: pageContent }} />
       </PageSection>
-      <PageSection width="xl" color="bg-brown-100">
+      <PageSection width="lg" color="bg-brown-100">
         <LatestNewsSection />
       </PageSection>
     </Layout>

@@ -9,8 +9,14 @@ const ProjectInfoCard = ({
   image,
   buttontitle,
   pagelink,
+  target,
+  pogress,
 }) => {
   const projectImage = getImage(image?.localFile)
+
+  const progress = pogress
+
+  const pogressPercentage = `${Math.round((progress / target) * 100)}%`
 
   return (
     <div className="bg-white border-transparent rounded-lg shadow-lg">
@@ -22,10 +28,10 @@ const ProjectInfoCard = ({
 
       <div className="overflow-hidden h-8 mb-4 text-xs flex bg-green-200">
         <div
-          style={{ width: "70%" }}
+          style={{ width: pogressPercentage }}
           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
         >
-          <div className="text-xl font-bold">70%</div>
+          <div className="text-xl font-bold">{pogressPercentage}</div>
         </div>
       </div>
       <div className="flex p-4 flex-col">
@@ -40,7 +46,7 @@ const ProjectInfoCard = ({
           </Link>
           <div className="flex flex-col">
             <span className="font-extrabold text-md">Doel:</span>
-            <span className="text-2xl"> €20.000</span>
+            <span className="text-2xl"> € {target}</span>
           </div>
         </div>
       </div>
@@ -54,6 +60,8 @@ ProjectInfoCard.propTypes = {
   image: PropTypes.object.isRequired,
   buttontitle: PropTypes.string.isRequired,
   pagelink: PropTypes.object.isRequired,
+  target: PropTypes.string.isRequired,
+  pogress: PropTypes.string.isRequired,
 }
 
 export default ProjectInfoCard
