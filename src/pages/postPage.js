@@ -18,9 +18,11 @@ const PostPage = ({ data }) => {
         <div className="w-full sm:grid sm:grid-cols-3">
           <div className="sm:col-span-2 sm:pr-12">
             {image && (
-              <GatsbyImage image={image} alt="header" className="w-full" />
+              <GatsbyImage image={image} alt="header" className="w-full mb-4" />
             )}
+            
             <h1>{data.page.title}</h1>
+            <p className="mb-4">{data.page.date}</p>
             <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
           </div>
           <div className="sm:col-span-">
@@ -38,6 +40,7 @@ export const query = graphql`
       uri
       title
       content
+      date(formatString: "DD MMMM, YYYY", locale: "NL")
       featuredImage {
         node {
           id

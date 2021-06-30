@@ -1,6 +1,6 @@
 module.exports = {
   purge: ["./src/**/*.js"],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
     extend: {
       colors: {
@@ -10,7 +10,7 @@ module.exports = {
         "blue-500": "#37167F",
       },
       height: {
-        hero: '448px',
+        hero: "448px",
         md: "50vh",
         lg: "70vh",
       },

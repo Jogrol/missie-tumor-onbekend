@@ -87,3 +87,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
