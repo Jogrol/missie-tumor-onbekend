@@ -13,9 +13,12 @@ export default function handler(
   req: GatsbyFunctionRequest,
   res: GatsbyFunctionResponse
 ) {
+
+  console.log(req.body)
+
+
   Paynl.Transaction.start({
     testMode: true,
-    //the amount in euro
     amount: 1.0,
     currency: "EUR",
     ipAddress: "10.20.30.40",
@@ -28,20 +31,17 @@ export default function handler(
     },
 
     //we redirect the user back to this url after the payment
-    returnUrl: "/bedankt",
+    returnUrl: "https://missietumoronbekendv2.gatsbyjs.io/",
 
     //the ip address of the user
   }).subscribe(
     function (result) {
-      //redirect the user to this url to complete the payment
-      console.log(result.paymentURL)
-
-      // the transactionId, use this to fetch the transaction later
-      console.log(result.transactionId)
-      res.send(JSON.stringify(result))
+      res.status(200).json({ value: result });
     },
     function (error) {
-      console.error(error)
+      res.status(422).json(error)
     }
   )
+
+ 
 }

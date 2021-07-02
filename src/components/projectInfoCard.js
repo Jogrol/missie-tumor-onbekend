@@ -10,7 +10,7 @@ const ProjectInfoCard = ({
   buttontitle,
   pagelink,
   target,
-  pogress,
+  pogress, // typo
 }) => {
   const projectImage = getImage(image?.localFile)
 
@@ -61,7 +61,7 @@ ProjectInfoCard.propTypes = {
   buttontitle: PropTypes.string.isRequired,
   pagelink: PropTypes.object.isRequired,
   target: PropTypes.string.isRequired,
-  pogress: PropTypes.string.isRequired,
+  pogress: PropTypes.string,
 }
 
 export default ProjectInfoCard
