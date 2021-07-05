@@ -10,7 +10,7 @@ const DonateActionForm = ({ title, description }) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: "React Hooks POST Request Example" }),
     }
-    fetch("/api/handler", requestOptions)
+    fetch("/api/donate", requestOptions)
       .then(response => response.json())
       .then(data => setResponse(data))
   }
