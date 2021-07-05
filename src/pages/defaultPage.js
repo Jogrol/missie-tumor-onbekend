@@ -13,7 +13,7 @@ const DefaultPage = ({ data }) => {
   return (
     <Layout siteTitle={pageTitle}>
       {pageHero && <PageHeroSmall {...pageHero} />}
-      <PageSection width="md">
+      <PageSection width="sm">
         <div dangerouslySetInnerHTML={{ __html: pageContent }} />
       </PageSection>
     </Layout>

@@ -21,7 +21,6 @@ const LatestNewsSection = () => {
 
   return (
     <>
-      <h2>Laatste nieuws</h2>
       <div className="grid sm:grid-cols-3 gap-8">
         {data.allWpPost.edges.map(({ node }) => (
           <div key={node.id} className="h-56">

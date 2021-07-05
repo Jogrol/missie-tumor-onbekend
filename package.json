@@ -20,6 +20,7 @@
     "gatsby-source-wordpress": "^5.8.0",
     "gatsby-transformer-sharp": "^3.8.0",
     "netlify-cli": "^3.38.9",
+    "node-fetch": "^2.6.1",
     "postcss": "^8.3.5",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",

@@ -7,12 +7,12 @@ const PageHero = ({ center, title, description, image, donationcta }) => {
   const pageHeroImage = getImage(image?.localFile)
 
   return (
-    <div className="relative sm:h-lg w-screen">
-      <div className="absolute left-0 top-0 h-full w-screen z-0">
+    <div className="mt-20 relative h-lg w-screen">
+      <div className="absolute h-lg w-screen z-0">
         <GatsbyImage
           image={pageHeroImage}
           alt="header"
-          className="h-full w-full"
+          className="h-lg w-full"
         />
       </div>
       <div
@@ -21,7 +21,7 @@ const PageHero = ({ center, title, description, image, donationcta }) => {
         }`}
       >
         <div className={`w-full sm:w-2/3 md:w-1/2 animate-fade-up delay-700`}>
-          <h1 className="text-white font-black  text-5xl sm:text-6xl md:text-8xl">
+          <h1 className="text-white italic text-5xl sm:text-6xl md:text-8xl text-center">
             {title}
           </h1>
           {description && (

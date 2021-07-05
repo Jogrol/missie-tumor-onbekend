@@ -6,10 +6,10 @@ import "./newsItem.css"
 const NewsItem = ({ title, date, uri, content }) => {
   return (
     <div className="h-full flex flex-col">
-      <span>{date}</span>
       <h5 className="text-green-100">{title}</h5>
+      <span>{date}</span>
       <div
-        className="flex-grow overflow-hidden news-item"
+        className="flex-grow overflow-hidden news-item mt-2"
         dangerouslySetInnerHTML={{ __html: content }}
       />
       <Link className="text-right m-4" to={uri}>

@@ -1,23 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
 import Menu from "./menu"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Header = ({ pageHeroInview }) => {
-  const data = useStaticQuery(graphql`
-    {
-      image: file(name: { eq: "MTO_Logo_rgb-e1623591053682" }) {
-        id
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
-    }
-  `)
-
-  const logoImage = getImage(data.image?.childImageSharp)
 
   return (
     <>
@@ -36,7 +22,6 @@ const Header = ({ pageHeroInview }) => {
                 src="https://www.missietumoronbekend.nl/wordpress/gatsby/wp-content/uploads/2021/06/mto_logo-1.png"
                 alt="logo"
               ></img>
-              {/* <GatsbyImage image={logoImage} alt="logo" className="w-full" /> */}
             </Link>
             <nav className="flex-1">
               <Menu />
