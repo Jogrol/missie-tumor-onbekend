@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import DonateActionForm from "./donateActionForm"
+import DonateOptionInfo from "./donateOptionInfo"
 import DonateOptionTab from "./donateOptionTab"
 
 // REFACTOR
@@ -35,7 +35,7 @@ const DonateSection = info => {
         </div>
         <div className="w-full sm:w-2/3">
           <div className="w-full h-full">
-            <DonateActionForm {...currentOption} />
+            <DonateOptionInfo {...currentOption} />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import fetch from "node-fetch"
 
-export default async function donate(req, res) {
+export default async function donateHandler(req, res) {
   // POST data to an authenticated API
   const url = "https://rest-api.pay.nl/v8/transaction/start/json"
 
