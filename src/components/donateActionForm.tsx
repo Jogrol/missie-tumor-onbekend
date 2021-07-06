@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 
-type FormValues = {
+export type DonateActionFormValues = {
   paymentPeriod: string
   amount: string
   otherAmount: string
@@ -29,9 +29,10 @@ const DonateActionForm = ({}) => {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<FormValues>()
+  } = useForm<DonateActionFormValues>()
   const [step, setStep] = useState(0)
   const [amountIsAnders, setAmountIsAnders] = useState(false)
+  const [response, setResponse] = useState(null)
 
   const formModel = {
     paymentPeriod: [
@@ -56,26 +57,25 @@ const DonateActionForm = ({}) => {
     ],
   }
 
-  const onSubmit = data => console.log(data)
+  const onSubmit = (data: DonateActionFormValues) => {
+    if (data.amount === "Anders" && data.otherAmount)  {
+      data.amount = data.otherAmount
+    }
+    
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ value: data }),
+    }
+    fetch("/api/donate", requestOptions)
+      .then(response => response.json())
+      .then(data => window.location.replace((data.transaction.paymentURL)))
+  }
+
 
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)} className="">
-        {/* <fieldset className="row-span-3 col-span-1 flex flex-col space-y-4 w-full">
-        {formModel.paymentPeriod.map(({id, value, name, label}) => {
-          return  <label htmlFor="eenmalig" className="border-2 border-gray-200 p-4 flex items-center rounded-md">
-          <input
-            id={id}
-            type="radio"
-            className="form-radio h-8 w-8"
-            {...register(name)}
-            value={value}
-          ></input>
-          <span className="ml-4 text-xl">{label}</span>
-        </label>
-        })}
-        </fieldset>  */}
-
         {step === 0 && (
           <fieldset className="w-full flex flex-col sm:flex-row gap-6">
             <label className="flex-initial flex items-center">
@@ -86,7 +86,7 @@ const DonateActionForm = ({}) => {
                 value="10"
                 {...register(FormNameEnum.Amount)}
               />
-              <span className="ml-4 text-xl">10</span>
+              <span className="ml-4 text-xl">€ 10,-</span>
             </label>
             <label className="flex-initial flex items-center">
               <input
@@ -96,7 +96,7 @@ const DonateActionForm = ({}) => {
                 value="20"
                 {...register(FormNameEnum.Amount)}
               ></input>
-              <span className="ml-4 text-xl">20</span>
+              <span className="ml-4 text-xl">€ 20,-</span>
             </label>
             <label className="flex-initial flex items-center">
               <input
@@ -106,7 +106,7 @@ const DonateActionForm = ({}) => {
                 value="40"
                 {...register(FormNameEnum.Amount)}
               ></input>
-              <span className="ml-4 text-xl">40</span>
+              <span className="ml-4 text-xl">€ 30,-</span>
             </label>
             <label className="flex-initial flex items-center">
               <input
@@ -117,18 +117,19 @@ const DonateActionForm = ({}) => {
                 {...register(FormNameEnum.Amount)}
               ></input>
               {watch(FormNameEnum.Amount) === "Anders" ? (
-                <input
-                  className="ml-4 text-xl"
-                  placeholder="Anders"
+                <span className="ml-4 text-xl">
+                  €
+                  <input
+                  className="w-16"
+                  placeholder="..."
                   {...register(FormNameEnum.OtherAmount)}
-                />
+                  />
+                  ,-
+                  </span>
               ) : (
-                <span className="ml-4 text-xl">Anders</span>
+                <span className="ml-4 text-xl">€ ... ,-</span>
               )}
             </label>
-            {watch("amount") === "Anders"
-              ? watch("otherAmount")
-              : watch("amount")}
           </fieldset>
         )}
 
@@ -193,7 +194,7 @@ const DonateActionForm = ({}) => {
           </span>
           <span>
             {step === 1 ? (
-              <input type="submit"></input>
+              <input  className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-brown-100 hover:text-brown-200 hover:no-underline" type="submit"></input>
             ) : (
               <button
                 onClick={() => setStep(step + 1)}
@@ -205,6 +206,7 @@ const DonateActionForm = ({}) => {
           </span>
         </div>
       </form>
+      {   console.log(response)}
     </div>
   )
 }

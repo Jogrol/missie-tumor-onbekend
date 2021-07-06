@@ -13,13 +13,13 @@ import FactSection from "../components/factsSection"
 const DonatePage = ({ data }) => {
   const { observable, inView } = useIntersect({ threshold: 1 })
 
-
   // Should come from WP
   const donateOptions = [
     {
       title: "Eenmalige donatie algemeen",
       description:
         "Met een algemene eenmallige donatie aan Missie Tumor Onbekend draag je bij aan algehele zorgverbeteringen voor PTO-patiënten in hun strijd tegen de onbekende primaire tumor. Doneer snel en gemakkelijk online via iDeal.",
+      hasDonateActionForm: true,
     },
     {
       title: "Periodieke donatie en schenking",
@@ -63,7 +63,7 @@ const DonatePage = ({ data }) => {
       )}
       {donateOptions && (
         <div id="scroll-to-donate">
-          <PageSection  width="xl">
+          <PageSection width="xl">
             <h2 className="text-center pb-12">Doneer nu</h2>
             <DonateSection {...donateOptions} />
           </PageSection>
