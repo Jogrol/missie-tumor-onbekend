@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 
+
 export type DonateActionFormValues = {
   paymentPeriod: string
-  amount: string
+  amount: number | string
   otherAmount: string
   firstName: string
   insertion: string
@@ -23,45 +24,28 @@ enum FormNameEnum {
   NewsLetter = "newsLetter",
 }
 
-const DonateActionForm = ({}) => {
+
+
+const DonateActionForm = () => {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<DonateActionFormValues>()
+  } = useForm<DonateActionFormValues>({
+    mode: "onBlur",
+    defaultValues: {
+      amount: 10,
+    },
+  })
   const [step, setStep] = useState(0)
-  const [amountIsAnders, setAmountIsAnders] = useState(false)
-  const [response, setResponse] = useState(null)
-
-  const formModel = {
-    paymentPeriod: [
-      {
-        id: "eenmalig",
-        value: "eenmalig",
-        name: FormNameEnum.PaymentPeriod,
-        label: "Eenmalig",
-      },
-      {
-        id: "maandelijks",
-        value: "maandelijks",
-        name: FormNameEnum.PaymentPeriod,
-        label: "Maandelijks",
-      },
-      {
-        id: "kwartaal",
-        value: "kwartaal",
-        name: FormNameEnum.PaymentPeriod,
-        label: "Per kwartaal",
-      },
-    ],
-  }
+  const otherAmountValue = watch(FormNameEnum.OtherAmount)
 
   const onSubmit = (data: DonateActionFormValues) => {
-    if (data.amount === "Anders" && data.otherAmount)  {
+    if (data.amount === "Anders" && data.otherAmount) {
       data.amount = data.otherAmount
     }
-    
+
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -69,9 +53,8 @@ const DonateActionForm = ({}) => {
     }
     fetch("/api/donate", requestOptions)
       .then(response => response.json())
-      .then(data => window.location.replace((data.transaction.paymentURL)))
+      .then(data => window.location.replace(data.transaction.paymentURL))
   }
-
 
   return (
     <div>
@@ -83,7 +66,7 @@ const DonateActionForm = ({}) => {
                 type="radio"
                 className="form-radio h-6 w-6"
                 name="amount"
-                value="10"
+                value={10}
                 {...register(FormNameEnum.Amount)}
               />
               <span className="ml-4 text-xl">€ 10,-</span>
@@ -93,7 +76,7 @@ const DonateActionForm = ({}) => {
                 type="radio"
                 className="form-radio h-6 w-6"
                 name="amount"
-                value="20"
+                value={20}
                 {...register(FormNameEnum.Amount)}
               ></input>
               <span className="ml-4 text-xl">€ 20,-</span>
@@ -103,7 +86,7 @@ const DonateActionForm = ({}) => {
                 type="radio"
                 className="form-radio h-6 w-6"
                 name="amount"
-                value="40"
+                value={40}
                 {...register(FormNameEnum.Amount)}
               ></input>
               <span className="ml-4 text-xl">€ 30,-</span>
@@ -120,14 +103,18 @@ const DonateActionForm = ({}) => {
                 <span className="ml-4 text-xl">
                   €
                   <input
-                  className="w-16"
-                  placeholder="..."
-                  {...register(FormNameEnum.OtherAmount)}
+                    type="number"
+                    className="w-16"
+                    placeholder="..."
+                    onChange={e => console.log(e)}
+                    {...register(FormNameEnum.OtherAmount)}
                   />
                   ,-
-                  </span>
+                </span>
               ) : (
-                <span className="ml-4 text-xl">€ ... ,-</span>
+                  <span className="ml-4 text-xl">
+                    { otherAmountValue ? `€ ${otherAmountValue}` : '€ ....,-'}
+                </span>
               )}
             </label>
           </fieldset>
@@ -171,30 +158,26 @@ const DonateActionForm = ({}) => {
                 {...register(FormNameEnum.Email, { required: true })}
               ></input>
             </label>
-            {/* <label className="col-span-3 mt-4 flex items-center justify-center">
-              <input
-                type="checkbox"
-                className="form-checkbox h-6 w-6"
-                {...register(FormNameEnum.NewsLetter)}
-              ></input>
-              <span className="ml-4 w-full">
-                Ja, ik wil de nieuwsbrief ontvangen
-              </span>
-            </label> */}
           </fieldset>
         )}
 
         <div className="flex flex-col sm:flex-row gap-4 justify-between mt-4 w-full items-center">
           <span>
             {step > 0 && (
-              <button onClick={() => setStep(step - 1)} className="ml-2 underline">
+              <button
+                onClick={() => setStep(step - 1)}
+                className="ml-2 underline"
+              >
                 Terug
               </button>
             )}
           </span>
           <span>
             {step === 1 ? (
-              <input  className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-brown-100 hover:text-brown-200 hover:no-underline" type="submit"></input>
+              <input
+                className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-brown-100 hover:text-brown-200 hover:no-underline"
+                type="submit"
+              ></input>
             ) : (
               <button
                 onClick={() => setStep(step + 1)}
