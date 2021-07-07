@@ -75,7 +75,7 @@ const DonateActionForm = ({}) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)} className="">
+      <form onSubmit={handleSubmit(onSubmit)}>
         {step === 0 && (
           <fieldset className="w-full flex flex-col sm:flex-row gap-6">
             <label className="flex-initial flex items-center">
@@ -171,7 +171,7 @@ const DonateActionForm = ({}) => {
                 {...register(FormNameEnum.Email, { required: true })}
               ></input>
             </label>
-            <label className="col-span-3 mt-4 flex items-center justify-center">
+            {/* <label className="col-span-3 mt-4 flex items-center justify-center">
               <input
                 type="checkbox"
                 className="form-checkbox h-6 w-6"
@@ -180,14 +180,14 @@ const DonateActionForm = ({}) => {
               <span className="ml-4 w-full">
                 Ja, ik wil de nieuwsbrief ontvangen
               </span>
-            </label>
+            </label> */}
           </fieldset>
         )}
 
         <div className="flex flex-col sm:flex-row gap-4 justify-between mt-4 w-full items-center">
           <span>
             {step > 0 && (
-              <button onClick={() => setStep(step - 1)} className="underline">
+              <button onClick={() => setStep(step - 1)} className="ml-2 underline">
                 Terug
               </button>
             )}
@@ -206,7 +206,6 @@ const DonateActionForm = ({}) => {
           </span>
         </div>
       </form>
-      {   console.log(response)}
     </div>
   )
 }
