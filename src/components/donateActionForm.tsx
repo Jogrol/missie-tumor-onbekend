@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 
 export type DonateActionFormValues = {
   paymentPeriod: string
-  amount: number | string
+  amount: number 
   otherAmount: string
   firstName: string
   insertion: string
@@ -86,10 +86,20 @@ const DonateActionForm = () => {
                 type="radio"
                 className="form-radio h-6 w-6"
                 name="amount"
-                value={40}
+                value={50}
                 {...register(FormNameEnum.Amount)}
               ></input>
-              <span className="ml-4 text-xl">€ 30,-</span>
+              <span className="ml-4 text-xl">€ 50,-</span>
+            </label>
+            <label className="flex-initial flex items-center">
+              <input
+                type="radio"
+                className="form-radio h-6 w-6"
+                name="amount"
+                value={100}
+                {...register(FormNameEnum.Amount)}
+              ></input>
+              <span className="ml-4 text-xl">€ 100,-</span>
             </label>
             <label className="flex-initial flex items-center">
               <input
@@ -104,9 +114,8 @@ const DonateActionForm = () => {
                   €
                   <input
                     type="number"
-                    className="w-16"
-                    placeholder="..."
-                    onChange={e => console.log(e)}
+                    className="w-20 pl-2 "
+                    placeholder="xxxx"
                     {...register(FormNameEnum.OtherAmount)}
                   />
                   ,-

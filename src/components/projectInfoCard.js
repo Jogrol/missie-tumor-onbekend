@@ -39,7 +39,7 @@ const ProjectInfoCard = ({
         <p>{description}</p>
         <div className="flex justify-between">
           <Link
-            to={pagelink.uri.replace("/steun-missie-tumor-onbekend/", "/")}
+            to={pagelink?.uri.replace("/steun-missie-tumor-onbekend/", "/")}
             className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-brown-100 hover:text-brown-200 hover:no-underline"
           >
             {buttontitle}

@@ -19,7 +19,7 @@ const DonateSection = info => {
   return (
     <div>
       <p className="container sm:max-w-screen-md mb-4">
-        Informeer u <Link to="/fondsenwervingsbeleid">hier</Link> over ons beleid
+        Informeer u <Link to="fondsenwerveringsbeleid/">hier</Link> over ons beleid
         ten aanzien van het werven van fondsen, donateurs en sponsoring.
       </p>
       <div className="flex flex-wrap w-full bg-brown-100 rounded-lg shadow-md h-200">

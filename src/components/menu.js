@@ -47,7 +47,7 @@ const Menu = () => {
         }
       >
         <div className="flex justify-center items-center w-full h-full">
-          <ul className="list-outside p-8 space-y-4">
+          <ul className="list-none p-8 space-y-4">
             <li className="">
               <Link  className="text-2xl sm:text-4xl" onClick={() => toggleMenuIsOpen(!menuIsOpen)} to="/">
                 Home

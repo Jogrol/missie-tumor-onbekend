@@ -27,8 +27,6 @@ export type PaymentBodyObject = {
 }
 
 export default async function donateHandler(req, res) {
-
-  console.log(req.connection.remoteAddress)
   
   const url = "https://rest-api.pay.nl/v8/transaction/start/json"
 
@@ -40,8 +38,8 @@ export default async function donateHandler(req, res) {
     return {
       token: "10c0122f9fc4bae64ad209a357d2dbb5ed70c964",
       serviceId: "SL-6238-2891",
-      amount: parseInt(input.amount, 10)*100,
-      finishUrl: "https://missietumoronbekendv2.gatsbyjs.io/",
+      amount: input.amount*100,
+      finishUrl: "https://steunmissietumoronbekend.nl/",
       ipAddress: req.connection.remoteAddress,
       testMode: TestModeEnnum.True,
       transaction: {
