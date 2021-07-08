@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import MobileMenu from "./mobileMenu"
-import DonateButton from "../ui-kit/donateButton"
+import MenuIcon from "../assets/menuIcon.svg"
+import CloseIcon from "../assets/closeIcon.svg"
 
 const Menu = () => {
   const data = useStaticQuery(graphql`
@@ -12,7 +12,6 @@ const Menu = () => {
             label
             url
             id
-            order
             connectedNode {
               node {
                 ... on WpContentNode {
@@ -26,46 +25,55 @@ const Menu = () => {
     }
   `)
 
-  const DONATIE_LABEL = "Steun ons"
+  const [menuIsOpen, toggleMenuIsOpen] = useState(false)
 
   return (
     <>
-      {/* mobile view */}
-      <ul className="lg:hidden flex justify-end">
-        <MobileMenu />
-      </ul>
-
-      {/* desktop view */}
-      <ul className="hidden lg:flex flex-wrap h-full items-center justify-end list-none">
-        {data.wpMenu.menuItems.nodes.map(
-          ({ connectedNode, id, label, url }) => {
-            const path = connectedNode.node.uri ?? url
-            const key = id
-
-            if (label === DONATIE_LABEL) {
-              return (
-                <li key={key} className="ml-12">
-                  <DonateButton path={path} title={label} />
-                </li>
-              )
-            }
-
-            return (
-              <li
-                key={key}
-                className="px-2 align-middle border-transparent border-b-4 hover:border-gray-400 transition duration-300 ease-in-out"
-              >
-                <Link
-                  className="font-black text-black hover:no-underline py-6 px-6"
-                  to={path}
-                >
-                  {label}
-                </Link>
-              </li>
-            )
-          }
+      <button
+        onClick={() => toggleMenuIsOpen(!menuIsOpen)}
+        className="px-2 py-4 border-1 border-gray-100 z-10"
+      >
+        {menuIsOpen ? (
+          <CloseIcon className="w-6 h-6" />
+        ) : (
+          <MenuIcon className="w-6 h-6" />
         )}
-      </ul>
+      </button>
+      <div
+        className={
+          menuIsOpen
+            ? "visible fixed top-0 right-0 w-screen h-screen opacity-100 bg-white duration-300 delay-100"
+            : "invisible fixed top-0 opacity-0 -mt-80 right-0 w-screen h-1/4 transition-all duration-300"
+        }
+      >
+        <div className="flex justify-center items-center w-full h-full">
+          <ul className="list-outside p-8 space-y-4">
+            <li className="">
+              <Link  className="text-2xl sm:text-4xl" onClick={() => toggleMenuIsOpen(!menuIsOpen)} to="/">
+                Home
+              </Link>
+            </li>
+            {data.wpMenu.menuItems.nodes.map(
+              ({ connectedNode, id, label, url }) => {
+                const path = connectedNode.node.uri ?? url
+                const key = id
+
+                return (
+                  <li key={key} className="text-sm">
+                    <Link
+                      className="text-2xl sm:text-4xl"
+                      onClick={() => toggleMenuIsOpen(!menuIsOpen)}
+                      to={path.replace("/steun-missie-tumor-onbekend/", "/")}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                )
+              }
+            )}
+          </ul>
+        </div>
+      </div>
     </>
   )
 }

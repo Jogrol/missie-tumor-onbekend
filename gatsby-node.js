@@ -1,4 +1,4 @@
-const { resolve } = require(`path`);
+const { resolve } = require(`path`)
 
 exports.createPages = async ({ actions, graphql }) => {
   const {
@@ -23,11 +23,10 @@ exports.createPages = async ({ actions, graphql }) => {
 
   await Promise.all(
     contentPages.map(async ({ uri, id, title }) => {
-      console.log("title", title)
-
       const pageType = {
         "Steun Missie Tumor Onbekend": resolve(`./src/pages/donatePage.js`),
-        default: resolve(`./src/pages/defaultPage.js`),
+        Fondsenwerfingsbeleid: resolve(`./src/pages/defaultPage.js`),
+        default: resolve(`./src/pages/projectPage.js`),
       }
 
       await actions.createPage({

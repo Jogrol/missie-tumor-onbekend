@@ -42,7 +42,7 @@ const DonateSection = info => {
           </div>
         </div>
       </div>
-      <p className="container sm:max-w-screen-lg mt-8 italic text-sm">
+      <p className="container sm:max-w-screen-md mt-8 italic text-sm text-center">
         *Missie Tumor Onbekend is het samenwerkingsverband tussen Stichting
         Sterren en Stichting Vrienden van Hederik. Stichting Vrienden van
         Hederik werft namens de samenwerkende stichtingen binnen Missie Tumor

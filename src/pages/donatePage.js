@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import DonateSection from "../components/donateSection"
@@ -10,34 +9,12 @@ import useIntersect from "../hooks/useIntersect"
 import VideoSection from "../components/videoSection"
 import ProjectSection from "../components/projectSection"
 import FactSection from "../components/factsSection"
+import donateOptions from "../donateOptions"
 
 const DonatePage = ({ data }) => {
   const { observable, inView } = useIntersect({ threshold: 1 })
 
   // Should come from WP
-  const donateOptions = [
-    {
-      title: "Eenmalige donatie algemeen",
-      description:
-        "Met een algemene eenmallige donatie aan Missie Tumor Onbekend draag je bij aan algehele zorgverbeteringen voor PTO-patiënten in hun strijd tegen de onbekende primaire tumor. Doneer snel en gemakkelijk online via iDeal.",
-      hasDonateActionForm: true,
-    },
-    {
-      title: "Periodieke donatie en schenking",
-      description:
-        "Wil je Missie Tumor Onbekend structureel en duurzaam ondersteunen, vul dan hier ons donatie formulier in.",
-    },
-    {
-      title: "Nalatenschap",
-      description:
-        "Vindt u het belangrijk dat er ook na uw overlijden doorgewerkt wordt aan baanbrekend onderzoek en innovatie voor PTO-patiënten, op dat deze groep een grotere kans op leven krijgt? Dan kunt u Missie Tumor Onbekend opnemen in uw testament.",
-    },
-    {
-      title: "Kom zelf in actie / organiseer zelf een collecte",
-      description:
-        "Wil jij ook in actie komen voor Missie Tumor Onbekend? Dat kan, neem hiervoor contact met ons op via warnyta@missietumoronbekend.nl. Bijvoorbeeld als je een leuke sportieve of andersoortige uitdaging wil aangaan en daarvoor donaties voor Missie Tumor Onbekend wil ophalen. Wij zullen je ondersteunen met informatie en materialen over onze Missie om jouw actie tot een succes te maken.",
-    },
-  ]
 
   const projectInfo = data.page.listOfProjects
   const videoSectionInfo = data.page.videoSection
@@ -62,16 +39,13 @@ const DonatePage = ({ data }) => {
           <ProjectSection {...projectInfo} />
         </PageSection>
       )}
-      {donateOptions && (
-        <div id="scroll-to-donate">
-          <PageSection width="xl">
+      <div id="scroll-to-donate">
+        <PageSection width="xl">
           <h2 className="text-center pb-12">Doneer nu</h2>
-            
-            <DonateSection {...donateOptions} />
-            
-          </PageSection>
-        </div>
-      )}
+          <DonateSection {...donateOptions} />
+        </PageSection>
+      </div>
+      )
     </Layout>
   )
 }
@@ -112,7 +86,7 @@ export const query = graphql`
           description
           buttontitle
           target
-          pogress
+          progress
           pagelink {
             ... on WpContentNode {
               uri
@@ -135,7 +109,7 @@ export const query = graphql`
           description
           buttontitle
           target
-          pogress
+          progress
           pagelink {
             ... on WpContentNode {
               uri
@@ -158,7 +132,7 @@ export const query = graphql`
           description
           buttontitle
           target
-          pogress
+          progress
           pagelink {
             ... on WpContentNode {
               uri

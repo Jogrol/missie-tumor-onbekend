@@ -7,25 +7,23 @@ const PageHero = ({ center, title, description, image, donationcta }) => {
   const pageHeroImage = getImage(image?.localFile)
 
   return (
-    <div className="mt-20 relative h-lg w-screen">
+    <div className="relative h-screen sm:h-lg w-screen">
       <div className="absolute h-lg w-screen z-0">
         <GatsbyImage
           image={pageHeroImage}
           alt="header"
-          className="h-lg w-full"
+          className="h-screen sm:h-lg w-full"
         />
       </div>
       <div
-        className={`relative h-lg container px-4 sm:max-w-screen-xl flex items-center ${
-          center && "justify-center"
-        }`}
+        className="relative h-screen sm:h-lg container px-4 sm:max-w-screen-xl flex items-center"
       >
-        <div className={`w-full sm:w-2/3 md:w-1/2 animate-fade-up delay-700`}>
-          <h1 className="text-white italic text-5xl sm:text-6xl md:text-8xl text-left">
+        <div className={`w-full sm:w-2/3 smanimate-fade-up delay-700`}>
+          <h1 className="text-white italic font-black text-4xl sm:text-5xl md:text-7xl text-left">
             {title}
           </h1>
           {description && (
-            <p className="text-white font-black text-xl">{description}</p>
+            <p className="text-white font-black font-bold text-xl">{description}</p>
           )}
           {donationcta && (
             <div className="pt-4 inline-block">

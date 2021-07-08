@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import useCorrectUri from '../helpers/setCorrectUri'
+import { numberWithCommas } from './../helpers/numberWithCommas'
 
 const ProjectInfoCard = ({
   title,
@@ -11,15 +11,12 @@ const ProjectInfoCard = ({
   buttontitle,
   pagelink,
   target,
-  pogress, // typo
+  progress
 }) => {
   const projectImage = getImage(image?.localFile)
+  const totalAmount = numberWithCommas(target)
 
-
-
-  const progress = pogress
-
-  const pogressPercentage = `${Math.round((progress / target) * 100)}%`
+  const progressPercentage = `${Math.round((progress / target) * 100)}%`
 
   return (
     <div className="bg-white border-transparent rounded-lg shadow-lg">
@@ -31,10 +28,10 @@ const ProjectInfoCard = ({
 
       <div className="overflow-hidden h-8 mb-4 text-xs flex bg-green-200">
         <div
-          style={{ width: pogressPercentage }}
+          style={{ width: progressPercentage }}
           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
         >
-          <div className="text-xl font-bold">{pogressPercentage}</div>
+          <div className="text-xl font-bold">{progressPercentage}</div>
         </div>
       </div>
       <div className="flex p-4 flex-col">
@@ -49,7 +46,7 @@ const ProjectInfoCard = ({
           </Link>
           <div className="flex flex-col">
             <span className="font-extrabold text-md">Doel:</span>
-            <span className="text-2xl"> € {target}</span>
+            <span className="text-2xl"> € {totalAmount}</span>
           </div>
         </div>
       </div>
