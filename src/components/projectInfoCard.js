@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import useCorrectUri from '../helpers/setCorrectUri'
 
 const ProjectInfoCard = ({
   title,
@@ -13,6 +14,8 @@ const ProjectInfoCard = ({
   pogress, // typo
 }) => {
   const projectImage = getImage(image?.localFile)
+
+
 
   const progress = pogress
 
@@ -39,7 +42,7 @@ const ProjectInfoCard = ({
         <p>{description}</p>
         <div className="flex justify-between">
           <Link
-            to={"/"}
+            to={pagelink.uri.replace("/steun-missie-tumor-onbekend/", "/")}
             className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-brown-100 hover:text-brown-200 hover:no-underline"
           >
             {buttontitle}

@@ -3,25 +3,19 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
-import DonateSection from "../components/donateSection"
+import PageHeroSmall from "../components/pageHeroSmall"
 
 const ProjectPage = ({ data }) => {
-  const donateOptions = data.page.donateOptions
+  const pageTitle = data.page.title
+  const pageContent = data.page.content
+  const pageHero = data.page.heroSmall
 
   return (
-    <Layout>
-      <PageSection>
-        <div
-          className="container sm:max-w-screen-md"
-          dangerouslySetInnerHTML={{ __html: data.page.content }}
-        />
+    <Layout siteTitle={pageTitle}>
+      {pageHero && <PageHeroSmall {...pageHero} />}
+      <PageSection width="sm">
+        <div dangerouslySetInnerHTML={{ __html: pageContent }} />
       </PageSection>
-
-      {donateOptions && (
-        <PageSection>
-          <DonateSection {...donateOptions} />
-        </PageSection>
-      )}
     </Layout>
   )
 }
@@ -32,6 +26,20 @@ export const query = graphql`
       uri
       title
       content
+      heroSmall {
+        title
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 1400
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
+        }
+      }
     }
   }
 `

@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import DonateSection from "../components/donateSection"
@@ -64,8 +65,10 @@ const DonatePage = ({ data }) => {
       {donateOptions && (
         <div id="scroll-to-donate">
           <PageSection width="xl">
-            <h2 className="text-center pb-12">Doneer nu</h2>
+          <h2 className="text-center pb-12">Doneer nu</h2>
+            
             <DonateSection {...donateOptions} />
+            
           </PageSection>
         </div>
       )}

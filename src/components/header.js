@@ -24,7 +24,7 @@ const Header = ({ pageHeroInview }) => {
               ></img>
             </Link>
             <nav className="flex-1">
-              <Menu />
+              {/* <Menu /> */}
             </nav>
           </div>
         </div>

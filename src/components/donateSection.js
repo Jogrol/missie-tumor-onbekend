@@ -1,8 +1,7 @@
 import React, { useState } from "react"
+import { Link } from "@reach/router"
 import DonateOptionInfo from "./donateOptionInfo"
 import DonateOptionTab from "./donateOptionTab"
-
-// REFACTOR
 
 const DonateSection = info => {
   const infoArray = Object.values(info).filter(item => item.title)
@@ -18,8 +17,12 @@ const DonateSection = info => {
   }
 
   return (
-    <>
-      <div className="flex flex-wrap w-full bg-brown-100 rounded-lg shadow-md">
+    <div>
+      <p className="container sm:max-w-screen-md mb-4">
+        Informeer u <Link to="/fondsenwervingsbeleid">hier</Link> over ons beleid
+        ten aanzien van het werven van fondsen, donateurs en sponsoring.
+      </p>
+      <div className="flex flex-wrap w-full bg-brown-100 rounded-lg shadow-md h-200">
         <div className="w-full sm:w-1/3">
           <div className="p-4">
             {infoArray.map((item, index) => {
@@ -39,7 +42,23 @@ const DonateSection = info => {
           </div>
         </div>
       </div>
-    </>
+      <p className="container sm:max-w-screen-lg mt-8 italic text-sm">
+        *Missie Tumor Onbekend is het samenwerkingsverband tussen Stichting
+        Sterren en Stichting Vrienden van Hederik. Stichting Vrienden van
+        Hederik werft namens de samenwerkende stichtingen binnen Missie Tumor
+        Onbekend fondsen bij particulieren, bedrijven en instanties. U zult
+        daarom op uw bankafschrift Stichting Vrienden van Hederik zien als
+        vertegenwoordiger van Missie Tumor Onbekend. De beide stichtingen zijn
+        opgericht door nabestaanden van PTO-patiënten en werken samen om o.a.
+        betere zorg voor, meer onderzoek naar en meer kennis en bewustwording
+        over PTO te bewerkstelligen. Missie Tumor Onbekend is aangesloten bij
+        het Platform Zeldzame Kankers van de NFK. Voor meer informatie kunt u
+        terecht op{" "}
+        <a href="https://www.missietumoronbekend.nl/info/">
+          Info | Missie Tumor Onbekend
+        </a>
+      </p>
+    </div>
   )
 }
 
