@@ -1,6 +1,6 @@
 export default [
   {
-    title: "Eenmalige donatie algemeen",
+    title: "Eenmalige donatie",
     description:
       "Met een algemene eenmallige donatie aan Missie Tumor Onbekend draag je bij aan algehele zorgverbeteringen voor PTO-patiënten in hun strijd tegen de onbekende primaire tumor. Doneer snel en gemakkelijk online via iDeal.",
     hasDonateActionForm: true,

@@ -19,8 +19,8 @@ const DonateSection = info => {
   return (
     <div>
       <p className="container sm:max-w-screen-md mb-4">
-        Informeer u <Link to="fondsenwerveringsbeleid/">hier</Link> over ons beleid
-        ten aanzien van het werven van fondsen, donateurs en sponsoring.
+        Informeer u <Link to="fondsenwerveringsbeleid/">hier</Link> over ons
+        beleid ten aanzien van het werven van fondsen, donateurs en sponsoring.
       </p>
       <div className="flex flex-wrap w-full bg-brown-100 rounded-lg shadow-md h-200">
         <div className="w-full sm:w-1/3">
@@ -50,10 +50,10 @@ const DonateSection = info => {
         daarom op uw bankafschrift Stichting Vrienden van Hederik zien als
         vertegenwoordiger van Missie Tumor Onbekend. De beide stichtingen zijn
         opgericht door nabestaanden van PTO-patiënten en werken samen om o.a.
-        betere zorg voor, meer onderzoek naar en meer kennis en bewustwording
-        over PTO te bewerkstelligen. Missie Tumor Onbekend is aangesloten bij
-        het Platform Zeldzame Kankers van de NFK. Voor meer informatie kunt u
-        terecht op{" "}
+        betere zorg, meer onderzoek en meer kennis en bewustwording over PTO te
+        bewerkstelligen. Missie Tumor Onbekend is aangesloten bij het Platform
+        Zeldzame Kankers van de NFK.
+        <br />
         <a href="https://www.missietumoronbekend.nl/info/">
           Info | Missie Tumor Onbekend
         </a>

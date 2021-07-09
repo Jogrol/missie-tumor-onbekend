@@ -27,13 +27,13 @@ const FactSection = () => {
         <HeartIcon c className="h-24 w-24 fill-current text-white" />
         <div className="pl-4">
           <span className="text-5xl text-brown-200 font-black">17%</span>
-          <p className="text-brown-200">van hen overleeft langer dan 1 jaar na eerste poli bezoek</p>
+          <p className="text-brown-200">overleeft slechts langer dan 1 jaar na eerste ziekenhuis bezoek</p>
         </div>
       </div>
       <div className="flex justify-center">
         <TreatmentIcon  className="h-24 w-24 fill-current text-white"  />
         <div className="pl-4">
-          <span className="text-5xl text-brown-200 font-black">2/3</span>
+          <span className="text-5xl text-brown-200 font-black">67%</span>
           <p className="text-brown-200">van PTO-patiënten wordt niet behandeld</p>
         </div>
       </div>

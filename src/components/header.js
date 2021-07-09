@@ -23,7 +23,7 @@ const Header = ({ pageHeroInview }) => {
               ></img>
             </Link>
             <nav className="flex-1 flex justify-end">
-              <Menu />
+              {/* <Menu /> */}
             </nav>
           </div>
         </div>

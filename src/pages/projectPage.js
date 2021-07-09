@@ -16,7 +16,7 @@ const ProjectPage = ({ data }) => {
   const pageHero = data.page.heroSmall
   const projectProgress = data.page.projectProgress
 
-  const pageHeroImage = getImage(data.page.projectimage.image?.localFile)
+  const pageHeroImage = getImage(data.page.project.projectimage?.localFile)
 
   return (
     <Layout siteTitle={pageTitle}>
@@ -79,8 +79,8 @@ export const query = graphql`
           }
         }
       }
-      projectimage {
-        image {
+      project {
+        projectimage {
           localFile {
             childImageSharp {
               gatsbyImageData(

@@ -60,7 +60,7 @@ const DonateActionForm = () => {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         {step === 0 && (
-          <fieldset className="w-full flex flex-col sm:flex-row gap-6">
+          <fieldset className="w-full flex flex-col flex-wrap  sm:flex-row gap-6">
             <label className="flex-initial flex items-center">
               <input
                 type="radio"
@@ -106,6 +106,26 @@ const DonateActionForm = () => {
                 type="radio"
                 className="form-radio h-6 w-6"
                 name="amount"
+                value={150}
+                {...register(FormNameEnum.Amount)}
+              ></input>
+              <span className="ml-4 text-xl">€ 150,-</span>
+            </label>
+            <label className="flex-initial flex items-center">
+              <input
+                type="radio"
+                className="form-radio h-6 w-6"
+                name="amount"
+                value={200}
+                {...register(FormNameEnum.Amount)}
+              ></input>
+              <span className="ml-4 text-xl">€ 200,-</span>
+            </label>
+            <label className="flex-initial flex items-center">
+              <input
+                type="radio"
+                className="form-radio h-6 w-6"
+                name="amount"
                 value="Anders"
                 {...register(FormNameEnum.Amount)}
               ></input>
@@ -122,7 +142,7 @@ const DonateActionForm = () => {
                 </span>
               ) : (
                   <span className="ml-4 text-xl">
-                    { otherAmountValue ? `€ ${otherAmountValue}` : '€ ....,-'}
+                    { otherAmountValue ? `€ ${otherAmountValue}` : '€ xxxx,-'}
                 </span>
               )}
             </label>

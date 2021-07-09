@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { numberWithCommas } from './../helpers/numberWithCommas'
+import { numberWithDots } from './../helpers/numberWithDots'
 
 const ProjectInfoCard = ({
   title,
@@ -14,7 +14,7 @@ const ProjectInfoCard = ({
   progress
 }) => {
   const projectImage = getImage(image?.localFile)
-  const totalAmount = numberWithCommas(target)
+  const totalAmount = numberWithDots(target)
 
   const progressPercentage = `${Math.round((progress / target) * 100)}%`
 

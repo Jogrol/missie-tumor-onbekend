@@ -33,7 +33,7 @@ const DonatePage = ({ data }) => {
       </PageSection>
       {projectInfo && (
         <PageSection width="xl" color="bg-brown-100">
-          <h2 className="text-center text-white pb-12">
+          <h2 id="projecten" className="text-center text-white pb-12">
             Projecten die we steunen
           </h2>
           <ProjectSection {...projectInfo} />

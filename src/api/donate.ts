@@ -39,7 +39,7 @@ export default async function donateHandler(req, res) {
       token: "10c0122f9fc4bae64ad209a357d2dbb5ed70c964",
       serviceId: "SL-6238-2891",
       amount: input.amount*100,
-      finishUrl: "https://steunmissietumoronbekend.nl/",
+      finishUrl: "https://steunmissietumoronbekend.nl/bedankt-voor-uw-donatie/",
       ipAddress: req.connection.remoteAddress,
       testMode: TestModeEnnum.True,
       transaction: {
@@ -63,7 +63,6 @@ export default async function donateHandler(req, res) {
     }).then(res => {
       return res.json()
     })
-
     res.json(result)
   } catch (error) {
     res.status(500).send(error)
