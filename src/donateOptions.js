@@ -9,6 +9,7 @@ export default [
     title: "Periodieke donatie en schenking",
     description:
       "Wil je Missie Tumor Onbekend structureel en duurzaam ondersteunen, vul dan hier ons donatie formulier in.",
+    hasLinktoFormPage: true,
   },
   {
     title: "Nalatenschap",
@@ -18,6 +19,7 @@ export default [
   {
     title: "Kom zelf in actie / organiseer zelf een collecte",
     description:
-      "Wil jij ook in actie komen voor Missie Tumor Onbekend? Dat kan, neem hiervoor contact met ons op via warnyta@missietumoronbekend.nl. Bijvoorbeeld als je een leuke sportieve of andersoortige uitdaging wil aangaan en daarvoor donaties voor Missie Tumor Onbekend wil ophalen. Wij zullen je ondersteunen met informatie en materialen over onze Missie om jouw actie tot een succes te maken.",
+      "Wil jij ook in actie komen voor Missie Tumor Onbekend? Dat kan, neem hiervoor contact met ons op via het onderstaande e-mailadres. Bijvoorbeeld als je een leuke sportieve of andersoortige uitdaging wil aangaan en daarvoor donaties voor Missie Tumor Onbekend wil ophalen. Wij zullen je ondersteunen met informatie en materialen over onze Missie om jouw actie tot een succes te maken.",
+    hasEmailAdress: true,
   },
 ]

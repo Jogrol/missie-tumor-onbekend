@@ -47,11 +47,16 @@ const Menu = () => {
         }
       >
         <div className="flex justify-center items-center w-full h-full">
-          <ul className="list-none p-8 space-y-4">
-            <li className="">
+          <ul className="list-none p-8 space-y-8">
+            <li>
               <Link  className="text-2xl sm:text-4xl" onClick={() => toggleMenuIsOpen(!menuIsOpen)} to="/">
                 Home
               </Link>
+            </li>
+            <li>
+              <a href="https://www.missietumoronbekend.nl/"  className="text-2xl sm:text-4xl" onClick={() => toggleMenuIsOpen(!menuIsOpen)} to="/">
+                Informatie over de stichting
+              </a>
             </li>
             {data.wpMenu.menuItems.nodes.map(
               ({ connectedNode, id, label, url }) => {
@@ -59,7 +64,7 @@ const Menu = () => {
                 const key = id
 
                 return (
-                  <li key={key} className="text-sm">
+                  <li key={key}>
                     <Link
                       className="text-2xl sm:text-4xl"
                       onClick={() => toggleMenuIsOpen(!menuIsOpen)}
