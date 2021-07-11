@@ -1,10 +1,9 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 
-
 export type DonateActionFormValues = {
   paymentPeriod: string
-  amount: number 
+  amount: number
   otherAmount: string
   firstName: string
   insertion: string
@@ -24,8 +23,6 @@ enum FormNameEnum {
   NewsLetter = "newsLetter",
 }
 
-
-
 const DonateActionForm = () => {
   const {
     register,
@@ -40,6 +37,7 @@ const DonateActionForm = () => {
   })
   const [step, setStep] = useState(0)
   const otherAmountValue = watch(FormNameEnum.OtherAmount)
+  const [errorMessage, setErrorMessage] = useState(null)
 
   const onSubmit = (data: DonateActionFormValues) => {
     if (data.amount === "Anders" && data.otherAmount) {
@@ -54,10 +52,16 @@ const DonateActionForm = () => {
     fetch("/api/donate", requestOptions)
       .then(response => response.json())
       .then(data => window.location.replace(data.transaction.paymentURL))
+      .catch(() =>
+        setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
+      )
   }
 
   return (
     <div>
+      {errorMessage && (
+        <p className="font-black text-red-300">{errorMessage}</p>
+      )}
       <form onSubmit={handleSubmit(onSubmit)}>
         {step === 0 && (
           <fieldset className="w-full flex flex-col flex-wrap  sm:flex-row gap-6">
@@ -141,8 +145,8 @@ const DonateActionForm = () => {
                   ,-
                 </span>
               ) : (
-                  <span className="ml-4 text-xl">
-                    { otherAmountValue ? `€ ${otherAmountValue}` : '€ xxxx,-'}
+                <span className="ml-4 text-xl">
+                  {otherAmountValue ? `€ ${otherAmountValue}` : "€ xxxx,-"}
                 </span>
               )}
             </label>

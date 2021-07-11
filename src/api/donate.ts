@@ -36,12 +36,12 @@ export default async function donateHandler(req, res) {
 
   const dtoMapper = (input: DonateActionFormValues): PaymentBodyObject => {
     return {
-      token: "10c0122f9fc4bae64ad209a357d2dbb5ed70c964",
-      serviceId: "SL-6238-2891",
+      token: process.env.PAY_API_TOKEN,
+      serviceId: process.env.PAY_SERVICE_ID,
       amount: input.amount*100,
       finishUrl: "https://steunmissietumoronbekend.nl/bedankt-voor-uw-donatie/",
       ipAddress: req.connection.remoteAddress,
-      testMode: TestModeEnnum.True,
+      testMode: TestModeEnnum.False,
       transaction: {
         currency: "EUR",
         description: "Donatie Stichting Tumor Onbekend",
