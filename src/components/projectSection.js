@@ -1,5 +1,5 @@
 import React from "react"
-import ProjectInfoCard from "./projectInfoCard"
+import ProjectInfoCard from "../components/projectInfoCard"
 
 const ProjectSection = projects => {
   const projectsArray = Object.values(projects).filter(item => item.title)

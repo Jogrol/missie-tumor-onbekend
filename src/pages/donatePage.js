@@ -21,32 +21,34 @@ const DonatePage = ({ data }) => {
   const pageHeroInfo = data.page.hero
 
   return (
-    <Layout pageHeroInview={inView}>
-      <div ref={observable} className="relative  w-screen">
-        <PageHero {...pageHeroInfo} />
-      </div>
-      <PageSection width="xl" color="bg-brown-100">
-        <FactSection />
-      </PageSection>
-      <PageSection color="bg-white-200">
-        <VideoSection {...videoSectionInfo} />
-      </PageSection>
-      {projectInfo && (
+
+      <Layout pageHeroInview={inView}>
+        <div ref={observable} className="relative  w-screen">
+          <PageHero {...pageHeroInfo} />
+        </div>
         <PageSection width="xl" color="bg-brown-100">
-          <h2 id="projecten" className="text-center text-white pb-12">
-            Projecten die we steunen
-          </h2>
-          <ProjectSection {...projectInfo} />
+          <FactSection />
         </PageSection>
-      )}
-      <div id="scroll-to-donate">
-        <PageSection width="xl">
-          <h2 className="text-center pb-12">Doneer nu</h2>
-          <DonateSection {...donateOptions} />
-        </PageSection>
-      </div>
-      )
-    </Layout>
+        <PageSection color="bg-white-200">
+          <VideoSection {...videoSectionInfo} />
+        </PageSection> 
+        {projectInfo && (
+          <PageSection width="xl" color="bg-brown-100">
+            <h2 id="projecten" className="text-center text-white pb-12">
+              Projecten die we steunen
+            </h2>
+            <ProjectSection {...projectInfo} />
+          </PageSection>
+        )}
+        <div id="scroll-to-donate">
+          <PageSection width="xl">
+            <h2 className="text-center pb-12">Doneer nu</h2>
+            <DonateSection {...donateOptions} />
+          </PageSection>
+        </div>
+        )
+      </Layout>
+   
   )
 }
 

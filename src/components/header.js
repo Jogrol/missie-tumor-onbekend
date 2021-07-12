@@ -13,17 +13,19 @@ const Header = ({ pageHeroInview }) => {
       >
         <div className="container w-full sm:max-w-screen-xl px-4">
           <div className="flex py-2 w-full">
-            <Link
+            <a
               className="h-16 w-1/2 sm:w-1/4 flex justify-center items-center"
-              to="/"
+              href="https://www.missietumoronbekend.nl/"
             >
               <img
                 src="https://www.missietumoronbekend.nl/wordpress/gatsby/wp-content/uploads/2021/06/mto_logo-1.png"
                 alt="logo"
               ></img>
-            </Link>
+            </a>
             <nav className="flex-1 flex justify-end">
-              {/* <Menu /> */}
+              <Link to="/" className="flex justify-center px-12 py-4 items-center">
+                Steun ons
+              </Link>
             </nav>
           </div>
         </div>
