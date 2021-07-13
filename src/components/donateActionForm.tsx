@@ -50,8 +50,15 @@ const DonateActionForm = () => {
       body: JSON.stringify({ value: data }),
     }
     fetch("/api/donate", requestOptions)
-      .then(response => response.json())
-      .then(data => window.location.replace(data.transaction.paymentURL))
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        if (data.transaction.paymentURL) {
+          return window.location.replace(data.transaction.paymentURL)
+        }
+        setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
+      })
       .catch(() =>
         setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
       )

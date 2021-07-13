@@ -24,8 +24,6 @@ exports.createPages = async ({ actions, graphql }) => {
   await Promise.all(
     contentPages.map(async ({ uri, id, title }) => {
 
-      console.log(title)
-
       const pageType = {
         "Steun Missie Tumor Onbekend": resolve(`./src/pages/donatePage.js`),
         "Fondsenwervingsbeleid": resolve(`./src/pages/defaultPage.js`),

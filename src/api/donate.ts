@@ -23,10 +23,11 @@ export type PaymentBodyObject = {
     lastName: string
     emailAddress: string
   }
-  saleData: { invoiceDate: string }
+  // saleData: { invoiceDate: string }
 }
 
 export default async function donateHandler(req, res) {
+
   
   const url = "https://rest-api.pay.nl/v8/transaction/start/json"
 
@@ -51,7 +52,7 @@ export default async function donateHandler(req, res) {
         lastName: input.lastName,
         emailAddress: input.email,
       },
-      saleData: { invoiceDate: getDateByDdMmYyyy() },
+      // saleData: { invoiceDate: getDateByDdMmYyyy() },
     }
   }
 
