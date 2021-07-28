@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "@reach/router"
-import DonateOptionInfo from "./donateOptionInfo"
-import DonateOptionTab from "./donateOptionTab"
+import DonateOptionInfo from "./donate/donateOptionInfo"
+import DonateOptionTab from "./donate/donateOptionTab"
 
 const DonateSection = info => {
   const infoArray = Object.values(info).filter(item => item.title)

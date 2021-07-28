@@ -31,7 +31,7 @@ const ProjectInfoCard = ({
           style={{ width: progressPercentage }}
           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
         >
-          <div className="text-xl font-bold">{progressPercentage}</div>
+          <div className="text-xl font-bold pl-4">{progressPercentage}</div>
         </div>
       </div>
       <div className="flex p-4 flex-col">

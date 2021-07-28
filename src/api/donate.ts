@@ -1,6 +1,5 @@
 import fetch from "node-fetch"
-import { DonateActionFormValues } from "../components/donateActionForm"
-import { getDateByDdMmYyyy } from "../helpers/getDateByDdMmYyyy"
+import { DonateActionFormValues } from "../components/donate/donateActionForm"
 import { getInitials } from "../helpers/getInitials"
 
 export enum TestModeEnnum {
@@ -23,12 +22,10 @@ export type PaymentBodyObject = {
     lastName: string
     emailAddress: string
   }
-  // saleData: { invoiceDate: string }
 }
 
 export default async function donateHandler(req, res) {
 
-  
   const url = "https://rest-api.pay.nl/v8/transaction/start/json"
 
   const headers = {
@@ -52,7 +49,6 @@ export default async function donateHandler(req, res) {
         lastName: input.lastName,
         emailAddress: input.email,
       },
-      // saleData: { invoiceDate: getDateByDdMmYyyy() },
     }
   }
 

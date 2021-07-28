@@ -5,11 +5,11 @@ export const ListOfLinks = () => {
   const linksArray = [
     {
       title: "Stichting Sterren",
-      url: "/carins-verhaal",
+      url: "https://www.missietumoronbekend.nl/carins-verhaal/",
     },
     {
       title: "Stichting Vrienden van Hederik",
-      url: "/hederiks-verhaal",
+      url: "https://www.missietumoronbekend.nl/hederiks-verhaal/",
     },
     {
       title: "NFK",
