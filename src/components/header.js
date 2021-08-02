@@ -21,10 +21,14 @@ const Header = ({ pageHeroInview }) => {
                 alt="logo"
               ></img>
             </a>
-            <nav className="flex-1 flex justify-end">
-              <Link to="/" className="flex justify-center px-12 py-4 items-center">
-                Steun ons
-              </Link>
+
+            <nav className="flex-1 flex sm:justify-end items-center">
+              <div className="btn-group">
+                <Link className="btn btn-outline btn-sm" to="/">Steun ons</Link>
+                <Link className="btn btn-outline btn-sm" to="/informatievoorziening-bewustwording">Informatievoorziening</Link>
+                <Link className="btn btn-outline btn-sm" to="/ondersteunen-van-wetenschappelijk-onderzoek">Wetenschappelijkonderzoek</Link>
+                <Link className="btn btn-outline btn-sm" to="/verbetering-inzet-zorg">Zorg</Link>
+              </div>
             </nav>
           </div>
         </div>

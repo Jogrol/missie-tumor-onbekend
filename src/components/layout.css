@@ -6,6 +6,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand:wght@700&family=Raleway&display=swap");
 
+.btn {
+  @apply rounded-full hover:no-underline
+}
+
 h1 {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
