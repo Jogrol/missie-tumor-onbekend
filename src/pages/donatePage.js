@@ -5,24 +5,20 @@ import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import DonateSection from "../components/donateSection"
 import PageHero from "../components/pageHero"
-import useIntersect from "../hooks/useIntersect"
 import VideoSection from "../components/videoSection"
 import ProjectSection from "../components/projectSection"
 import FactSection from "../components/factsSection"
 import donateOptions from "../donateOptions"
 
 const DonatePage = ({ data }) => {
-  const { observable, inView } = useIntersect({ threshold: 1 })
-
-  // Should come from WP
-
+ 
   const projectInfo = data.page.listOfProjects
   const videoSectionInfo = data.page.videoSection
   const pageHeroInfo = data.page.hero
 
   return (
-    <Layout pageHeroInview={inView}>
-      <div ref={observable} className="relative  w-screen">
+    <Layout>
+      <div className="relative  w-screen">
         <PageHero {...pageHeroInfo} />
       </div>
       <PageSection width="xl" color="bg-brown-100">

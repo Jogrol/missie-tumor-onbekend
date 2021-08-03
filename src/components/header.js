@@ -2,14 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-const Header = ({ pageHeroInview }) => {
+const Header = () => {
   return (
     <>
-      <div
-        className={`fixed top-0 left-0 border-opacity-100 opacity-100 w-full h-18 shadow-lg z-50 ${
-          pageHeroInview ? "bg-transparant" : "bg-white"
-        }`}
-      >
+      <div className="fixed top-0 left-0 border-opacity-100 opacity-100 w-full h-18 shadow-lg z-50 bg-white">
         <div className="container w-full sm:max-w-screen-xl px-4">
           <div className="flex py-2 w-full">
             <a
@@ -24,10 +20,27 @@ const Header = ({ pageHeroInview }) => {
 
             <nav className="flex-1 flex sm:justify-end items-center">
               <div className="btn-group">
-                <Link className="btn btn-outline btn-sm" to="/">Steun ons</Link>
-                <Link className="btn btn-outline btn-sm" to="/informatievoorziening-bewustwording">Informatievoorziening</Link>
-                <Link className="btn btn-outline btn-sm" to="/ondersteunen-van-wetenschappelijk-onderzoek">Wetenschappelijkonderzoek</Link>
-                <Link className="btn btn-outline btn-sm" to="/verbetering-inzet-zorg">Zorg</Link>
+                <Link className="btn btn-outline btn-sm" to="/">
+                  Steun ons
+                </Link>
+                <Link
+                  className="btn btn-outline btn-sm"
+                  to="/informatievoorziening-bewustwording"
+                >
+                  Informatievoorziening
+                </Link>
+                <Link
+                  className="btn btn-outline btn-sm"
+                  to="/ondersteunen-van-wetenschappelijk-onderzoek"
+                >
+                  Wetenschappelijkonderzoek
+                </Link>
+                <Link
+                  className="btn btn-outline btn-sm"
+                  to="/verbetering-inzet-zorg"
+                >
+                  Zorg
+                </Link>
               </div>
             </nav>
           </div>

@@ -29,7 +29,7 @@ const ProjectPage = ({ data }) => {
       <div className="w-full flex justify-center">
               <button
                 onClick={() => scrollTo("#scroll-to-donate")}
-                className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-white hover:text-brown-200 hover:no-underline"
+                className="btn btn-primary"
               >
                 Doneer nu
               </button>

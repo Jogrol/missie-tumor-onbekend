@@ -38,9 +38,13 @@ const ProjectInfoCard = ({
         <h3>{title}</h3>
         <p>{description}</p>
         <div className="flex justify-between items-center">
+          <div className="flex flex-col">
+            <span className="font-extrabold text-md">Doel:</span>
+            <span className="text-2xl"> € {totalAmount}</span>
+          </div>
           <Link
             to={pagelink?.uri.replace("/steun-missie-tumor-onbekend/", "/")}
-            className="btn btn-primary"
+            className="link link-primary"
           >
             {buttontitle}
             <svg
@@ -57,10 +61,6 @@ const ProjectInfoCard = ({
               ></path>
             </svg>
           </Link>
-          <div className="flex flex-col">
-            <span className="font-extrabold text-md">Doel:</span>
-            <span className="text-2xl"> € {totalAmount}</span>
-          </div>
         </div>
       </div>
     </div>
