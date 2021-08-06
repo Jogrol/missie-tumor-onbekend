@@ -8,6 +8,7 @@ module.exports = {
         "brown-100": "#DDD6BD",
         "brown-200": "#977921",
         "blue-500": "#37167F",
+        "blue-600": "#023765"
       },
       height: {
         hero: "448px",

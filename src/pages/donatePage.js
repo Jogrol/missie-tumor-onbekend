@@ -7,11 +7,10 @@ import DonateSection from "../components/donateSection"
 import PageHero from "../components/pageHero"
 import VideoSection from "../components/videoSection"
 import ProjectSection from "../components/projectSection"
-import FactSection from "../components/factsSection"
+import Stats from "../components/stats"
 import donateOptions from "../donateOptions"
 
 const DonatePage = ({ data }) => {
- 
   const projectInfo = data.page.listOfProjects
   const videoSectionInfo = data.page.videoSection
   const pageHeroInfo = data.page.hero
@@ -20,10 +19,10 @@ const DonatePage = ({ data }) => {
     <Layout>
       <div className="relative  w-screen">
         <PageHero {...pageHeroInfo} />
+        <div className="-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-12 divide-y-2 container">
+          <Stats />
+        </div>
       </div>
-      <PageSection width="xl" color="bg-brown-100">
-        <FactSection />
-      </PageSection>
       <PageSection color="bg-white-200">
         <VideoSection {...videoSectionInfo} />
       </PageSection>

@@ -19,7 +19,7 @@ const ProjectInfoCard = ({
   const progressPercentage = `${Math.round((progress / target) * 100)}%`
 
   return (
-    <div className="bg-white border-transparent rounded-lg shadow-lg">
+    <div className="card row-span-3 shadow-lg compact bg-base-100">
       <GatsbyImage
         image={projectImage}
         alt="image"
@@ -34,13 +34,13 @@ const ProjectInfoCard = ({
           <div className="text-xl font-bold pl-4">{progressPercentage}</div>
         </div>
       </div>
-      <div className="flex p-4 flex-col">
+      <div className="flex px-6 pb-6 flex-col">
         <h3>{title}</h3>
         <p>{description}</p>
         <div className="flex justify-between items-center">
-          <div className="flex flex-col">
+          <div className="flex items-center">
             <span className="font-extrabold text-md">Doel:</span>
-            <span className="text-2xl"> € {totalAmount}</span>
+            <span className="ml-4 text-2xl"> € {totalAmount}</span>
           </div>
           <Link
             to={pagelink?.uri.replace("/steun-missie-tumor-onbekend/", "/")}
