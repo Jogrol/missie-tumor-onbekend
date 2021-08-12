@@ -17,41 +17,40 @@ const Header = () => {
                 alt="logo"
               ></img>
             </a>
-
-            <nav className="flex-1 flex sm:justify-end items-center">
-              <div className="btn-group">
-                <Link className="btn btn-outline btn-sm" to="/">
-                  Steun ons
-                </Link>
-                <Link
-                  className="btn btn-outline btn-sm"
-                  to="/informatievoorziening-bewustwording"
+            {/* //desktop */}
+            <div class="flex justify-end flex-1 items-center gap-4">
+              <Link className="btn btn-outline btn-sm" to="/">
+                Steun ons
+              </Link>
+              <div class="dropdown dropdown-end">
+                <div tabindex="0" class="btn btn-ghost rounded-btn">
+                  Projecten
+                </div>
+                <ul
+                  tabindex="0"
+                  class="p-2 shadow menu dropdown-content bg-base-100 rounded-box"
                 >
-                  Informatievoorziening
-                </Link>
-                <Link
-                  className="btn btn-outline btn-sm"
-                  to="/ondersteunen-van-wetenschappelijk-onderzoek"
-                >
-                  Wetenschappelijkonderzoek
-                </Link>
-                <Link
-                  className="btn btn-outline btn-sm"
-                  to="/verbetering-inzet-zorg"
-                >
-                  Zorg
-                </Link>
+                  <li>
+                    <Link to="/informatievoorziening-bewustwording">
+                      Informatievoorziening
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/ondersteunen-van-wetenschappelijk-onderzoek">
+                      Wetenschappelijkonderzoek
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/verbetering-inzet-zorg">Zorg</Link>
+                  </li>
+                </ul>
               </div>
-            </nav>
+            </div>
           </div>
         </div>
       </div>
     </>
   )
-}
-
-Header.propTypes = {
-  pageHeroInview: PropTypes.bool,
 }
 
 export default Header

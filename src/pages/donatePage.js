@@ -19,7 +19,7 @@ const DonatePage = ({ data }) => {
     <Layout>
       <div className="relative  w-screen">
         <PageHero {...pageHeroInfo} />
-        <div className="-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-12 divide-y-2 container">
+        <div className="-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-4 sm:px-12 divide-y-2 container">
           <Stats />
         </div>
       </div>
