@@ -1,10 +1,11 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
+import { formatNumberToEuro } from "../../helpers/formatNumberToEuro"
 
 export type DonateActionFormValues = {
   paymentPeriod: string
   amount: number
-  otherAmount: string
+  otherAmount: number
   firstName: string
   insertion: string
   lastName: string
@@ -36,14 +37,9 @@ const DonateActionForm = () => {
     },
   })
   const [step, setStep] = useState(0)
-  const otherAmountValue = watch(FormNameEnum.OtherAmount)
   const [errorMessage, setErrorMessage] = useState(null)
 
   const onSubmit = (data: DonateActionFormValues) => {
-    if (data.amount === "Anders" && data.otherAmount) {
-      data.amount = data.otherAmount
-    }
-
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -64,6 +60,38 @@ const DonateActionForm = () => {
       )
   }
 
+  const donateOptions = [
+    {
+      value: 10,
+      id: FormNameEnum.Amount,
+    },
+    {
+      value: 20,
+      id: FormNameEnum.Amount,
+    },
+    {
+      value: 50,
+      id: FormNameEnum.Amount,
+    },
+    {
+      value: 100,
+      id: FormNameEnum.Amount,
+    },
+    {
+      value: 150,
+      id: FormNameEnum.Amount,
+    },
+    {
+      value: 200,
+      id: FormNameEnum.Amount,
+    },
+    {
+      value: 0,
+      label: 'Anders',
+      id: FormNameEnum.Amount,
+    },
+  ]
+
   return (
     <div>
       {errorMessage && (
@@ -72,90 +100,36 @@ const DonateActionForm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         {step === 0 && (
           <fieldset className="w-full flex flex-col flex-wrap  sm:flex-row gap-6">
+            {donateOptions.map(i => {
+              return (
+                <label key={i.value} className="flex-initial flex items-center">
+                  <input
+                    type="radio"
+                    className="form-radio h-6 w-6"
+                    name={i.id}
+                    value={i.value}
+                    {...register(i.id)}
+                  />
+                  <span className="ml-4 text-xl">
+                    {i.label ? i.label : formatNumberToEuro(i.value)}
+                  </span>
+                </label>
+                
+              )
+            })}
             <label className="flex-initial flex items-center">
-              <input
-                type="radio"
-                className="form-radio h-6 w-6"
-                name="amount"
-                value={10}
-                {...register(FormNameEnum.Amount)}
-              />
-              <span className="ml-4 text-xl">€ 10,-</span>
-            </label>
-            <label className="flex-initial flex items-center">
-              <input
-                type="radio"
-                className="form-radio h-6 w-6"
-                name="amount"
-                value={20}
-                {...register(FormNameEnum.Amount)}
-              ></input>
-              <span className="ml-4 text-xl">€ 20,-</span>
-            </label>
-            <label className="flex-initial flex items-center">
-              <input
-                type="radio"
-                className="form-radio h-6 w-6"
-                name="amount"
-                value={50}
-                {...register(FormNameEnum.Amount)}
-              ></input>
-              <span className="ml-4 text-xl">€ 50,-</span>
-            </label>
-            <label className="flex-initial flex items-center">
-              <input
-                type="radio"
-                className="form-radio h-6 w-6"
-                name="amount"
-                value={100}
-                {...register(FormNameEnum.Amount)}
-              ></input>
-              <span className="ml-4 text-xl">€ 100,-</span>
-            </label>
-            <label className="flex-initial flex items-center">
-              <input
-                type="radio"
-                className="form-radio h-6 w-6"
-                name="amount"
-                value={150}
-                {...register(FormNameEnum.Amount)}
-              ></input>
-              <span className="ml-4 text-xl">€ 150,-</span>
-            </label>
-            <label className="flex-initial flex items-center">
-              <input
-                type="radio"
-                className="form-radio h-6 w-6"
-                name="amount"
-                value={200}
-                {...register(FormNameEnum.Amount)}
-              ></input>
-              <span className="ml-4 text-xl">€ 200,-</span>
-            </label>
-            <label className="flex-initial flex items-center">
-              <input
-                type="radio"
-                className="form-radio h-6 w-6"
-                name="amount"
-                value="Anders"
-                {...register(FormNameEnum.Amount)}
-              ></input>
-              {watch(FormNameEnum.Amount) === "Anders" ? (
+              {watch(FormNameEnum.Amount) === "0" &&
                 <span className="ml-4 text-xl">
                   €
                   <input
                     type="number"
                     className="w-20 pl-2 "
-                    placeholder="xxxx"
+                    placeholder="xxx"
                     {...register(FormNameEnum.OtherAmount)}
                   />
                   ,-
                 </span>
-              ) : (
-                <span className="ml-4 text-xl">
-                  {otherAmountValue ? `€ ${otherAmountValue}` : "€ xxxx,-"}
-                </span>
-              )}
+              }
             </label>
           </fieldset>
         )}

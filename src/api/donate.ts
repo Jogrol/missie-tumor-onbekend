@@ -25,7 +25,6 @@ export type PaymentBodyObject = {
 }
 
 export default async function donateHandler(req, res) {
-
   const url = "https://rest-api.pay.nl/v8/transaction/start/json"
 
   const headers = {
@@ -33,10 +32,11 @@ export default async function donateHandler(req, res) {
   }
 
   const dtoMapper = (input: DonateActionFormValues): PaymentBodyObject => {
+    console.log(input)
     return {
       token: process.env.PAY_API_TOKEN,
       serviceId: process.env.PAY_SERVICE_ID,
-      amount: input.amount*100,
+      amount: input.otherAmount ? input.otherAmount * 100 : input.amount * 100,
       finishUrl: "https://steunmissietumoronbekend.nl/bedankt-voor-uw-donatie/",
       ipAddress: req.connection.remoteAddress,
       testMode: process.env.PAY_TEST_MODE,

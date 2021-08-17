@@ -23,18 +23,16 @@ const mailOptions = {
 }
 
 export default function newsletterHandler(req, res) {
+  //
+  if (req.body) {
+    console.log('body', req.body)
+  }
 
-
-    // 
-    if (req.body) {
-        
-    }
-
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error)
-    } else {
-      console.log("Email sent: " + info.response)
-    }
-  })
+  // transporter.sendMail(mailOptions, function (error, info) {
+  //   if (error) {
+  //     console.log(error)
+  //   } else {
+  //     console.log("Email sent: " + info.response)
+  //   }
+  // })
 }
