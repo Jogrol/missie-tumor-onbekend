@@ -1,3 +1,4 @@
+import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
 import fetch from "node-fetch"
 import { DonateActionFormValues } from "../components/donate/donateActionForm"
 import { getInitials } from "../helpers/getInitials"
@@ -24,7 +25,10 @@ export type PaymentBodyObject = {
   }
 }
 
-export default async function donateHandler(req, res) {
+export default async function donateHandler(
+  req: GatsbyFunctionRequest,
+  res: GatsbyFunctionResponse
+) {
   const url = "https://rest-api.pay.nl/v8/transaction/start/json"
 
   const headers = {
@@ -32,7 +36,6 @@ export default async function donateHandler(req, res) {
   }
 
   const dtoMapper = (input: DonateActionFormValues): PaymentBodyObject => {
-    console.log(input)
     return {
       token: process.env.PAY_API_TOKEN,
       serviceId: process.env.PAY_SERVICE_ID,
@@ -60,7 +63,7 @@ export default async function donateHandler(req, res) {
     }).then(res => {
       return res.json()
     })
-    res.json(result)
+    res.status(200).json(result)
   } catch (error) {
     res.status(500).send(error)
   }

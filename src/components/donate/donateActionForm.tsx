@@ -5,7 +5,10 @@ import donationRequest from "../../services/donationRequest"
 import {
   DonationRequestFormNameEnum,
   DonationRequestProps,
-} from "../../services/donationRequestModels"
+} from "../../services/donationRequestModel"
+import newsletterRequest, {
+  NewsletterRequestProps,
+} from "../../services/newsletterRequest"
 import { DonateOption } from "./donateActionFormModel"
 
 const donateOptionList = [
@@ -54,13 +57,28 @@ function DonateActionForm(): React.ReactNode {
   const [errorMessage, setErrorMessage] = useState<string>(null)
 
   async function onSubmit(data: DonationRequestProps): Promise<void> {
+    if (data.newsLetter) {
+      const newsletterProps: NewsletterRequestProps = {
+        firstName: data.firstName,
+        insertion: data.insertion,
+        lastName: data.lastName,
+        email: data.email,
+        newsletter: data.newsLetter,
+      }
+
+      const newsletterResponse = await newsletterRequest(newsletterProps)
+
+      if (!newsletterResponse.success) {
+        console.error(newsletterResponse.errorMessage)
+      }
+    }
+
     const reponseData = await donationRequest(data)
 
     if (!reponseData.success) {
       setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
     }
 
-    
     window.location.replace(reponseData.info.redirectUrl)
   }
 

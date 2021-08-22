@@ -1,12 +1,8 @@
-import { DonationRequestResultModel, DonationRequestProps, DonationApiRequestResultModel } from "./donationRequestModels"
+import { DonationRequestResultModel, DonationRequestProps, DonationApiRequestResultModel } from "./donationRequestModel"
+import createErrorResult from "./shared/createErrorResult"
 
 
-function createErrorResult(error: string): DonationRequestResultModel {
-  return {
-    success: false,
-    errorMessage: error,
-  }
-}
+
 
 export default async function donationRequest(
   data: DonationRequestProps
