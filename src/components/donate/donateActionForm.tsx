@@ -1,96 +1,68 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 import { formatNumberToEuro } from "../../helpers/formatNumberToEuro"
+import donationRequest from "../../services/donationRequest"
+import {
+  DonationRequestFormNameEnum,
+  DonationRequestProps,
+} from "../../services/donationRequestModels"
+import { DonateOption } from "./donateActionFormModel"
 
-export type DonateActionFormValues = {
-  paymentPeriod: string
-  amount: number
-  otherAmount: number
-  firstName: string
-  insertion: string
-  lastName: string
-  email: string
-  newsLetter: boolean
-}
+const donateOptionList = [
+  {
+    value: 10,
+    id: DonationRequestFormNameEnum.Amount,
+  },
+  {
+    value: 20,
+    id: DonationRequestFormNameEnum.Amount,
+  },
+  {
+    value: 50,
+    id: DonationRequestFormNameEnum.Amount,
+  },
+  {
+    value: 100,
+    id: DonationRequestFormNameEnum.Amount,
+  },
+  {
+    value: 150,
+    id: DonationRequestFormNameEnum.Amount,
+  },
+  {
+    value: 200,
+    id: DonationRequestFormNameEnum.Amount,
+  },
+  {
+    value: 0,
+    label: "Anders",
+    id: DonationRequestFormNameEnum.Amount,
+  },
+] as DonateOption[]
 
-enum FormNameEnum {
-  PaymentPeriod = "paymentPeriod",
-  Amount = "amount",
-  OtherAmount = "otherAmount",
-  FirstName = "firstName",
-  Insertion = "insertion",
-  LastName = "lastName",
-  Email = "email",
-  NewsLetter = "newsLetter",
-}
-
-const DonateActionForm = () => {
+function DonateActionForm(): React.ReactNode {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<DonateActionFormValues>({
+  } = useForm<DonationRequestProps>({
     mode: "onBlur",
-    defaultValues: {
-      amount: 10,
-    },
+    defaultValues: { [DonationRequestFormNameEnum.Amount]: 10 },
   })
-  const [step, setStep] = useState(0)
-  const [errorMessage, setErrorMessage] = useState(null)
+  const [step, setStep] = useState<number>(0)
+  const [errorMessage, setErrorMessage] = useState<string>(null)
 
-  const onSubmit = (data: DonateActionFormValues) => {
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ value: data }),
+  async function onSubmit(data: DonationRequestProps): Promise<void> {
+    const reponseData = await donationRequest(data)
+
+    if (!reponseData.success) {
+      setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
     }
-    fetch("/api/donate", requestOptions)
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        if (data.transaction.paymentURL) {
-          return window.location.replace(data.transaction.paymentURL)
-        }
-        setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
-      })
-      .catch(() =>
-        setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
-      )
-  }
 
-  const donateOptions = [
-    {
-      value: 10,
-      id: FormNameEnum.Amount,
-    },
-    {
-      value: 20,
-      id: FormNameEnum.Amount,
-    },
-    {
-      value: 50,
-      id: FormNameEnum.Amount,
-    },
-    {
-      value: 100,
-      id: FormNameEnum.Amount,
-    },
-    {
-      value: 150,
-      id: FormNameEnum.Amount,
-    },
-    {
-      value: 200,
-      id: FormNameEnum.Amount,
-    },
-    {
-      value: 0,
-      label: 'Anders',
-      id: FormNameEnum.Amount,
-    },
-  ]
+    
+    window.location.replace(reponseData.info.redirectUrl)
+  }
 
   return (
     <div>
@@ -100,13 +72,13 @@ const DonateActionForm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         {step === 0 && (
           <fieldset className="w-full flex flex-col flex-wrap  sm:flex-row gap-6">
-            {donateOptions.map(i => {
+            {donateOptionList.map((i: DonateOption) => {
               return (
                 <label key={i.value} className="flex-initial flex items-center">
                   <input
                     type="radio"
                     className="form-radio h-6 w-6"
-                    name={i.id}
+                    name={i.value}
                     value={i.value}
                     {...register(i.id)}
                   />
@@ -114,22 +86,21 @@ const DonateActionForm = () => {
                     {i.label ? i.label : formatNumberToEuro(i.value)}
                   </span>
                 </label>
-                
               )
             })}
             <label className="flex-initial flex items-center">
-              {watch(FormNameEnum.Amount) === "0" &&
+              {watch(DonationRequestFormNameEnum.Amount) === "0" && (
                 <span className="ml-4 text-xl">
                   €
                   <input
                     type="number"
                     className="w-20 pl-2 "
                     placeholder="xxx"
-                    {...register(FormNameEnum.OtherAmount)}
+                    {...register(DonationRequestFormNameEnum.OtherAmount)}
                   />
                   ,-
                 </span>
-              }
+              )}
             </label>
           </fieldset>
         )}
@@ -142,7 +113,9 @@ const DonateActionForm = () => {
                 type="text"
                 className="p-4 block w-full h-full"
                 placeholder="Naam"
-                {...register(FormNameEnum.FirstName, { required: true })}
+                {...register(DonationRequestFormNameEnum.FirstName, {
+                  required: true,
+                })}
               ></input>
             </label>
             <label className="border-2 col-span-1">
@@ -151,7 +124,7 @@ const DonateActionForm = () => {
                 type="text"
                 className="p-4 block w-full h-full"
                 placeholder="tussenvoegsel"
-                {...register(FormNameEnum.Insertion)}
+                {...register(DonationRequestFormNameEnum.Insertion)}
               ></input>
             </label>
             <label className="border-2 col-span-3">
@@ -160,7 +133,9 @@ const DonateActionForm = () => {
                 type="text"
                 className="p-4 block w-full h-full"
                 placeholder="Achternaam"
-                {...register(FormNameEnum.LastName, { required: true })}
+                {...register(DonationRequestFormNameEnum.LastName, {
+                  required: true,
+                })}
               ></input>
             </label>
             <label className="border-2 col-span-3">
@@ -169,8 +144,18 @@ const DonateActionForm = () => {
                 type="email"
                 className="p-4 block w-full h-full"
                 placeholder="Email"
-                {...register(FormNameEnum.Email, { required: true })}
+                {...register(DonationRequestFormNameEnum.Email, {
+                  required: true,
+                })}
               ></input>
+            </label>
+            <label className="flex-initial flex items-center justify-center col-span-3 pt-4">
+              <input
+                type="checkbox"
+                className="form-checkbox h-6 w-6 mr-2"
+                {...register(DonationRequestFormNameEnum.NewsLetter)}
+              ></input>
+              Ja, ik schrijf mij in voor de nieuwsbrief
             </label>
           </fieldset>
         )}
