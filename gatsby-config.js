@@ -4,9 +4,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Steun Missie Tumor Onbekend`,
+    siteUrl: 'https://steunmissietumoronbekend.nl/',
+    description: `Missie Tumor Onbekend zet zich in voor betere toegang tot zorg, informatie en baanbrekend onderzoek voor patiënten met uitgezaaide kanker van een onbekende primaire tumor (PTO). Laten we gezamenlijk het onbekende bekend maken, door steun aan de Missie`,
+    author: `Joey Grolleman`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,6 +26,7 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-robots-txt',
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
