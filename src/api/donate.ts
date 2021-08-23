@@ -1,11 +1,11 @@
 import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
 import fetch from "node-fetch"
-import { DonateActionFormValues } from "../components/donate/donateActionForm"
 import { getInitials } from "../helpers/getInitials"
+import { DonationRequestProps } from "../services/donationRequestModel"
 
 export enum TestModeEnnum {
-  False = 0,
-  True = 1,
+  False = "0",
+  True = "1",
 }
 export type PaymentBodyObject = {
   token: string
@@ -35,7 +35,7 @@ export default async function donateHandler(
     "Content-Type": "application/json",
   }
 
-  const dtoMapper = (input: DonateActionFormValues): PaymentBodyObject => {
+  const dtoMapper = (input: DonationRequestProps): PaymentBodyObject => {
     return {
       token: process.env.PAY_API_TOKEN,
       serviceId: process.env.PAY_SERVICE_ID,

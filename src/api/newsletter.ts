@@ -3,6 +3,7 @@ import {
   NewsletterRequestProps,
   NewsletterRequestResultModel,
 } from "../services/newsletterRequestModel"
+import { TestModeEnnum } from "./donate"
 
 const nodemailer = require("nodemailer")
 
@@ -21,12 +22,17 @@ export interface MailOptionsModel {
   html: string
 }
 
+const isTestEnvironment = () : boolean => {
+  return process.env.PAY_TEST_MODE === TestModeEnnum.True ? true : false
+}
+
 function createEmail(input: NewsletterRequestProps): MailOptionsModel {
   return {
     from: process.env.GMAIL_ACCOUNT,
     to: "joeygrolleman@gmail.com",
     subject: "Nieuwe inschrijving nieuwsbrief",
-    html: `<div> 
+    html: `<div>
+              ${isTestEnvironment && '<h5>Let op: Deze aanvraag komt vanuit de test omgeving</h5>'}
               <h2>Nieuwe inschrijving</h2>
               <p>via steunmissietumoronbekend.nl<p>
               <p><b>Voornaam:</b> ${input.firstName}</p>
@@ -41,10 +47,12 @@ export default function newsletterHandler(
   req: GatsbyFunctionRequest,
   res: GatsbyFunctionResponse
 ) {
+
   transporter.sendMail(
     createEmail(req.body.value),
     function (error: unknown, info: unknown) {
       if (error) {
+      
         return res
           .status(500)
           .send({
