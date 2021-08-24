@@ -9,6 +9,7 @@ import PageHeroSmall from "../components/pageHeroSmall"
 import DonateSection from "../components/donateSection"
 import donateOptions from "../donateOptions"
 import ProgressBar from "../components/progressBar"
+import Seo from "../components/seo"
 
 const ProjectPage = ({ data }) => {
   const pageTitle = data.page.title
@@ -19,7 +20,8 @@ const ProjectPage = ({ data }) => {
   const pageHeroImage = getImage(data.page.project.projectimage?.localFile)
 
   return (
-    <Layout siteTitle={pageTitle}>
+    <Layout>
+      <Seo title={pageTitle} />
       {pageHero && <PageHeroSmall {...pageHero} />}
       <div className="-mb-4">
         <ProgressBar {...projectProgress} />
@@ -40,7 +42,6 @@ const ProjectPage = ({ data }) => {
             dangerouslySetInnerHTML={{ __html: pageContent }}
           />
           <div className="col-span-4 sm:col-span-2">
-
             <GatsbyImage
               image={pageHeroImage}
               alt="project afbeelding"

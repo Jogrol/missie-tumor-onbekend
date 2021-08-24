@@ -9,14 +9,19 @@ import VideoSection from "../components/videoSection"
 import ProjectSection from "../components/projectSection"
 import Stats from "../components/stats"
 import donateOptions from "../donateOptions"
+import Seo from "../components/seo"
 
 const DonatePage = ({ data }) => {
+  // Should come from WP
+
+  const pageTitle = data.page.title
   const projectInfo = data.page.listOfProjects
   const videoSectionInfo = data.page.videoSection
   const pageHeroInfo = data.page.hero
 
   return (
     <Layout>
+      <Seo title={pageTitle} />
       <div className="relative  w-screen">
         <PageHero {...pageHeroInfo} />
         <div className="-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-4 sm:px-12 divide-y-2 container">

@@ -1,10 +1,11 @@
+import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
 import fetch from "node-fetch"
-import { DonateActionFormValues } from "../components/donate/donateActionForm"
 import { getInitials } from "../helpers/getInitials"
+import { DonationRequestProps } from "../services/donationRequestModel"
 
 export enum TestModeEnnum {
-  False = 0,
-  True = 1,
+  False = "0",
+  True = "1",
 }
 export type PaymentBodyObject = {
   token: string
@@ -24,19 +25,21 @@ export type PaymentBodyObject = {
   }
 }
 
-export default async function donateHandler(req, res) {
-
+export default async function donateHandler(
+  req: GatsbyFunctionRequest,
+  res: GatsbyFunctionResponse
+) {
   const url = "https://rest-api.pay.nl/v8/transaction/start/json"
 
   const headers = {
     "Content-Type": "application/json",
   }
 
-  const dtoMapper = (input: DonateActionFormValues): PaymentBodyObject => {
+  const dtoMapper = (input: DonationRequestProps): PaymentBodyObject => {
     return {
       token: process.env.PAY_API_TOKEN,
       serviceId: process.env.PAY_SERVICE_ID,
-      amount: input.amount*100,
+      amount: input.otherAmount ? input.otherAmount * 100 : input.amount * 100,
       finishUrl: "https://steunmissietumoronbekend.nl/bedankt-voor-uw-donatie/",
       ipAddress: req.connection.remoteAddress,
       testMode: process.env.PAY_TEST_MODE,
@@ -60,7 +63,7 @@ export default async function donateHandler(req, res) {
     }).then(res => {
       return res.json()
     })
-    res.json(result)
+    res.status(200).json(result)
   } catch (error) {
     res.status(500).send(error)
   }
