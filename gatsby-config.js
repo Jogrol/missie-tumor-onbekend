@@ -5,11 +5,12 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Steun Missie Tumor Onbekend`,
-    siteUrl: 'https://steunmissietumoronbekend.nl/',
+    siteUrl: "https://steunmissietumoronbekend.nl/",
     description: `Missie Tumor Onbekend zet zich in voor betere toegang tot zorg, informatie en baanbrekend onderzoek voor patiënten met uitgezaaide kanker van een onbekende primaire tumor (PTO). Laten we gezamenlijk het onbekende bekend maken, door steun aan de Missie`,
     author: `Joey Grolleman`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     // {
     //   resolve: `gatsby-source-filesystem`,
@@ -26,7 +27,53 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-robots-txt',
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://steunmissietumoronbekend.nl",
+        sitemap: "https://steunmissietumoronbekend.nl/sitemap.xml",
+        env: {
+          development: {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+          },
+          production: {
+            policy: [{ userAgent: "*", allow: "/" }],
+          },
+        },
+      },
+    },
+    // {
+      // resolve: `gatsby-plugin-sitemap`,
+      // options: {
+      //   query: `{
+      //     site {
+      //       siteMetadata {
+      //         siteUrlNoSlash
+      //       }
+      //     }
+      //     allSitePage {
+      //       edges {
+      //         node {
+      //           path
+      //         }
+      //       }
+      //     }
+      //   }`,
+      //   serialize: ({ site, allSitePage }) => {
+      //     let pages = []
+      //     allSitePage.edges.map(edge => {
+      //       pages.push({
+      //         url: site.siteMetadata.siteUrlNoSlash + edge.node.path,
+      //         changefreq: `daily`,
+      //         priority: 0.7,
+      //       })
+      //     })
+
+      //     return pages
+      //   },
+      // },
+  
+    "gatsby-plugin-sitemap",
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
