@@ -9,6 +9,8 @@ import useIntersect from "../hooks/useIntersect"
 import VideoSection from "../components/videoSection"
 import ProjectSection from "../components/projectSection"
 import FactSection from "../components/factsSection"
+import Seo from "../components/seo"
+
 import donateOptions from "../donateOptions"
 
 const DonatePage = ({ data }) => {
@@ -16,12 +18,14 @@ const DonatePage = ({ data }) => {
 
   // Should come from WP
 
+  const pageTitle = data.page.title
   const projectInfo = data.page.listOfProjects
   const videoSectionInfo = data.page.videoSection
   const pageHeroInfo = data.page.hero
 
   return (
     <Layout pageHeroInview={inView}>
+      <Seo title={pageTitle} />
       <div ref={observable} className="relative  w-screen">
         <PageHero {...pageHeroInfo} />
       </div>

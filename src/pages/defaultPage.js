@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import PageHeroSmall from "../components/pageHeroSmall"
+import Seo from "../components/seo"
 
 const DefaultPage = ({ data }) => {
   const pageTitle = data.page.title
@@ -11,7 +12,8 @@ const DefaultPage = ({ data }) => {
   const pageHero = data.page.heroSmall
 
   return (
-    <Layout siteTitle={pageTitle}>
+    <Layout>
+      <Seo title={pageTitle} />
       {pageHero && <PageHeroSmall {...pageHero} />}
       <PageSection width="sm">
         <div dangerouslySetInnerHTML={{ __html: pageContent }} />
