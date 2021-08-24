@@ -10,15 +10,7 @@ module.exports = {
     author: `Joey Grolleman`,
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/images`,
-    //   },
-    // },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -26,6 +18,12 @@ module.exports = {
           include: /assets/,
         },
       },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        excludes: [`/defaultPage`, `/donatePage`, `/projectPage`]
+      }
     },
     {
       resolve: "gatsby-plugin-robots-txt",
@@ -42,38 +40,6 @@ module.exports = {
         },
       },
     },
-    // {
-      // resolve: `gatsby-plugin-sitemap`,
-      // options: {
-      //   query: `{
-      //     site {
-      //       siteMetadata {
-      //         siteUrlNoSlash
-      //       }
-      //     }
-      //     allSitePage {
-      //       edges {
-      //         node {
-      //           path
-      //         }
-      //       }
-      //     }
-      //   }`,
-      //   serialize: ({ site, allSitePage }) => {
-      //     let pages = []
-      //     allSitePage.edges.map(edge => {
-      //       pages.push({
-      //         url: site.siteMetadata.siteUrlNoSlash + edge.node.path,
-      //         changefreq: `daily`,
-      //         priority: 0.7,
-      //       })
-      //     })
-
-      //     return pages
-      //   },
-      // },
-  
-    "gatsby-plugin-sitemap",
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
