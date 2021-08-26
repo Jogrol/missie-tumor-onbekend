@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export const ListOfLinks = () => {
+const ListOfLinks = () => {
   const linksArray = [
     {
       title: "Stichting Sterren",
