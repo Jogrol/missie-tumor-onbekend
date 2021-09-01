@@ -7,20 +7,19 @@ const PageHero = ({ title, description, image, donationcta }) => {
   const pageHeroImage = getImage(image?.localFile)
 
   return (
-    <div class="hero h-lg bg-base-200">
+    <div className="hero h-screen sm:h-lg bg-base-200">
       <GatsbyImage
         image={pageHeroImage}
         alt="header"
-        className="hero-overlay bg-opacity-60 h-full w-full"
+        className="hero-overlay h-full w-full"
       />
-      <div class="hero-overlay bg-opacity-30 z-10"></div>
-      <div class="flex-col hero-content z-20 sm:w-1/2">
+      <div className="flex-col hero-content z-20 sm:w-1/2">
         <div>
-          <h1 class="mb-5 text-5xl font-bold text-white">{title}</h1>
-          <p class="mb-5 text-white">{description}</p>
+          <h1 className="mb-5 text-3xl sm:text-5xl font-bold text-white">{title}</h1>
+          <p className="mb-5 text-white">{description}</p>
           <div className="flex">
             <button
-              class="btn btn-primary"
+              className="btn btn-primary"
               onClick={() => scrollTo("#scroll-to-donate")}
             >
               Doneer nu

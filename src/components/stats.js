@@ -34,9 +34,9 @@ const statsItems = [
 const Stats = () => {
   return (
     <div className="w-full shadow-xl rounded-sm px-4 py-8 grid sm:grid-cols-2 lg:grid-cols-4  bg-white gap-4">
-      {statsItems.map(item => {
+      {statsItems.map((item, index) => {
         return (
-          <div className="flex flex-row">
+          <div key={index} className="flex flex-row">
             {item.icon}
             <div className="pl-4">
               <span className="text-5xl text-brown-200 font-blue-600">
