@@ -29,7 +29,7 @@ const isTestEnvironment = () : boolean => {
 function createEmail(input: NewsletterRequestProps): MailOptionsModel {
   return {
     from: process.env.GMAIL_ACCOUNT,
-    to: "joeygrolleman@gmail.com",
+    to: process.env.EMAIL_TO,
     subject: "Nieuwe inschrijving nieuwsbrief",
     html: `<div>
               ${isTestEnvironment && '<h5>Let op: Deze aanvraag komt vanuit de test omgeving</h5>'}
