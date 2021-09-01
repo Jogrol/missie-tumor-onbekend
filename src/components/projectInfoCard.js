@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { numberWithDots } from './../helpers/numberWithDots'
+import { numberWithDots } from "./../helpers/numberWithDots"
 
 const ProjectInfoCard = ({
   title,
@@ -11,7 +11,7 @@ const ProjectInfoCard = ({
   buttontitle,
   pagelink,
   target,
-  progress
+  progress,
 }) => {
   const projectImage = getImage(image?.localFile)
   const totalAmount = numberWithDots(target)
@@ -19,7 +19,7 @@ const ProjectInfoCard = ({
   const progressPercentage = `${Math.round((progress / target) * 100)}%`
 
   return (
-    <div className="bg-white border-transparent rounded-lg shadow-lg">
+    <div className="card row-span-3 shadow-lg compact bg-base-100">
       <GatsbyImage
         image={projectImage}
         alt="image"
@@ -34,20 +34,33 @@ const ProjectInfoCard = ({
           <div className="text-xl font-bold pl-4">{progressPercentage}</div>
         </div>
       </div>
-      <div className="flex p-4 flex-col">
+      <div className="flex px-6 pb-6 flex-col">
         <h3>{title}</h3>
         <p>{description}</p>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center">
+            <span className="font-extrabold text-md">Doel:</span>
+            <span className="ml-4 text-2xl"> € {totalAmount}</span>
+          </div>
           <Link
             to={pagelink?.uri.replace("/steun-missie-tumor-onbekend/", "/")}
-            className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-brown-100 hover:text-brown-200 hover:no-underline"
+            className="link link-primary"
           >
             {buttontitle}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="inline-block w-6 h-6 ml-2 stroke-current"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
           </Link>
-          <div className="flex flex-col">
-            <span className="font-extrabold text-md">Doel:</span>
-            <span className="text-2xl"> € {totalAmount}</span>
-          </div>
         </div>
       </div>
     </div>

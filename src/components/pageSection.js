@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
  //tailwind-add: sm:max-w-screen-sm, sm:max-w-screen-md, sm:max-w-screen-lg 
 
-const PageSection = ({ children, width = "lg", color = "bg-white" }) => {
+const PageSection = ({ children, width = "lg", color = "bg-white"}) => {
 
   const screenSize = {
     sm: "sm:max-w-screen-sm",
@@ -15,7 +15,7 @@ const PageSection = ({ children, width = "lg", color = "bg-white" }) => {
 
 
   return (
-    <section className={`py-8 ${color}`}>
+    <section className={`py-8 ${color} rounded`} >
       <div className={`container px-4 w-full ${screenSize[width]}`}>
         {children}
       </div>

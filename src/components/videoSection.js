@@ -1,6 +1,6 @@
 import React from "react"
 
-const VideoSection = ({ introductiontext, videolink}) => {
+const VideoSection = ({ introductiontext, videolink }) => {
   return (
     <div className="sm:flex gap-4 justify-center items-center py-8">
       <blockquote className="w-full text-2xl md:w-1/3 italic p-4">

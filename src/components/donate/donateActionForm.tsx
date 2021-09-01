@@ -183,7 +183,7 @@ function DonateActionForm(): React.ReactNode {
             {step > 0 && (
               <button
                 onClick={() => setStep(step - 1)}
-                className="ml-2 underline"
+                className="link link-primary ml-2"
               >
                 Terug
               </button>
@@ -192,13 +192,13 @@ function DonateActionForm(): React.ReactNode {
           <span>
             {step === 1 ? (
               <input
-                className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-brown-100 hover:text-brown-200 hover:no-underline"
+                className="btn btn-primary"
                 type="submit"
               ></input>
             ) : (
               <button
                 onClick={() => setStep(step + 1)}
-                className="flex justify-center px-12 py-4 items-center rounded-full text-white font-semibold bg-yellow-500 hover:bg-brown-100 hover:text-brown-200 hover:no-underline"
+                className="btn btn-primary"
               >
                 Ga verder
               </button>

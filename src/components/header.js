@@ -2,14 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-const Header = ({ pageHeroInview }) => {
+const Header = () => {
   return (
     <>
-      <div
-        className={`fixed top-0 left-0 border-opacity-100 opacity-100 w-full h-18 shadow-lg z-50 ${
-          pageHeroInview ? "bg-transparant" : "bg-white"
-        }`}
-      >
+      <div className="fixed top-0 left-0 border-opacity-100 opacity-100 w-full h-18 shadow-xl rounded z-50 bg-white">
         <div className="container w-full sm:max-w-screen-xl px-4">
           <div className="flex py-2 w-full">
             <a
@@ -21,20 +17,40 @@ const Header = ({ pageHeroInview }) => {
                 alt="logo"
               ></img>
             </a>
-            <nav className="flex-1 flex justify-end">
-              <Link to="/" className="flex justify-center px-12 py-4 items-center">
+            {/* //desktop */}
+            <div class="flex justify-end flex-1 items-center gap-4">
+              <Link className="btn btn-outline btn-sm" to="/">
                 Steun ons
               </Link>
-            </nav>
+              <div class="dropdown dropdown-end">
+                <div tabindex="0" class="btn btn-ghost rounded-btn">
+                  Projecten
+                </div>
+                <ul
+                  tabindex="0"
+                  class="p-2 shadow menu dropdown-content bg-base-100 rounded-box"
+                >
+                  <li>
+                    <Link to="/informatievoorziening-bewustwording">
+                      Informatievoorziening
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/ondersteunen-van-wetenschappelijk-onderzoek">
+                      Wetenschappelijkonderzoek
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/verbetering-inzet-zorg">Zorg</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </>
   )
-}
-
-Header.propTypes = {
-  pageHeroInview: PropTypes.bool,
 }
 
 export default Header
