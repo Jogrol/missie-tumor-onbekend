@@ -10,10 +10,10 @@ const ProjectSection = projects => {
 
   return (
     <>
-      <ul className="sm:flex gap-8 justify-center">
+      <ul className="md:flex gap-8 justify-center">
         {projectsArray.map((item, index) => {
           return (
-            <li key={index} className="w-full sm:w-1/3 mt-8 sm:m-0 list-none">
+            <li key={index} className="w-full md:w-1/3 mt-8 md:m-0 list-none">
               <ProjectInfoCard {...item} />
             </li>
           )

@@ -15,7 +15,6 @@ const ProjectInfoCard = ({
 }) => {
   const projectImage = getImage(image?.localFile)
   const totalAmount = numberWithDots(target)
-
   const progressPercentage = `${Math.round((progress / target) * 100)}%`
 
   return (
@@ -35,9 +34,9 @@ const ProjectInfoCard = ({
         </div>
       </div>
       <div className="flex px-6 pb-6 flex-col">
-        <h3>{title}</h3>
+        <h3 className="text-xl sm:text-2xl">{title}</h3>
         <p>{description}</p>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center flex-wrap">
           <div className="flex items-center">
             <span className="font-extrabold text-md">Doel:</span>
             <span className="ml-4 text-2xl"> € {totalAmount}</span>

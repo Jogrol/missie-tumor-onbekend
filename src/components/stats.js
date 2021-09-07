@@ -4,7 +4,7 @@ import HospitalIcon from "../assets/hospitalIcon.svg"
 import HeartIcon from "../assets/heartIcon.svg"
 import TreatmentIcon from "../assets/treatmentIcon.svg"
 
-const iconStyle = 'h-24 w-24 text-blue-600'
+const iconStyle = "h-16 w-16 text-blue-600"
 
 const statsItems = [
   {
@@ -36,8 +36,8 @@ const Stats = () => {
     <div className="w-full shadow-xl rounded-sm px-4 py-8 grid sm:grid-cols-2 lg:grid-cols-4  bg-white gap-4">
       {statsItems.map((item, index) => {
         return (
-          <div key={index} className="flex flex-row">
-            {item.icon}
+          <div key={index} className="flex flex-row items-center">
+            <div className="flex"> {item.icon}</div>
             <div className="pl-4">
               <span className="text-5xl text-brown-200 font-blue-600">
                 {item.stat}
