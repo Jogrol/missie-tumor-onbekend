@@ -1,10 +1,13 @@
 import React from "react"
-import PropTypes from "prop-types"
 import Footer from "./footer"
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+interface LayoutPropsModel {
+  children: JSX.Element[];
+}
+
+const Layout = ({ children }: LayoutPropsModel) => {
   return (
     <div className="flex flex-col min-h-screen">
       <header>
@@ -16,11 +19,6 @@ const Layout = ({ children }) => {
       </footer>
     </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  pageHeroInview: PropTypes.bool,
 }
 
 export default Layout

@@ -1,7 +1,7 @@
 import React from "react"
 import Menu from "./menu"
 
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
     <>
       <div className="fixed top-0 left-0 border-opacity-100 opacity-100 w-full h-18 shadow-xl rounded z-50 bg-white">

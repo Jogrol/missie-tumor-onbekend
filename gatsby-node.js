@@ -25,10 +25,10 @@ exports.createPages = async ({ actions, graphql }) => {
     contentPages.map(async ({ uri, id, title }) => {
 
       const pageType = {
-        "Steun Missie Tumor Onbekend": resolve(`./src/pages/donatePage.js`),
-        "Fondsenwervingsbeleid": resolve(`./src/pages/defaultPage.js`),
-        "Bedankt voor uw donatie":  resolve(`./src/pages/defaultPage.js`),
-        default: resolve(`./src/pages/projectPage.js`),
+        "Steun Missie Tumor Onbekend": resolve(`./src/pages/donatePage.tsx`),
+        "Fondsenwervingsbeleid": resolve(`./src/pages/defaultPage.tsx`),
+        "Bedankt voor uw donatie":  resolve(`./src/pages/defaultPage.tsx`),
+        default: resolve(`./src/pages/projectPage.tsx`),
       }
 
       await actions.createPage({

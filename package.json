@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@types/react": "^17.0.20",
     "daisyui": "^1.10.0",
     "gatsby": "^3.9.1",
     "gatsby-image": "^2.11.0",

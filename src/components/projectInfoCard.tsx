@@ -1,8 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { numberWithDots } from "./../helpers/numberWithDots"
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image"
+import { numberWithDots } from "../helpers/numberWithDots"
+import { ProjectItemDataModel } from "../models/projectItemData.model"
+
 
 const ProjectInfoCard = ({
   title,
@@ -12,7 +13,7 @@ const ProjectInfoCard = ({
   pagelink,
   target,
   progress,
-}) => {
+}: ProjectItemDataModel): JSX.Element => {
   const projectImage = getImage(image?.localFile)
   const totalAmount = numberWithDots(target)
   const progressPercentage = `${Math.round((progress / target) * 100)}%`
@@ -64,16 +65,6 @@ const ProjectInfoCard = ({
       </div>
     </div>
   )
-}
-
-ProjectInfoCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
-  buttontitle: PropTypes.string.isRequired,
-  pagelink: PropTypes.object.isRequired,
-  target: PropTypes.string.isRequired,
-  pogress: PropTypes.string,
 }
 
 export default ProjectInfoCard

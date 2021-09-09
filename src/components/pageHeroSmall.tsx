@@ -1,8 +1,8 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { HeroSmallDataModel } from "../models/heroSmallData.model"
 
-const PageHeroSmall = ({ title, image }) => {
+const PageHeroSmall = ({ title, image }: HeroSmallDataModel): JSX.Element => {
   const pageHeroImage = getImage(image?.localFile)
 
   return (
@@ -21,11 +21,6 @@ const PageHeroSmall = ({ title, image }) => {
       </div>
     </div>
   )
-}
-
-PageHeroSmall.propTypes = {
-  title: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
 }
 
 export default PageHeroSmall

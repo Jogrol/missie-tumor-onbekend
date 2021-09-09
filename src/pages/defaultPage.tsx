@@ -5,8 +5,9 @@ import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import PageHeroSmall from "../components/pageHeroSmall"
 import Seo from "../components/seo"
+import { DefaultPageDataModel } from "../models/pages/defaultPageData.model"
 
-const DefaultPage = ({ data }) => {
+const DefaultPage = ({ data }: DefaultPageDataModel): JSX.Element => {
   const pageTitle = data.page.title
   const pageContent = data.page.content
   const pageHero = data.page.heroSmall

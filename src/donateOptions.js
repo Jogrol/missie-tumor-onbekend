@@ -1,4 +1,4 @@
-export default [
+const donateOptions = [
   {
     title: "Eenmalige donatie",
     description:
@@ -23,3 +23,5 @@ export default [
     hasEmailAdress: true,
   },
 ]
+
+export default donateOptions;

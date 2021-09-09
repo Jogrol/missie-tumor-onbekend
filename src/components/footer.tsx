@@ -1,7 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const Footer = () => {
+interface LinkItem {
+  title: string,
+  url: string,
+  isExternal?: 'string,'
+}
+
+const Footer = (): JSX.Element => {
   const linksArray = [
     {
       title: "NFK Patiëntenplatform Zeldzame Kankers ",
@@ -16,14 +22,14 @@ const Footer = () => {
       title: "Stichting Vrienden van Hederik",
       url: "/hederiks-verhaal",
     },
-  ]
+  ] as LinkItem[]
   return (
     <>
       <div className="p-2 text-white text-bold">
         © 2021 Missie Tumor Onbekend
       </div>
       <ul className="flex flex-col sm:flex-row p-2 justify-center list-none text-white sm:divide-x-2">
-        {linksArray.map(({ url, title, isExternal }, index) => {
+        {linksArray.map(({ url, title, isExternal }: LinkItem, index: number) => {
           return (
             <li className="text-xs sm:px-4 sm:py-2" key={index}>
               {!isExternal ? (

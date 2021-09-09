@@ -1,6 +1,9 @@
 import React from "react"
+import { VideoSectionDataModel } from "../models/videoSectionData.model"
 
-const VideoSection = ({ introductiontext, videolink }) => {
+const VideoSection = ({
+  introductiontext,
+}: VideoSectionDataModel): JSX.Element => {
   return (
     <div className="sm:flex gap-4 justify-center items-center py-8">
       <blockquote className="w-full text-2xl md:w-1/3 italic p-4">

@@ -10,8 +10,9 @@ import DonateSection from "../components/donateSection"
 import donateOptions from "../donateOptions"
 import ProgressBar from "../components/progressBar"
 import Seo from "../components/seo"
+import { ProjectPageDataModel } from "../models/pages/projectPageData.model"
 
-const ProjectPage = ({ data }) => {
+const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
   const pageTitle = data.page.title
   const pageContent = data.page.content
   const pageHero = data.page.heroSmall

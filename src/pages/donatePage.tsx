@@ -9,9 +9,13 @@ import VideoSection from "../components/videoSection"
 import ProjectSection from "../components/projectSection"
 import Stats from "../components/stats"
 import donateOptions from "../donateOptions"
+import { DonatePageDataModel } from "../models/pages/donatePageData.model"
+import { projectItemDataModel } from "../models/projectItemData.model"
 
-const DonatePage = ({ data }) => {
-  const projectInfo = data.page.listOfProjects
+const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
+  const projectsList = Object.values(data.page.listOfProjects).filter(
+    (item: projectItemDataModel) => item.title
+  )
   const videoSectionInfo = data.page.videoSection
   const pageHeroInfo = data.page.hero
 
@@ -26,12 +30,12 @@ const DonatePage = ({ data }) => {
       <PageSection color="bg-white-200">
         <VideoSection {...videoSectionInfo} />
       </PageSection>
-      {projectInfo && (
+      {projectsList && (
         <PageSection width="xl" color="bg-brown-100">
           <h2 id="projecten" className="text-center text-white pb-12">
             Projecten die we steunen
           </h2>
-          <ProjectSection {...projectInfo} />
+          <ProjectSection projects={projectsList} />
         </PageSection>
       )}
       <div id="scroll-to-donate">

@@ -4,7 +4,14 @@ import HospitalIcon from "../assets/hospitalIcon.svg"
 import HeartIcon from "../assets/heartIcon.svg"
 import TreatmentIcon from "../assets/treatmentIcon.svg"
 
-const iconStyle = "h-16 w-16 text-blue-600"
+
+interface StatsItemModel {
+  readonly icon: JSX.Element;
+  readonly stat: string;
+  readonly description: string;
+}
+
+const iconStyle = "h-16 w-16 text-blue-600";
 
 const statsItems = [
   {
@@ -28,13 +35,13 @@ const statsItems = [
     icon: <TreatmentIcon className={iconStyle} />,
     stat: "67%",
     description: "van PTO-patiënten wordt niet behandeld",
-  },
-]
+  } 
+] as StatsItemModel[]
 
-const Stats = () => {
+const Stats = (): JSX.Element => {
   return (
     <div className="w-full shadow-xl rounded-sm px-4 py-8 grid sm:grid-cols-2 lg:grid-cols-4  bg-white gap-4">
-      {statsItems.map((item, index) => {
+      {statsItems.map((item: StatsItemModel, index: number) => {
         return (
           <div key={index} className="flex flex-row items-center">
             <div className="flex"> {item.icon}</div>

@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import MenuIcon from "../assets/menuIcon.svg"
 
-const Menu = () => {
+const Menu = (): JSX.Element => {
 
 
   return (
@@ -12,11 +12,10 @@ const Menu = () => {
           Steun ons
         </Link>
         <div className="dropdown dropdown-end">
-          <div tabindex="0" class="btn btn-ghost rounded-btn">
+          <button className="btn btn-ghost rounded-btn">
             Projecten
-          </div>
+          </button>
           <ul
-            tabindex="0"
             className="p-2 shadow menu dropdown-content bg-base-100 rounded-box"
           >
             <li>
@@ -37,11 +36,10 @@ const Menu = () => {
       </div>
       <div className="flex justify-end flex-1 sm:hidden">
         <div className="dropdown dropdown-end">
-          <div tabindex="0" className="h-full flex justify-center items-center">
+          <button className="h-full flex justify-center items-center">
            <MenuIcon className="h-8 w-8 text-blue-600" />
-          </div>
+          </button>
           <ul
-            tabindex="0"
             className="p-2 shadow menu dropdown-content bg-base-100 rounded-box"
           >
             <li>
