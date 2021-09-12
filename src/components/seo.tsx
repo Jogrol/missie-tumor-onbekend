@@ -1,18 +1,30 @@
 import React from "react"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 interface SeoPropsModel {
   readonly description?: string
   readonly lang?: string
   readonly title: string
+  readonly meta: any[]
 }
 
-const Seo = ({
-  description,
-  title,
-}: SeoPropsModel): JSX.Element => {
-  const { site } = useStaticQuery(
+interface SiteQueryPropModel {
+  readonly site: {
+    readonly siteMetadata: {
+      readonly title
+      readonly description
+      readonly author
+      readonly siteUrl
+      readonly twitterDescription
+      readonly organizaton
+      readonly twitterSite
+    }
+  }
+}
+
+const Seo = ({ description, lang = "nl", meta = [], title }: SeoPropsModel) => {
+  const { site }: SiteQueryPropModel = useStaticQuery(
     graphql`
       query {
         site {
@@ -20,6 +32,10 @@ const Seo = ({
             title
             description
             author
+            siteUrl
+            twitterDescription
+            organizaton
+            twitterSite
           }
         }
       }
@@ -28,11 +44,15 @@ const Seo = ({
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const url = site.siteMetadata?.siteUrl
+  const twitterDescription = site.siteMetadata.twitterDescription
+  const twitterSite = site.siteMetadata.twitterSite
+  const organizaton = site.siteMetadata.organizaton
 
   return (
     <Helmet
       htmlAttributes={{
-        lang: "nl"
+        lang,
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
@@ -53,7 +73,27 @@ const Seo = ({
           property: `og:type`,
           content: `website`,
         },
-      ]}
+        {
+          property: `og:url`,
+          content: url,
+        },
+        {
+          property: `twitter:site`,
+          content: twitterSite,
+        },
+        {
+          property: `twitter:creator`,
+          content: organizaton,
+        },
+        {
+          property: `twitter:title`,
+          content: title,
+        },
+        {
+          property: `twitter:description`,
+          content: twitterDescription,
+        },
+      ].concat(meta)}
     />
   )
 }

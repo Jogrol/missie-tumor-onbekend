@@ -10,11 +10,11 @@ import ProjectSection from "../components/projectSection"
 import Stats from "../components/stats"
 import donateOptions from "../donateOptions"
 import { DonatePageDataModel } from "../models/pages/donatePageData.model"
-import { projectItemDataModel } from "../models/projectItemData.model"
+import { ProjectItemDataModel } from "../models/projectItemData.model"
 
 const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   const projectsList = Object.values(data.page.listOfProjects).filter(
-    (item: projectItemDataModel) => item.title
+    (item: ProjectItemDataModel) => item.title
   )
   const videoSectionInfo = data.page.videoSection
   const pageHeroInfo = data.page.hero
