@@ -12,13 +12,13 @@ interface SeoPropsModel {
 interface SiteQueryPropModel {
   readonly site: {
     readonly siteMetadata: {
-      readonly title
-      readonly description
-      readonly author
-      readonly siteUrl
-      readonly twitterDescription
-      readonly organizaton
-      readonly twitterSite
+      readonly title: string
+      readonly description: string
+      readonly author: string;
+      readonly siteUrl: string;
+      readonly twitterDescription: string
+      readonly organizaton: string
+      readonly twitterSite: string
     }
   }
 }
