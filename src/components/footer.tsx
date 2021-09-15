@@ -1,88 +1,91 @@
 import React from "react"
 import CbfLogoIcon from "../assets/cbfErkendBlackIcon.svg"
 import MtoLogoBlckIcon from "../assets/mtoLogoBlackIcon.svg"
-interface LinkItem {
-  title: string
-  url: string
-  isExternal?: string
-  hasLogo: boolean
-}
+import FacebookIcon from "../assets/facebookIcon.svg"
+import TwitterIcon from "../assets/twitterIcon.svg"
+import LinkedinIcon from "../assets/linkedinIcon.svg"
 
 const Footer = (): JSX.Element => {
-  const linksArray = [
-    {
-      title: "NFK Patiëntenplatform Zeldzame Kankers ",
-      url: "https://zeldzamekankers.nl/",
-      isExternal: "_blank",
-    },
-    {
-      title: "Stichting Sterren",
-      url: "https://www.missietumoronbekend.nl/carins-verhaal",
-      isExternal: "_blank",
-    },
-    {
-      title: "Stichting Vrienden van Hederik",
-      url: "https://www.missietumoronbekend.nl/hederiks-verhaal",
-      isExternal: "_blank",
-      hasLogo: true,
-    },
-  ] as LinkItem[]
-
   return (
-    <footer className="bg-brown-100">
-      <div className="container w-full sm:max-w-screen-xxl grid sm:grid-cols-3 py-3 divide-x-2 divide-white">
-        <div className="col-span-1 p-6">
-          <p className="text-lg font-extrabold">Informatie</p>
+    <footer className="p-10 footer bg-brown-100 text-base-content">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 container gap-6">
+        <div className="grid-cols-1 md:col-span-2">
           <MtoLogoBlckIcon className="h-16" />
-          <div className="ml-2">
-            <p className="mb-1 text-xs">
-              <span className="font-bold">KvK-nummer:</span>
-              <span className="font-light"> 62004980</span>
-            </p>
-            <p className="text-xs mb-1">
-              <span className="font-bold">RSIN-nummer:</span>
-              <span className="font-light"> 854590353</span>
-            </p>
+          <p className="mb-0 text-xs">
+            <span className="font-bold">KvK-nummer:</span>
+            <span className="font-light"> 62004980</span>
+          </p>
+          <p className="text-xs mb-1">
+            <span className="font-bold">RSIN-nummer:</span>
+            <span className="font-light"> 854590353</span>
+          </p>
+        </div>
+        <div className="col-span-1 flex flex-col">
+          <span className="footer-title">
+            Een samenwerking van
+          </span>
+          <a
+            className="link link-hover"
+            href="https://zeldzamekankers.nl"
+            target="_blank"
+          >
+            NFK Patiëntenplatform Zeldzame Kankers
+          </a>
+          <a
+            className="link link-hover"
+            href="https://www.missietumoronbekend.nl/carins-verhaa/l"
+            target="_blank"
+          >
+            Stichting Sterren
+          </a>
+          <a
+            className="link link-hover"
+            href="https://www.missietumoronbekend.nl/hederiks-verhaal/"
+            target="_blank"
+          >
+            Stichting Vrienden van Hederik
+          </a>
+        </div>
+        <div className="col-span-1 flex flex-col">
+        <span className="footer-title">Informatie</span>
+          <a
+            className="link link-hover"
+            href="https://www.missietumoronbekend.nl/info/"
+            target="_blank"
+          >
+            Over ons
+          </a>
+          <a
+            className="link link-hover"
+            href="https://www.missietumoronbekend.nl/actueel/"
+            target="_blank"
+          >
+            Actueel
+          </a>
+          <a className="link link-hover" href="/fondsenwerveringsbeleid/">
+            Fondsenwerveringsbeleid
+          </a>
+        </div>
+        <div className="col-span-1 flex flex-col">
+        <span className="footer-title">Volg ons</span>
+          <div className="flex gap-6">
+            <a href="https://twitter.com/tumoronbekend?lang=nl" target="_blank">
+              <TwitterIcon className="h-8 w-8" />
+            </a>
             <a
-              className="text-black"
-              href="https://www.missietumoronbekend.nl/info/"
+              href="https://www.linkedin.com/company/missie-tumor-onbekend/"
               target="_blank"
-              rel="noreferrer"
             >
-              Meer informatie
+              <LinkedinIcon className="h-8 w-8" />
+            </a>
+            <a
+              href="https://www.facebook.com/Missie-Tumor-Onbekend-102703861368466/"
+              target="_blank"
+            >
+              <FacebookIcon className="h-8 w-8" />
             </a>
           </div>
         </div>
-        <div className="col-span-1 p-6">
-          <p className="text-lg font-extrabold">Is een samenwerking van</p>
-          <ul className="list-inside">
-            {linksArray.map(
-              ({ url, title, hasLogo }: LinkItem, index: number) => {
-                return (
-                  <li className="font-sm" key={index}>
-                    {/* <div className=''> */}
-                    <a
-                      className="text-black"
-                      href={url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {title}
-                    </a>
-               
-            
-                  </li>
-                )
-              }
-            )}
-          </ul>
-        </div>
-        <div className="col-span-1 p-6">
-          <p className="text-lg font-extrabold">Volg ons op</p>
-        </div>
-      </div>
-      <div className="flex p-2 items-center w-full justify-center border-t-2 border-white bg-brown-200 ">
-        <p className="text-white pt-4"> © 2021 Missie Tumor Onbekend</p>
       </div>
     </footer>
   )

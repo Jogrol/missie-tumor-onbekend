@@ -10,6 +10,10 @@
   @apply font-bold text-lg
 }
 
+.link {
+  @apply text-black
+}
+
 .btn {
   @apply rounded-full hover:no-underline px-8
 }
