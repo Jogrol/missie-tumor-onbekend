@@ -7,9 +7,9 @@ import LinkedinIcon from "../assets/linkedinIcon.svg"
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="p-10 footer bg-brown-100 text-base-content">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 container gap-6">
-        <div className="grid-cols-1 md:col-span-2">
+    <footer className="py-10 px-4 footer bg-brown-100 text-base-content shadow-xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 container gap-6">
+        <div className="grid-cols-1 lg:col-span-2">
           <MtoLogoBlckIcon className="h-16" />
           <p className="mb-0 text-xs">
             <span className="font-bold">KvK-nummer:</span>
@@ -21,9 +21,7 @@ const Footer = (): JSX.Element => {
           </p>
         </div>
         <div className="col-span-1 flex flex-col">
-          <span className="footer-title">
-            Een samenwerking van
-          </span>
+          <span className="footer-title">Een samenwerking van</span>
           <a
             className="link link-hover"
             href="https://zeldzamekankers.nl"
@@ -33,21 +31,24 @@ const Footer = (): JSX.Element => {
           </a>
           <a
             className="link link-hover"
-            href="https://www.missietumoronbekend.nl/carins-verhaa/l"
+            href="https://www.missietumoronbekend.nl/carins-verhaal/"
             target="_blank"
           >
             Stichting Sterren
           </a>
-          <a
-            className="link link-hover"
-            href="https://www.missietumoronbekend.nl/hederiks-verhaal/"
-            target="_blank"
-          >
-            Stichting Vrienden van Hederik
-          </a>
+          <p className="flex no-wrap items-start">
+            <a
+              className="link link-hover"
+              href="https://www.missietumoronbekend.nl/hederiks-verhaal/"
+              target="_blank"
+            >
+              Stichting Vrienden van Hederik
+            </a>
+            <CbfLogoIcon className="h-14 mr-2" />
+          </p>
         </div>
         <div className="col-span-1 flex flex-col">
-        <span className="footer-title">Informatie</span>
+          <span className="footer-title">Informatie</span>
           <a
             className="link link-hover"
             href="https://www.missietumoronbekend.nl/info/"
@@ -67,7 +68,7 @@ const Footer = (): JSX.Element => {
           </a>
         </div>
         <div className="col-span-1 flex flex-col">
-        <span className="footer-title">Volg ons</span>
+          <span className="footer-title">Volg ons</span>
           <div className="flex gap-6">
             <a href="https://twitter.com/tumoronbekend?lang=nl" target="_blank">
               <TwitterIcon className="h-8 w-8" />

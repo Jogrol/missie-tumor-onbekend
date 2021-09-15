@@ -10,7 +10,7 @@ const Header = (): JSX.Element => {
         <div className="container w-full sm:max-w-screen-xl px-4">
           <div className="flex py-2 w-full">
             <a className="flex items-center" href="https://www.missietumoronbekend.nl/">
-              <MtoLogoIcon className="h-20" />
+              <MtoLogoIcon className="h-14 sm:h-20" />
             </a>
             <div className="order-3 sm:order-2 flex flex-1 items-center justify-end ">
               <Menu />
