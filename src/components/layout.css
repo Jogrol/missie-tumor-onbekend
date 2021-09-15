@@ -6,6 +6,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand:wght@700&family=Raleway&display=swap");
 
+.footer-title {
+  @apply font-bold text-lg
+}
+
 .btn {
   @apply rounded-full hover:no-underline px-8
 }

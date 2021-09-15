@@ -14,7 +14,7 @@ const Layout = ({ children }: LayoutPropsModel) => {
         <Header />
       </header>
       <main className="flex-grow">{children}</main>
-      <footer className="text-center w-full bg-brown-200 p-4 rounded">
+      <footer>
         <Footer />
       </footer>
     </div>
