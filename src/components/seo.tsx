@@ -6,7 +6,7 @@ interface SeoPropsModel {
   readonly description?: string
   readonly lang?: string
   readonly title: string
-  readonly meta: any[]
+  readonly meta?: any[]
 }
 
 interface SiteQueryPropModel {

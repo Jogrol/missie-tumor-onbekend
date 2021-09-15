@@ -5,7 +5,7 @@ import MtoLogoIcon from "../assets/mtoLogoIcon.svg"
 
 const Header = (): JSX.Element => {
   return (
-    <>
+    <header>
       <div className="fixed top-0 left-0 border-opacity-100 opacity-100 w-full h-18 shadow-xl rounded z-50 bg-white">
         <div className="container w-full sm:max-w-screen-xl px-4">
           <div className="flex py-2 w-full">
@@ -21,7 +21,7 @@ const Header = (): JSX.Element => {
           </div>
         </div>
       </div>
-    </>
+    </header>
   )
 }
 

@@ -7,8 +7,8 @@ import LinkedinIcon from "../assets/linkedinIcon.svg"
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="py-10 px-4 footer bg-brown-100 text-base-content shadow-xl">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 container gap-6">
+    <footer className="bg-brown-100 text-base-content shadow-xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 container gap-6 px-4 py-10 ">
         <div className="grid-cols-1 lg:col-span-2">
           <MtoLogoBlckIcon className="h-16" />
           <p className="mb-0 text-xs">
@@ -87,6 +87,9 @@ const Footer = (): JSX.Element => {
             </a>
           </div>
         </div>
+      </div>
+      <div className="w-full text-center bg-brown-200 p-3 border border-t-2 border-white">
+        <p className="text-white m-0">© 2020 Missie Tumor Onbekend</p>
       </div>
     </footer>
   )
