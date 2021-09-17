@@ -1,7 +1,8 @@
 import React from "react"
+import Backgroundlogo from "../assets/images/backgroundLogo.svg"
 
 interface PageSectionPropsModel {
-  readonly children: JSX.Element | JSX.Element[];
+  readonly children: JSX.Element | JSX.Element[]
   readonly width?: string
   readonly color?: string
 }
@@ -20,8 +21,12 @@ const PageSection = ({
   }
 
   return (
-    <section className={`py-8 ${color} rounded`}>
-      <div className={`container px-4 w-full ${screenSize[width]}`}>
+    <section className={`py-8 ${color} rounded relative`}>
+      <div className="absolute h-full w-full z-0 overflow-hidden ">
+        {/* <Backgroundlogo className="w-full h-full" /> */}
+      </div>
+
+      <div className={`container px-4 w-full ${screenSize[width]} z-10`}>
         {children}
       </div>
     </section>

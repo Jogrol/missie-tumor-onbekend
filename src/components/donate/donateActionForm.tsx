@@ -43,7 +43,7 @@ const donateOptionList = [
   },
 ] as DonateOption[]
 
-function DonateActionForm(): React.ReactNode {
+function DonateActionForm(): JSX.Element {
   const {
     register,
     handleSubmit,
