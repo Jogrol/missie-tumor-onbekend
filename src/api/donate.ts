@@ -1,6 +1,6 @@
 import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
 import fetch from "node-fetch"
-import { getInitials } from "../helpers/getInitials"
+import { formatNameToInititals } from "../helpers/formatNameToInititals"
 import { DonationRequestProps } from "../services/donationRequestModel"
 
 export enum TestModeEnnum {
@@ -48,7 +48,7 @@ export default async function donateHandler(
         description: "Donatie Stichting Tumor Onbekend",
       },
       enduser: {
-        initials: getInitials(input.firstName),
+        initials: formatNameToInititals(input.firstName),
         lastName: input.lastName,
         emailAddress: input.email,
       },

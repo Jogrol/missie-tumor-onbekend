@@ -1,3 +1,3 @@
-export function useCorrectUri(uri: string): String {
+export function formatToCorrectUrl(uri: string): string {
   return uri.replace("/steun-missie-tumor-onbekend/", "/")
 }

@@ -1,8 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image"
-import { numberWithDots } from "../helpers/numberWithDots"
+import { formatNumberToDots } from "../helpers/formatNumberToDots"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
+import { formatToCorrectUrl } from "../helpers/formatToCorrectUrl"
 
 
 const ProjectInfoCard = ({
@@ -15,7 +16,7 @@ const ProjectInfoCard = ({
   progress,
 }: ProjectItemDataModel): JSX.Element => {
   const projectImage = getImage(image?.localFile)
-  const totalAmount = numberWithDots(target)
+  const totalAmount = formatNumberToDots(target)
   const progressPercentage = `${Math.round((progress / target) * 100)}%`
 
   return (
@@ -43,7 +44,7 @@ const ProjectInfoCard = ({
             <span className="ml-4 text-2xl"> € {totalAmount}</span>
           </div>
           <Link
-            to={pagelink?.uri.replace("/steun-missie-tumor-onbekend/", "/")}
+            to={formatToCorrectUrl(pagelink?.uri)}
             className="link link-primary"
           >
             {buttontitle}
