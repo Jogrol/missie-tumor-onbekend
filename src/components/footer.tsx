@@ -1,6 +1,6 @@
 import React from "react"
 import CbfLogoIcon from "../assets/cbfErkendBlackIcon.svg"
-import MtoLogoBlckIcon from "../assets/mtoLogoBlackIcon.svg"
+import MtoLogoBlackIcon from "../assets/mtoLogoBlackIcon.svg"
 import FacebookIcon from "../assets/facebookIcon.svg"
 import TwitterIcon from "../assets/twitterIcon.svg"
 import LinkedinIcon from "../assets/linkedinIcon.svg"
@@ -8,9 +8,9 @@ import LinkedinIcon from "../assets/linkedinIcon.svg"
 const Footer = (): JSX.Element => {
   return (
     <footer className="bg-brown-100 text-base-content shadow-xl">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 container gap-6 px-4 py-10 divide-y-2 divide-black sm:divide-y-0">
+      <div className="px-4 lg:px-2 py-10 container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 divide-y-2 divide-black sm:divide-y-0">
         <div className="col-span-1">
-          <MtoLogoBlckIcon className="h-16" />
+          <MtoLogoBlackIcon className="max-h-12 object-contain" />
           <p className="mb-0 text-xs font-bold">
             Stichting Vrienden van Hederik
           </p>
@@ -23,9 +23,9 @@ const Footer = (): JSX.Element => {
             <span className="font-light text-xs"> 861248892</span>
           </p>
         </div>
-        <div className="col-span-1 flex pt-6 sm:pt-0">
-          <CbfLogoIcon className="h-20" />
-          <p className="text-xs mt-6 mb-0">
+        <div className="col-span-1 flex flex-col justify-start pt-6 sm:pt-0">
+          <CbfLogoIcon className="h-16 w-16" />
+          <p className="text-xs mb-0">
             Stichting Vrienden van Hederik <br /> is een CBF-erkend goed doel.
           </p>
         </div>
@@ -98,7 +98,7 @@ const Footer = (): JSX.Element => {
         </div>
       </div>
       <div className="w-full text-center bg-brown-200 p-3 border border-t-2 border-white">
-        <p className="text-white m-0">© 2020 Missie Tumor Onbekend</p>
+        <p className="text-white m-0">© 2021 Missie Tumor Onbekend</p>
       </div>
     </footer>
   )

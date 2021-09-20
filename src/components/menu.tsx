@@ -5,7 +5,7 @@ import MenuIcon from "../assets/menuIcon.svg"
 const Menu = (): JSX.Element => {
   return (
     <>
-      <div className="hidden sm:flex justify-end flex-1 items-center gap-4">
+      <div className="hidden sm:flex flex-1 items-center gap-4 justify-end">
         <div className="dropdown dropdown-end">
           <button className="btn btn-ghost rounded-btn">Projecten</button>
           <ul className="p-2 shadow menu dropdown-content bg-base-100 rounded-box">

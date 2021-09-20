@@ -22,10 +22,6 @@ const PageSection = ({
 
   return (
     <section className={`py-8 ${color} rounded relative`}>
-      <div className="absolute h-full w-full z-0 overflow-hidden ">
-        {/* <Backgroundlogo className="w-full h-full" /> */}
-      </div>
-
       <div className={`container px-4 w-full ${screenSize[width]} z-10`}>
         {children}
       </div>
