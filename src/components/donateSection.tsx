@@ -1,28 +1,20 @@
 import React, { useState } from "react"
-import { Link } from "@reach/router"
-import DonateOptionInfo from "./donate/donateOptionInfo"
-import DonateOptionTab from "./donate/donateOptionTab"
+// import { Link } from "@reach/router"
+// import DonateOptionInfo from "./donate/donateOptionInfo"
+// import DonateOptionTab from "./donate/donateOptionTab"
+import DonateWidget from "./donate/donateWidget"
+import donateWidgetConfig from "./donate/donateWidgetConfig"
 
 const DonateSection = info => {
-  const infoArray = Object.values(info).filter(item => item.title)
-
-  const [currentOption, setOption] = useState(infoArray[0])
-
-  if (!infoArray.length) {
-    return null
-  }
-
-  const handleClick = item => {
-    setOption(item)
-  }
-
   return (
     <div>
-      <p className="container sm:max-w-screen-md mb-4">
+      <h2 className="text-center pb-12">Doneer nu</h2>
+      <DonateWidget donateOptions={donateWidgetConfig} />
+      {/* <p className="container sm:max-w-screen-md mb-4">
         Informeer u <Link to="/fondsenwerveringsbeleid/">hier</Link> over ons
         beleid ten aanzien van het werven van fondsen, donateurs en sponsoring.
-      </p>
-      <div className="flex flex-wrap w-full bg-brown-100 rounded-lg shadow-md h-200">
+      </p> */}
+      {/* <div className="flex flex-wrap w-full bg-brown-100 rounded-lg shadow-md h-200">
         <div className="w-full sm:w-1/3">
           <div className="p-4">
             {infoArray.map((item, index) => {
@@ -41,8 +33,8 @@ const DonateSection = info => {
             <DonateOptionInfo {...currentOption} />
           </div>
         </div>
-      </div>
-      <p className="container sm:max-w-screen-md mt-8 italic text-sm text-center">
+      </div> */}
+      {/* <p className="container sm:max-w-screen-md mt-8 italic text-sm text-center">
         *Missie Tumor Onbekend is het samenwerkingsverband tussen Stichting
         Sterren en Stichting Vrienden van Hederik. Stichting Vrienden van
         Hederik werft namens de samenwerkende stichtingen binnen Missie Tumor
@@ -57,7 +49,7 @@ const DonateSection = info => {
         <a href="https://www.missietumoronbekend.nl/info/">
           Info | Missie Tumor Onbekend
         </a>
-      </p>
+      </p> */}
     </div>
   )
 }

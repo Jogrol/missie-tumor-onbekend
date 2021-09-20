@@ -8,7 +8,6 @@ import PageHero from "../components/pageHero"
 import VideoSection from "../components/videoSection"
 import ProjectSection from "../components/projectSection"
 import Stats from "../components/stats"
-import donateOptions from "../donateOptions"
 import { DonatePageDataModel } from "../models/pages/donatePageData.model"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
 
@@ -41,8 +40,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
       )}
       <div id="scroll-to-donate">
         <PageSection width="xl">
-          <h2 className="text-center pb-12">Doneer nu</h2>
-          <DonateSection {...donateOptions} />
+          <DonateSection />
         </PageSection>
       </div>
     </Layout>

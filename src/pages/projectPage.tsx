@@ -7,7 +7,6 @@ import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import PageHeroSmall from "../components/pageHeroSmall"
 import DonateSection from "../components/donateSection"
-import donateOptions from "../donateOptions"
 import ProgressBar from "../components/progressBar"
 import { ProjectPageDataModel } from "../models/pages/projectPageData.model"
 
@@ -52,7 +51,7 @@ const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
       <div id="scroll-to-donate">
         <PageSection width="xl">
           <h2 className="text-center pb-12">Doneer nu</h2>
-          <DonateSection {...donateOptions} />
+          <DonateSection />
         </PageSection>
       </div>
     </Layout>
