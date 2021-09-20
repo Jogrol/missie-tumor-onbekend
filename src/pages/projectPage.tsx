@@ -9,7 +9,6 @@ import PageHeroSmall from "../components/pageHeroSmall"
 import DonateSection from "../components/donateSection"
 import donateOptions from "../donateOptions"
 import ProgressBar from "../components/progressBar"
-import Seo from "../components/seo"
 import { ProjectPageDataModel } from "../models/pages/projectPageData.model"
 
 const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
@@ -21,8 +20,7 @@ const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
   const pageHeroImage = getImage(data.page.project.projectimage?.localFile)
 
   return (
-    <Layout>
-      <Seo title={pageTitle} />
+    <Layout title={pageTitle}>
       {pageHero && <PageHeroSmall {...pageHero} />}
       <div className="-mb-4">
         <ProgressBar {...projectProgress} />

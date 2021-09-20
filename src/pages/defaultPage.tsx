@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import PageHeroSmall from "../components/pageHeroSmall"
-import Seo from "../components/seo"
 import { DefaultPageDataModel } from "../models/pages/defaultPageData.model"
 
 const DefaultPage = ({ data }: DefaultPageDataModel): JSX.Element => {
@@ -13,8 +12,7 @@ const DefaultPage = ({ data }: DefaultPageDataModel): JSX.Element => {
   const pageHero = data.page.heroSmall
 
   return (
-    <Layout>
-      <Seo title={pageTitle} />
+    <Layout title={pageTitle}>
       {pageHero && <PageHeroSmall {...pageHero} />}
       <PageSection width="sm">
         <div dangerouslySetInnerHTML={{ __html: pageContent }} />

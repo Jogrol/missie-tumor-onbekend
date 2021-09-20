@@ -1,6 +1,4 @@
 import React from "react"
-import Backgroundlogo from "../assets/images/backgroundLogo.svg"
-
 interface PageSectionPropsModel {
   readonly children: JSX.Element | JSX.Element[]
   readonly width?: string

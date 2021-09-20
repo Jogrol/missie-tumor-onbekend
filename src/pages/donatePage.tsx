@@ -13,6 +13,7 @@ import { DonatePageDataModel } from "../models/pages/donatePageData.model"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
 
 const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
+  const pageTitle = data.page.title
   const projectsList = Object.values(data.page.listOfProjects).filter(
     (item: ProjectItemDataModel) => item.title
   )
@@ -20,7 +21,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   const pageHeroInfo = data.page.hero
 
   return (
-    <Layout>
+    <Layout title={pageTitle}>
       <div className="relative  w-screen">
         <PageHero {...pageHeroInfo} />
         <div className="-mt-14 sm:-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-4 sm:px-12 divide-y-2 container">

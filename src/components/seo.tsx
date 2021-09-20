@@ -50,6 +50,7 @@ const Seo = ({ description, lang = "nl", meta = [], title }: SeoPropsModel) => {
   const organizaton = site.siteMetadata.organizaton
 
   return (
+    
     <Helmet
       htmlAttributes={{
         lang,
