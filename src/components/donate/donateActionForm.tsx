@@ -9,39 +9,8 @@ import {
 import newsletterRequest, {
   NewsletterRequestProps,
 } from "../../services/newsletterRequest"
-import { DonateOption } from "./donateActionFormModel"
+import donateAmountList, { DonateAmountItem } from "./donateAmountList"
 
-const donateOptionList = [
-  {
-    value: 10,
-    id: DonationRequestFormNameEnum.Amount,
-  },
-  {
-    value: 20,
-    id: DonationRequestFormNameEnum.Amount,
-  },
-  {
-    value: 50,
-    id: DonationRequestFormNameEnum.Amount,
-  },
-  {
-    value: 100,
-    id: DonationRequestFormNameEnum.Amount,
-  },
-  {
-    value: 150,
-    id: DonationRequestFormNameEnum.Amount,
-  },
-  {
-    value: 200,
-    id: DonationRequestFormNameEnum.Amount,
-  },
-  {
-    value: 0,
-    label: "Anders",
-    id: DonationRequestFormNameEnum.Amount,
-  },
-] as DonateOption[]
 
 function DonateActionForm(): JSX.Element {
   const {
@@ -90,7 +59,7 @@ function DonateActionForm(): JSX.Element {
       <form onSubmit={handleSubmit(onSubmit)}>
         {step === 0 && (
           <fieldset className="w-full flex flex-col flex-wrap  sm:flex-row gap-6">
-            {donateOptionList.map((i: DonateOption) => {
+            {donateAmountList.map((i: DonateAmountItem) => {
               return (
                 <label key={i.value} className="flex-initial flex items-center">
                   <input
