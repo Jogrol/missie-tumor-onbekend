@@ -4,6 +4,7 @@ import MtoLogoBlackIcon from "../assets/mtoLogoBlackIcon.svg"
 import FacebookIcon from "../assets/facebookIcon.svg"
 import TwitterIcon from "../assets/twitterIcon.svg"
 import LinkedinIcon from "../assets/linkedinIcon.svg"
+import InstagramIcon from "../assets/instagramIcon.svg"
 
 const Footer = (): JSX.Element => {
   return (
@@ -26,7 +27,7 @@ const Footer = (): JSX.Element => {
         <div className="col-span-1 flex flex-col justify-start pt-6 sm:pt-0">
           <CbfLogoIcon className="h-16 w-16" />
           <p className="text-xs mb-0">
-            Stichting Vrienden van Hederik <br /> is een CBF-erkend goed doel.
+          Stichting Vrienden van Hederik is een CBF-erkend goed doel, en is ook een aangemerkt en erkent als een ANBI-instelling.
           </p>
         </div>
         <div className="col-span-1 flex flex-col pt-6 sm:pt-0">
@@ -93,6 +94,12 @@ const Footer = (): JSX.Element => {
               target="_blank"
             >
               <FacebookIcon className="h-8 w-8" />
+            </a>
+            <a
+              href="https://www.instagram.com/missie_tumor_onbekend/"
+              target="_blank"
+            >
+              <InstagramIcon className="h-8 w-8" />
             </a>
           </div>
         </div>
