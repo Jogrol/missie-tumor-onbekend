@@ -70,5 +70,15 @@ module.exports = {
       // To learn more, visit: https://gatsby.dev/offline
       // `gatsby-plugin-offline`,
     },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-NFS3PP9",
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "SMTO_Datalayer" },
+        dataLayerName: "GTM-NFS3PP9",
+        routeChangeEventName: "SMTO_ChangeEvent",
+      },
+    },
   ],
 }

@@ -44,7 +44,7 @@ const ProjectInfoCard = ({
             <span className="ml-4 text-2xl"> € {totalAmount}</span>
           </div>
           <Link
-            to={formatToCorrectUrl(pagelink?.uri)}
+            to={pagelink && formatToCorrectUrl(pagelink.uri)}
             className="link link-primary"
           >
             {buttontitle}
