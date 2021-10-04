@@ -75,9 +75,7 @@ module.exports = {
       options: {
         id: "GTM-NFS3PP9",
         includeInDevelopment: false,
-        defaultDataLayer: { platform: "SMTO_Datalayer" },
-        dataLayerName: "GTM-NFS3PP9",
-        routeChangeEventName: "SMTO_ChangeEvent",
+        dataLayerName: "dataLayer",
       },
     },
   ],
