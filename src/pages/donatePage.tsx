@@ -11,6 +11,7 @@ import Stats from "../components/stats"
 import donateOptions from "../donateOptions"
 import { DonatePageDataModel } from "../models/pages/donatePageData.model"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
+import PageHeroWithVideo from "../components/pageHeroWithVideo"
 
 const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   const pageTitle = data.page.title
@@ -23,7 +24,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   return (
     <Layout title={pageTitle}>
       <div className="relative  w-screen">
-        <PageHero {...pageHeroInfo} />
+        <PageHeroWithVideo/>
         <div className="-mt-14 sm:-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-4 sm:px-12 divide-y-2 container">
           <Stats />
         </div>
