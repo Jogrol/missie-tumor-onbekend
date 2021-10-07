@@ -22,29 +22,34 @@ const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
   return (
     <Layout title={pageTitle}>
       {pageHero && <PageHeroSmall {...pageHero} />}
-      <div className="-mb-4">
+      {/* <div className="-mb-4 sm:max-w-screen-sm container">
         <ProgressBar {...projectProgress} />
-      </div>
+      </div> */}
 
-      <PageSection width="lg" color="bg-brown-100">
-        <div className="w-full flex justify-center">
-          <button
-            onClick={() => scrollTo("#scroll-to-donate")}
-            className="btn btn-primary"
-          >
-            Doneer nu
-          </button>
+      <PageSection width="md">
+        <div className="rounded-t-md">
+          <ProgressBar {...projectProgress} />
         </div>
-        <div className="grid grid-cols-4 w-full gap-12">
-          <div
-            className="col-span-4 sm:col-span-2"
-            dangerouslySetInnerHTML={{ __html: pageContent }}
-          />
-          <div className="col-span-4 sm:col-span-2">
+        <div className="w-full bg-gray-100 rounded-md pt-8">
+          <div className="sm:w-full flex justify-center bg-gray-100 px-4 sm:px:0">
+            <button
+              onClick={() => scrollTo("#scroll-to-donate")}
+              className="btn sm:btn-lg btn-primary w-full sm:w-auto"
+            >
+              Doneer nu
+            </button>
+          </div>
+          <div className="w-full sm:px-12">
             <GatsbyImage
               image={pageHeroImage}
               alt="project afbeelding"
-              className="mt-8 w-full h-1/2"
+              className="mt-8 w-full h-full object-fill sm:rounded-lg"
+            />
+          </div>
+          <div className="px-4 sm:px-12 pb-8 sm:pb-12">
+            <div
+              className="col-span-4 sm:col-span-2"
+              dangerouslySetInnerHTML={{ __html: pageContent }}
             />
           </div>
         </div>

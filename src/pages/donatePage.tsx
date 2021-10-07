@@ -33,8 +33,8 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
         <VideoSection {...videoSectionInfo} />
       </PageSection>
       {projectsList && (
-        <PageSection width="xl" color="bg-brown-100">
-          <h2 id="projecten" className="text-center text-white pb-12">
+        <PageSection width="xl" color="bg-gray-100">
+          <h2 id="projecten" className="text-center text-black pb-12">
             Projecten die we steunen
           </h2>
           <ProjectSection projects={projectsList} />

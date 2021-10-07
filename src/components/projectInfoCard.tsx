@@ -26,11 +26,10 @@ const ProjectInfoCard = ({
         alt="image"
         className="w-full h-52 rounded-t-lg"
       />
-
-      <div className="overflow-hidden h-8 mb-4 text-xs flex bg-green-200">
+      <div className="overflow-hidden h-8 mb-4 text-xs flex bg-brown-100">
         <div
           style={{ width: progressPercentage }}
-          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
+          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-brown-200"
         >
           <div className="text-xl font-bold pl-4">{progressPercentage}</div>
         </div>

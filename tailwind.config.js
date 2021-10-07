@@ -3,12 +3,24 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+         // Dark Blue #003665
+        // Dark orange #D59355
+        // Light orange #F5C6AA
+        // Light brown #F6E1CC
+        // Brown old #DDD6BE
+        // Dark green #40688C
+        // Light grey #EEF0F1
+        // Black #2E3844
+        // White #FFFFFF
       colors: {
         "green-100": "#A17D23",
-        "brown-100": "#DDD6BD",
-        "brown-200": "#977921",
+        "brown-100": "#DDD6BE",
+        "brown-200": "#D59355",
+        "brown-300": "#987821",
+        "gray-100": "#EEF0F1",
+        'green-500': "#40688C",
         "blue-500": "#37167F",
-        "blue-600": "#023765",
+        "blue-600": "#003665",
       },
       height: {
         hero: "448px",
@@ -21,8 +33,6 @@ module.exports = {
       animation: {
         "in": "fadeIn 12s ease-in-out infinite",
         "out": "fadeIn 12s ease-in-out infinite 6s",
-        // "fade-up-oposite": "fadeIn 12s ease-in-out infinite 6s",
-        // "fade-up-with-delay": "fadeIn 10s ease-in-out infinite 8s",
       },
       keyframes: {
         fadeIn: {
@@ -54,19 +64,19 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#F59E0B",
-          "primary-focus": "#D97706",
-          "primary-content": "blue",
-          secondary: "#DDD6BD",
-          "secondary-focus": "#977921",
-          "secondary-content": "white",
+          primary: "#D59355",
+          "primary-focus": "#F5C6AA",
+          "primary-content": "#ffffff",
+          secondary: "#F6E1CC",
+          "secondary-focus": "#F5C6AA",
+          "secondary-content": "#2E3844",
           tertairy: "#977921",
-          accent: "#37cdbe",
+          accent: "#2E3844",
           "accent-focus": "#2aa79b",
-          "accent-content": "wgite",
-          neutral: "#3d4451",
-          "neutral-focus": "#2a2e37",
-          "neutral-content": "white",
+          "accent-content": "white",
+          neutral: "#EEF0F1",
+          "neutral-focus": "#F6E1CC",
+          "neutral-content": "#003665",
           "base-100": "#ffffff",
           "base-200": "#f9fafb",
           "base-300": "#977921",

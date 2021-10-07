@@ -104,7 +104,7 @@ const Footer = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className="w-full text-center bg-brown-200 p-3 border border-t-2 border-white">
+      <div className="w-full text-center bg-brown-300 p-3 border border-t-2 border-white">
         <p className="text-white m-0">© 2021 Missie Tumor Onbekend</p>
       </div>
     </footer>

@@ -7,6 +7,11 @@ import MuteIcon from "../assets/muteIcon.svg"
 const PageHeroWithVideo = () => {
   const [isMuted, setIsmuted] = useState<boolean>(true)
 
+  const handleDonateNowClick = (): void => {
+    scrollTo("#scroll-to-donate")
+    setIsmuted(true)
+  }
+
   return (
     <div className="hero h-screen bg-base-200">
       <video
@@ -41,12 +46,12 @@ const PageHeroWithVideo = () => {
         </div>
         <div className="absolute bottom-0 left-0 flex flex-col sm:flex-row sm:justify-center w-full px-4 pb-4 sm:pb-24 gap-4 sm:gap-16">
           <button
-            className="btn btn-primary w-full sm:w-96"
-            onClick={() => scrollTo("#scroll-to-donate")}
+            className="btn sm:btn-lg btn-primary w-full sm:w-96"
+            onClick={handleDonateNowClick}
           >
             Doneer nu
           </button>
-          <a className="btn btn-secondary w-full sm:w-96" href="#">
+          <a className="btn sm:btn-lg btn-secondary w-full sm:w-96" href="#">
             Deel nu jouw verhaal met PTO
           </a>
         </div>
