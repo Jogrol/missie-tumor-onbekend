@@ -10,29 +10,39 @@ import ProjectSection from "../components/projectSection"
 import Stats from "../components/stats"
 import { DonatePageDataModel } from "../models/pages/donatePageData.model"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
+import PageHeroWithVideo from "../components/pageHeroWithVideo"
+import PatientStoriesSection from "../components/patientStoriesSection"
 
 const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   const pageTitle = data.page.title
   const projectsList = Object.values(data.page.listOfProjects).filter(
     (item: ProjectItemDataModel) => item.title
   )
+  const patientStoriesImages = Object.values(data.page.patientstoriesimages)
   const videoSectionInfo = data.page.videoSection
   const pageHeroInfo = data.page.hero
 
+  console.log(patientStoriesImages)
   return (
     <Layout title={pageTitle}>
-      <div className="relative  w-screen">
-        <PageHero {...pageHeroInfo} />
+      <div className="relative w-screen bg-gray-100">
+        <PageHeroWithVideo />
         <div className="-mt-14 sm:-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-4 sm:px-12 divide-y-2 container">
           <Stats />
         </div>
       </div>
+      <PageSection width="xl" color="bg-gray-100">
+        <h2 className="text-center font-black my-8">
+          Titel van deze sectie
+        </h2>
+        <PatientStoriesSection patientStoriesImages={patientStoriesImages} />
+      </PageSection>
       <PageSection color="bg-white-200">
         <VideoSection {...videoSectionInfo} />
       </PageSection>
       {projectsList && (
-        <PageSection width="xl" color="bg-brown-100">
-          <h2 id="projecten" className="text-center text-white pb-12">
+        <PageSection width="xl" color="bg-gray-100">
+          <h2 id="projecten" className="text-center font-black my-8">
             Projecten die we steunen
           </h2>
           <ProjectSection projects={projectsList} />
@@ -75,6 +85,44 @@ export const query = graphql`
           url
           target
           title
+        }
+      }
+      patientstoriesimages {
+        patientenverhaalA {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 400
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
+        }
+        patientenverhaalB {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 400
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
+        }
+        patientenverhaalC {
+          altText
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 400
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
         }
       }
       listOfProjects {

@@ -38,8 +38,7 @@ const Header = (): JSX.Element => {
                   <div className="flex mt-4">
                     <InfoIcon className="h-6 w-6 mr-4" />
                     <p>
-                      Stichting Vrienden van Hederik is een CBF-erkend goed
-                      doel.
+                    Stichting Vrienden van Hederik is een CBF-erkend goed doel, en is ook een aangemerkt en erkent als een ANBI-instelling.
                     </p>
                   </div>
                 </div>

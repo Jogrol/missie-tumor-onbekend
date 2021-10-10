@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { formatNumberToDots } from "../helpers/formatNumberToDots"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
 import { formatToCorrectUrl } from "../helpers/formatToCorrectUrl"
@@ -26,11 +26,10 @@ const ProjectInfoCard = ({
         alt="image"
         className="w-full h-52 rounded-t-lg"
       />
-
-      <div className="overflow-hidden h-8 mb-4 text-xs flex bg-green-200">
+      <div className="overflow-hidden h-8 mb-4 text-xs flex bg-brown-100">
         <div
           style={{ width: progressPercentage }}
-          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
+          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-brown-200"
         >
           <div className="text-xl font-bold pl-4">{progressPercentage}</div>
         </div>
@@ -44,7 +43,7 @@ const ProjectInfoCard = ({
             <span className="ml-4 text-2xl"> € {totalAmount}</span>
           </div>
           <Link
-            to={formatToCorrectUrl(pagelink?.uri)}
+            to={pagelink && formatToCorrectUrl(pagelink.uri)}
             className="link link-primary"
           >
             {buttontitle}

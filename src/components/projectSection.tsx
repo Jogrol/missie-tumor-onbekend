@@ -1,4 +1,3 @@
-import { ImageDataLike } from "gatsby-plugin-image"
 import React from "react"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
 import ProjectInfoCard from "./projectInfoCard"

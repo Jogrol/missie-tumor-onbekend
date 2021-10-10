@@ -6,9 +6,9 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand:wght@700&family=Raleway&display=swap");
 
-.footer-title {
+/* .footer-title {
   @apply font-bold text-lg
-}
+} */
 
 .link {
   @apply text-black
