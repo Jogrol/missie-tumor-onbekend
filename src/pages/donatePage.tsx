@@ -23,7 +23,6 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   const videoSectionInfo = data.page.videoSection
   const pageHeroInfo = data.page.hero
 
-  console.log(patientStoriesImages)
   return (
     <Layout title={pageTitle}>
       <div className="relative w-screen bg-gray-100">

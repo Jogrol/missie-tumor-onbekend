@@ -32,9 +32,8 @@ const PatientStoriesSection = ({
         {patientStoriesImages.map((item, index) => {
           const image = getImage(item.localFile)
           return (
-            <a href={contentData[index].link} target="_blank">
+            <a href={contentData[index].link} target="_blank" key={index}>
               <div
-                key={index}
                 className={`bg-white-100 p-4 shadow-xl w-80 origin-center animate-polaroid hover:animate-polaroidHoverState cursor-pointer`}
               >
                 <div className="flex flex-col">
