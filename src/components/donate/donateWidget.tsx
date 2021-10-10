@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { DonateOption, DonationTypeEnum } from "./donateWidgetConfig"
 import DonateWidgetTabs from "./donateWidgetTabs"
 import DonateActionForm from "./donateActionForm"
+import DonateWidgetForm from "./donateWidgetForm"
 export interface DonateWidgetPropsModel {
   donateOptions: DonateOption[]
 }
@@ -31,7 +32,7 @@ const DonateWidget = ({
 
   function renderDonationType(type: DonationTypeEnum) {
     const renderDonationType = {
-      [DonationTypeEnum.Form]: <DonateActionForm />,
+      [DonationTypeEnum.Form]: <DonateWidgetForm />,
       default: "hhello",
     }
 
@@ -43,13 +44,13 @@ const DonateWidget = ({
   }, [options, currentOption])
 
   return (
-    <div className="w-full">
+    <div className="container border-4 rounded-xl shadow-md sm:px-4 pb-6">
       <DonateWidgetTabs tabs={options} handleClick={setActive} />
-      <div className="container sm:max-w-screen-md h-40 mt-8">
-        <h3 key={currentOption.title}>{currentOption.title}</h3>
+      <div className="px-4">
+        <h3 key={currentOption.title} className="text-black">{currentOption.title}</h3>
         <p>{currentOption.description}</p>
       </div>
-      <div className="container sm:max-w-screen-md h-40 mt-4">
+      <div className="w-full p-4">
         {renderDonationType(currentOption.donationType)}
       </div>
     </div>

@@ -11,7 +11,7 @@ const DonateWidgetTabs = ({
   handleClick,
 }: DonateWidgetTabsPropsModel): JSX.Element => {
   return (
-    <div className="tabs tabs-boxed sm:flex sm:justify-center">
+    <div className="tabs tabs-boxed sm:flex sm:justify-center w-full">
       {tabs.map((i: DonateOption, index: number) => {
         return (
           <button
