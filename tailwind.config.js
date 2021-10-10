@@ -36,7 +36,7 @@ module.exports = {
         in: "fadeIn 12s ease-in-out infinite",
         out: "fadeIn 12s ease-in-out infinite 6s",
         polaroidHoverState: "poloroidHoverState 0.3s ease-in forwards",
-        polaroidInitialState: "poloroidInitialState 0.3s ease-in"
+        polroidInitialState: "poloroidInitialState 0.3s ease-in"
       },
       keyframes: {
         fadeIn: {

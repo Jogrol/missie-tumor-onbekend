@@ -10,12 +10,6 @@ const PatientStoriesSection = ({
   patientStoriesImages,
 }: PatientStoriesSectionPropsModel): JSX.Element => {
   // Moet uit nieuwe CMS komen.
-  const imageDescription = [
-    "Hederik heeft van niemand afscheid genomen",
-    "Ik hoop dat ze iets kunnen vinden met DNA onderzoek, dat is afwachten.",
-    "Machteloos tegen een onzichtbare vijand.",
-  ]
-
   const contentData = [
     {
       discription: "Hederik heeft van niemand afscheid genomen",
@@ -59,7 +53,7 @@ const PatientStoriesSection = ({
         })}
       </div>
       <div className="w-full flex justify-center flex-col mt-8">
-        <p className="text-white text-center text-lg container sm:w-2/3">
+        <p className="text-center text-lg container sm:w-2/3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

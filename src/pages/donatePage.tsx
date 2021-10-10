@@ -26,14 +26,14 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   console.log(patientStoriesImages)
   return (
     <Layout title={pageTitle}>
-      <div className="relative  w-screen bg-green-200">
+      <div className="relative w-screen bg-gray-100">
         <PageHeroWithVideo />
         <div className="-mt-14 sm:-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-4 sm:px-12 divide-y-2 container">
           <Stats />
         </div>
       </div>
-      <PageSection width="xl" color="bg-green-200">
-        <h2 className="text-center text-white font-black my-8">
+      <PageSection width="xl" color="bg-gray-100">
+        <h2 className="text-center font-black my-8">
           Titel van deze sectie
         </h2>
         <PatientStoriesSection patientStoriesImages={patientStoriesImages} />
