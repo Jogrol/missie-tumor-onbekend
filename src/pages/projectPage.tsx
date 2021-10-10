@@ -22,10 +22,6 @@ const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
   return (
     <Layout title={pageTitle}>
       {pageHero && <PageHeroSmall {...pageHero} />}
-      {/* <div className="-mb-4 sm:max-w-screen-sm container">
-        <ProgressBar {...projectProgress} />
-      </div> */}
-
       <PageSection width="md">
         <div className="rounded-t-md">
           <ProgressBar {...projectProgress} />

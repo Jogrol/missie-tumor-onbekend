@@ -1,4 +1,5 @@
 import { HeroDataModel } from "../heroData.model"
+import { PatientStoriesDataModel } from "../patientStoriesData.model"
 import { ProjectItemDataModel } from "../projectItemData.model"
 import { VideoSectionDataModel } from "../videoSectionData.model"
 
@@ -14,6 +15,7 @@ export interface DonatePageDataModel {
         readonly projectc: ProjectItemDataModel
       }
       readonly videoSection: VideoSectionDataModel;
+      readonly patientstoriesimages: PatientStoriesDataModel;
     }
   }
 }

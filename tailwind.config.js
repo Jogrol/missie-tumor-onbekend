@@ -3,24 +3,26 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
-         // Dark Blue #003665
-        // Dark orange #D59355
-        // Light orange #F5C6AA
-        // Light brown #F6E1CC
-        // Brown old #DDD6BE
-        // Dark green #40688C
-        // Light grey #EEF0F1
-        // Black #2E3844
-        // White #FFFFFF
+      // Dark Blue #003665
+      // Dark orange #D59355
+      // Light orange #F5C6AA
+      // Light brown #F6E1CC
+      // Brown old #DDD6BE
+      // Dark green #40688C
+      // Light grey #EEF0F1
+      // Black #2E3844
+      // White #FFFFFF
       colors: {
-        "green-100": "#A17D23",
         "brown-100": "#DDD6BE",
         "brown-200": "#D59355",
         "brown-300": "#987821",
         "gray-100": "#EEF0F1",
-        'green-500': "#40688C",
+        "green-100": "#A17D23",
+        "green-200": "#849084",
+        "green-500": "#40688C",
         "blue-500": "#37167F",
         "blue-600": "#003665",
+        "white-100": "#f8f8ff"
       },
       height: {
         hero: "448px",
@@ -31,8 +33,10 @@ module.exports = {
         "2/3": "66.666667%",
       },
       animation: {
-        "in": "fadeIn 12s ease-in-out infinite",
-        "out": "fadeIn 12s ease-in-out infinite 6s",
+        in: "fadeIn 12s ease-in-out infinite",
+        out: "fadeIn 12s ease-in-out infinite 6s",
+        polaroidHoverState: "poloroidHoverState 0.3s ease-in forwards",
+        polaroidInitialState: "poloroidInitialState 0.3s ease-in"
       },
       keyframes: {
         fadeIn: {
@@ -40,9 +44,17 @@ module.exports = {
           "25%": { opacity: "1" },
           "50%": { opacity: "1" },
           "51%": { opacity: "0" },
-          "75": { opacity: "1" },
+          "75%": { opacity: "1" },
           "100%": { opacity: "0" },
         },
+        poloroidHoverState: {
+          from: { transform: 'scale(1)' },
+          to: { transform: 'scale(1.05)' },
+        },
+        poloroidInitialState: {
+          from: { transform: 'scale(1.05)' },
+          to: { transform: 'scale(1)' },
+        }
       },
     },
     fontFamily: {
@@ -57,6 +69,7 @@ module.exports = {
     extend: {
       divideColor: ["group-hover"],
       margin: ["last"],
+      animation: ["hover", "focus"],
     },
   },
   plugins: [require("daisyui")],
