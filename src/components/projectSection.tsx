@@ -7,7 +7,7 @@ export interface ProjectSectionPropsModel {
 }
 
 const ProjectSection = ({
-  projects
+  projects,
 }: ProjectSectionPropsModel): JSX.Element => {
   return (
     <ul className="md:flex gap-8 justify-center">

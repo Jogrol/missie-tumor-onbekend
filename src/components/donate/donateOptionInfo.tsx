@@ -14,14 +14,17 @@ const DonateOptionInfo = ({
         <h4 className="mb-4">{title}</h4>
         <p className="flex-grow">{description}</p>
         <div className="w-full h-full">
-
           {hasDonateActionForm && <DonateActionForm />}
           {hasLinktoFormPage && (
             <a href="https://www.missietumoronbekend.nl/steun-onze-missie/">
               Missie Tumor Onbekend, perodieke donatie
             </a>
           )}
-          {hasEmailAdress && <a href="mailto:warnyta@missietumoronbekend.nl?subject=Mail vanuit Steun Missie Tumor Onbekend">warnyta@missietumoronbekend.nl</a>}
+          {hasEmailAdress && (
+            <a href="mailto:warnyta@missietumoronbekend.nl?subject=Mail vanuit Steun Missie Tumor Onbekend">
+              warnyta@missietumoronbekend.nl
+            </a>
+          )}
         </div>
       </div>
     </div>

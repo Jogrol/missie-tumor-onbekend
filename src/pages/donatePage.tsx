@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import DonateSection from "../components/donateSection"
-import PageHero from "../components/pageHero"
 import VideoSection from "../components/videoSection"
 import ProjectSection from "../components/projectSection"
 import Stats from "../components/stats"
@@ -19,23 +18,20 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   const projectsList = Object.values(data.page.listOfProjects).filter(
     (item: ProjectItemDataModel) => item.title
   )
-  const patientStoriesImages = Object.values(data.page.patientstoriesimages)
+
   const videoSectionInfo = data.page.videoSection
-  const pageHeroInfo = data.page.hero
 
   return (
     <Layout title={pageTitle}>
-      <div className="relative w-screen bg-gray-100">
+      <div className="relative w-screen bg-green-200">
         <PageHeroWithVideo />
         <div className="-mt-14 sm:-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-4 sm:px-12 divide-y-2 container">
           <Stats />
         </div>
       </div>
-      <PageSection width="xl" color="bg-gray-100">
-        <h2 className="text-center font-black my-8">
-          Titel van deze sectie
-        </h2>
-        <PatientStoriesSection patientStoriesImages={patientStoriesImages} />
+      <PageSection width="xl" color="bg-green-200">
+        <h2 className="text-center text-white font-black my-8">Titel van deze sectie</h2>
+        <PatientStoriesSection />
       </PageSection>
       <PageSection color="bg-white-200">
         <VideoSection {...videoSectionInfo} />
@@ -86,44 +82,6 @@ export const query = graphql`
           url
           target
           title
-        }
-      }
-      patientstoriesimages {
-        patientenverhaalA {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
-        }
-        patientenverhaalB {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
-        }
-        patientenverhaalC {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 400
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
         }
       }
       listOfProjects {

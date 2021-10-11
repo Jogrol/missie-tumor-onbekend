@@ -5,7 +5,6 @@ import { formatNumberToDots } from "../helpers/formatNumberToDots"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
 import { formatToCorrectUrl } from "../helpers/formatToCorrectUrl"
 
-
 const ProjectInfoCard = ({
   title,
   description,

@@ -14,8 +14,8 @@ interface SiteQueryPropModel {
     readonly siteMetadata: {
       readonly title: string
       readonly description: string
-      readonly author: string;
-      readonly siteUrl: string;
+      readonly author: string
+      readonly siteUrl: string
       readonly twitterDescription: string
       readonly organizaton: string
       readonly twitterSite: string
@@ -50,7 +50,6 @@ const Seo = ({ description, lang = "nl", meta = [], title }: SeoPropsModel) => {
   const organizaton = site.siteMetadata.organizaton
 
   return (
-    
     <Helmet
       htmlAttributes={{
         lang,

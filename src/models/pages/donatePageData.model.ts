@@ -5,7 +5,6 @@ import { VideoSectionDataModel } from "../videoSectionData.model"
 
 export interface DonatePageDataModel {
   readonly data: {
-  
     readonly page: {
       readonly title: string
       readonly hero: HeroDataModel
@@ -14,8 +13,8 @@ export interface DonatePageDataModel {
         readonly projectb: ProjectItemDataModel
         readonly projectc: ProjectItemDataModel
       }
-      readonly videoSection: VideoSectionDataModel;
-      readonly patientstoriesimages: PatientStoriesDataModel;
+      readonly videoSection: VideoSectionDataModel
+      readonly patientstoriesimages: PatientStoriesDataModel
     }
   }
 }

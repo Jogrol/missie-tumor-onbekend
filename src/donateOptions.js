@@ -24,4 +24,4 @@ const donateOptions = [
   },
 ]
 
-export default donateOptions;
+export default donateOptions

@@ -27,7 +27,8 @@ const Footer = (): JSX.Element => {
         <div className="col-span-1 flex flex-col justify-start pt-6 sm:pt-0">
           <CbfLogoIcon className="h-16 w-16" />
           <p className="text-xs mb-0">
-          Stichting Vrienden van Hederik is een CBF-erkend goed doel, en is ook een aangemerkt en erkent als een ANBI-instelling.
+            Stichting Vrienden van Hederik is een CBF-erkend goed doel, en is
+            ook een aangemerkt en erkent als een ANBI-instelling.
           </p>
         </div>
         <div className="col-span-1 flex flex-col pt-6 sm:pt-0">

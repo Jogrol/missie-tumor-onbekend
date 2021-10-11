@@ -38,14 +38,17 @@ const Header = (): JSX.Element => {
                   <div className="flex mt-4">
                     <InfoIcon className="h-6 w-6 mr-4" />
                     <p>
-                    Stichting Vrienden van Hederik is een CBF-erkend goed doel, en is ook een aangemerkt en erkent als een ANBI-instelling.
+                      Stichting Vrienden van Hederik is een CBF-erkend goed
+                      doel, en is ook een aangemerkt en erkent als een
+                      ANBI-instelling.
                     </p>
                   </div>
                 </div>
               </div>
               <CbfLogoIcon className="h-12 w-12" />
               <p className="hidden md:block mb-0 text-xs text-gray-400 font-thin">
-                Stichting Vrienden <br /> van Hederik <br /> is een CBF-erkend <br />
+                Stichting Vrienden <br /> van Hederik <br /> is een CBF-erkend{" "}
+                <br />
                 goed doel.
               </p>
             </div>

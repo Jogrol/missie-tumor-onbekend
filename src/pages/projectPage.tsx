@@ -30,7 +30,7 @@ const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
           <div className="sm:w-full flex justify-center bg-gray-100 px-4 sm:px:0">
             <button
               onClick={() => scrollTo("#scroll-to-donate")}
-              className="btn sm:btn-lg btn-primary w-full sm:w-auto"
+              className="btn btn-primary w-full sm:w-auto"
             >
               Doneer nu
             </button>

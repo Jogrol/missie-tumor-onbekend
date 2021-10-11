@@ -1,4 +1,4 @@
-import { DonationRequestFormNameEnum } from "../../services/donationRequestModels";
+import { DonationRequestFormNameEnum } from "../../services/donationRequestModels"
 
 export interface DonateOption {
   id: DonationRequestFormNameEnum

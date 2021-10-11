@@ -22,7 +22,7 @@ module.exports = {
         "green-500": "#40688C",
         "blue-500": "#37167F",
         "blue-600": "#003665",
-        "white-100": "#f8f8ff"
+        "white-100": "#f8f8ff",
       },
       height: {
         hero: "448px",
@@ -36,7 +36,7 @@ module.exports = {
         in: "fadeIn 12s ease-in-out infinite",
         out: "fadeIn 12s ease-in-out infinite 6s",
         polaroidHoverState: "poloroidHoverState 0.3s ease-in forwards",
-        polroidInitialState: "poloroidInitialState 0.3s ease-in"
+        polroidInitialState: "poloroidInitialState 0.3s ease-in",
       },
       keyframes: {
         fadeIn: {
@@ -48,13 +48,13 @@ module.exports = {
           "100%": { opacity: "0" },
         },
         poloroidHoverState: {
-          from: { transform: 'scale(1)' },
-          to: { transform: 'scale(1.05)' },
+          from: { transform: "scale(1)" },
+          to: { transform: "scale(1.05)" },
         },
         poloroidInitialState: {
-          from: { transform: 'scale(1.05)' },
-          to: { transform: 'scale(1)' },
-        }
+          from: { transform: "scale(1.05)" },
+          to: { transform: "scale(1)" },
+        },
       },
     },
     fontFamily: {
