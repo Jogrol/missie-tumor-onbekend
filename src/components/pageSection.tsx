@@ -20,7 +20,7 @@ const PageSection = ({
 
   return (
     <section className={`pb-16 pt-8 ${color} rounded relative`}>
-      <div className={`container px-2 w-full ${screenSize[width]} z-10`}>
+      <div className={`container px-2 px-4 w-full ${screenSize[width]} z-10`}>
         {children}
       </div>
     </section>

@@ -42,7 +42,7 @@ const DonateSection = info => {
           </div>
         </div>
       </div>
-      <p className="container sm:max-w-screen-md mt-8 italic text-sm text-center">
+      <p className="container sm:max-w-screen-md mt-8 text-sm">
         *Missie Tumor Onbekend is het samenwerkingsverband tussen Stichting
         Sterren en Stichting Vrienden van Hederik. Stichting Vrienden van
         Hederik werft namens de samenwerkende stichtingen binnen Missie Tumor
@@ -52,10 +52,9 @@ const DonateSection = info => {
         opgericht door nabestaanden van PTO-patiënten en werken samen om o.a.
         betere zorg, meer onderzoek en meer kennis en bewustwording over PTO te
         bewerkstelligen. Missie Tumor Onbekend is aangesloten bij het Platform
-        Zeldzame Kankers van de NFK.
-        <br />
+        Zeldzame Kankers van de NFK. &nbsp;
         <a href="https://www.missietumoronbekend.nl/info/">
-          Info | Missie Tumor Onbekend
+           Info | Missie Tumor Onbekend
         </a>
       </p>
     </div>

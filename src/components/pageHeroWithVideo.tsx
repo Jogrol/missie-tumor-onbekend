@@ -46,12 +46,12 @@ const PageHeroWithVideo = () => {
           </div>
           <div className="flex w-full flex-col sm:flex-row flex-wrap sm:justify-center md:flex-row gap-4 sm:gap-6">
             <button
-              className="btn btn-primary w-full sm:w-96"
+              className="btn sm:btn-lg btn-primary w-full sm:w-96"
               onClick={handleDonateNowClick}
             >
               Doneer nu
             </button>
-            <a className="btn btn-secondary w-full sm:w-96" href="#">
+            <a className="btn sm:btn-lg btn-secondary w-full sm:w-96" href="#">
               Deel nu jouw verhaal met PTO
             </a>
           </div>
