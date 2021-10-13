@@ -7,13 +7,13 @@ export interface ProjectSectionPropsModel {
 }
 
 const ProjectSection = ({
-  projects
+  projects,
 }: ProjectSectionPropsModel): JSX.Element => {
   return (
-    <ul className="md:flex gap-8 justify-center">
+    <ul className="flex flex-col lg:flex-row gap-8 justify-center">
       {projects.map((item: ProjectItemDataModel, index: number) => {
         return (
-          <li key={index} className="w-full md:w-1/3 mt-8 md:m-0 list-none">
+          <li key={index} className="w-full lg:w-1/3 mt-8 md:m-0 list-none">
             <ProjectInfoCard {...item} />
           </li>
         )

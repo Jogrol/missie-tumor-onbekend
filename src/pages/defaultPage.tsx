@@ -14,7 +14,7 @@ const DefaultPage = ({ data }: DefaultPageDataModel): JSX.Element => {
   return (
     <Layout title={pageTitle}>
       {pageHero && <PageHeroSmall {...pageHero} />}
-      <PageSection width="sm">
+      <PageSection width="md">
         <div dangerouslySetInnerHTML={{ __html: pageContent }} />
       </PageSection>
     </Layout>

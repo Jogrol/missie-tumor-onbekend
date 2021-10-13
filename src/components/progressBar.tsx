@@ -8,7 +8,7 @@ const ProgressBar = ({
   const progressPercentage = `${Math.round((progressie / target) * 100)}%`
 
   return (
-    <div className="overflow-hidden h-8 text-xs flex bg-brown-100">
+    <div className="overflow-hidden h-8 text-xs flex bg-brown-100 rounded-b-md shadow-lg">
       <div
         style={{ width: progressPercentage }}
         className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-brown-200"

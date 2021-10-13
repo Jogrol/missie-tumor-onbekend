@@ -1,8 +1,9 @@
-import { DonationRequestResultModel, DonationRequestProps, DonationApiRequestResultModel } from "./donationRequestModel"
+import {
+  DonationRequestResultModel,
+  DonationRequestProps,
+  DonationApiRequestResultModel,
+} from "./donationRequestModel"
 import createErrorResult from "./shared/createErrorResult"
-
-
-
 
 export default async function donationRequest(
   data: DonationRequestProps

@@ -1,5 +1,3 @@
-import { DonateOption } from "./donateWidget"
-
 export enum DonationTypeEnum {
   None,
   Form,

@@ -1,6 +1,6 @@
 import React from "react"
 import Menu from "./menu"
-import CbfLogoIcon from "../assets/cbfErkendColorIcon.svg"
+import CbfLogoIcon from "../assets/cbfErkendBlackIcon.svg"
 import MtoLogoIcon from "../assets/mtoLogoIcon.svg"
 import InfoIcon from "../assets/infoIcon.svg"
 import CloseIcon from "../assets/closeIcon.svg"
@@ -22,7 +22,7 @@ const Header = (): JSX.Element => {
               <Menu />
             </div>
 
-            <div className="border border-2 rounded-lg md:p-2 flex items-center order-1 md:order-3 indicator sm:ml-4">
+            <div className="border border-2 rounded-lg md:p-2 flex items-center order-1 md:order-3 indicator ml-2 sm:ml-4">
               <label
                 htmlFor="info-modal"
                 className="modal-button md:hidden indicator-item indicator-top indicator-end"
@@ -35,17 +35,20 @@ const Header = (): JSX.Element => {
                   <label className="flex justify-end" htmlFor="info-modal">
                     <CloseIcon className="h-6 w-6" />
                   </label>
-                  <div className="flex mt-4">
-                    <InfoIcon className="h-6 w-6 mr-4" />
+                  <div className="">
+                    <InfoIcon className="h-6 w-6 mb-4" />
                     <p>
-                    Stichting Vrienden van Hederik is een CBF-erkend goed doel, en is ook een aangemerkt en erkent als een ANBI-instelling.
+                      Stichting Vrienden van Hederik is een CBF-erkend goed
+                      doel, en is ook een aangemerkt en erkent als een
+                      ANBI-instelling.
                     </p>
                   </div>
                 </div>
               </div>
-              <CbfLogoIcon className="h-12 w-12" />
+              <CbfLogoIcon className="h-8 sm:h-12 w-8 sm:w-12" />
               <p className="hidden md:block mb-0 text-xs text-gray-400 font-thin">
-                Stichting Vrienden <br /> van Hederik <br /> is een CBF-erkend <br />
+                Stichting Vrienden <br /> van Hederik <br /> is een CBF-erkend{" "}
+                <br />
                 goed doel.
               </p>
             </div>

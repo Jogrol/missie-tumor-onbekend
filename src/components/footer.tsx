@@ -5,6 +5,7 @@ import FacebookIcon from "../assets/facebookIcon.svg"
 import TwitterIcon from "../assets/twitterIcon.svg"
 import LinkedinIcon from "../assets/linkedinIcon.svg"
 import InstagramIcon from "../assets/instagramIcon.svg"
+import { Link } from "gatsby"
 
 const Footer = (): JSX.Element => {
   return (
@@ -27,7 +28,8 @@ const Footer = (): JSX.Element => {
         <div className="col-span-1 flex flex-col justify-start pt-6 sm:pt-0">
           <CbfLogoIcon className="h-16 w-16" />
           <p className="text-xs mb-0">
-          Stichting Vrienden van Hederik is een CBF-erkend goed doel, en is ook een aangemerkt en erkent als een ANBI-instelling.
+            Stichting Vrienden van Hederik is een CBF-erkend goed doel, en is
+            ook een aangemerkt en erkent als een ANBI-instelling.
           </p>
         </div>
         <div className="col-span-1 flex flex-col pt-6 sm:pt-0">
@@ -73,9 +75,12 @@ const Footer = (): JSX.Element => {
           >
             Actueel
           </a>
-          <a className="link link-hover" href="/fondsenwerveringsbeleid/">
+          <Link className="link link-hover" to="/fondsenwerveringsbeleid/">
             Fondsenwerveringsbeleid
-          </a>
+          </Link>
+          <Link className="link link-hover" to="/privacy-cookie-verklaring/">
+            Privacy verklaring
+          </Link>
         </div>
         <div className="col-span-1 flex flex-col pt-6 sm:pt-0">
           <span className="footer-title">Volg ons</span>

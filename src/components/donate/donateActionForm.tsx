@@ -160,10 +160,7 @@ function DonateActionForm(): JSX.Element {
           </span>
           <span>
             {step === 1 ? (
-              <input
-                className="btn btn-primary"
-                type="submit"
-              ></input>
+              <input className="btn btn-primary" type="submit"></input>
             ) : (
               <button
                 onClick={() => setStep(step + 1)}

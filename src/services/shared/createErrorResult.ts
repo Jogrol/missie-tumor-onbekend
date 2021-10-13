@@ -1,6 +1,8 @@
-import { DonationRequestResultModel } from "../donationRequestModel";
+import { DonationRequestResultModel } from "../donationRequestModel"
 
-export default function createErrorResult(error: string): DonationRequestResultModel {
+export default function createErrorResult(
+  error: string
+): DonationRequestResultModel {
   return {
     success: false,
     errorMessage: error,

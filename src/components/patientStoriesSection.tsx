@@ -1,49 +1,55 @@
 import React from "react"
-import { PatientStoriesDataModel } from "../models/patientStoriesData.model"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-
-export interface PatientStoriesSectionPropsModel {
-  readonly patientStoriesImages: PatientStoriesDataModel[]
+import patientImageA from "../images/patientA.jpg"
+import patientImageB from "../images/patientB.jpg"
+import patientImageC from "../images/patientC.jpg"
+interface PatientStoriesContentDatasModel {
+  readonly imageSrc: string
+  readonly imageAlt: string
+  readonly discription: string
+  readonly link: string
 }
 
-const PatientStoriesSection = ({
-  patientStoriesImages,
-}: PatientStoriesSectionPropsModel): JSX.Element => {
+const PatientStoriesSection = (): JSX.Element => {
   // Moet uit nieuwe CMS komen.
   const contentData = [
     {
+      imageSrc: patientImageA,
+      imageAlt: "Afbeelding van een patient",
       discription: "Hederik heeft van niemand afscheid genomen",
       link: "https://www.missietumoronbekend.nl/hederiks-verhaal/",
     },
     {
+      imageSrc: patientImageB,
+      imageAlt: "Afbeelding van een patient",
       discription:
         "Ik hoop dat ze iets kunnen vinden met DNA onderzoek, dat is afwachten.",
       link: "https://www.missietumoronbekend.nl/patientenverhalen/",
     },
     {
+      imageSrc: patientImageC,
+      imageAlt: "Afbeelding van een patient",
       discription: "Machteloos tegen een onzichtbare vijand.",
       link: "https://www.missietumoronbekend.nl/carins-verhaal/",
     },
-  ]
+  ] as PatientStoriesContentDatasModel[]
 
   return (
     <>
       <div className="flex flex-wrap w-full gap-8 sm:gap-16 justify-center">
-        {patientStoriesImages.map((item, index) => {
-          const image = getImage(item.localFile)
+        {contentData.map((item, index) => {
           return (
-            <a key={index} href={contentData[index].link} target="_blank">
-              <div 
+            <a href={item.link} target="_blank" key={index}>
+              <div
                 className={`bg-white-100 p-4 shadow-xl w-80 origin-center animate-polaroid hover:animate-polaroidHoverState cursor-pointer`}
               >
                 <div className="flex flex-col">
-                  <GatsbyImage
-                    image={image}
-                    alt={item.altText}
+                  <img
+                    src={item.imageSrc}
+                    alt={item.imageAlt}
                     className="h-80 object-cover"
                   />
-                  <span className="my-4 text-black italic text-md">
-                    "{contentData[index].discription}"
+                  <span className="my-4 h-16 text-black italic text-md">
+                    "{item.discription}"
                   </span>
                 </div>
               </div>
@@ -51,16 +57,39 @@ const PatientStoriesSection = ({
           )
         })}
       </div>
-      <div className="w-full flex justify-center flex-col mt-8">
-        <p className="text-center text-lg container sm:w-2/3">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolo
-        </p>
+      <div>
+        <div className="container sm:max-w-screen-md py-8">
+          <p>
+            Missie Tumor Onbekend, de patiëntenorganisatie voor primaire tumor
+            onbekend (PTO) patiënten, is actief betrokken bij het PTO zorgpad en
+            werkt samen met zorgverleners in het hele land om zo de beste zorg
+            voor deze patiënten te realiseren.
+          </p>
+          <p>
+            U bent niet de enige die met PTO te maken heeft als patiënt of
+            naaste, ook al is het vaak een onbekende diagnose, kan het eenzaam
+            aanvoelen en breekt er een moeilijke tijd aan.
+          </p>
+          <p>
+            Missie Tumor Onbekend wil graag - met jouw hulp - de optimale
+            patiënten route in kaart brengen zodat we de zorg kunnen verbeteren,
+            uitdagingen kunnen aanpakken en mogelijkheden kunnen benutten. Dit
+            in samenwerking met zorgverleners, zorgverzekeraars en andere
+            betrokken stakeholders.
+          </p>
+          <p>
+            Er zijn 3 concrete projecten waar we jouw hulp nu goed bij kunnen
+            gebruiken: de komst van een landelijk PTO zorgpad, de update van de
+            klinische richtlijn over PTO en de organisatie van eerste landelijk
+            symposium over PTO in 2022.{" "}
+          </p>
+        </div>
         <div className="flex sm:justify-center">
-          <a className="btn btn-secondary w-full sm:w-96" href="#">
+          <a
+            className="btn sm:btn-lg btn-secondary w-full sm:w-96"
+            href="https://nl.research.net/r/PTO_2021"
+            target="_blank"
+          >
             Deel nu jouw verhaal met PTO
           </a>
         </div>
