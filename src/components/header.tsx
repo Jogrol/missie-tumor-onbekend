@@ -1,6 +1,6 @@
 import React from "react"
 import Menu from "./menu"
-import CbfLogoIcon from "../assets/cbfErkendColorIcon.svg"
+import CbfLogoIcon from "../assets/cbfErkendBlackIcon.svg"
 import MtoLogoIcon from "../assets/mtoLogoIcon.svg"
 import InfoIcon from "../assets/infoIcon.svg"
 import CloseIcon from "../assets/closeIcon.svg"
@@ -22,7 +22,7 @@ const Header = (): JSX.Element => {
               <Menu />
             </div>
 
-            <div className="border border-2 rounded-lg md:p-2 flex items-center order-1 md:order-3 indicator sm:ml-4">
+            <div className="border border-2 rounded-lg md:p-2 flex items-center order-1 md:order-3 indicator ml-2 sm:ml-4">
               <label
                 htmlFor="info-modal"
                 className="modal-button md:hidden indicator-item indicator-top indicator-end"
@@ -45,7 +45,7 @@ const Header = (): JSX.Element => {
                   </div>
                 </div>
               </div>
-              <CbfLogoIcon className="h-8 w-8" />
+              <CbfLogoIcon className="h-8 sm:h-12 w-8 sm:w-12" />
               <p className="hidden md:block mb-0 text-xs text-gray-400 font-thin">
                 Stichting Vrienden <br /> van Hederik <br /> is een CBF-erkend{" "}
                 <br />
