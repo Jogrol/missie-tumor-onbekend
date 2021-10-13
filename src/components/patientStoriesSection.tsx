@@ -85,7 +85,11 @@ const PatientStoriesSection = (): JSX.Element => {
           </p>
         </div>
         <div className="flex sm:justify-center">
-          <a className="btn sm:btn-lg btn-secondary w-full sm:w-96" href="#">
+          <a
+            className="btn sm:btn-lg btn-secondary w-full sm:w-96"
+            href="https://nl.research.net/r/PTO_2021"
+            target="_blank"
+          >
             Deel nu jouw verhaal met PTO
           </a>
         </div>
