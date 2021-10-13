@@ -5,6 +5,7 @@ import FacebookIcon from "../assets/facebookIcon.svg"
 import TwitterIcon from "../assets/twitterIcon.svg"
 import LinkedinIcon from "../assets/linkedinIcon.svg"
 import InstagramIcon from "../assets/instagramIcon.svg"
+import { Link } from "gatsby"
 
 const Footer = (): JSX.Element => {
   return (
@@ -74,9 +75,12 @@ const Footer = (): JSX.Element => {
           >
             Actueel
           </a>
-          <a className="link link-hover" href="/fondsenwerveringsbeleid/">
+          <Link className="link link-hover" to="/fondsenwerveringsbeleid/">
             Fondsenwerveringsbeleid
-          </a>
+          </Link>
+          <Link className="link link-hover" to="/privacy-cookie-verklaring/">
+            Privacy verklaring
+          </Link>
         </div>
         <div className="col-span-1 flex flex-col pt-6 sm:pt-0">
           <span className="footer-title">Volg ons</span>

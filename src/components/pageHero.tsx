@@ -14,7 +14,7 @@ const PageHero = ({ title, description, image }: HeroDataModel) => {
         alt="header"
         className="hero-overlay object-cover h-full w-full"
       />
-      <div className="relative px-4 pt-6 sm:pb- h-5/6 w-full z-20">
+      <div className="relative px-4 pt-6 sm:pb-4 h-5/6 w-full z-20">
         <div className="h-full pb-4 flex flex-col justify-center">
           <div className="h-2/3 flex flex-grow justify-center items-center">
             <MtoLogoWhiteIcon className="w-full md:w-2/3 object-fill" />

@@ -23,23 +23,13 @@ const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
     <Layout title={pageTitle}>
       {pageHero && <PageHeroSmall {...pageHero} />}
       <PageSection width="md" color="bg-gray-100 ">
-        {/* <div className="sm:w-full flex justify-center bg-gray-100 px-4 sm:px:0">
-          <button
-            onClick={() => scrollTo("#scroll-to-donate")}
-            className="btn btn-primary w-full sm:w-auto"
-          >
-            Doneer nu
-          </button>
-        </div> */}
-        {/* <div className="w-full"> */}
-          <GatsbyImage
-            image={pageHeroImage}
-            alt="project afbeelding"
-            className="w-full object-fill rounded-t-lg"
-          />
-        {/* </div> */}
+        <GatsbyImage
+          image={pageHeroImage}
+          alt="project afbeelding"
+          className="w-full object-fill rounded-t-lg"
+        />
         <ProgressBar {...projectProgress} />
-        <div className="">
+        <div className="mt-4">
           <div
             className="col-span-4 sm:col-span-2"
             dangerouslySetInnerHTML={{ __html: pageContent }}

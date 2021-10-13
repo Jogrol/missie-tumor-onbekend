@@ -54,7 +54,7 @@ const DonateSection = info => {
         bewerkstelligen. Missie Tumor Onbekend is aangesloten bij het Platform
         Zeldzame Kankers van de NFK. &nbsp;
         <a href="https://www.missietumoronbekend.nl/info/">
-           Info | Missie Tumor Onbekend
+          Info | Missie Tumor Onbekend
         </a>
       </p>
     </div>

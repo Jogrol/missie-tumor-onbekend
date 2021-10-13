@@ -12,6 +12,7 @@ import { DonatePageDataModel } from "../models/pages/donatePageData.model"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
 import PatientStoriesSection from "../components/patientStoriesSection"
 import PageHero from "../components/pageHero"
+import BackgroundVideo from "../assets/videos/tumorfonds.webm"
 
 const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   const pageTitle = data.page.title
@@ -19,30 +20,34 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
     (item: ProjectItemDataModel) => item.title
   )
 
-  
-
   const videoSectionInfo = data.page.videoSection
   const pageHeroInfo = data.page.hero
 
   return (
     <Layout title={pageTitle}>
-      <div className="relative w-screen bg-gray-100">
-        <PageHero {...pageHeroInfo}/>
-        {/* <PageHeroWithVideo /> */}
+      <div className="relative w-screen">
+        <PageHero {...pageHeroInfo} />
         <div className="-mt-14 sm:-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-4 sm:px-12 divide-y-2 container">
           <Stats />
         </div>
       </div>
-      <PageSection width="xl" color="bg-gray-100">
-        <h2 className="text-center font-black my-8">Deel nu jouw ervaring met PTO en verbeter de zorg</h2>
-        <PatientStoriesSection />
-      </PageSection>
       <PageSection color="bg-white-200">
         <VideoSection {...videoSectionInfo} />
       </PageSection>
+      <PageSection width="xl" color="bg-gray-100">
+        <h2 className="text-center font-black pb-16">
+          Deel nu jouw ervaring met PTO en verbeter de zorg
+        </h2>
+        <PatientStoriesSection />
+      </PageSection>
+      <PageSection color="bg-white-200">
+        <video playsInline controls className="rounded-xl">
+          <source src={BackgroundVideo} type="video/mp4" />
+        </video>
+      </PageSection>
       {projectsList && (
         <PageSection width="xl" color="bg-gray-100">
-          <h2 id="projecten" className="text-center font-black my-8">
+          <h2 id="projecten" className="text-center font-black pb-16">
             Projecten die we steunen
           </h2>
           <ProjectSection projects={projectsList} />
@@ -50,7 +55,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
       )}
       <div id="scroll-to-donate">
         <PageSection width="xl">
-          <h2 className="text-center font-black my-8">Doneer nu</h2>
+          <h2 className="text-center font-black pb-8">Doneer nu</h2>
           <DonateSection {...donateOptions} />
         </PageSection>
       </div>
