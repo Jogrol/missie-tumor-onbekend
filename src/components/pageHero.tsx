@@ -17,7 +17,7 @@ const PageHero = ({ title, description, image }: HeroDataModel) => {
       <div className="relative px-4 pt-6 sm:pb- h-5/6 w-full z-20">
         <div className="h-full pb-4 flex flex-col justify-center">
           <div className="h-2/3 flex flex-grow justify-center items-center">
-            <MtoLogoWhiteIcon className="max-h-60 object-contain text-white" />
+            <MtoLogoWhiteIcon className="w-full md:w-2/3 object-fill" />
           </div>
           <div className="flex w-full flex-col sm:flex-row flex-wrap sm:justify-center md:flex-row gap-4 sm:gap-8">
             <button

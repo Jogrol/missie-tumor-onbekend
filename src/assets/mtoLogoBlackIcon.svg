@@ -2,7 +2,7 @@
 	<title>zwart wit-ai</title>
 	<style>
 		tspan { white-space:pre }
-		.shp0 { fill:#ffffff } 
+		.shp0 { fill: #000000 } 
 		.shp1 { fill: #ffffff } 
 	</style>
 	<g id="Layer 1">
