@@ -1,6 +1,6 @@
 import React from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
-import MtoLogoWhiteIcon from "../assets/MtoLogoWhiteIcon.svg"
+import MtoLogoWhiteIcon from "../assets/mtoLogoWhiteIcon.svg"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { HeroDataModel } from "../models/heroData.model"
 
