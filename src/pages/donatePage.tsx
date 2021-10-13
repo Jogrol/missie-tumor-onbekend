@@ -10,8 +10,8 @@ import Stats from "../components/stats"
 import donateOptions from "../donateOptions"
 import { DonatePageDataModel } from "../models/pages/donatePageData.model"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
-import PageHeroWithVideo from "../components/pageHeroWithVideo"
 import PatientStoriesSection from "../components/patientStoriesSection"
+import PageHero from "../components/pageHero"
 
 const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   const pageTitle = data.page.title
@@ -19,12 +19,16 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
     (item: ProjectItemDataModel) => item.title
   )
 
+  
+
   const videoSectionInfo = data.page.videoSection
+  const pageHeroInfo = data.page.hero
 
   return (
     <Layout title={pageTitle}>
       <div className="relative w-screen bg-gray-100">
-        <PageHeroWithVideo />
+        <PageHero {...pageHeroInfo}/>
+        {/* <PageHeroWithVideo /> */}
         <div className="-mt-14 sm:-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-4 sm:px-12 divide-y-2 container">
           <Stats />
         </div>

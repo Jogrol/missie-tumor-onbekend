@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
-import BackgroundVideo from "../assets/videos/tumorfonds.mp4"
+import BackgroundVideo from "../assets/videos/tumorfonds.webm"
 import VolumeIcon from "../assets/volumeIcon.svg"
 import MuteIcon from "../assets/muteIcon.svg"
 
@@ -24,16 +24,6 @@ const PageHeroWithVideo = () => {
       </video>
       <div className="relative px-4 pt-6 sm:pb- h-5/6 w-full z-20">
         <div className="h-full container flex flex-col justify-between py-2 sm:py-10">
-          <div className="flex justify-end">
-            <button onClick={() => setIsmuted(!isMuted)}>
-              {isMuted ? (
-                <VolumeIcon className="h-8 w-8 animate-pulse" />
-              ) : (
-                <MuteIcon className="h-8 w-8 animate-pulse" />
-              )}
-            </button>
-          </div>
-          <div>
             <div className="relative">
               <p className="absolute text-white text-2xl sm:text-5xl text-center leading-normal text-center p-4 animate-in">
                 Elk jaar worden 1500 Nederlanders slachtoffer van een tumor die
