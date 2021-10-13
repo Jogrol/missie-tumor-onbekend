@@ -88,7 +88,7 @@ module.exports = {
           "accent-focus": "#2aa79b",
           "accent-content": "white",
           neutral: "#EEF0F1",
-          "neutral-focus": "#F6E1CC",
+          "neutral-focus": "#2E3844",
           "neutral-content": "#003665",
           "base-100": "#ffffff",
           "base-200": "#f9fafb",

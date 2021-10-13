@@ -35,8 +35,8 @@ const Header = (): JSX.Element => {
                   <label className="flex justify-end" htmlFor="info-modal">
                     <CloseIcon className="h-6 w-6" />
                   </label>
-                  <div className="flex mt-4">
-                    <InfoIcon className="h-6 w-6 mr-4" />
+                  <div className="">
+                    <InfoIcon className="h-6 w-6 mb-4" />
                     <p>
                       Stichting Vrienden van Hederik is een CBF-erkend goed
                       doel, en is ook een aangemerkt en erkent als een
@@ -45,7 +45,7 @@ const Header = (): JSX.Element => {
                   </div>
                 </div>
               </div>
-              <CbfLogoIcon className="h-12 w-12" />
+              <CbfLogoIcon className="h-8 w-8" />
               <p className="hidden md:block mb-0 text-xs text-gray-400 font-thin">
                 Stichting Vrienden <br /> van Hederik <br /> is een CBF-erkend{" "}
                 <br />
