@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@sendgrid/mail": "^7.4.7",
     "@types/react": "^17.0.27",
     "daisyui": "^1.14.3",
     "gatsby": "^3.14.2",
@@ -27,7 +28,6 @@
     "gatsby-transformer-sharp": "^3.14.0",
     "netlify-cli": "^3.39.4",
     "node-fetch": "^2.6.5",
-    "nodemailer": "^6.6.5",
     "postcss": "^8.3.9",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",

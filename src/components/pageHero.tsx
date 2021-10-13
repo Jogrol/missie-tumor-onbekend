@@ -26,7 +26,11 @@ const PageHero = ({ title, description, image }: HeroDataModel) => {
             >
               Doneer nu
             </button>
-            <a className="btn sm:btn-lg btn-secondary w-full sm:w-96" href="https://nl.research.net/r/PTO_2021" target="_blank">
+            <a
+              className="btn sm:btn-lg btn-secondary w-full sm:w-96"
+              href="https://nl.research.net/r/PTO_2021"
+              target="_blank"
+            >
               Deel nu jouw verhaal met PTO
             </a>
           </div>

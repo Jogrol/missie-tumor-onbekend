@@ -41,7 +41,7 @@ export default async function donateHandler(
       serviceId: process.env.PAY_SERVICE_ID,
       amount: input.otherAmount ? input.otherAmount * 100 : input.amount * 100,
       finishUrl: "https://steunmissietumoronbekend.nl/bedankt-voor-uw-donatie/",
-      ipAddress: req.connection.remoteAddress,
+      ipAddress: req.socket.remoteAddress,
       testMode: process.env.PAY_TEST_MODE,
       transaction: {
         currency: "EUR",

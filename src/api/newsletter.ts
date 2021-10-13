@@ -5,16 +5,8 @@ import {
 } from "../services/newsletterRequestModel"
 import { TestModeEnnum } from "./donate"
 
-const nodemailer = require("nodemailer")
-
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.GMAIL_ACCOUNT,
-    pass: process.env.GMAIL_PASSWORD,
-  },
-})
-
+const sendgrid = require("@sendgrid/mail")
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
 export interface MailOptionsModel {
   from: string
   to: string
@@ -28,7 +20,7 @@ const isTestEnvironment = (): boolean => {
 
 function createEmail(input: NewsletterRequestProps): MailOptionsModel {
   return {
-    from: process.env.GMAIL_ACCOUNT,
+    from: process.env.SENDGRID_AUTHORIZED_EMAIL,
     to: process.env.EMAIL_TO,
     subject: "Nieuwe inschrijving nieuwsbrief",
     html: `<div>
@@ -50,21 +42,35 @@ export default function newsletterHandler(
   req: GatsbyFunctionRequest,
   res: GatsbyFunctionResponse
 ) {
-  transporter.sendMail(
-    createEmail(req.body.value),
-    function (error: unknown, info: unknown) {
-      if (error) {
-        return res.status(500).send({
+  sendgrid
+    .send(createEmail(req.body.value))
+    .then(
+      () => {
+        res.status(200).json({
           response: {
-            success: false,
-            info: error,
+            success: true,
+            info: "Message has send",
           } as NewsletterRequestResultModel,
         })
-      } else {
-        return res.status(200).json({
-          response: { success: true, info } as NewsletterRequestResultModel,
-        })
+      },
+      error => {
+        console.error(error)
+        if (error.response) {
+          return res.status(500).send({
+            response: {
+              success: false,
+              info: error,
+            } as NewsletterRequestResultModel,
+          })
+        }
       }
-    }
-  )
+    )
+    .catch(error => {
+      return res.status(500).send({
+        response: {
+          success: false,
+          info: error,
+        } as NewsletterRequestResultModel,
+      })
+    })
 }
