@@ -10,7 +10,9 @@ import newsletterRequest from "../../services/newsletterRequest"
 import { NewsletterRequestProps } from "../../services/newsletterRequestModel"
 import DonateWidgetTotalAmount from "./donateWidgetTotalAmount"
 import donateAmountList, { DonateAmountItem } from "./donateAmountList"
+import {FormInput} from '../form/formInput'
 import { useEffect } from "react"
+import { TermEnum } from "../../services/donationTermRequestModel"
 
 const DonateWidgetForm = (): JSX.Element => {
   const {
@@ -26,7 +28,7 @@ const DonateWidgetForm = (): JSX.Element => {
   const [step, setStep] = useState<number>(0)
   const [errorMessage, setErrorMessage] = useState<string>(null)
   const watchAmount = watch(DonationRequestFormNameEnum.Amount)
-  const watchTerm = watch(DonationRequestFormNameEnum.Term, "Maandelijks")
+  const watchTerm = watch(DonationRequestFormNameEnum.Term, TermEnum.Monthly)
   const [displayedAmount, setDisplayedAmount] = useState<number>(10)
   const watchOtherAmount = watch(DonationRequestFormNameEnum.OtherAmount)
 
@@ -97,9 +99,9 @@ const DonateWidgetForm = (): JSX.Element => {
                 className="select mb-4 sm:mb-0 select-bordered select-primary select-lg w-full sm:w-96"
                 {...register(DonationRequestFormNameEnum.Term)}
               >
-                <option>Maandelijks</option>
-                <option>Per kwartaal</option>
-                <option>Jaarlijks</option>
+                <option>{TermEnum.Monthly}</option>
+                <option>{TermEnum.PerQuarter}</option>
+                <option>{TermEnum.Yearly}</option>
               </select>
             </fieldset>
             <fieldset className="flex flex-wrap items-center h-full sm:col-start-2 col-span-4 sm:col-span-3 gap-4">
@@ -151,7 +153,8 @@ const DonateWidgetForm = (): JSX.Element => {
             </div>
             <fieldset className="flex justify-center col-span-4 sm:col-span-3">
               <div className="w-full grid grid-cols-4">
-                <div className="form-control col-span-4 ">
+                {/* <FormInput type='text' addStyle="col-span-4"> */}
+                <div className="form-control col-span-4">
                   <label className="label">
                     <span className="hidden">Naam</span>
                     <input
@@ -201,14 +204,41 @@ const DonateWidgetForm = (): JSX.Element => {
                     ></input>
                   </label>
                 </div>
+                <div className="form-control col-span-4">
+                  <label className="label">
+                    <span className="hidden">IBAN</span>
+                    <input
+                      type="text"
+                      className="input input-primary input-bordered w-full"
+                      placeholder="IBAN"
+                      {...register(DonationRequestFormNameEnum.Iban, {
+                        required: true,
+                      })}
+                    ></input>
+                  </label>
+                </div>
                 <div className="form-control pt-4 col-span-4">
-                  <label className="flex-initial flex items-center justify-center px-2">
+                <label className="flex flex-row items-center px-2">
                     <input
                       type="checkbox"
-                      className="checkbox checkbox-primary mr-2"
+                      className="checkbox checkbox-primary  mr-2"
+                      {...register(DonationRequestFormNameEnum.IbanApproval)}
+                    ></input>
+                    <span className="w-11/12">
+                      Hiermee geef ik toestemming aan Missie Tumor Onbekend* om
+                      een betaalverzoek te sturen naar het door u opgegeven
+                      e-mailadres om de donatie uit te voeren.
+                    </span>
+                  </label>
+                </div>
+                <div className="form-control pt-4 col-span-4">
+                  <label className="flex items-center px-2">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-primary  mr-2"
                       {...register(DonationRequestFormNameEnum.NewsLetter)}
                     ></input>
-                    Ja, ik schrijf mij in voor de nieuwsbrief
+                    <span className="w-11/12">Ja, ik schrijf mij in voor de nieuwsbrief</span>
                   </label>
                 </div>
               </div>

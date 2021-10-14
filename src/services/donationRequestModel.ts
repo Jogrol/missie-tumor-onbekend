@@ -8,6 +8,7 @@ export type DonationRequestProps = {
   [DonationRequestFormNameEnum.Email]: string
   [DonationRequestFormNameEnum.NewsLetter]: boolean
   [DonationRequestFormNameEnum.Iban]: string
+  [DonationRequestFormNameEnum.IbanApproval]: string
 }
 
 export enum DonationRequestFormNameEnum {
@@ -16,6 +17,7 @@ export enum DonationRequestFormNameEnum {
   Amount = "amount",
   OtherAmount = "otherAmount",
   FirstName = "firstName",
+  IbanApproval = "approvalIban",
   Insertion = "insertion",
   LastName = "lastName",
   Email = "email",
