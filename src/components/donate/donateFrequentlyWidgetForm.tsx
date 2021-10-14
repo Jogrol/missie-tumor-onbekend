@@ -10,11 +10,15 @@ import { NewsletterRequestPropsModel } from "../../services/newsletterRequestMod
 import DonateWidgetSummary from "./donateWidgetSummary"
 import FormInput from "../form/formInput"
 import { useEffect } from "react"
-import { TermEnum } from "../../services/donateFrequentlyRequestModel"
+import {
+  DonateFrequentlyRequestPropsModel,
+  TermEnum,
+} from "../../services/donateFrequentlyRequestModel"
 import FormCheckbox from "../form/formCheckbox"
 import FormSelect from "../form/formSelect"
 import FormRadio from "../form/formRadio"
 import donateAmountList from "./donateAmountList"
+import donateFrequentlyRequest from "../../services/donateFrequentlyRequest"
 
 const DonateFrequentlyWidgetForm = (): JSX.Element => {
   const formMethods = useForm<DonateRequestProps>({
@@ -34,30 +38,16 @@ const DonateFrequentlyWidgetForm = (): JSX.Element => {
     DonateRequestFormNameEnum.OtherAmount
   )
 
-  async function onSubmit(data: DonateRequestProps): Promise<void> {
-    if (data.newsLetter) {
-      const newsletterProps: NewsletterRequestPropsModel = {
-        firstName: data.firstName,
-        insertion: data.insertion,
-        lastName: data.lastName,
-        email: data.email,
-        newsletter: data.newsLetter,
-      }
-
-      const newsletterResponse = await newsletterRequest(newsletterProps)
-
-      if (!newsletterResponse.success) {
-        console.error(newsletterResponse.errorMessage)
-      }
-    }
-
-    const reponseData = await donateRequest(data)
+  async function onSubmit(
+    data: DonateFrequentlyRequestPropsModel
+  ): Promise<void> {
+    console.log("onSubmit")
+    const reponseData = await donateFrequentlyRequest(data)
 
     if (!reponseData.success) {
       setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
     }
-
-    window.location.replace(reponseData.info.redirectUrl)
+    window.location.replace("/bedankt-voor-uw-donatie/")
   }
 
   useEffect(() => {

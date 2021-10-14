@@ -1,11 +1,11 @@
 import {
-  NewsletterRequestProps,
+  NewsletterRequestPropsModel,
   NewsletterRequestResultModel,
 } from "./newsletterRequestModel"
 import createErrorResult from "./shared/createErrorResult"
 
 export default async function newsletterRequest(
-  data: NewsletterRequestProps
+  data: NewsletterRequestPropsModel
 ): Promise<NewsletterRequestResultModel> {
   const requestOptions = {
     method: "POST",

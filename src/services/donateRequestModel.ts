@@ -13,15 +13,15 @@ export interface DonateRequestProps {
 
 export enum DonateRequestFormNameEnum {
   Term = "term",
-  Iban = "Iban",
+  Iban = "iban",
   Amount = "amount",
   OtherAmount = "otherAmount",
   FirstName = "firstName",
-  IbanApproval = "approvalIban",
+  IbanApproval = "ibanApproval",
   Insertion = "insertion",
   LastName = "lastName",
   Email = "email",
-  NewsLetter = "newsLetter",
+  NewsLetter = "newsletter",
 }
 
 export interface DonateApiRequestResultModel {

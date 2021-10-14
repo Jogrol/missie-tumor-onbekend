@@ -1,4 +1,4 @@
-export interface DonateFrequentlyRequestModel {
+export interface DonateFrequentlyRequestResultModel {
   success: boolean
   info?: unknown
   errorMessage?: string
@@ -16,7 +16,9 @@ export interface DonateFrequentlyRequestPropsModel {
   lastName: string
   email: string
   newsletter: boolean
+  otherAmount: string
   amount: number
   term: TermEnum
   iban: number
+  ibanApproval: boolean
 }

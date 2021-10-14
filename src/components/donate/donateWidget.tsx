@@ -4,6 +4,7 @@ import DonateWidgetTabs from "./donateWidgetTabs"
 import DonateActionForm from "./donateActionForm"
 import DonateOnceWidgetForm from "./donateOnceWidgetForm"
 import DonateFrequentlyWidgetForm from "./donateFrequentlyWidgetForm"
+import DonateEmailForm from "./donateEmailForm"
 export interface DonateWidgetPropsModel {
   donateOptions: DonateOption[]
 }
@@ -35,7 +36,8 @@ const DonateWidget = ({
     const renderDonationType = {
       [DonationTypeEnum.Form]: <DonateOnceWidgetForm />,
       [DonationTypeEnum.Frequently]: <DonateFrequentlyWidgetForm />,
-      default: "hhello",
+      [DonationTypeEnum.Email]: <DonateEmailForm />,
+      default: <DonateEmailForm />,
     }
 
     return renderDonationType[type] ?? renderDonationType.default
@@ -46,15 +48,15 @@ const DonateWidget = ({
   }, [options, currentOption])
 
   return (
-    <div className="container min-h-96 border-4 rounded-xl shadow-md sm:px-4 pt-6 pb-6">
+    <div className="container min-h-96 border-yellow-100 border-8 rounded-xl shadow-md sm:px-4 pt-6 pb-6">
       <DonateWidgetTabs tabs={options} handleClick={setActive} />
-      <div className="px-4">
+      <div className="px-4 my-6">
         <h3 key={currentOption.title} className="text-black">
           {currentOption.title}
         </h3>
         <p>{currentOption.description}</p>
       </div>
-      <div className="w-full p-4">
+      <div className="w-full p-4 mb-4">
         {renderDonationType(currentOption.donationType)}
       </div>
     </div>

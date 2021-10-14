@@ -12,13 +12,15 @@ const DonateWidgetSummary = ({
 }: DonateWidgetSummaryPropsModel): JSX.Element => {
   return (
     <div className="w-full">
-      <p className="text-xl bg-white rounded-lg flex flex-col items-center justify-center">
-        Bedrag:
+      <div className="text-xl bg-yellow-100 p-4 rounded-lg flex flex-col items-center justify-center">
+        <span>Bedrag:</span>
         <span className="ml-2 text-4xl font-black">
           {formatNumberToEuro(totalAmount)}
         </span>
-      </p>
-      {term ? <p className="text-center font-black">{term}</p> : null}
+        {term ? (
+          <span className="text-center font-black mt-2">{term}</span>
+        ) : null}
+      </div>
     </div>
   )
 }

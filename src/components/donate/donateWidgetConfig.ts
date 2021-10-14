@@ -29,13 +29,6 @@ const donateWidgetConfig = [
     donationType: DonationTypeEnum.Frequently,
   },
   {
-    title: "Overschijving",
-    description: "",
-
-    isActive: false,
-    donationType: DonationTypeEnum.None,
-  },
-  {
     title: "Nalatenschap",
     description:
       "Vindt u het belangrijk dat er ook na uw overlijden doorgewerkt wordt aan baanbrekend onderzoek en innovatie voor PTO-patiënten, op dat deze groep een grotere kans op leven krijgt? Dan kunt u Missie Tumor Onbekend opnemen in uw testament.",

@@ -29,13 +29,13 @@ const DonateOnceWidgetForm = (): JSX.Element => {
   )
 
   async function onSubmit(data: DonateRequestProps): Promise<void> {
-    if (data.newsLetter) {
+    if (data.newsletter) {
       const newsletterProps: NewsletterRequestPropsModel = {
         firstName: data.firstName,
         insertion: data.insertion,
         lastName: data.lastName,
         email: data.email,
-        newsletter: data.newsLetter,
+        newsletter: data.newsletter,
       }
 
       const newsletterResponse = await newsletterRequest(newsletterProps)
