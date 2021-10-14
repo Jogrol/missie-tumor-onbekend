@@ -16,7 +16,7 @@ import FormSelect from "../form/formSelect"
 import FormRadio from "../form/formRadio"
 import donateAmountList from "./donateAmountList"
 
-const DonateWidgetForm = (): JSX.Element => {
+const DonateFrequentlyWidgetForm = (): JSX.Element => {
   const formMethods = useForm<DonationRequestProps>({
     mode: "onBlur",
     defaultValues: { [DonationRequestFormNameEnum.Amount]: 10 },
@@ -230,4 +230,4 @@ const DonateWidgetForm = (): JSX.Element => {
   )
 }
 
-export default DonateWidgetForm
+export default DonateFrequentlyWidgetForm

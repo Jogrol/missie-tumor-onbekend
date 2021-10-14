@@ -1,7 +1,7 @@
 export enum DonationTypeEnum {
   None,
   Form,
-  FormWithEmail,
+  Frequently,
   Email,
 }
 export interface DonateOption {
@@ -26,7 +26,7 @@ const donateWidgetConfig = [
       "Wil je Missie Tumor Onbekend structureel en duurzaam ondersteunen, vul dan hier ons donatie formulier in.",
 
     isActive: false,
-    donationType: DonationTypeEnum.Email,
+    donationType: DonationTypeEnum.Frequently,
   },
   {
     title: "Overschijving",

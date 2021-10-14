@@ -3,7 +3,7 @@ import { formatNumberToEuro } from "../../helpers/formatNumberToEuro"
 
 interface DonateWidgetSummaryPropsModel {
   totalAmount: number
-  term: string
+  term?: string
 }
 
 const DonateWidgetSummary = ({
@@ -18,7 +18,7 @@ const DonateWidgetSummary = ({
           {formatNumberToEuro(totalAmount)}
         </span>
       </p>
-      <p className="text-center font-black">{term}</p>
+      {term ? <p className="text-center font-black">{term}</p> : null}
     </div>
   )
 }

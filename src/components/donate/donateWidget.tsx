@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react"
 import { DonateOption, DonationTypeEnum } from "./donateWidgetConfig"
 import DonateWidgetTabs from "./donateWidgetTabs"
 import DonateActionForm from "./donateActionForm"
-import DonateWidgetForm from "./donateWidgetForm"
+import DonateOnceWidgetForm from "./donateOnceWidgetForm"
+import DonateFrequentlyWidgetForm from "./donateFrequentlyWidgetForm"
 export interface DonateWidgetPropsModel {
   donateOptions: DonateOption[]
 }
@@ -32,7 +33,8 @@ const DonateWidget = ({
 
   function renderDonationType(type: DonationTypeEnum) {
     const renderDonationType = {
-      [DonationTypeEnum.Form]: <DonateWidgetForm />,
+      [DonationTypeEnum.Form]: <DonateOnceWidgetForm />,
+      [DonationTypeEnum.Frequently]: <DonateFrequentlyWidgetForm />,
       default: "hhello",
     }
 

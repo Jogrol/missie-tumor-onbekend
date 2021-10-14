@@ -5,9 +5,9 @@ export interface PeriodicDonateRequestResultModel {
 }
 
 export enum TermEnum {
-  Monthly = "Maandelijks",
-  PerQuarter = "Per kwartaal",
-  Yearly = "Jaarlijks",
+  Monthly = "maandelijks",
+  PerQuarter = "per kwartaal",
+  Yearly = "jaarlijks",
 }
 
 export interface DonateTermRequestModel {
