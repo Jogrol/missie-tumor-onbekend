@@ -25,8 +25,8 @@ const DonateWidgetForm = (): JSX.Element => {
   })
   const [step, setStep] = useState<number>(0)
   const [errorMessage, setErrorMessage] = useState<string>(null)
-  const [displayedAmount, setDisplayedAmount] = useState<number>(4)
   const watchAmount = watch(DonationRequestFormNameEnum.Amount)
+  const [displayedAmount, setDisplayedAmount] = useState<number>(watchAmount)
   const watchOtherAmount = watch(DonationRequestFormNameEnum.OtherAmount)
 
   async function onSubmit(data: DonationRequestProps): Promise<void> {
@@ -76,7 +76,7 @@ const DonateWidgetForm = (): JSX.Element => {
   }, [watch])
 
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       {errorMessage && (
         <p className="font-black sm:text-center text-red-800">{errorMessage}</p>
       )}
@@ -116,10 +116,8 @@ const DonateWidgetForm = (): JSX.Element => {
                       type="number"
                       className="input w-full sm:w-auto input-primary inpunt-bordered"
                       placeholder="€ xxx"
-                      //   value={displayedAmount}
-                      {...register(DonationRequestFormNameEnum.OtherAmount, {
-                        // onBlur: e => console.log(e.value),
-                      })}
+                      defaultValue="10"
+                      {...register(DonationRequestFormNameEnum.OtherAmount)}
                     />
                   </label>
                 </div>

@@ -44,7 +44,7 @@ const DonateWidget = ({
   }, [options, currentOption])
 
   return (
-    <div className="container border-4 rounded-xl shadow-md sm:px-4 pb-6">
+    <div className="container min-h-96 border-4 rounded-xl shadow-md sm:px-4 pt-6 pb-6">
       <DonateWidgetTabs tabs={options} handleClick={setActive} />
       <div className="px-4">
         <h3 key={currentOption.title} className="text-black">{currentOption.title}</h3>
