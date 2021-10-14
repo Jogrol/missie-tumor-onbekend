@@ -26,7 +26,8 @@ const DonateWidgetForm = (): JSX.Element => {
   const [step, setStep] = useState<number>(0)
   const [errorMessage, setErrorMessage] = useState<string>(null)
   const watchAmount = watch(DonationRequestFormNameEnum.Amount)
-  const [displayedAmount, setDisplayedAmount] = useState<number>(watchAmount)
+  const watchTerm = watch(DonationRequestFormNameEnum.Term, "Maandelijks")
+  const [displayedAmount, setDisplayedAmount] = useState<number>(10)
   const watchOtherAmount = watch(DonationRequestFormNameEnum.OtherAmount)
 
   async function onSubmit(data: DonationRequestProps): Promise<void> {
@@ -56,7 +57,8 @@ const DonateWidgetForm = (): JSX.Element => {
   }
 
   useEffect(() => {
-    const subscription = watch((value, { name, type }) => {
+    const subscription = watch((value, { name }) => {
+      console.log(value, name)
       if (name === DonationRequestFormNameEnum.OtherAmount) {
         setDisplayedAmount(Number(value.otherAmount))
       }
@@ -84,10 +86,23 @@ const DonateWidgetForm = (): JSX.Element => {
       <form onSubmit={handleSubmit(onSubmit)}>
         {step === 0 && (
           <div className="grid grid-cols-4 sm:gap-8">
-            <div className="col-span-4 sm:col-span-1">
-              <DonateWidgetTotalAmount total={displayedAmount} />
+            <div className="col-span-4 sm:row-span-2 sm:col-span-1 pb-4 sm:pb-0">
+              <DonateWidgetTotalAmount
+                totalAmount={displayedAmount}
+                term={watchTerm}
+              />
             </div>
-            <fieldset className="flex flex-wrap items-center h-full col-span-4 sm:col-span-3 gap-4">
+            <fieldset className="sm:col-start-2 col-span-4">
+              <select
+                className="select mb-4 sm:mb-0 select-bordered select-primary select-lg w-full sm:w-96"
+                {...register(DonationRequestFormNameEnum.Term)}
+              >
+                <option>Maandelijks</option>
+                <option>Per kwartaal</option>
+                <option>Jaarlijks</option>
+              </select>
+            </fieldset>
+            <fieldset className="flex flex-wrap items-center h-full sm:col-start-2 col-span-4 sm:col-span-3 gap-4">
               {donateAmountList.map((i: DonateAmountItem) => {
                 return (
                   <div
@@ -129,7 +144,10 @@ const DonateWidgetForm = (): JSX.Element => {
         {step === 1 && (
           <div className="grid grid-cols-4 sm:gap-8">
             <div className="col-span-4 sm:col-span-1">
-              <DonateWidgetTotalAmount total={displayedAmount} />
+              <DonateWidgetTotalAmount
+                totalAmount={displayedAmount}
+                term={watchTerm}
+              />
             </div>
             <fieldset className="flex justify-center col-span-4 sm:col-span-3">
               <div className="w-full grid grid-cols-4">
