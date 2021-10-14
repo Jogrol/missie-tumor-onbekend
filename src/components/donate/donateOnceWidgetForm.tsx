@@ -1,38 +1,36 @@
 import React, { useState } from "react"
 import { useForm, FormProvider } from "react-hook-form"
-import donationRequest from "../../services/donationRequest"
+import donateRequest from "../../services/donateRequest"
 import {
-  DonationRequestFormNameEnum,
-  DonationRequestProps,
-} from "../../services/donationRequestModel"
+  DonateRequestFormNameEnum,
+  DonateRequestProps,
+} from "../../services/donateRequestModel"
 import newsletterRequest from "../../services/newsletterRequest"
-import { NewsletterRequestProps } from "../../services/newsletterRequestModel"
+import { NewsletterRequestPropsModel } from "../../services/newsletterRequestModel"
 import DonateWidgetSummary from "./donateWidgetSummary"
 import FormInput from "../form/formInput"
 import { useEffect } from "react"
-import { TermEnum } from "../../services/donationTermRequestModel"
 import FormCheckbox from "../form/formCheckbox"
-import FormSelect from "../form/formSelect"
 import FormRadio from "../form/formRadio"
 import donateAmountList from "./donateAmountList"
 
 const DonateOnceWidgetForm = (): JSX.Element => {
-  const formMethods = useForm<DonationRequestProps>({
+  const formMethods = useForm<DonateRequestProps>({
     mode: "onBlur",
-    defaultValues: { [DonationRequestFormNameEnum.Amount]: 10 },
+    defaultValues: { [DonateRequestFormNameEnum.Amount]: 10 },
   })
 
   const [step, setStep] = useState<number>(0)
   const [errorMessage, setErrorMessage] = useState<string>(null)
-  const watchAmount = formMethods.watch(DonationRequestFormNameEnum.Amount)
+  const watchAmount = formMethods.watch(DonateRequestFormNameEnum.Amount)
   const [displayedAmount, setDisplayedAmount] = useState<number>(10)
   const watchOtherAmount = formMethods.watch(
-    DonationRequestFormNameEnum.OtherAmount
+    DonateRequestFormNameEnum.OtherAmount
   )
 
-  async function onSubmit(data: DonationRequestProps): Promise<void> {
+  async function onSubmit(data: DonateRequestProps): Promise<void> {
     if (data.newsLetter) {
-      const newsletterProps: NewsletterRequestProps = {
+      const newsletterProps: NewsletterRequestPropsModel = {
         firstName: data.firstName,
         insertion: data.insertion,
         lastName: data.lastName,
@@ -47,7 +45,7 @@ const DonateOnceWidgetForm = (): JSX.Element => {
       }
     }
 
-    const reponseData = await donationRequest(data)
+    const reponseData = await donateRequest(data)
 
     if (!reponseData.success) {
       setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
@@ -58,14 +56,14 @@ const DonateOnceWidgetForm = (): JSX.Element => {
 
   useEffect(() => {
     const subscription = formMethods.watch((value, { name }) => {
-      if (name === DonationRequestFormNameEnum.OtherAmount) {
+      if (name === DonateRequestFormNameEnum.OtherAmount) {
         setDisplayedAmount(Number(value.otherAmount))
       }
 
-      if (name === DonationRequestFormNameEnum.Amount) {
+      if (name === DonateRequestFormNameEnum.Amount) {
         if (Number(value.amount) === 0) {
           formMethods.setValue(
-            DonationRequestFormNameEnum.OtherAmount,
+            DonateRequestFormNameEnum.OtherAmount,
             value.amount,
             {
               shouldValidate: true,
@@ -92,14 +90,12 @@ const DonateOnceWidgetForm = (): JSX.Element => {
           {step === 0 && (
             <div className="grid grid-cols-4 sm:gap-8">
               <div className="col-span-4 sm:row-span-2 sm:col-span-1 pb-4 sm:pb-0">
-                <DonateWidgetSummary
-                  totalAmount={displayedAmount}
-                />
+                <DonateWidgetSummary totalAmount={displayedAmount} />
               </div>
               <fieldset className="flex flex-wrap items-center h-full sm:col-start-2 col-span-4 sm:col-span-3 gap-4">
                 <FormRadio
                   addStyle="bg-white border border-brown-200 rounded-md px-4 w-full sm:w-auto"
-                  registerName={DonationRequestFormNameEnum.Amount}
+                  registerName={DonateRequestFormNameEnum.Amount}
                   options={donateAmountList}
                 />
                 {Number(watchAmount) === 0 && (
@@ -108,7 +104,7 @@ const DonateOnceWidgetForm = (): JSX.Element => {
                     addStyle="w-full sm:w-auto"
                     label="Ander bedrag"
                     placeholder="€ xxx"
-                    registerName={DonationRequestFormNameEnum.OtherAmount}
+                    registerName={DonateRequestFormNameEnum.OtherAmount}
                   />
                 )}
               </fieldset>
@@ -118,9 +114,7 @@ const DonateOnceWidgetForm = (): JSX.Element => {
           {step === 1 && (
             <div className="grid grid-cols-4 sm:gap-8">
               <div className="col-span-4 sm:col-span-1">
-                <DonateWidgetSummary
-                  totalAmount={displayedAmount}
-                />
+                <DonateWidgetSummary totalAmount={displayedAmount} />
               </div>
               <fieldset className="flex justify-center col-span-4 sm:col-span-3">
                 <div className="w-full grid grid-cols-4">
@@ -129,21 +123,21 @@ const DonateOnceWidgetForm = (): JSX.Element => {
                     addStyle="col-span-4"
                     label="Naam"
                     placeholder="Naam"
-                    registerName={DonationRequestFormNameEnum.FirstName}
+                    registerName={DonateRequestFormNameEnum.FirstName}
                     required={true}
                   />
                   <FormInput
                     type="text"
                     label="Tussenvoegsel"
                     placeholder="Tussenvoegsel"
-                    registerName={DonationRequestFormNameEnum.Insertion}
+                    registerName={DonateRequestFormNameEnum.Insertion}
                   />
                   <FormInput
                     type="text"
                     label="Achternaam"
                     addStyle="col-span-3"
                     placeholder="Achternaam"
-                    registerName={DonationRequestFormNameEnum.LastName}
+                    registerName={DonateRequestFormNameEnum.LastName}
                     required={true}
                   />
                   <FormInput
@@ -151,13 +145,13 @@ const DonateOnceWidgetForm = (): JSX.Element => {
                     label="Email"
                     addStyle="col-span-4"
                     placeholder="Email"
-                    registerName={DonationRequestFormNameEnum.Email}
+                    registerName={DonateRequestFormNameEnum.Email}
                     required={true}
                   />
                   <FormCheckbox
                     addStyle="pt-4 col-span-4"
                     label="Ja, ik schrijf mij in voor de nieuwsbrief."
-                    registerName={DonationRequestFormNameEnum.NewsLetter}
+                    registerName={DonateRequestFormNameEnum.NewsLetter}
                   />
                 </div>
               </fieldset>

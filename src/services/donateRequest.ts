@@ -1,13 +1,13 @@
 import {
-  DonationRequestResultModel,
-  DonationRequestProps,
-  DonationApiRequestResultModel,
-} from "./donationRequestModel"
+  DonateRequestResultModel,
+  DonateRequestProps,
+  DonateApiRequestResultModel,
+} from "./donateRequestModel"
 import createErrorResult from "./shared/createErrorResult"
 
-export default async function donationRequest(
-  data: DonationRequestProps
-): Promise<DonationRequestResultModel> {
+export default async function donateRequest(
+  data: DonateRequestProps
+): Promise<DonateRequestResultModel> {
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -17,7 +17,7 @@ export default async function donationRequest(
   try {
     const response = await fetch("/api/donate", requestOptions)
 
-    const data: DonationApiRequestResultModel = await response.json()
+    const data: DonateApiRequestResultModel = await response.json()
 
     if (!data.transaction) {
       return createErrorResult("No redirectUrl found")

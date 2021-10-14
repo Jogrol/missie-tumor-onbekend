@@ -4,7 +4,7 @@ export interface NewsletterRequestResultModel {
   errorMessage?: string
 }
 
-export interface NewsletterRequestProps {
+export interface NewsletterRequestPropsModel {
   firstName: string
   insertion: string
   lastName: string

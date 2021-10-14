@@ -1,4 +1,4 @@
-export interface PeriodicDonateRequestResultModel {
+export interface DonateFrequentlyRequestModel {
   success: boolean
   info?: unknown
   errorMessage?: string
@@ -10,7 +10,7 @@ export enum TermEnum {
   Yearly = "jaarlijks",
 }
 
-export interface DonateTermRequestModel {
+export interface DonateFrequentlyRequestPropsModel {
   firstName: string
   insertion: string
   lastName: string
