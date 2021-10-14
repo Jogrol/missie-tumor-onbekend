@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import { useForm } from "react-hook-form"
-import { formatNumberToEuro } from "../../helpers/formatNumberToEuro"
+import { useForm, FormProvider } from "react-hook-form"
 import donationRequest from "../../services/donationRequest"
 import {
   DonationRequestFormNameEnum,
@@ -8,29 +7,32 @@ import {
 } from "../../services/donationRequestModel"
 import newsletterRequest from "../../services/newsletterRequest"
 import { NewsletterRequestProps } from "../../services/newsletterRequestModel"
-import DonateWidgetTotalAmount from "./donateWidgetTotalAmount"
-import donateAmountList, { DonateAmountItem } from "./donateAmountList"
-import {FormInput} from '../form/formInput'
+import DonateWidgetSummary from "./donateWidgetSummary"
+import FormInput from "../form/formInput"
 import { useEffect } from "react"
 import { TermEnum } from "../../services/donationTermRequestModel"
+import FormCheckbox from "../form/formCheckbox"
+import FormSelect from "../form/formSelect"
+import FormRadio from "../form/formRadio"
+import donateAmountList from "./donateAmountList"
 
 const DonateWidgetForm = (): JSX.Element => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setValue,
-    formState: { errors },
-  } = useForm<DonationRequestProps>({
+  const formMethods = useForm<DonationRequestProps>({
     mode: "onBlur",
     defaultValues: { [DonationRequestFormNameEnum.Amount]: 10 },
   })
+
   const [step, setStep] = useState<number>(0)
   const [errorMessage, setErrorMessage] = useState<string>(null)
-  const watchAmount = watch(DonationRequestFormNameEnum.Amount)
-  const watchTerm = watch(DonationRequestFormNameEnum.Term, TermEnum.Monthly)
+  const watchAmount = formMethods.watch(DonationRequestFormNameEnum.Amount)
+  const watchTerm = formMethods.watch(
+    DonationRequestFormNameEnum.Term,
+    TermEnum.Monthly
+  )
   const [displayedAmount, setDisplayedAmount] = useState<number>(10)
-  const watchOtherAmount = watch(DonationRequestFormNameEnum.OtherAmount)
+  const watchOtherAmount = formMethods.watch(
+    DonationRequestFormNameEnum.OtherAmount
+  )
 
   async function onSubmit(data: DonationRequestProps): Promise<void> {
     if (data.newsLetter) {
@@ -59,17 +61,20 @@ const DonateWidgetForm = (): JSX.Element => {
   }
 
   useEffect(() => {
-    const subscription = watch((value, { name }) => {
-      console.log(value, name)
+    const subscription = formMethods.watch((value, { name }) => {
       if (name === DonationRequestFormNameEnum.OtherAmount) {
         setDisplayedAmount(Number(value.otherAmount))
       }
 
       if (name === DonationRequestFormNameEnum.Amount) {
         if (Number(value.amount) === 0) {
-          setValue(DonationRequestFormNameEnum.OtherAmount, value.amount, {
-            shouldValidate: true,
-          })
+          formMethods.setValue(
+            DonationRequestFormNameEnum.OtherAmount,
+            value.amount,
+            {
+              shouldValidate: true,
+            }
+          )
           setDisplayedAmount(Number(watchOtherAmount))
         }
         setDisplayedAmount(Number(value.amount))
@@ -77,204 +82,150 @@ const DonateWidgetForm = (): JSX.Element => {
     })
 
     return () => subscription.unsubscribe()
-  }, [watch])
+  }, [formMethods.watch])
 
   return (
     <div className="w-full h-full">
-      {errorMessage && (
-        <p className="font-black sm:text-center text-red-800">{errorMessage}</p>
-      )}
-
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {step === 0 && (
-          <div className="grid grid-cols-4 sm:gap-8">
-            <div className="col-span-4 sm:row-span-2 sm:col-span-1 pb-4 sm:pb-0">
-              <DonateWidgetTotalAmount
-                totalAmount={displayedAmount}
-                term={watchTerm}
-              />
-            </div>
-            <fieldset className="sm:col-start-2 col-span-4">
-              <select
-                className="select mb-4 sm:mb-0 select-bordered select-primary select-lg w-full sm:w-96"
-                {...register(DonationRequestFormNameEnum.Term)}
-              >
-                <option>{TermEnum.Monthly}</option>
-                <option>{TermEnum.PerQuarter}</option>
-                <option>{TermEnum.Yearly}</option>
-              </select>
-            </fieldset>
-            <fieldset className="flex flex-wrap items-center h-full sm:col-start-2 col-span-4 sm:col-span-3 gap-4">
-              {donateAmountList.map((i: DonateAmountItem) => {
-                return (
-                  <div
-                    className="form-control bg-white border border-brown-200 rounded-md px-4 w-full sm:w-auto"
-                    key={i.value}
-                  >
-                    <label className="cursor-pointer label">
-                      <input
-                        type="radio"
-                        className="radio radio-primary radio-lg"
-                        name={i.value}
-                        value={i.value}
-                        {...register(i.id)}
-                      />
-                      <span className="label-text text-xl ml-4">
-                        {i.label ? i.label : formatNumberToEuro(i.value)}
-                      </span>
-                    </label>
-                  </div>
-                )
-              })}
-              {Number(watchAmount) === 0 && (
-                <div className="form-control w-full sm:w-auto">
-                  <label className="label">
-                    <input
-                      type="number"
-                      className="input w-full sm:w-auto input-primary inpunt-bordered"
-                      placeholder="€ xxx"
-                      defaultValue="10"
-                      {...register(DonationRequestFormNameEnum.OtherAmount)}
-                    />
-                  </label>
-                </div>
-              )}
-            </fieldset>
-          </div>
+      <FormProvider {...formMethods}>
+        {errorMessage && (
+          <p className="font-black sm:text-center text-red-800">
+            {errorMessage}
+          </p>
         )}
-
-        {step === 1 && (
-          <div className="grid grid-cols-4 sm:gap-8">
-            <div className="col-span-4 sm:col-span-1">
-              <DonateWidgetTotalAmount
-                totalAmount={displayedAmount}
-                term={watchTerm}
-              />
-            </div>
-            <fieldset className="flex justify-center col-span-4 sm:col-span-3">
-              <div className="w-full grid grid-cols-4">
-                {/* <FormInput type='text' addStyle="col-span-4"> */}
-                <div className="form-control col-span-4">
-                  <label className="label">
-                    <span className="hidden">Naam</span>
-                    <input
-                      type="text"
-                      className="input input-primary input-bordered w-full"
-                      placeholder="Naam"
-                      {...register(DonationRequestFormNameEnum.FirstName, {
-                        required: true,
-                      })}
-                    ></input>
-                  </label>
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="hidden">tussenvoegsel</span>
-                    <input
-                      type="text"
-                      className="input input-primary input-bordered w-full"
-                      placeholder="tussenvoegsel"
-                      {...register(DonationRequestFormNameEnum.Insertion)}
-                    ></input>
-                  </label>
-                </div>
-                <div className="form-control col-span-3">
-                  <label className="label">
-                    <span className="hidden">Achternaam</span>
-                    <input
-                      type="text"
-                      className="input input-primary input-bordered w-full"
-                      placeholder="Achternaam"
-                      {...register(DonationRequestFormNameEnum.LastName, {
-                        required: true,
-                      })}
-                    ></input>
-                  </label>
-                </div>
-                <div className="form-control col-span-4">
-                  <label className="label">
-                    <span className="hidden">Email</span>
-                    <input
-                      type="email"
-                      className="input input-primary input-bordered w-full"
-                      placeholder="Email"
-                      {...register(DonationRequestFormNameEnum.Email, {
-                        required: true,
-                      })}
-                    ></input>
-                  </label>
-                </div>
-                <div className="form-control col-span-4">
-                  <label className="label">
-                    <span className="hidden">IBAN</span>
-                    <input
-                      type="text"
-                      className="input input-primary input-bordered w-full"
-                      placeholder="IBAN"
-                      {...register(DonationRequestFormNameEnum.Iban, {
-                        required: true,
-                      })}
-                    ></input>
-                  </label>
-                </div>
-                <div className="form-control pt-4 col-span-4">
-                <label className="flex flex-row items-center px-2">
-                    <input
-                      type="checkbox"
-                      className="checkbox checkbox-primary  mr-2"
-                      {...register(DonationRequestFormNameEnum.IbanApproval)}
-                    ></input>
-                    <span className="w-11/12">
-                      Hiermee geef ik toestemming aan Missie Tumor Onbekend* om
-                      een betaalverzoek te sturen naar het door u opgegeven
-                      e-mailadres om de donatie uit te voeren.
-                    </span>
-                  </label>
-                </div>
-                <div className="form-control pt-4 col-span-4">
-                  <label className="flex items-center px-2">
-                    <input
-                      type="checkbox"
-                      className="checkbox checkbox-primary  mr-2"
-                      {...register(DonationRequestFormNameEnum.NewsLetter)}
-                    ></input>
-                    <span className="w-11/12">Ja, ik schrijf mij in voor de nieuwsbrief</span>
-                  </label>
-                </div>
+        <form onSubmit={formMethods.handleSubmit(onSubmit)}>
+          {step === 0 && (
+            <div className="grid grid-cols-4 sm:gap-8">
+              <div className="col-span-4 sm:row-span-2 sm:col-span-1 pb-4 sm:pb-0">
+                <DonateWidgetSummary
+                  totalAmount={displayedAmount}
+                  term={watchTerm}
+                />
               </div>
-            </fieldset>
-          </div>
-        )}
+              <FormSelect
+                addStyle="sm:col-start-2 col-span-4"
+                label="Periode betaling"
+                registerName={DonationRequestFormNameEnum.Term}
+                options={[
+                  TermEnum.Monthly,
+                  TermEnum.PerQuarter,
+                  TermEnum.Yearly,
+                ]}
+              />
+              <fieldset className="flex flex-wrap items-center h-full sm:col-start-2 col-span-4 sm:col-span-3 gap-4">
+                <FormRadio
+                  addStyle="bg-white border border-brown-200 rounded-md px-4 w-full sm:w-auto"
+                  registerName={DonationRequestFormNameEnum.Amount}
+                  options={donateAmountList}
+                />
+                {Number(watchAmount) === 0 && (
+                  <FormInput
+                    type="number"
+                    addStyle="w-full sm:w-auto"
+                    label="Ander bedrag"
+                    placeholder="€ xxx"
+                    registerName={DonationRequestFormNameEnum.OtherAmount}
+                  />
+                )}
+              </fieldset>
+            </div>
+          )}
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-between mt-4 w-full items-center">
-          <span>
-            {step > 0 && (
-              <button
-                onClick={() => setStep(step - 1)}
-                className="link link-primary ml-2"
-              >
-                Terug
-              </button>
-            )}
-          </span>
-          <span className="w-full flex justify-end">
-            {step === 1 ? (
-              <input
-                className="btn btn-primary w-full sm:w-auto"
-                type="submit"
-              ></input>
-            ) : (
-              <button
-                disabled={displayedAmount ? false : true}
-                onClick={() => setStep(step + 1)}
-                className="btn btn-primary w-full sm:w-auto"
-              >
-                Ga verder
-              </button>
-            )}
-          </span>
-        </div>
-      </form>
+          {step === 1 && (
+            <div className="grid grid-cols-4 sm:gap-8">
+              <div className="col-span-4 sm:col-span-1">
+                <DonateWidgetSummary
+                  totalAmount={displayedAmount}
+                  term={watchTerm}
+                />
+              </div>
+              <fieldset className="flex justify-center col-span-4 sm:col-span-3">
+                <div className="w-full grid grid-cols-4">
+                  <FormInput
+                    type="text"
+                    addStyle="col-span-4"
+                    label="Naam"
+                    placeholder="Naam"
+                    registerName={DonationRequestFormNameEnum.FirstName}
+                    required={true}
+                  />
+                  <FormInput
+                    type="text"
+                    label="Tussenvoegsel"
+                    placeholder="Tussenvoegsel"
+                    registerName={DonationRequestFormNameEnum.Insertion}
+                  />
+                  <FormInput
+                    type="text"
+                    label="Achternaam"
+                    addStyle="col-span-3"
+                    placeholder="Achternaam"
+                    registerName={DonationRequestFormNameEnum.LastName}
+                    required={true}
+                  />
+                  <FormInput
+                    type="text"
+                    label="Email"
+                    addStyle="col-span-4"
+                    placeholder="Email"
+                    registerName={DonationRequestFormNameEnum.Email}
+                    required={true}
+                  />
+                  <FormInput
+                    type="text"
+                    label="Iban"
+                    addStyle="col-span-4"
+                    placeholder="Iban"
+                    registerName={DonationRequestFormNameEnum.Iban}
+                    required={true}
+                  />
+                  <FormCheckbox
+                    addStyle="pt-4 col-span-4"
+                    label="Hiermee geef ik toestemming aan Missie Tumor Onbekend*
+                    om een betaalverzoek te sturen naar het door u opgegeven
+                    e-mailadres om de donatie uit te voeren."
+                    registerName={DonationRequestFormNameEnum.IbanApproval}
+                    required={true}
+                  />
+                  <FormCheckbox
+                    addStyle="pt-4 col-span-4"
+                    label="Ja, ik schrijf mij in voor de nieuwsbrief."
+                    registerName={DonationRequestFormNameEnum.NewsLetter}
+                  />
+                </div>
+              </fieldset>
+            </div>
+          )}
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-between mt-4 w-full items-center">
+            <span>
+              {step > 0 && (
+                <button
+                  onClick={() => setStep(step - 1)}
+                  className="link link-primary ml-2"
+                >
+                  Terug
+                </button>
+              )}
+            </span>
+            <span className="w-full flex justify-end">
+              {step === 1 ? (
+                <input
+                  className="btn btn-primary w-full sm:w-auto"
+                  type="submit"
+                ></input>
+              ) : (
+                <button
+                  disabled={displayedAmount ? false : true}
+                  onClick={() => setStep(step + 1)}
+                  className="btn btn-primary w-full sm:w-auto"
+                >
+                  Ga verder
+                </button>
+              )}
+            </span>
+          </div>
+        </form>
+      </FormProvider>
     </div>
   )
 }

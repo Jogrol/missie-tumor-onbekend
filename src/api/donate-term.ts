@@ -20,7 +20,7 @@ export interface MailOptionsModel {
   html: string
 }
 
-const isTestEnvironment = () : boolean => {
+const isTestEnvironment = (): boolean => {
   return process.env.PAY_TEST_MODE === TestModeEnnum.True ? true : false
 }
 
@@ -30,7 +30,10 @@ function createEmail(input: DonateTermRequestModel): MailOptionsModel {
     to: process.env.EMAIL_TO,
     subject: "Nieuwe periodieke donatie",
     html: `<div>
-              ${isTestEnvironment && '<h5>Let op: Deze aanvraag komt vanuit de test omgeving</h5>'}
+              ${
+                isTestEnvironment &&
+                "<h5>Let op: Deze aanvraag komt vanuit de test omgeving</h5>"
+              }
               <h2>Nieuwe periodieke donatie</h2>
               <p>via steunmissietumoronbekend.nl<p>
               <p><b>Voornaam:</b> ${input.firstName}</p>
@@ -48,26 +51,20 @@ export default function donateTerm(
   req: GatsbyFunctionRequest,
   res: GatsbyFunctionResponse
 ) {
-
   transporter.sendMail(
     createEmail(req.body.value),
     function (error: unknown, info: unknown) {
       if (error) {
-      
-        return res
-          .status(500)
-          .send({
-            response: {
-              success: false,
-              info: error,
-            } as NewsletterRequestResultModel,
-          })
+        return res.status(500).send({
+          response: {
+            success: false,
+            info: error,
+          } as NewsletterRequestResultModel,
+        })
       } else {
-        return res
-          .status(200)
-          .json({
-            response: { success: true, info } as NewsletterRequestResultModel,
-          })
+        return res.status(200).json({
+          response: { success: true, info } as NewsletterRequestResultModel,
+        })
       }
     }
   )

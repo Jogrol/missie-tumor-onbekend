@@ -1,16 +1,15 @@
 import React from "react"
 import { formatNumberToEuro } from "../../helpers/formatNumberToEuro"
-import { DonationRequestFormNameEnum } from "../../services/donationRequestModel"
 
-interface DonateWidgetTotalAmountPropsModel {
+interface DonateWidgetSummaryPropsModel {
   totalAmount: number
   term: string
 }
 
-const DonateWidgetTotalAmount = ({
+const DonateWidgetSummary = ({
   totalAmount,
   term,
-}: DonateWidgetTotalAmountPropsModel): JSX.Element => {
+}: DonateWidgetSummaryPropsModel): JSX.Element => {
   return (
     <div className="w-full">
       <p className="text-xl bg-white rounded-lg flex flex-col items-center justify-center">
@@ -24,4 +23,4 @@ const DonateWidgetTotalAmount = ({
   )
 }
 
-export default DonateWidgetTotalAmount
+export default DonateWidgetSummary

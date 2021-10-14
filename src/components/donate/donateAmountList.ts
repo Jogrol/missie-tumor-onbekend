@@ -1,40 +1,39 @@
+import { formatNumberToEuro } from "../../helpers/formatNumberToEuro"
 import { DonationRequestFormNameEnum } from "../../services/donationRequestModel"
 
 export interface DonateAmountItem {
-  id: DonationRequestFormNameEnum
   value: number
-  label?: string
+  label: string
 }
 
 const donateAmountList = [
   {
     value: 10,
-    id: DonationRequestFormNameEnum.Amount,
+    label: formatNumberToEuro(10),
   },
   {
     value: 20,
-    id: DonationRequestFormNameEnum.Amount,
+    label: formatNumberToEuro(20),
   },
   {
     value: 50,
-    id: DonationRequestFormNameEnum.Amount,
+    label: formatNumberToEuro(50),
   },
   {
     value: 100,
-    id: DonationRequestFormNameEnum.Amount,
+    label: formatNumberToEuro(100),
   },
   {
     value: 150,
-    id: DonationRequestFormNameEnum.Amount,
+    label: formatNumberToEuro(150),
   },
   {
     value: 200,
-    id: DonationRequestFormNameEnum.Amount,
+    label: formatNumberToEuro(200),
   },
   {
     value: 0,
     label: "Anders",
-    id: DonationRequestFormNameEnum.Amount,
   },
 ] as DonateAmountItem[]
 

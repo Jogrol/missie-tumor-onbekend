@@ -11,7 +11,6 @@ import newsletterRequest, {
 } from "../../services/newsletterRequest"
 import donateAmountList, { DonateAmountItem } from "./donateAmountList"
 
-
 function DonateActionForm(): JSX.Element {
   const {
     register,

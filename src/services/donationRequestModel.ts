@@ -13,7 +13,7 @@ export type DonationRequestProps = {
 
 export enum DonationRequestFormNameEnum {
   Term = "term",
-  Iban = 'Iban',
+  Iban = "Iban",
   Amount = "amount",
   OtherAmount = "otherAmount",
   FirstName = "firstName",

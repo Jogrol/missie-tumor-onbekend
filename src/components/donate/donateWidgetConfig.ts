@@ -7,7 +7,7 @@ export enum DonationTypeEnum {
 export interface DonateOption {
   title: string
   description: string
-  isActive: boolean,
+  isActive: boolean
   donationType: DonationTypeEnum
 }
 
@@ -26,7 +26,7 @@ const donateWidgetConfig = [
       "Wil je Missie Tumor Onbekend structureel en duurzaam ondersteunen, vul dan hier ons donatie formulier in.",
 
     isActive: false,
-    donationType: DonationTypeEnum.Email
+    donationType: DonationTypeEnum.Email,
   },
   {
     title: "Overschijving",
