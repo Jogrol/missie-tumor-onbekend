@@ -26,7 +26,7 @@ const FormInput = ({
         <span className="hidden">{label}</span>
         <input
           type={type}
-          className="input input-primary input-bordered w-full"
+          className="input input-primary input-lg input-bordered w-full"
           placeholder={placeholder}
           {...register(registerName, {
             required: required,

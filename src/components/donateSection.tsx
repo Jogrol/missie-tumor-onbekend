@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import React, { useState } from "react"
 // import { Link } from "@reach/router"
 // import DonateOptionInfo from "./donate/donateOptionInfo"
@@ -9,33 +10,11 @@ const DonateSection = info => {
   return (
     <div>
       <h2 className="text-center pb-12">Doneer nu</h2>
-      <DonateWidget donateOptions={donateWidgetConfig} />
-      {/* <p className="container sm:max-w-screen-md mb-4">
+      <p className="container sm:max-w-screen-md mb-4">
         Informeer u <Link to="/fondsenwerveringsbeleid/">hier</Link> over ons
         beleid ten aanzien van het werven van fondsen, donateurs en sponsoring.
-      </p> */}
-      {/* <div className="flex flex-wrap w-full bg-brown-100 rounded-lg shadow-md h-200">
-        <div className="w-full sm:w-1/3">
-          <div className="p-4">
-            {infoArray.map((item, index) => {
-              return (
-                <DonateOptionTab
-                  key={index}
-                  {...item}
-                  onClickFn={() => handleClick(item)}
-                />
-              )
-            })}
-          </div>
-        </div>
-        <div className="w-full sm:w-2/3">
-          <div className="w-full h-full">
-            <DonateOptionInfo {...currentOption} />
-          </div>
-        </div>
-      </div> */}
-      {/* <p className="container sm:max-w-screen-md mt-8 italic text-sm text-center">
-      </div>
+      </p>
+      <DonateWidget donateOptions={donateWidgetConfig} />
       <p className="container sm:max-w-screen-md mt-8 text-sm">
         *Missie Tumor Onbekend is het samenwerkingsverband tussen Stichting
         Sterren en Stichting Vrienden van Hederik. Stichting Vrienden van
@@ -50,7 +29,7 @@ const DonateSection = info => {
         <a href="https://www.missietumoronbekend.nl/info/">
           Info | Missie Tumor Onbekend
         </a>
-      </p> */}
+      </p>
     </div>
   )
 }

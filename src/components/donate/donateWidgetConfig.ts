@@ -37,7 +37,7 @@ const donateWidgetConfig = [
     donationType: DonationTypeEnum.Email,
   },
   {
-    title: "Kom zelf in actie / organiseer zelf een collecte",
+    title: "Kom zelf in actie",
     description:
       "Wil jij ook in actie komen voor Missie Tumor Onbekend? Dat kan, neem hiervoor contact met ons op via het onderstaande e-mailadres. Bijvoorbeeld als je een leuke sportieve of andersoortige uitdaging wil aangaan en daarvoor donaties voor Missie Tumor Onbekend wil ophalen. Wij zullen je ondersteunen met informatie en materialen over onze Missie om jouw actie tot een succes te maken.",
     isActive: false,

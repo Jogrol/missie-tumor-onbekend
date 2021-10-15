@@ -16,7 +16,7 @@ const DonateWidgetTabs = ({
         return (
           <button
             key={index}
-            className={`tab tab-lg w-full sm:w-auto h-full ${
+            className={`tab tab-lg w-full sm:w-auto ${
               i.isActive ? "tab-active" : ""
             }`}
             onClick={() => handleClick(index)}
