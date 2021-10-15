@@ -19,6 +19,7 @@ import FormSelect from "../form/formSelect"
 import FormRadio from "../form/formRadio"
 import donateAmountList from "./donateAmountList"
 import donateFrequentlyRequest from "../../services/donateFrequentlyRequest"
+import Loader from "../loader"
 
 const DonateFrequentlyWidgetForm = (): JSX.Element => {
   const formMethods = useForm<DonateRequestProps>({
@@ -37,16 +38,24 @@ const DonateFrequentlyWidgetForm = (): JSX.Element => {
   const watchOtherAmount = formMethods.watch(
     DonateRequestFormNameEnum.OtherAmount
   )
+  const [isLoading, setIsloading] = useState<boolean>(false)
 
   async function onSubmit(
     data: DonateFrequentlyRequestPropsModel
   ): Promise<void> {
-    console.log("onSubmit")
+    setErrorMessage(null)
+    setIsloading(true)
     const reponseData = await donateFrequentlyRequest(data)
 
-    if (!reponseData.success) {
+    console.log(reponseData)
+
+    setIsloading(false)
+
+    // Check interface later
+    if (!reponseData.response.success) {
       setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
     }
+
     window.location.replace("/bedankt-voor-uw-donatie/")
   }
 
@@ -75,7 +84,8 @@ const DonateFrequentlyWidgetForm = (): JSX.Element => {
   }, [formMethods.watch])
 
   return (
-    <div className="w-full h-full">
+    <div className="relative w-full h-full">
+      <Loader isLoading={isLoading} />
       <FormProvider {...formMethods}>
         {errorMessage && (
           <p className="font-black sm:text-center text-red-800">

@@ -13,6 +13,7 @@ import { useEffect } from "react"
 import FormCheckbox from "../form/formCheckbox"
 import FormRadio from "../form/formRadio"
 import donateAmountList from "./donateAmountList"
+import Loader from "../loader"
 
 const DonateOnceWidgetForm = (): JSX.Element => {
   const formMethods = useForm<DonateRequestProps>({
@@ -24,11 +25,14 @@ const DonateOnceWidgetForm = (): JSX.Element => {
   const [errorMessage, setErrorMessage] = useState<string>(null)
   const watchAmount = formMethods.watch(DonateRequestFormNameEnum.Amount)
   const [displayedAmount, setDisplayedAmount] = useState<number>(10)
+  const [isLoading, setIsloading] = useState<boolean>(false)
   const watchOtherAmount = formMethods.watch(
     DonateRequestFormNameEnum.OtherAmount
   )
 
   async function onSubmit(data: DonateRequestProps): Promise<void> {
+    setErrorMessage(false)
+    setIsloading(true)
     if (data.newsletter) {
       const newsletterProps: NewsletterRequestPropsModel = {
         firstName: data.firstName,
@@ -47,10 +51,10 @@ const DonateOnceWidgetForm = (): JSX.Element => {
 
     const reponseData = await donateRequest(data)
 
+    setIsloading(false)
     if (!reponseData.success) {
       setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
     }
-
     window.location.replace(reponseData.info.redirectUrl)
   }
 
@@ -79,7 +83,8 @@ const DonateOnceWidgetForm = (): JSX.Element => {
   }, [formMethods.watch])
 
   return (
-    <div className="w-full h-full">
+    <div className="relative w-full h-full">
+      <Loader isLoading={isLoading} />
       <FormProvider {...formMethods}>
         {errorMessage && (
           <p className="font-black sm:text-center text-red-800">
