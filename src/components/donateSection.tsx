@@ -9,7 +9,6 @@ import donateWidgetConfig from "./donate/donateWidgetConfig"
 const DonateSection = info => {
   return (
     <div>
-      <h2 className="text-center pb-12">Doneer nu</h2>
       <p className="container sm:max-w-screen-md mb-4">
         Informeer u <Link to="/fondsenwerveringsbeleid/">hier</Link> over ons
         beleid ten aanzien van het werven van fondsen, donateurs en sponsoring.

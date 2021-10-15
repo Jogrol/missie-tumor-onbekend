@@ -37,7 +37,7 @@ const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
       </PageSection>
       <div id="scroll-to-donate">
         <PageSection width="xl">
-          <h2 className="text-center pb-12">Doneer nu</h2>
+          <h2 className="text-center font-black pb-16">Doneer nu</h2>
           <DonateSection />
         </PageSection>
       </div>
