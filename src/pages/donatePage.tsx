@@ -54,10 +54,19 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
         </h2>
         <PatientStoriesSection />
       </PageSection>
-      <PageSection color="bg-white-200">
-        <video playsInline controls className="rounded-xl">
-          <source src={BackgroundVideo} type="video/mp4" />
-        </video>
+      <PageSection width="sm" color="bg-white-200">
+        <div className="relative overflow-hidden pb-2/3 h-96">
+          <iframe
+            className="absolute h-full w-full object-cover"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/pOFXZT6j8S0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media;"
+            allowFullScreen
+          ></iframe>
+        </div>
       </PageSection>
       {projectsList && (
         <PageSection width="xl" color="bg-gray-100">
