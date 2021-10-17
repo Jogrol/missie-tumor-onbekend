@@ -109,7 +109,7 @@ const Footer = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className="w-full bg-brown-300 p-3 border border-t-2 border-white pb-12 sm:pb-20">
+      <div className="w-full bg-brown-300 p-3 border border-t-2 border-white">
         <div className="flex flex-wrap justify-center gap-4">
           <p className="text-white text-sm m-0">
             Deze website is gemaakt door{" "}

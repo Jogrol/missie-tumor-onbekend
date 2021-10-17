@@ -10,7 +10,7 @@ const VideoSection = ({
         "{introductiontext}"
       </blockquote>
       <div className="w-full md:w-2/3 mt-4 md:mt-0">
-        <div className="relative overflow-hidden pb-2/3 h-full">
+        <div className="relative pb-2/3 h-full">
           <iframe
             className="absolute h-full w-full object-cover"
             title="video"

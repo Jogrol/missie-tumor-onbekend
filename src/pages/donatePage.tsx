@@ -55,13 +55,13 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
         <PatientStoriesSection />
       </PageSection>
       <PageSection width="sm" color="bg-white-200">
-        <div className="relative overflow-hidden pb-2/3 sm:h-96">
+        <div className="relative pb-2/3 sm:h-96">
           <iframe
             className="absolute h-full w-full object-cover"
             width="560"
             height="315"
             src="https://www.youtube.com/embed/pOFXZT6j8S0"
-            title="YouTube video player"
+            title="Steun Missie Tumor Onbekend"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media;"
             allowFullScreen
