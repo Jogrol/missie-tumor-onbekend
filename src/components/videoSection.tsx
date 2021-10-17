@@ -5,7 +5,7 @@ const VideoSection = ({
   introductiontext,
 }: VideoSectionDataModel): JSX.Element => {
   return (
-    <div className="sm:flex gap-4 justify-center items-center py-8">
+    <div className="sm:flex gap-4 justify-center items-center">
       <blockquote className="w-full text-2xl md:w-1/3 italic p-4">
         "{introductiontext}"
       </blockquote>

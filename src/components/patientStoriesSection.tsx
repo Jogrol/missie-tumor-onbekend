@@ -16,7 +16,7 @@ const PatientStoriesSection = (): JSX.Element => {
       imageSrc: patientImageA,
       imageAlt: "Afbeelding van een patient",
       discription: "Hederik heeft van niemand afscheid genomen",
-      link: "https://www.missietumoronbekend.nl/hederiks-verhaal/",
+      link: "https://www.missietumoronbekend.nl/patientenverhalen/hederiks-verhaal/",
     },
     {
       imageSrc: patientImageB,
@@ -29,7 +29,7 @@ const PatientStoriesSection = (): JSX.Element => {
       imageSrc: patientImageC,
       imageAlt: "Afbeelding van een patient",
       discription: "Machteloos tegen een onzichtbare vijand.",
-      link: "https://www.missietumoronbekend.nl/carins-verhaal/",
+      link: "https://www.missietumoronbekend.nl/patientenverhalen/carins-verhaal/",
     },
   ] as PatientStoriesContentDatasModel[]
 

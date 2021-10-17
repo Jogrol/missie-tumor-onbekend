@@ -24,17 +24,32 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
 
   return (
     <Layout title={pageTitle}>
-      <div className="relative w-screen">
+      <div className="relative w-screen bg-gray-100">
         <PageHero {...pageHeroInfo} />
         <div className="-mt-14 sm:-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-4 sm:px-12 divide-y-2 container">
           <Stats />
         </div>
       </div>
+      <PageSection width="sm" color="bg-gray-100">
+        <h2 className="text-center font-black pb-8">Wat is PTO?</h2>
+        <p>
+          In Nederland krijgen jaarlijkse ongeveer 1.500 patiënten de diagnose
+          'primaire tumor onbekend' (PTO). Dit betekent dat er sprake is van
+          uitgezaaide kanker, zonder dat de bron (de primaire tumor) bekend is.
+          Doordat de bron van de uitzaaiingen onbekend is, is het moeilijk een
+          goede behandeling te vinden.
+        </p>
+        <div className="text-center">
+          <a href="https://www.missietumoronbekend.nl/pto/" target="_blank">
+            Meer informatie over PTO
+          </a>
+        </div>
+      </PageSection>
       <PageSection color="bg-white-200">
         <VideoSection {...videoSectionInfo} />
       </PageSection>
       <PageSection width="xl" color="bg-gray-100">
-        <h2 className="text-center font-black pb-16">
+        <h2 className="text-center font-black pb-8">
           Deel nu jouw ervaring met PTO en verbeter de zorg
         </h2>
         <PatientStoriesSection />
@@ -46,7 +61,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
       </PageSection>
       {projectsList && (
         <PageSection width="xl" color="bg-gray-100">
-          <h2 id="projecten" className="text-center font-black pb-16">
+          <h2 id="projecten" className="text-center font-black pb-8">
             Projecten die we steunen
           </h2>
           <ProjectSection projects={projectsList} />
@@ -54,7 +69,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
       )}
       <div id="scroll-to-donate">
         <PageSection width="xl">
-          <h2 className="text-center font-black pb-16">Doneer nu</h2>
+          <h2 className="text-center font-black pb-8">Doneer nu</h2>
           <DonateSection />
         </PageSection>
       </div>
