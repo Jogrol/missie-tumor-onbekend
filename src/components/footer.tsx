@@ -109,8 +109,19 @@ const Footer = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className="w-full text-center bg-brown-300 p-3 border border-t-2 border-white">
-        <p className="text-white m-0">© 2021 Missie Tumor Onbekend</p>
+      <div className="w-full bg-brown-300 p-3 border border-t-2 border-white">
+        <div className="flex flex-wrap justify-center gap-4">
+          <p className="text-white text-sm m-0">
+            Deze website is gemaakt door{" "}
+            <a
+              className="text-white text-sm underline"
+              href="mailto:joeygrolleman@gmail.com?subject=Mail vanuit Steun Missie Tumor Onbekend"
+            >
+              Joey Grolleman
+            </a>
+          </p>
+          <p className="text-white text-sm m-0">© 2021 Missie Tumor Onbekend</p>
+        </div>
       </div>
     </footer>
   )
