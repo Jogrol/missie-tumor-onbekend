@@ -46,9 +46,7 @@ const DonateFrequentlyWidgetForm = (): JSX.Element => {
     setErrorMessage(null)
     setIsloading(true)
     const reponseData = await donateFrequentlyRequest(data)
-
-    console.log(reponseData)
-
+    
     setIsloading(false)
 
     // Check interface later

@@ -7,7 +7,6 @@ import createErrorResult from "./shared/createErrorResult"
 export default async function donateFrequentlyRequest(
   data: DonateFrequentlyRequestPropsModel
 ): Promise<DonateFrequentlyRequestResultModel> {
-  console.log("check", data)
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
