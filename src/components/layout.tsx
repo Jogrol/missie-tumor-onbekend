@@ -3,6 +3,7 @@ import Footer from "./footer"
 import Header from "./header"
 import "./layout.css"
 import Seo from "./seo"
+import StickyFooter from "./stickyFooter"
 
 interface LayoutPropsModel {
   title: string

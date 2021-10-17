@@ -1,5 +1,4 @@
 import { formatNumberToEuro } from "../../helpers/formatNumberToEuro"
-import { DonateRequestFormNameEnum } from "../../services/donateRequestModel"
 
 export interface DonateAmountItem {
   value: number

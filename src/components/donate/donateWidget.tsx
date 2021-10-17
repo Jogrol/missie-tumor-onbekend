@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { DonateOption, DonationTypeEnum } from "./donateWidgetConfig"
 import DonateWidgetTabs from "./donateWidgetTabs"
-import DonateActionForm from "./donateActionForm"
 import DonateOnceWidgetForm from "./donateOnceWidgetForm"
 import DonateFrequentlyWidgetForm from "./donateFrequentlyWidgetForm"
 import DonateEmailForm from "./donateEmailForm"
