@@ -55,7 +55,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
         <PatientStoriesSection />
       </PageSection>
       <PageSection width="sm" color="bg-white-200">
-        <div className="relative overflow-hidden pb-2/3 h-96">
+        <div className="relative overflow-hidden pb-2/3 sm:h-96">
           <iframe
             className="absolute h-full w-full object-cover"
             width="560"
