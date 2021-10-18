@@ -21,7 +21,7 @@ function createEmail(input: NewsletterRequestPropsModel): MailOptionsModel {
     subject: "Nieuwe inschrijving nieuwsbrief",
     html: `<div>
               ${
-                isTestEnvironment &&
+                isTestEnvironment() &&
                 "<h5>Let op: Deze aanvraag komt vanuit de test omgeving</h5>"
               }
               <h2>Nieuwe inschrijving</h2>

@@ -25,7 +25,7 @@ function createEmail(
     subject: "Nieuwe donatie onvangen",
     html: `<div>
               ${
-                isTestEnvironment &&
+                isTestEnvironment() &&
                 "<h5>Let op: Deze aanvraag komt vanuit de test omgeving</h5>"
               }
               <h2>Nieuwe donatie ontvangen</h2>
