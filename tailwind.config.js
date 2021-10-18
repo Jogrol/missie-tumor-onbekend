@@ -58,10 +58,6 @@ module.exports = {
         },
       },
     },
-    fontFamily: {
-      // Quicksand: ["Quicksand", "sans-serif"],
-      // Raleway: ["Raleway", "serif"],
-    },
     container: {
       center: true,
     },
@@ -73,7 +69,7 @@ module.exports = {
       animation: ["hover", "focus"],
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("@tailwindcss/aspect-ratio")],
   daisyui: {
     themes: [
       {
