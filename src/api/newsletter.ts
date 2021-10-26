@@ -3,7 +3,6 @@ import {
   NewsletterRequestPropsModel,
   NewsletterRequestResultModel,
 } from "../services/newsletterRequestModel"
-import { isTestEnvironment } from "./helpers/isTestEnvironment"
 
 const sendgrid = require("@sendgrid/mail")
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
@@ -21,7 +20,6 @@ function createEmail(input: NewsletterRequestPropsModel): MailOptionsModel {
     subject: "Nieuwe inschrijving nieuwsbrief",
     html: `<div>
               ${
-                isTestEnvironment() &&
                 "<h5>Let op: Deze aanvraag komt vanuit de test omgeving</h5>"
               }
               <h2>Nieuwe inschrijving</h2>

@@ -4,7 +4,6 @@ import {
   DonateFrequentlyRequestPropsModel,
   DonateFrequentlyRequestResultModel,
 } from "../services/donateFrequentlyRequestModel"
-import { isTestEnvironment } from "./helpers/isTestEnvironment"
 
 const sendgrid = require("@sendgrid/mail")
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
@@ -24,10 +23,6 @@ function createEmail(
     to: process.env.EMAIL_TO,
     subject: "Nieuwe donatie onvangen",
     html: `<div>
-              ${
-                isTestEnvironment() &&
-                "<h5>Let op: Deze aanvraag komt vanuit de test omgeving</h5>"
-              }
               <h2>Nieuwe donatie ontvangen</h2>
               <p>via steunmissietumoronbekend.nl<p>
               <p><b>Voornaam:</b> ${input.firstName}</p>
