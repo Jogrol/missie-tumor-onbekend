@@ -1,18 +1,18 @@
-import React from "react"
-import Layout from "../components/layout"
-import PageSection from "../components/pageSection"
-import { Link } from "gatsby"
+// import React from "react"
+// import Layout from "../components/layout"
+// import PageSection from "../components/pageSection"
+// import { Link } from "gatsby"
 
-const NotFoundPage = (): JSX.Element => (
-  <Layout title="404: Not found">
-    <PageSection width="xl">
-      <div className="w-full h-lg flex flex-col justify-center items-center">
-        <h1>404: Not Found</h1>
-        <p>Er is iets fout gegaan.</p>
-        <Link to="/">Ga naar de homepage</Link>
-      </div>
-    </PageSection>
-  </Layout>
-)
+// const NotFoundPage = (): JSX.Element => (
+//   <Layout title="404: Not found">
+//     <PageSection width="xl">
+//       <div className="flex flex-col items-center justify-center w-full h-lg">
+//         <h1>404: Not Found</h1>
+//         <p>Er is iets fout gegaan.</p>
+//         <Link to="/">Ga naar de homepage</Link>
+//       </div>
+//     </PageSection>
+//   </Layout>
+// )
 
-export default NotFoundPage
+// export default NotFoundPage
