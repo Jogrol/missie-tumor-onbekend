@@ -11,11 +11,14 @@ import { DonatePageDataModel } from "../models/pages/donatePageData.model"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
 import PatientStoriesSection from "../components/patientStoriesSection"
 import PageHero from "../components/pageHero"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 const IndexPage = ({ data }): JSX.Element => {
   const contenful = data.page.edges[0].node
   const pageTitle = contenful.pageTitle
-  const introSection = contenful.introSection
+  const introSectionData = contenful.introSection
+  const heroData = contenful.hero
+  const infoSectionData = contenful.infoSection
 
   // const pageTitle = data.page.title
   //   const projectsList = Object.values(data.page.listOfProjects).filter(
@@ -27,35 +30,31 @@ const IndexPage = ({ data }): JSX.Element => {
 
   return (
     <Layout title={pageTitle}>
-      <PageSection width="xl" color="bg-gray-100">
-        <h2 className="pb-8 font-black text-center">{introSection.title}</h2>
-        <PatientStoriesSection patientStoriesProps={introSection} />
-      </PageSection>
-      {/* <div className="relative w-screen bg-gray-100">
-        <PageHero {...pageHeroInfo} />
+      <div className="relative w-screen bg-gray-100">
+        <PageHero pageHeroProps={heroData} />
         <div className="container relative z-40 px-4 divide-y-2 -mt-14 sm:-mt-20 sm:max-w-screen-md md:max-w-screen-xl sm:px-12">
           <Stats />
         </div>
       </div>
       <PageSection width="sm" color="bg-gray-100">
-        <h2 className="pb-8 font-black text-center">Wat is PTO?</h2>
-        <p>
-          In Nederland krijgen jaarlijkse ongeveer 1.500 patiënten de diagnose
-          'primaire tumor onbekend' (PTO). Dit betekent dat er sprake is van
-          uitgezaaide kanker, zonder dat de bron (de primaire tumor) bekend is.
-          Doordat de bron van de uitzaaiingen onbekend is, is het moeilijk een
-          goede behandeling te vinden.
-        </p>
+        <h2 className="pb-8 font-black text-center">{infoSectionData.title}</h2>
+        <div>{renderRichText(infoSectionData.description)}</div>
+
         <div className="text-center">
-          <a href="https://www.missietumoronbekend.nl/pto/" target="_blank">
-            Meer informatie over PTO
-          </a>
+          {console.log(infoSectionData)}
+          {/* <a href={infoSectionData.callToAction.url} target="_blank">
+            {infoSectionData.callToAction.title}
+          </a> */}
         </div>
       </PageSection>
-      <PageSection color="bg-white-200">
+      <PageSection width="xl" color="bg-gray-100">
+        <PatientStoriesSection patientStoriesProps={introSectionData} />
+      </PageSection>
+
+      {/* <PageSection color="bg-white-200">
         <VideoSection {...videoSectionInfo} />
       </PageSection>
-  
+
       <PageSection width="sm" color="bg-white-200">
         <div className="aspect-w-16 aspect-h-9">
           <iframe
@@ -73,13 +72,13 @@ const IndexPage = ({ data }): JSX.Element => {
           </h2>
           <ProjectSection projects={projectsList} />
         </PageSection>
-      )}
+      )} */}
       <div id="scroll-to-donate">
         <PageSection width="xl">
           <h2 className="pb-8 font-black text-center">Doneer nu</h2>
           <DonateSection />
         </PageSection>
-      </div> */}
+      </div>
     </Layout>
   )
 }
@@ -90,6 +89,13 @@ export const query = graphql`
     page: allContentfulHomePage {
       edges {
         node {
+          hero {
+            title
+            image {
+              description
+              gatsbyImageData(placeholder: DOMINANT_COLOR)
+            }
+          }
           pageTitle
           introSection {
             patientStories {
@@ -99,6 +105,25 @@ export const query = graphql`
                 description
                 gatsbyImageData(placeholder: DOMINANT_COLOR)
               }
+              callToAction {
+                ... on ContentfulButton {
+                  id
+                  title
+                  url
+                  openInAnotherTab
+                }
+              }
+            }
+            title
+            node_locale
+            description {
+              raw
+            }
+          }
+          infoSection {
+            title
+            description {
+              raw
             }
             callToAction {
               ... on ContentfulButton {
@@ -107,11 +132,6 @@ export const query = graphql`
                 url
                 openInAnotherTab
               }
-            }
-            title
-            node_locale
-            description {
-              raw
             }
           }
         }

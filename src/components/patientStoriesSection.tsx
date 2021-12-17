@@ -7,6 +7,9 @@ const PatientStoriesSection = ({ patientStoriesProps }): JSX.Element => {
 
   return (
     <>
+      <h2 className="pb-8 font-black text-center">
+        {patientStoriesProps.title}
+      </h2>
       <div className="flex flex-wrap justify-center w-full gap-8 sm:gap-16">
         {patientStories.map((item, index) => {
           const patientImage = getImage(item.image.gatsbyImageData)
