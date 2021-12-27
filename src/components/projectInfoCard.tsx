@@ -5,43 +5,35 @@ import { formatNumberToDots } from "../helpers/formatNumberToDots"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
 import { formatToCorrectUrl } from "../helpers/formatToCorrectUrl"
 
-const ProjectInfoCard = ({
-  title,
-  description,
-  image,
-  buttontitle,
-  pagelink,
-  target,
-  progress,
-}: ProjectItemDataModel): JSX.Element => {
-  const projectImage = getImage(image?.localFile)
-  const totalAmount = formatNumberToDots(target)
-  const progressPercentage = `${Math.round((progress / target) * 100)}%`
+const ProjectInfoCard = ({ projectInfoCardProps }): JSX.Element => {
+  const projectImage = getImage(projectInfoCardProps.image?.localFile)
+  const totalAmount = formatNumberToDots(projectInfoCardProps.target.goal)
+  const progressPercentage = `${projectInfoCardProps.target.progress}%`
 
   return (
-    <div className="card row-span-3 shadow-lg compact bg-base-100">
+    <div className="row-span-3 shadow-lg card compact bg-base-100">
       <GatsbyImage
         image={projectImage}
         alt="image"
-        className="w-full h-52 rounded-t-lg"
+        className="w-full rounded-t-lg h-52"
       />
-      <div className="overflow-hidden h-8 mb-4 text-xs flex bg-brown-100">
+      <div className="flex h-8 mb-4 overflow-hidden text-xs bg-brown-100">
         <div
           style={{ width: progressPercentage }}
-          className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-brown-200"
+          className="flex flex-col justify-center text-center text-white shadow-none whitespace-nowrap bg-brown-200"
         >
-          <div className="text-xl font-bold pl-4">{progressPercentage}</div>
+          <div className="pl-4 text-xl font-bold">{progressPercentage}</div>
         </div>
       </div>
-      <div className="flex px-6 pb-6 flex-col">
-        <h3 className="text-xl sm:text-2xl">{title}</h3>
-        <p>{description}</p>
-        <div className="flex justify-between items-center flex-wrap">
+      <div className="flex flex-col px-6 pb-6">
+        <h3 className="text-xl sm:text-2xl">{projectInfoCardProps.title}</h3>
+        <p>{projectInfoCardProps.description.description}</p>
+        <div className="flex flex-wrap items-center justify-between">
           <div className="flex items-center">
             <span className="font-extrabold text-md">Doel:</span>
             <span className="ml-4 text-2xl"> € {totalAmount}</span>
           </div>
-          <Link
+          {/* <Link
             to={pagelink && formatToCorrectUrl(pagelink.uri)}
             className="link link-primary"
           >
@@ -59,7 +51,7 @@ const ProjectInfoCard = ({
                 d="M9 5l7 7-7 7"
               ></path>
             </svg>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

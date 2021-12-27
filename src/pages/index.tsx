@@ -19,6 +19,9 @@ const IndexPage = ({ data }): JSX.Element => {
   const introSectionData = contenful.introSection
   const heroData = contenful.hero
   const infoSectionData = contenful.infoSection
+  const videoSectionData = contenful.videoSection
+  const campaingVideoSectionData = contenful.campaignVideoSection
+  const projectSectionData = contenful.projectSection
 
   // const pageTitle = data.page.title
   //   const projectsList = Object.values(data.page.listOfProjects).filter(
@@ -39,40 +42,35 @@ const IndexPage = ({ data }): JSX.Element => {
       <PageSection width="sm" color="bg-gray-100">
         <h2 className="pb-8 font-black text-center">{infoSectionData.title}</h2>
         <div>{renderRichText(infoSectionData.description)}</div>
-
         <div className="text-center">
-          {console.log(infoSectionData)}
-          {/* <a href={infoSectionData.callToAction.url} target="_blank">
+          <a href={infoSectionData.callToAction.url} target="_blank">
             {infoSectionData.callToAction.title}
-          </a> */}
+          </a>
         </div>
+      </PageSection>
+      <PageSection color="bg-white-200">
+        <VideoSection videoSectionProps={videoSectionData} />
       </PageSection>
       <PageSection width="xl" color="bg-gray-100">
         <PatientStoriesSection patientStoriesProps={introSectionData} />
       </PageSection>
 
-      {/* <PageSection color="bg-white-200">
-        <VideoSection {...videoSectionInfo} />
-      </PageSection>
-
       <PageSection width="sm" color="bg-white-200">
         <div className="aspect-w-16 aspect-h-9">
           <iframe
-            src="https://www.youtube.com/embed/pOFXZT6j8S0"
+            src={campaingVideoSectionData.videoUrl}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
         </div>
       </PageSection>
-      {projectsList && (
-        <PageSection width="xl" color="bg-gray-100">
-          <h2 id="projecten" className="pb-8 font-black text-center">
-            Projecten die we steunen
-          </h2>
-          <ProjectSection projects={projectsList} />
-        </PageSection>
-      )} */}
+      <PageSection width="xl" color="bg-gray-100">
+        <h2 id="projecten" className="pb-8 font-black text-center">
+          Projecten die we steunen
+        </h2>
+        <ProjectSection projectSectionProps={projectSectionData} />
+      </PageSection>
       <div id="scroll-to-donate">
         <PageSection width="xl">
           <h2 className="pb-8 font-black text-center">Doneer nu</h2>
@@ -89,6 +87,7 @@ export const query = graphql`
     page: allContentfulHomePage {
       edges {
         node {
+          pageTitle
           hero {
             title
             image {
@@ -96,7 +95,13 @@ export const query = graphql`
               gatsbyImageData(placeholder: DOMINANT_COLOR)
             }
           }
-          pageTitle
+          videoSection {
+            description {
+              id
+              description
+            }
+            videoUrl
+          }
           introSection {
             patientStories {
               url
@@ -105,20 +110,22 @@ export const query = graphql`
                 description
                 gatsbyImageData(placeholder: DOMINANT_COLOR)
               }
-              callToAction {
-                ... on ContentfulButton {
-                  id
-                  title
-                  url
-                  openInAnotherTab
-                }
-              }
             }
             title
             node_locale
             description {
               raw
             }
+            callToAction {
+              ... on ContentfulButton {
+                title
+                url
+                openInAnotherTab
+              }
+            }
+          }
+          campaignVideoSection {
+            videoUrl
           }
           infoSection {
             title
@@ -126,12 +133,34 @@ export const query = graphql`
               raw
             }
             callToAction {
-              ... on ContentfulButton {
-                id
+              ... on ContentfulLink {
                 title
                 url
                 openInAnotherTab
               }
+            }
+          }
+          projectSection {
+            id
+            title
+            image {
+              description
+              gatsbyImageData(placeholder: DOMINANT_COLOR)
+            }
+            description {
+              id
+              description
+            }
+            projectLink {
+              ... on ContentfulLink {
+                title
+                url
+                openInAnotherTab
+              }
+            }
+            target {
+              goal
+              progress
             }
           }
         }

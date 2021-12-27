@@ -6,15 +6,14 @@ export interface ProjectSectionPropsModel {
   readonly projects: ProjectItemDataModel[]
 }
 
-const ProjectSection = ({
-  projects,
-}: ProjectSectionPropsModel): JSX.Element => {
+const ProjectSection = ({ projectSectionProps }): JSX.Element => {
+  console.log(projectSectionProps)
   return (
-    <ul className="flex flex-col lg:flex-row gap-8 justify-center">
-      {projects.map((item: ProjectItemDataModel, index: number) => {
+    <ul className="flex flex-col justify-center gap-8 lg:flex-row">
+      {projectSectionProps.map((i, index: number) => {
         return (
-          <li key={index} className="w-full lg:w-1/3 mt-8 md:m-0 list-none">
-            <ProjectInfoCard {...item} />
+          <li key={i.id} className="w-full mt-8 list-none lg:w-1/3 md:m-0">
+            <ProjectInfoCard projectInfoCardProps={i} />
           </li>
         )
       })}
