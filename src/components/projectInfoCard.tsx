@@ -2,11 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { formatNumberToDots } from "../helpers/formatNumberToDots"
-import { ProjectItemDataModel } from "../models/projectItemData.model"
-import { formatToCorrectUrl } from "../helpers/formatToCorrectUrl"
 
 const ProjectInfoCard = ({ projectInfoCardProps }): JSX.Element => {
-  const projectImage = getImage(projectInfoCardProps.image?.localFile)
+  const projectImage = getImage(projectInfoCardProps.image?.gatsbyImageData)
   const totalAmount = formatNumberToDots(projectInfoCardProps.target.goal)
   const progressPercentage = `${projectInfoCardProps.target.progress}%`
 
@@ -27,17 +25,19 @@ const ProjectInfoCard = ({ projectInfoCardProps }): JSX.Element => {
       </div>
       <div className="flex flex-col px-6 pb-6">
         <h3 className="text-xl sm:text-2xl">{projectInfoCardProps.title}</h3>
-        <p>{projectInfoCardProps.description.description}</p>
+        <p>{projectInfoCardProps.summary.summary}</p>
         <div className="flex flex-wrap items-center justify-between">
           <div className="flex items-center">
-            <span className="font-extrabold text-md">Doel:</span>
+            <span className="font-extrabold text-md">
+              {projectInfoCardProps.target.label}
+            </span>
             <span className="ml-4 text-2xl"> € {totalAmount}</span>
           </div>
-          {/* <Link
-            to={pagelink && formatToCorrectUrl(pagelink.uri)}
+          <Link
+            to={projectInfoCardProps.projectLink.url}
             className="link link-primary"
           >
-            {buttontitle}
+            {projectInfoCardProps.projectLink.title}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -51,7 +51,7 @@ const ProjectInfoCard = ({ projectInfoCardProps }): JSX.Element => {
                 d="M9 5l7 7-7 7"
               ></path>
             </svg>
-          </Link> */}
+          </Link>
         </div>
       </div>
     </div>

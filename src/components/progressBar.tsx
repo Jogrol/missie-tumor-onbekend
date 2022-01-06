@@ -1,19 +1,15 @@
 import React from "react"
-import { ProgressDataModel } from "../models/projectProgressData.model"
 
-const ProgressBar = ({
-  progressie,
-  target,
-}: ProgressDataModel): JSX.Element => {
-  const progressPercentage = `${Math.round((progressie / target) * 100)}%`
+const ProgressBar = ({ progressBarProps }): JSX.Element => {
+  const progressPercentage = `${progressBarProps}%`
 
   return (
-    <div className="overflow-hidden h-8 text-xs flex bg-brown-100 rounded-b-md shadow-lg">
+    <div className="flex h-8 overflow-hidden text-xs shadow-lg bg-brown-100 rounded-b-md">
       <div
         style={{ width: progressPercentage }}
-        className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-brown-200"
+        className="flex flex-col justify-center text-center text-white shadow-none whitespace-nowrap bg-brown-200"
       >
-        <div className="text-xl pl-4 font-bold">{progressPercentage}</div>
+        <div className="pl-4 text-xl font-bold">{progressPercentage}</div>
       </div>
     </div>
   )

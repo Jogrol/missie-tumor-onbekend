@@ -11,11 +11,11 @@
 } */
 
 .link {
-  @apply text-black
+  @apply text-black;
 }
 
 .btn {
-  @apply rounded-full hover:no-underline px-8
+  @apply px-8 rounded-full hover:no-underline;
 }
 
 h1 {
@@ -26,7 +26,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1 {
@@ -68,7 +68,7 @@ a {
   font-family: Raleway;
   font-size: 1rem;
   line-height: 1.5rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 p {
@@ -87,8 +87,8 @@ a {
 
 ul {
   list-style-type: circle;
-  list-style-position: inside;
   padding-left: 0;
+  margin-left: 1rem;
 }
 
 li {
@@ -101,7 +101,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
 
 @media only screen and (max-width: 600px) {
   h1 {

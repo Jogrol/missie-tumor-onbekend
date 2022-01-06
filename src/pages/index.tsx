@@ -1,14 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import DonateSection from "../components/donateSection"
 import VideoSection from "../components/videoSection"
 import ProjectSection from "../components/projectSection"
 import Stats from "../components/stats"
-import { DonatePageDataModel } from "../models/pages/donatePageData.model"
-import { ProjectItemDataModel } from "../models/projectItemData.model"
 import PatientStoriesSection from "../components/patientStoriesSection"
 import PageHero from "../components/pageHero"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
@@ -22,14 +19,6 @@ const IndexPage = ({ data }): JSX.Element => {
   const videoSectionData = contenful.videoSection
   const campaingVideoSectionData = contenful.campaignVideoSection
   const projectSectionData = contenful.projectSection
-
-  // const pageTitle = data.page.title
-  //   const projectsList = Object.values(data.page.listOfProjects).filter(
-  //     (item: ProjectItemDataModel) => item.title
-  //   )
-
-  //   const videoSectionInfo = data.page.videoSection
-  //   const pageHeroInfo = data.page.hero
 
   return (
     <Layout title={pageTitle}>
@@ -54,7 +43,6 @@ const IndexPage = ({ data }): JSX.Element => {
       <PageSection width="xl" color="bg-gray-100">
         <PatientStoriesSection patientStoriesProps={introSectionData} />
       </PageSection>
-
       <PageSection width="sm" color="bg-white-200">
         <div className="aspect-w-16 aspect-h-9">
           <iframe
@@ -66,9 +54,6 @@ const IndexPage = ({ data }): JSX.Element => {
         </div>
       </PageSection>
       <PageSection width="xl" color="bg-gray-100">
-        <h2 id="projecten" className="pb-8 font-black text-center">
-          Projecten die we steunen
-        </h2>
         <ProjectSection projectSectionProps={projectSectionData} />
       </PageSection>
       <div id="scroll-to-donate">
@@ -141,26 +126,30 @@ export const query = graphql`
             }
           }
           projectSection {
-            id
             title
-            image {
-              description
-              gatsbyImageData(placeholder: DOMINANT_COLOR)
-            }
-            description {
+            projectCards {
               id
-              description
-            }
-            projectLink {
-              ... on ContentfulLink {
-                title
-                url
-                openInAnotherTab
+              title
+              image {
+                description
+                gatsbyImageData(placeholder: DOMINANT_COLOR)
               }
-            }
-            target {
-              goal
-              progress
+              summary {
+                id
+                summary
+              }
+              projectLink {
+                ... on ContentfulLink {
+                  title
+                  url
+                  openInAnotherTab
+                }
+              }
+              target {
+                goal
+                label
+                progress
+              }
             }
           }
         }
@@ -168,108 +157,3 @@ export const query = graphql`
     }
   }
 `
-
-// export const query = graphql`
-//   query donatePage($id: String) {
-//     page: wpPage(id: { eq: $id }) {
-//       uri
-//       title
-//       content
-//       hero {
-//         title
-//         description
-//         donationcta
-//         image {
-//           localFile {
-//             childImageSharp {
-//               gatsbyImageData(
-//                 width: 2600
-//                 placeholder: BLURRED
-//                 formats: [AUTO, WEBP, AVIF]
-//               )
-//             }
-//           }
-//         }
-//       }
-//       videoSection {
-//         introductiontext
-//         videolink {
-//           url
-//           target
-//           title
-//         }
-//       }
-//       listOfProjects {
-//         projecta {
-//           title
-//           description
-//           buttontitle
-//           target
-//           progress
-//           pagelink {
-//             ... on WpContentNode {
-//               uri
-//             }
-//           }
-//           image {
-//             localFile {
-//               childImageSharp {
-//                 gatsbyImageData(
-//                   width: 300
-//                   placeholder: BLURRED
-//                   formats: [AUTO, WEBP, AVIF]
-//                 )
-//               }
-//             }
-//           }
-//         }
-//         projectb {
-//           title
-//           description
-//           buttontitle
-//           target
-//           progress
-//           pagelink {
-//             ... on WpContentNode {
-//               uri
-//             }
-//           }
-//           image {
-//             localFile {
-//               childImageSharp {
-//                 gatsbyImageData(
-//                   width: 300
-//                   placeholder: BLURRED
-//                   formats: [AUTO, WEBP, AVIF]
-//                 )
-//               }
-//             }
-//           }
-//         }
-//         projectc {
-//           title
-//           description
-//           buttontitle
-//           target
-//           progress
-//           pagelink {
-//             ... on WpContentNode {
-//               uri
-//             }
-//           }
-//           image {
-//             localFile {
-//               childImageSharp {
-//                 gatsbyImageData(
-//                   width: 300
-//                   placeholder: BLURRED
-//                   formats: [AUTO, WEBP, AVIF]
-//                 )
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `

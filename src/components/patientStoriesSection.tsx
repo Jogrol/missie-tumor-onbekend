@@ -23,7 +23,7 @@ const PatientStoriesSection = ({ patientStoriesProps }): JSX.Element => {
                   <GatsbyImage
                     image={patientImage}
                     alt={item.image.description}
-                    className="w-full rounded-t-lg h-52"
+                    className="w-full rounded-t-lg h-80"
                   />
                   <span className="h-16 my-4 italic text-black text-md">
                     {item.title}
