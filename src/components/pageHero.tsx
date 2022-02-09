@@ -4,7 +4,6 @@ import MtoLogoWhiteIcon from "../assets/mtoLogoWhiteIcon.svg"
 import { useInView } from "react-intersection-observer"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { HeroDataModel } from "../models/heroData.model"
-import StickyFooterWrapper from "./stickyFooterWrapper"
 
 const PageHero = ({ title, description, image }: HeroDataModel) => {
   const [ref, inView] = useInView({
@@ -14,40 +13,38 @@ const PageHero = ({ title, description, image }: HeroDataModel) => {
   const pageHeroImage = getImage(image?.localFile)
 
   return (
-    <StickyFooterWrapper inView={inView}>
-      <div className="hero h-screen bg-base-200">
-        <GatsbyImage
-          image={pageHeroImage}
-          alt="header"
-          className="hero-overlay object-cover h-full w-full"
-        />
-        <div className="relative px-4 pt-6 sm:pb-4 h-5/6 w-full z-20">
-          <div className="h-full pb-4 flex flex-col justify-center">
-            <div className="h-2/3 flex flex-grow justify-center items-center">
-              <MtoLogoWhiteIcon className="w-full md:w-2/3 object-fill" />
-            </div>
-            <div
-              ref={ref}
-              className="flex w-full flex-col sm:flex-row flex-wrap sm:justify-center md:flex-row gap-4 sm:gap-8"
+    <div className="h-screen hero bg-base-200">
+      <GatsbyImage
+        image={pageHeroImage}
+        alt="header"
+        className="object-cover w-full h-full hero-overlay"
+      />
+      <div className="relative z-20 w-full px-4 pt-6 sm:pb-4 h-5/6">
+        <div className="flex flex-col justify-center h-full pb-4">
+          <div className="flex items-center justify-center flex-grow h-2/3">
+            <MtoLogoWhiteIcon className="object-fill w-full md:w-2/3" />
+          </div>
+          <div
+            ref={ref}
+            className="flex flex-col flex-wrap w-full gap-4 sm:flex-row sm:justify-center md:flex-row sm:gap-8"
+          >
+            <button
+              className="w-full btn sm:btn-lg btn-primary sm:w-96"
+              onClick={() => scrollTo("#scroll-to-donate")}
             >
-              <button
-                className="btn sm:btn-lg btn-primary w-full sm:w-96"
-                onClick={() => scrollTo("#scroll-to-donate")}
-              >
-                Doneer nu
-              </button>
-              <a
-                className="btn sm:btn-lg btn-secondary w-full sm:w-96"
-                href="https://nl.research.net/r/PTO_2021"
-                target="_blank"
-              >
-                Deel nu jouw verhaal met PTO
-              </a>
-            </div>
+              Doneer nu
+            </button>
+            <a
+              className="w-full btn sm:btn-lg btn-secondary sm:w-96"
+              href="https://nl.research.net/r/PTO_2021"
+              target="_blank"
+            >
+              Deel nu jouw verhaal met PTO
+            </a>
           </div>
         </div>
       </div>
-    </StickyFooterWrapper>
+    </div>
   )
 }
 
