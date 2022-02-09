@@ -11,7 +11,6 @@ import { DonatePageDataModel } from "../models/pages/donatePageData.model"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
 import PatientStoriesSection from "../components/patientStoriesSection"
 import PageHero from "../components/pageHero"
-import BackgroundVideo from "../assets/videos/tumorfonds.webm"
 
 const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   const pageTitle = data.page.title
@@ -26,12 +25,12 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
     <Layout title={pageTitle}>
       <div className="relative w-screen bg-gray-100">
         <PageHero {...pageHeroInfo} />
-        <div className="-mt-14 sm:-mt-20 relative z-40 sm:max-w-screen-md md:max-w-screen-xl px-4 sm:px-12 divide-y-2 container">
+        <div className="container relative z-40 px-4 divide-y-2 -mt-14 sm:-mt-20 sm:max-w-screen-md md:max-w-screen-xl sm:px-12">
           <Stats />
         </div>
       </div>
       <PageSection width="sm" color="bg-gray-100">
-        <h2 className="text-center font-black pb-8">Wat is PTO?</h2>
+        <h2 className="pb-8 font-black text-center">Wat is PTO?</h2>
         <p>
           In Nederland krijgen jaarlijkse ongeveer 1.500 patiënten de diagnose
           'primaire tumor onbekend' (PTO). Dit betekent dat er sprake is van
@@ -49,7 +48,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
         <VideoSection {...videoSectionInfo} />
       </PageSection>
       <PageSection width="xl" color="bg-gray-100">
-        <h2 className="text-center font-black pb-8">
+        <h2 className="pb-8 font-black text-center">
           Vul de vragenlijst in en verbeter de zorg
         </h2>
         <PatientStoriesSection />
@@ -66,7 +65,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
       </PageSection>
       {projectsList && (
         <PageSection width="xl" color="bg-gray-100">
-          <h2 id="projecten" className="text-center font-black pb-8">
+          <h2 id="projecten" className="pb-8 font-black text-center">
             Projecten die we steunen
           </h2>
           <ProjectSection projects={projectsList} />
@@ -74,7 +73,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
       )}
       <div id="scroll-to-donate">
         <PageSection width="xl">
-          <h2 className="text-center font-black pb-8">Doneer nu</h2>
+          <h2 className="pb-8 font-black text-center">Doneer nu</h2>
           <DonateSection />
         </PageSection>
       </div>
