@@ -8,7 +8,7 @@
     "@sendgrid/mail": "^7.6.0",
     "@types/react": "^17.0.37",
     "daisyui": "^1.16.6",
-    "gatsby": "^4.4.0",
+    "gatsby": "3.0.0",
     "gatsby-cli": "^3.14.2",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
