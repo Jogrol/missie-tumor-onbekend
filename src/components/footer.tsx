@@ -1,11 +1,12 @@
 import React from "react"
-import CbfLogoIcon from "../assets/cbfErkendBlackIcon.svg"
 import MtoLogoBlackIcon from "../assets/mtoLogoBlackIcon.svg"
 import FacebookIcon from "../assets/facebookIcon.svg"
 import TwitterIcon from "../assets/twitterIcon.svg"
 import LinkedinIcon from "../assets/linkedinIcon.svg"
 import InstagramIcon from "../assets/instagramIcon.svg"
+import CbfLogoZw from "../images/CBF_LOGO_ZW.png"
 import { Link } from "gatsby"
+const CbfLogoZwAlt = "CBF Logo ZW"
 
 const Footer = (): JSX.Element => {
   return (
@@ -25,8 +26,8 @@ const Footer = (): JSX.Element => {
             <span className="text-xs font-light"> 861248892</span>
           </p>
         </div>
-        <div className="flex flex-col justify-start col-span-1 pt-6 sm:pt-0">
-          <CbfLogoIcon className="w-16 h-16" />
+        <div className="pt-6 sm:pt-0">
+          <img src={CbfLogoZw} alt={CbfLogoZwAlt} className="h-14" />
           <p className="mb-0 text-xs">
             Stichting Vrienden van Hederik is een CBF-erkend goed doel, en is
             ook een aangemerkt en erkent als een ANBI-instelling.
