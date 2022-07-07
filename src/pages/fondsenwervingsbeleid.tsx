@@ -2,14 +2,14 @@ import React from "react"
 import { graphql } from "gatsby"
 import BasicPageTemplate from "../templates/basicPageTemplate"
 
-const BasicPagePrivacyCookieVerklaring = ({ data }): JSX.Element => {
+const BasicPageFondsenWervingsbeleid = ({ data }): JSX.Element => {
   return <BasicPageTemplate data={data} />
 }
 
 export const query = graphql`
-  query privacyCookieVerklaringPage {
+  query fondsenWerveringsBeleidPage {
     page: allContentfulDefaultPage(
-      filter: { id: { eq: "7a2acbf1-a2ac-5892-8c6b-44333cec18e6" } }
+      filter: { id: { eq: "bb3140ff-283f-5ea4-b0d5-b5a319917a0b" } }
     ) {
       edges {
         node {
@@ -34,4 +34,4 @@ export const query = graphql`
   }
 `
 
-export default BasicPagePrivacyCookieVerklaring
+export default BasicPageFondsenWervingsbeleid
