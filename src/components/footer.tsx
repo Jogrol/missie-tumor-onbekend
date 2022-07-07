@@ -43,7 +43,7 @@ const Footer = (): JSX.Element => {
           </a>
           <a
             className="link link-hover"
-            href="https://www.missietumoronbekend.nl/patientenverhalen/carins-verhaal/"
+            href="https://www.missietumoronbekend.nl/patientenverhalen/carins-verhaal"
             target="_blank"
           >
             Stichting Sterren
@@ -51,7 +51,7 @@ const Footer = (): JSX.Element => {
           <p className="flex items-start no-wrap">
             <a
               className="link link-hover"
-              href="https://www.missietumoronbekend.nl/patientenverhalen/hederiks-verhaal/"
+              href="https://www.missietumoronbekend.nl/patientenverhalen/hederiks-verhaal"
               target="_blank"
             >
               Stichting Vrienden van Hederik
@@ -63,14 +63,14 @@ const Footer = (): JSX.Element => {
           <span className="footer-title">Informatie</span>
           <a
             className="link link-hover"
-            href="https://www.missietumoronbekend.nl/info/"
+            href="https://www.missietumoronbekend.nl/info"
             target="_blank"
           >
             Over ons
           </a>
           <a
             className="link link-hover"
-            href="https://www.missietumoronbekend.nl/actueel/"
+            href="https://www.missietumoronbekend.nl/actueel"
             target="_blank"
           >
             Actueel
