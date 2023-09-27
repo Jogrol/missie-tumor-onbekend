@@ -16,8 +16,11 @@ export default async function donateRequest(
 
   try {
     const response = await fetch("/api/donate", requestOptions)
+    console.log('RESPONSE IN DONE REQUEST', response)
 
     const data: DonateApiRequestResultModel = await response.json()
+
+    console.log('data', data)
 
     if (!data.transaction) {
       return createErrorResult("No redirectUrl found")

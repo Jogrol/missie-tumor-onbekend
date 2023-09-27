@@ -62,10 +62,14 @@ export default async function donateHandler(
       headers: headers,
       body: JSON.stringify(dtoMapper(req.body.value)),
     }).then(res => {
+      if(!res.ok) {
+        throw new Error(`HTTP RESPONSE ERROR: ${res.statusText}}`)
+      }
       return res.json()
     })
     res.status(200).json(result)
   } catch (error) {
+    console.error(`HTTP ERROR: ${error.message}}`)
     res.status(500).send(error)
   }
 }

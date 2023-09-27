@@ -52,6 +52,7 @@ const DonateOnceWidgetForm = (): JSX.Element => {
     const reponseData = await donateRequest(data)
 
     setIsloading(false)
+    console.log('reponseData', reponseData)
     if (!reponseData.success) {
       setErrorMessage("Er is een fout opgetreden. Probeer het opnieuw")
     }
