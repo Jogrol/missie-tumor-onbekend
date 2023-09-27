@@ -2,8 +2,8 @@
   "name": "Steun Missie Tumor onbkend",
   "private": true,
   "description": "De donatie site van Missie Tumor Onbekend",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "version": "1.0.0",
+  "author": "Joey Grolleman <joeygrolleman@gmail.com>",
   "dependencies": {
     "@sendgrid/mail": "^7.4.7",
     "@types/react": "^17.0.27",
