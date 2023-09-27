@@ -36,6 +36,10 @@ export default async function donateHandler(
     "Content-Type": "application/json",
   }
 
+  console.log(' req.localAddress',  req.socket.localAddress)
+  console.log(' req.readyState',  req.socket.readyState)
+  console.log(' req.remoteAddress',  req.socket.remoteAddress)
+
   const dtoMapper = (input: DonateRequestProps): PaymentBodyObject => {
     return {
       token: process.env.PAY_API_TOKEN,
