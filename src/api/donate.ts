@@ -13,7 +13,6 @@ export type PaymentBodyObject = {
   serviceId: string
   amount: number
   finishUrl: string
-  ipAddress: string
   testMode: string
   transaction: {
     currency: "EUR"
@@ -46,7 +45,6 @@ export default async function donateHandler(
       serviceId: process.env.PAY_SERVICE_ID,
       amount: input.otherAmount ? input.otherAmount * 100 : input.amount * 100,
       finishUrl: "https://steunmissietumoronbekend.nl/bedankt-voor-uw-donatie/",
-      ipAddress: req.socket?.remoteAddress || req.socket?.localAddress || "127.0.0.1",
       testMode: process.env.PAY_TEST_MODE,
       transaction: {
         currency: "EUR",
