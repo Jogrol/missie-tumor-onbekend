@@ -36,18 +36,13 @@ export default async function donateHandler(
     "Content-Type": "application/json",
   }
 
-  console.log(req)
-  console.log(' req.localAddress',  req.socket?.localAddress)
-  console.log(' req.readyState',  req.socket?.readyState)
-  console.log(' req.remoteAddress',  req.socket?.remoteAddress)
-
   const dtoMapper = (input: DonateRequestProps): PaymentBodyObject => {
     return {
       token: process.env.PAY_API_TOKEN,
       serviceId: process.env.PAY_SERVICE_ID,
       amount: input.otherAmount ? input.otherAmount * 100 : input.amount * 100,
       finishUrl: "https://steunmissietumoronbekend.nl/bedankt-voor-uw-donatie/",
-      ipAddress: req.socket?.remoteAddress || req.socket?.localAddress || "127.0.0.1",
+      ipAddress: "127.0.0.1",
       testMode: process.env.PAY_TEST_MODE,
       transaction: {
         currency: "EUR",
