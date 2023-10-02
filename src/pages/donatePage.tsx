@@ -49,7 +49,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
       </PageSection>
       <PageSection width="xl" color="bg-gray-100">
         <h2 className="pb-8 font-black text-center">
-          Vul de vragenlijst in en verbeter de zorg
+            Deel jouw ervaring met PTO als patiënt of naaste
         </h2>
         <PatientStoriesSection />
       </PageSection>
