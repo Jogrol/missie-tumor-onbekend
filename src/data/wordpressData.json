@@ -105,13 +105,13 @@
         }
       },
       "projectb": {
-        "title": "Project B",
-        "description": "Beschrijving van project B om patiënten te helpen met PTO.",
+        "title": "Ondersteunen van Wetenschappelijk Onderzoek",
+        "description": "Ondersteunen van wetenschappelijk onderzoek naar de diagnose en behandeling van Primaire Tumor Onbekend (PTO).",
         "buttontitle": "Steun dit project",
         "target": 15000,
         "progress": 8000,
         "pagelink": {
-          "uri": "/projects/project-b"
+          "uri": "/ondersteunen-van-wetenschappelijk-onderzoek"
         },
         "image": {
           "localFile": {
@@ -141,13 +141,13 @@
         }
       },
       "projectc": {
-        "title": "Project C",
-        "description": "Beschrijving van project C om patiënten te helpen met PTO.",
+        "title": "Verbetering Inzet Zorg",
+        "description": "Verbetering van de zorg voor patiënten met Primaire Tumor Onbekend door optimalisatie van zorgprocessen en behandelprotocollen.",
         "buttontitle": "Steun dit project",
         "target": 20000,
         "progress": 12000,
         "pagelink": {
-          "uri": "/projects/project-c"
+          "uri": "/verbetering-inzet-zorg"
         },
         "image": {
           "localFile": {
@@ -326,13 +326,13 @@
         }
       },
       "projectb": {
-        "title": "Project B",
-        "description": "Beschrijving van project B om patiënten te helpen met PTO.",
+        "title": "Ondersteunen van Wetenschappelijk Onderzoek",
+        "description": "Ondersteunen van wetenschappelijk onderzoek naar de diagnose en behandeling van Primaire Tumor Onbekend (PTO).",
         "buttontitle": "Steun dit project",
         "target": 15000,
         "progress": 8000,
         "pagelink": {
-          "uri": "/projects/project-b"
+          "uri": "/ondersteunen-van-wetenschappelijk-onderzoek"
         },
         "image": {
           "localFile": {
@@ -362,13 +362,13 @@
         }
       },
       "projectc": {
-        "title": "Project C",
-        "description": "Beschrijving van project C om patiënten te helpen met PTO.",
+        "title": "Verbetering Inzet Zorg",
+        "description": "Verbetering van de zorg voor patiënten met Primaire Tumor Onbekend door optimalisatie van zorgprocessen en behandelprotocollen.",
         "buttontitle": "Steun dit project",
         "target": 20000,
         "progress": 12000,
         "pagelink": {
-          "uri": "/projects/project-c"
+          "uri": "/verbetering-inzet-zorg"
         },
         "image": {
           "localFile": {
@@ -522,6 +522,208 @@
                 "sources": [
                   {
                     "srcSet": "/static/project-a-large.webp 1x",
+                    "type": "image/webp",
+                    "sizes": "(min-width: 800px) 800px, 100vw"
+                  }
+                ]
+              },
+              "width": 800,
+              "height": 600
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "nodeType": "WpPage",
+    "id": "page-5",
+    "uri": "/ondersteunen-van-wetenschappelijk-onderzoek",
+    "title": "Ondersteunen van Wetenschappelijk Onderzoek",
+    "content": "<p>Het project Ondersteunen van Wetenschappelijk Onderzoek richt zich op het financieren en faciliteren van wetenschappelijk onderzoek naar de diagnose en behandeling van Primaire Tumor Onbekend (PTO).</p><p>Onze doelstellingen zijn:</p><ul><li>Het financieren van innovatief onderzoek naar nieuwe diagnostische methoden</li><li>Het ondersteunen van klinische studies naar behandelopties voor PTO-patiënten</li><li>Het stimuleren van samenwerking tussen onderzoeksinstellingen</li></ul><p>Met uw steun kunnen we doorbraken realiseren in de strijd tegen deze complexe vorm van kanker.</p>",
+    "heroSmall": {
+      "title": "Ondersteunen van Wetenschappelijk Onderzoek",
+      "subtitle": "Innovatief onderzoek naar PTO",
+      "description": "Leer meer over ons wetenschappelijk onderzoek naar PTO",
+      "image": {
+        "localFile": {
+          "childImageSharp": {
+            "gatsbyImageData": {
+              "layout": "constrained",
+              "backgroundColor": "#f8f8f8",
+              "images": {
+                "fallback": {
+                  "src": "/static/hero-small-5.jpg",
+                  "srcSet": "/static/hero-small-5.jpg 1x",
+                  "sizes": "(min-width: 1400px) 1400px, 100vw"
+                },
+                "sources": [
+                  {
+                    "srcSet": "/static/hero-small-5.webp 1x",
+                    "type": "image/webp",
+                    "sizes": "(min-width: 1400px) 1400px, 100vw"
+                  }
+                ]
+              },
+              "width": 1400,
+              "height": 700
+            }
+          }
+        }
+      }
+    },
+    "projectProgress": {
+      "progressie": 8000,
+      "target": 15000
+    },
+    "hero": {
+      "title": "Ondersteunen van Wetenschappelijk Onderzoek",
+      "subtitle": "Innovatief onderzoek naar PTO",
+      "description": "Leer meer over ons wetenschappelijk onderzoek naar PTO",
+      "image": {
+        "localFile": {
+          "childImageSharp": {
+            "gatsbyImageData": {
+              "layout": "constrained",
+              "backgroundColor": "#f8f8f8",
+              "images": {
+                "fallback": {
+                  "src": "/static/hero-5.jpg",
+                  "srcSet": "/static/hero-5.jpg 1x",
+                  "sizes": "(min-width: 1400px) 1400px, 100vw"
+                },
+                "sources": [
+                  {
+                    "srcSet": "/static/hero-5.webp 1x",
+                    "type": "image/webp",
+                    "sizes": "(min-width: 1400px) 1400px, 100vw"
+                  }
+                ]
+              },
+              "width": 1400,
+              "height": 700
+            }
+          }
+        }
+      }
+    },
+    "project": {
+      "projectimage": {
+        "localFile": {
+          "childImageSharp": {
+            "gatsbyImageData": {
+              "layout": "constrained",
+              "backgroundColor": "#f8f8f8",
+              "images": {
+                "fallback": {
+                  "src": "/static/project-b-large.jpg",
+                  "srcSet": "/static/project-b-large.jpg 1x",
+                  "sizes": "(min-width: 800px) 800px, 100vw"
+                },
+                "sources": [
+                  {
+                    "srcSet": "/static/project-b-large.webp 1x",
+                    "type": "image/webp",
+                    "sizes": "(min-width: 800px) 800px, 100vw"
+                  }
+                ]
+              },
+              "width": 800,
+              "height": 600
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "nodeType": "WpPage",
+    "id": "page-6",
+    "uri": "/verbetering-inzet-zorg",
+    "title": "Verbetering Inzet Zorg",
+    "content": "<p>Het project Verbetering Inzet Zorg richt zich op het optimaliseren van zorgprocessen en behandelprotocollen voor patiënten met Primaire Tumor Onbekend (PTO).</p><p>Onze doelstellingen zijn:</p><ul><li>Het verbeteren van de coördinatie tussen verschillende zorgverleners</li><li>Het ontwikkelen van gespecialiseerde zorgpaden voor PTO-patiënten</li><li>Het verkorten van de tijd tussen diagnose en behandeling</li><li>Het verbeteren van de kwaliteit van leven tijdens en na behandeling</li></ul><p>Met uw steun kunnen we de zorg voor PTO-patiënten substantieel verbeteren.</p>",
+    "heroSmall": {
+      "title": "Verbetering Inzet Zorg",
+      "subtitle": "Optimalisatie van zorgprocessen",
+      "description": "Leer meer over onze initiatieven voor betere zorg bij PTO",
+      "image": {
+        "localFile": {
+          "childImageSharp": {
+            "gatsbyImageData": {
+              "layout": "constrained",
+              "backgroundColor": "#f8f8f8",
+              "images": {
+                "fallback": {
+                  "src": "/static/hero-small-6.jpg",
+                  "srcSet": "/static/hero-small-6.jpg 1x",
+                  "sizes": "(min-width: 1400px) 1400px, 100vw"
+                },
+                "sources": [
+                  {
+                    "srcSet": "/static/hero-small-6.webp 1x",
+                    "type": "image/webp",
+                    "sizes": "(min-width: 1400px) 1400px, 100vw"
+                  }
+                ]
+              },
+              "width": 1400,
+              "height": 700
+            }
+          }
+        }
+      }
+    },
+    "projectProgress": {
+      "progressie": 12000,
+      "target": 20000
+    },
+    "hero": {
+      "title": "Verbetering Inzet Zorg",
+      "subtitle": "Optimalisatie van zorgprocessen",
+      "description": "Leer meer over onze initiatieven voor betere zorg bij PTO",
+      "image": {
+        "localFile": {
+          "childImageSharp": {
+            "gatsbyImageData": {
+              "layout": "constrained",
+              "backgroundColor": "#f8f8f8",
+              "images": {
+                "fallback": {
+                  "src": "/static/hero-6.jpg",
+                  "srcSet": "/static/hero-6.jpg 1x",
+                  "sizes": "(min-width: 1400px) 1400px, 100vw"
+                },
+                "sources": [
+                  {
+                    "srcSet": "/static/hero-6.webp 1x",
+                    "type": "image/webp",
+                    "sizes": "(min-width: 1400px) 1400px, 100vw"
+                  }
+                ]
+              },
+              "width": 1400,
+              "height": 700
+            }
+          }
+        }
+      }
+    },
+    "project": {
+      "projectimage": {
+        "localFile": {
+          "childImageSharp": {
+            "gatsbyImageData": {
+              "layout": "constrained",
+              "backgroundColor": "#f8f8f8",
+              "images": {
+                "fallback": {
+                  "src": "/static/project-c-large.jpg",
+                  "srcSet": "/static/project-c-large.jpg 1x",
+                  "sizes": "(min-width: 800px) 800px, 100vw"
+                },
+                "sources": [
+                  {
+                    "srcSet": "/static/project-c-large.webp 1x",
                     "type": "image/webp",
                     "sizes": "(min-width: 800px) 800px, 100vw"
                   }

@@ -52,6 +52,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           "Over Ons": resolve(`./src/pages/defaultPage.tsx`),
           "Doneer": resolve(`./src/pages/donatePage.tsx`),
           "Informatievoorziening & Bewustwording": resolve(`./src/pages/projectPage.tsx`),
+          "Ondersteunen van Wetenschappelijk Onderzoek": resolve(`./src/pages/projectPage.tsx`),
+          "Verbetering Inzet Zorg": resolve(`./src/pages/projectPage.tsx`),
           Fondsenwervingsbeleid: resolve(`./src/pages/defaultPage.tsx`),
           "Bedankt voor uw donatie": resolve(`./src/pages/defaultPage.tsx`),
           "Privacy & cookie verklaring": resolve(`./src/pages/defaultPage.tsx`),
