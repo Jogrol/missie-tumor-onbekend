@@ -2,20 +2,19 @@ import React from "react"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import MtoLogoWhiteIcon from "../assets/mtoLogoWhiteIcon.svg"
 import { useInView } from "react-intersection-observer"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { HeroDataModel } from "../models/heroData.model"
+import pageHeroImage from "../images/hero-image.jpeg"
 
 const PageHero = ({ title, description, image }: HeroDataModel) => {
   const [ref, inView] = useInView({
     threshold: 0,
   })
 
-  const pageHeroImage = getImage(image?.localFile)
 
   return (
     <div className="h-screen hero bg-base-200">
-      <GatsbyImage
-        image={pageHeroImage}
+      <img
+        src={pageHeroImage}
         alt="header"
         className="object-cover w-full h-full hero-overlay"
       />
