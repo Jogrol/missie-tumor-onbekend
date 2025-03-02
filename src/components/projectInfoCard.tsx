@@ -1,9 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { formatNumberToDots } from "../helpers/formatNumberToDots"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
 import { formatToCorrectUrl } from "../helpers/formatToCorrectUrl"
+
+// Import project images directly
+import informatievoorziening from "../images/informatievoorziening.jpeg"
+import wetenschappelijkonderzoek from "../images/wetenschappelijkonderzoek.jpeg"
+import zorg from "../images/zorg.jpeg"
 
 const ProjectInfoCard = ({
   title,
@@ -14,16 +18,24 @@ const ProjectInfoCard = ({
   target,
   progress,
 }: ProjectItemDataModel): JSX.Element => {
-  const projectImage = getImage(image?.localFile)
+  // Select the appropriate image based on the project title
+  const getProjectImage = () => {
+    if (title === "Informatievoorziening & Bewustwording") return informatievoorziening
+    if (title === "Ondersteunen van Wetenschappelijk Onderzoek") return wetenschappelijkonderzoek
+    if (title === "Verbetering Inzet Zorg") return zorg
+    return null
+  }
+  
   const totalAmount = formatNumberToDots(target)
   const progressPercentage = `${Math.round((progress / target) * 100)}%`
+  const projectImage = getProjectImage()
 
   return (
     <div className="card row-span-3 shadow-lg compact bg-base-100">
-      <GatsbyImage
-        image={projectImage}
-        alt="image"
-        className="w-full h-52 rounded-t-lg"
+      <img
+        src={projectImage}
+        alt={title}
+        className="w-full h-52 rounded-t-lg object-cover"
       />
       <div className="overflow-hidden h-8 mb-4 text-xs flex bg-brown-100">
         <div
