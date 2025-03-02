@@ -49,26 +49,17 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-transformer-json`,
     {
       /**
-       * First up is the WordPress source plugin that connects Gatsby
-       * to your WordPress site.
-       *
-       * visit the plugin docs to learn more
-       * https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/README.md
-       *
+       * Source filesystem plugin to source data from the filesystem
+       * We're using this to source our local JSON data
        */
-      resolve: `gatsby-source-wordpress`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `https://www.missietumoronbekend.nl/wordpress/gatsby/graphql`,
+        name: `data`,
+        path: `${__dirname}/src/data/`,
       },
-
-      // this (optional) plugin enables Progressive Web App + Offline functionality
-      // To learn more, visit: https://gatsby.dev/offline
-      // `gatsby-plugin-offline`,
     },
     {
       resolve: "gatsby-plugin-google-tagmanager",

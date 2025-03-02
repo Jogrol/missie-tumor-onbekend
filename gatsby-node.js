@@ -1,43 +1,78 @@
 const { resolve } = require(`path`)
 
-exports.createPages = async ({ actions, graphql }) => {
-  const {
-    data: {
-      allWpPage: { nodes: contentPages },
+// Create pages from our JSON data
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions
+
+  // Create a simple test page to verify our setup is working
+  createPage({
+    path: "/test-page",
+    component: resolve(`./src/pages/defaultPage.tsx`),
+    context: {
+      id: "page-1",
     },
-  } = await graphql(`
-    query ALL_CONTENT_NODES {
-      allWpPage {
-        nodes {
-          uri
-          nodeType
-          id
-          title
-          isFrontPage
-          content
-          status
+  })
+
+  try {
+    const result = await graphql(`
+      query ALL_CONTENT_NODES {
+        allWordpressDataJson {
+          nodes {
+            id
+            uri
+            title
+          }
         }
       }
+    `)
+
+    if (result.errors) {
+      reporter.panicOnBuild(`Error while running GraphQL query.`)
+      return
     }
-  `)
 
-  await Promise.all(
-    contentPages.map(async ({ uri, id, title }) => {
-      const pageType = {
-        "Steun Missie Tumor Onbekend": resolve(`./src/pages/donatePage.tsx`),
-        Fondsenwervingsbeleid: resolve(`./src/pages/defaultPage.tsx`),
-        "Bedankt voor uw donatie": resolve(`./src/pages/defaultPage.tsx`),
-        "Privacy & cookie verklaring": resolve(`./src/pages/defaultPage.tsx`),
-        default: resolve(`./src/pages/projectPage.tsx`),
-      }
+    // Check if we have data
+    if (!result.data || !result.data.allWordpressDataJson || !result.data.allWordpressDataJson.nodes) {
+      reporter.info('No WordPress data nodes found')
+      return
+    }
 
-      await actions.createPage({
-        component: pageType[title] ? pageType[title] : pageType.default,
-        path: uri.replace("/steun-missie-tumor-onbekend/", "/"),
-        context: {
-          id: id,
-        },
+    const contentPages = result.data.allWordpressDataJson.nodes
+
+    await Promise.all(
+      contentPages.map(async ({ uri, id, title }) => {
+        if (!uri) {
+          reporter.warn(`Page with id ${id} has no URI, skipping`)
+          return
+        }
+
+        const pageType = {
+          "Steun Missie Tumor Onbekend": resolve(`./src/pages/donatePage.tsx`),
+          "Home": resolve(`./src/pages/donatePage.tsx`),
+          "Over Ons": resolve(`./src/pages/defaultPage.tsx`),
+          "Doneer": resolve(`./src/pages/donatePage.tsx`),
+          "Project A": resolve(`./src/pages/projectPage.tsx`),
+          Fondsenwervingsbeleid: resolve(`./src/pages/defaultPage.tsx`),
+          "Bedankt voor uw donatie": resolve(`./src/pages/defaultPage.tsx`),
+          "Privacy & cookie verklaring": resolve(`./src/pages/defaultPage.tsx`),
+          default: resolve(`./src/pages/defaultPage.tsx`),
+        }
+
+        const path = uri.replace("/steun-missie-tumor-onbekend/", "/")
+        reporter.info(`Creating page: ${path} with template: ${pageType[title] || pageType.default}`)
+
+        await createPage({
+          component: pageType[title] ? pageType[title] : pageType.default,
+          path: path,
+          context: {
+            id: id,
+          },
+        })
       })
-    })
-  )
+    )
+  } catch (error) {
+    reporter.panicOnBuild(`Error while creating pages: ${error}`)
+  }
 }
+
+
