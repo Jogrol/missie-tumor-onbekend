@@ -69,13 +69,13 @@
     },
     "listOfProjects": {
       "projecta": {
-        "title": "Project A",
-        "description": "Beschrijving van project A om patiënten te helpen met PTO.",
+        "title": "Informatievoorziening & Bewustwording",
+        "description": "Vergroten van kennis en bewustwording over PTO door middel van voorlichtingscampagnes en educatief materiaal.",
         "buttontitle": "Steun dit project",
-        "target": 10000,
-        "progress": 6500,
+        "target": 15000,
+        "progress": 8500,
         "pagelink": {
-          "uri": "/projects/project-a"
+          "uri": "/informatievoorziening-bewustwording"
         },
         "image": {
           "localFile": {
@@ -290,13 +290,13 @@
     },
     "listOfProjects": {
       "projecta": {
-        "title": "Project A",
-        "description": "Beschrijving van project A om patiënten te helpen met PTO.",
+        "title": "Informatievoorziening & Bewustwording",
+        "description": "Vergroten van kennis en bewustwording over PTO door middel van voorlichtingscampagnes en educatief materiaal.",
         "buttontitle": "Steun dit project",
-        "target": 10000,
-        "progress": 6500,
+        "target": 15000,
+        "progress": 8500,
         "pagelink": {
-          "uri": "/projects/project-a"
+          "uri": "/informatievoorziening-bewustwording"
         },
         "image": {
           "localFile": {
@@ -437,13 +437,13 @@
   {
     "nodeType": "WpPage",
     "id": "page-4",
-    "uri": "/projects/project-a",
-    "title": "Project A",
-    "content": "<p>Project A is gericht op het verbeteren van de diagnose van PTO. Lees meer over dit project.</p>",
+    "uri": "/informatievoorziening-bewustwording",
+    "title": "Informatievoorziening & Bewustwording",
+    "content": "<p>Het project Informatievoorziening & Bewustwording is gericht op het verbeteren van de kennis en bewustwording over Primaire Tumor Onbekend (PTO). Door middel van voorlichtingscampagnes, informatiebijeenkomsten en educatief materiaal willen we zowel patiënten, zorgverleners als het algemene publiek beter informeren over deze zeldzame vorm van kanker.</p><p>Onze doelstellingen zijn:</p><ul><li>Het vergroten van de bekendheid van PTO bij het algemene publiek</li><li>Het verbeteren van de informatievoorziening voor patiënten en hun naasten</li><li>Het ondersteunen van zorgverleners met up-to-date informatie over diagnostiek en behandelopties</li></ul><p>Met uw steun kunnen we deze belangrijke doelstellingen realiseren.</p>",
     "heroSmall": {
-      "title": "Project A",
-      "subtitle": "Verbeteren van diagnose",
-      "description": "Leer meer over Project A",
+      "title": "Informatievoorziening & Bewustwording",
+      "subtitle": "Verbeteren van kennis en bewustwording",
+      "description": "Leer meer over onze informatievoorziening en bewustwordingscampagnes",
       "image": {
         "localFile": {
           "childImageSharp": {
@@ -472,13 +472,13 @@
       }
     },
     "projectProgress": {
-      "progressie": 6500,
-      "target": 10000
+      "progressie": 8500,
+      "target": 15000
     },
     "hero": {
-      "title": "Project A",
-      "subtitle": "Verbeteren van diagnose",
-      "description": "Leer meer over Project A",
+      "title": "Informatievoorziening & Bewustwording",
+      "subtitle": "Verbeteren van kennis en bewustwording",
+      "description": "Leer meer over onze informatievoorziening en bewustwordingscampagnes",
       "image": {
         "localFile": {
           "childImageSharp": {
