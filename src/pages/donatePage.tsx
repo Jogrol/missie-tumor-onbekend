@@ -13,13 +13,25 @@ import PatientStoriesSection from "../components/patientStoriesSection"
 import PageHero from "../components/pageHero"
 
 const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
-  const pageTitle = data.page.title
-  const projectsList = Object.values(data.page.listOfProjects).filter(
-    (item: ProjectItemDataModel) => item.title
-  )
+  // Add null checks to prevent errors
+  if (!data || !data.page) {
+    return (
+      <Layout title="Error Loading Page">
+        <div className="container mx-auto px-4 py-12">
+          <h1 className="text-3xl font-bold text-red-600">Error Loading Page</h1>
+          <p className="mt-4">There was an error loading the page data. Please try again later.</p>
+        </div>
+      </Layout>
+    )
+  }
 
-  const videoSectionInfo = data.page.videoSection
-  const pageHeroInfo = data.page.hero
+  const pageTitle = data.page.title || "Donate Page"
+  const projectsList = data.page.listOfProjects ? Object.values(data.page.listOfProjects).filter(
+    (item: ProjectItemDataModel) => item && item.title
+  ) : []
+
+  const videoSectionInfo = data.page.videoSection || {}
+  const pageHeroInfo = data.page.hero || {}
 
   return (
     <Layout title={pageTitle}>
@@ -83,22 +95,23 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
 
 export const query = graphql`
   query donatePage($id: String) {
-    page: wpPage(id: { eq: $id }) {
+    page: wordpressDataJson(id: {eq: $id}) {
       uri
       title
       content
       hero {
         title
         description
-        donationcta
         image {
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                width: 2600
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
+              gatsbyImageData {
+                images {
+                  fallback {
+                    src
+                  }
+                }
+              }
             }
           }
         }
@@ -119,18 +132,18 @@ export const query = graphql`
           target
           progress
           pagelink {
-            ... on WpContentNode {
-              uri
-            }
+            uri
           }
           image {
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 300
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
+                gatsbyImageData {
+                  images {
+                    fallback {
+                      src
+                    }
+                  }
+                }
               }
             }
           }
@@ -142,18 +155,18 @@ export const query = graphql`
           target
           progress
           pagelink {
-            ... on WpContentNode {
-              uri
-            }
+            uri
           }
           image {
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 300
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
+                gatsbyImageData {
+                  images {
+                    fallback {
+                      src
+                    }
+                  }
+                }
               }
             }
           }
@@ -165,18 +178,18 @@ export const query = graphql`
           target
           progress
           pagelink {
-            ... on WpContentNode {
-              uri
-            }
+            uri
           }
           image {
             localFile {
               childImageSharp {
-                gatsbyImageData(
-                  width: 300
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
+                gatsbyImageData {
+                  images {
+                    fallback {
+                      src
+                    }
+                  }
+                }
               }
             }
           }
