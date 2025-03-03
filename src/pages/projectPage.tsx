@@ -58,7 +58,7 @@ const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
 
   return (
     <Layout title={pageTitle}>
-      {pageHero && <PageHeroSmall {...pageHero} />}
+      <PageHeroSmall title={pageTitle} />
       <PageSection width="md" color="bg-gray-100 ">
         {projectImage && (
           <img
