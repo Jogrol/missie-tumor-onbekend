@@ -1,17 +1,15 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { HeroSmallDataModel } from "../models/heroSmallData.model"
+import projectHero from "../images/hero-project.jpeg"
 
-const PageHeroSmall = ({ title, image }: HeroSmallDataModel): JSX.Element => {
-  const pageHeroImage = getImage(image?.localFile)
-
+const PageHeroSmall = ({ title }: HeroSmallDataModel): JSX.Element => {
   return (
     <div className="relative h-64 w-full">
       <div className="absolute left-0 top-0 h-64 w-full z-0">
-        <GatsbyImage
-          image={pageHeroImage}
-          alt="header"
-          className="h-full w-full"
+        <img
+          src={projectHero}
+          alt={`${title} header`}
+          className="h-full w-full object-cover"
         />
       </div>
       <div className="absolute pt-28 w-full h-64 flex justify-center items-center px-4">

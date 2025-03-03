@@ -1,7 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import scrollTo from "gatsby-plugin-smoothscroll"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+// Import project images directly
+import projectHero from "../images/hero-project.jpeg"
+import informatievoorziening from "../images/informatievoorziening.jpeg"
+import wetenschappelijkonderzoek from "../images/wetenschappelijkonderzoek.jpeg"
+import zorg from "../images/zorg.jpeg"
 
 import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
@@ -28,19 +33,25 @@ const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
   const pageHero = data.page.heroSmall || null
   const projectProgress = data.page.projectProgress || { progressie: 0, target: 100 }
 
-  // Safely access nested properties
-  const pageHeroImage = data.page.project && data.page.project.projectimage ? 
-    getImage(data.page.project.projectimage.localFile) : null
+  // Select the appropriate image based on the project title
+  const getProjectImage = () => {
+    if (pageTitle === "Informatievoorziening & bewustwording") return informatievoorziening
+    if (pageTitle === "Ondersteunen van wetenschappelijk onderzoek") return wetenschappelijkonderzoek
+    if (pageTitle === "Verbetering inzet zorg") return zorg
+    return null
+  }
+  
+  const projectImage = getProjectImage()
 
   return (
     <Layout title={pageTitle}>
       {pageHero && <PageHeroSmall {...pageHero} />}
       <PageSection width="md" color="bg-gray-100 ">
-        {pageHeroImage && (
-          <GatsbyImage
-            image={pageHeroImage}
-            alt="project afbeelding"
-            className="w-full object-fill rounded-t-lg"
+        {projectImage && (
+          <img
+            src={projectImage}
+            alt={`${pageTitle} afbeelding`}
+            className="w-full object-cover rounded-t-lg h-64"
           />
         )}
         {projectProgress && <ProgressBar {...projectProgress} />}
@@ -54,7 +65,7 @@ const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
       <div id="scroll-to-donate">
         <PageSection width="xl">
           <h2 className="text-center font-black pb-8">Doneer nu</h2>
-          <DonateSection />
+          <DonateSection projectName={pageTitle} />
         </PageSection>
       </div>
     </Layout>
