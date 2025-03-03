@@ -29,7 +29,7 @@ const WetenschappelijkOnderzoekContent: React.FC = () => {
         <strong>
           Missie Tumor Onbekend wil onder andere de volgende projecten
           realiseren in het kader van het ondersteunen van wetenschappelijk
-          onderzoek
+          onderzoek.
         </strong>
       </p>
       <ul>

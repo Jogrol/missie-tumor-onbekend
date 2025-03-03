@@ -20,9 +20,9 @@ const InformatieVoorzieningContent: React.FC = () => {
       </p>
 
       <p>
-        <strong>
+        <strong className='font-bold'>
           Missie Tumor Onbekend wil onder andere de volgende projecten
-          realiseren in het kader van informatievoorziening &amp; bewustwording
+          realiseren in het kader van informatievoorziening &amp; bewustwording.
         </strong>
       </p>
 
