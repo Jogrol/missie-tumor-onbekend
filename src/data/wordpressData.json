@@ -540,7 +540,7 @@
     "id": "page-5",
     "uri": "/ondersteunen-van-wetenschappelijk-onderzoek",
     "title": "Ondersteunen van wetenschappelijk onderzoek",
-    "content": "<p>Het project Ondersteunen van Wetenschappelijk Onderzoek richt zich op het financieren en faciliteren van wetenschappelijk onderzoek naar de diagnose en behandeling van Primaire Tumor Onbekend (PTO).</p><p>Onze doelstellingen zijn:</p><ul><li>Het financieren van innovatief onderzoek naar nieuwe diagnostische methoden</li><li>Het ondersteunen van klinische studies naar behandelopties voor PTO-patiënten</li><li>Het stimuleren van samenwerking tussen onderzoeksinstellingen</li></ul><p>Met uw steun kunnen we doorbraken realiseren in de strijd tegen deze complexe vorm van kanker.</p>",
+    "content": "",
     "heroSmall": {
       "title": "Ondersteunen van wetenschappelijk onderzoek",
       "subtitle": "Innovatief onderzoek naar PTO",
@@ -573,8 +573,8 @@
       }
     },
     "projectProgress": {
-      "progressie": 8000,
-      "target": 15000
+      "progressie": 25000,
+      "target": 100000
     },
     "hero": {
       "title": "Ondersteunen van wetenschappelijk onderzoek",
