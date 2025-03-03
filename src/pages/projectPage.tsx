@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import scrollTo from "gatsby-plugin-smoothscroll"
 
 // Import project images directly
-import projectHero from "../images/hero-project.jpeg"
 import informatievoorziening from "../images/informatievoorziening.jpeg"
 import wetenschappelijkonderzoek from "../images/wetenschappelijkonderzoek.jpeg"
 import zorg from "../images/zorg.jpeg"
@@ -221,38 +220,8 @@ export const query = graphql`
     page: wordpressDataJson(id: { eq: $id }) {
       uri
       title
-      content
-      heroSmall {
-        title
-        image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData {
-                images {
-                  fallback {
-                    src
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      project {
-        projectimage {
-          localFile {
-            childImageSharp {
-              gatsbyImageData {
-                images {
-                  fallback {
-                    src
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+
+  
       projectProgress {
         target
         progressie
