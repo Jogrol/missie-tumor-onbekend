@@ -5,6 +5,9 @@ import Layout from "../components/layout"
 import PageSection from "../components/pageSection"
 import PageHeroSmall from "../components/pageHeroSmall"
 import { DefaultPageDataModel } from "../models/pages/defaultPageData.model"
+import PrivacyStatement from "../components/content/PrivacyStament"
+import ThankYouMessage from "../components/content/ThankYouMessage"
+import MissionBackground from "../components/content/MissionBackground"
 
 const DefaultPage = ({ data }: DefaultPageDataModel): JSX.Element => {
   // Add null checks to prevent errors
@@ -26,46 +29,25 @@ const DefaultPage = ({ data }: DefaultPageDataModel): JSX.Element => {
   const pageTitle = data.page.title || "Default Page"
   const pageHero = data.page.heroSmall || null
 
+  // Function to render the appropriate content based on page title
+  const renderContent = () => {
+    switch (pageTitle) {
+      case "Privacy & cookie verklaring":
+        return <PrivacyStatement />;
+      case "Bedankt voor uw donatie":
+        return <ThankYouMessage />;
+      case "Fondsenwervingsbeleid":
+        return <MissionBackground />;
+      default:
+        return <div dangerouslySetInnerHTML={{ __html: data.page.content || "" }} />;
+    }
+  };
+
   return (
     <Layout title={pageTitle}>
       {pageHero && <PageHeroSmall {...pageHero} />}
       <PageSection width="md">
-        {pageTitle === "Bedankt voor uw donatie" && (
-          <div>
-            <p>
-              Vriendelijk bedankt voor uw donatie aan Missie Tumor Onbekend. Met
-              uw steun kunnen wij projecten realiseren en initiatieven aanjagen
-              die de zorg voor patiënten met een onbekende primaire tumor
-              verbeteren.
-            </p>
-
-            <p>
-              Voor meer informatie over onze huidige projecten kunt u terecht
-              bij '
-              <a
-                href="https://steunmissietumoronbekend.nl/#projecten"
-                data-type="URL"
-                data-id="https://steunmissietumoronbekend.nl/#projecten"
-              >
-                projecten die we steunen
-              </a>
-              '
-            </p>
-
-            <p>
-              Wij zouden u graag op de hoogte houden van onze vorderingen door u
-              elk kwartaal onze nieuwsbrief te sturen. Klik{" "}
-              <a
-                href="https://www.missietumoronbekend.nl/info/#nieuwsbriefpto"
-                data-type="URL"
-                data-id="https://www.missietumoronbekend.nl/info/#nieuwsbriefpto"
-              >
-                hier
-              </a>
-              als u deze wenst te ontvangen.
-            </p>
-          </div>
-        )}
+        {renderContent()}
       </PageSection>
     </Layout>
   )
