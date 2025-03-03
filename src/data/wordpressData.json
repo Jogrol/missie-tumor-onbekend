@@ -439,41 +439,14 @@
     "id": "page-4",
     "uri": "/informatievoorziening-bewustwording",
     "title": "Informatievoorziening & bewustwording",
-    "content": "<p>Het project Informatievoorziening & Bewustwording is gericht op het verbeteren van de kennis en bewustwording over Primaire Tumor Onbekend (PTO). Door middel van voorlichtingscampagnes, informatiebijeenkomsten en educatief materiaal willen we zowel patiënten, zorgverleners als het algemene publiek beter informeren over deze zeldzame vorm van kanker.</p><p>Onze doelstellingen zijn:</p><ul><li>Het vergroten van de bekendheid van PTO bij het algemene publiek</li><li>Het verbeteren van de informatievoorziening voor patiënten en hun naasten</li><li>Het ondersteunen van zorgverleners met up-to-date informatie over diagnostiek en behandelopties</li></ul><p>Met uw steun kunnen we deze belangrijke doelstellingen realiseren.</p>",
     "heroSmall": {
       "title": "Informatievoorziening & bewustwording",
       "subtitle": "Verbeteren van kennis en bewustwording",
-      "description": "Leer meer over onze informatievoorziening en bewustwordingscampagnes",
-      "image": {
-        "localFile": {
-          "childImageSharp": {
-            "gatsbyImageData": {
-              "layout": "constrained",
-              "backgroundColor": "#f8f8f8",
-              "images": {
-                "fallback": {
-                  "src": "/static/hero-small-4.jpg",
-                  "srcSet": "/static/hero-small-4.jpg 1x",
-                  "sizes": "(min-width: 1400px) 1400px, 100vw"
-                },
-                "sources": [
-                  {
-                    "srcSet": "/static/hero-small-4.webp 1x",
-                    "type": "image/webp",
-                    "sizes": "(min-width: 1400px) 1400px, 100vw"
-                  }
-                ]
-              },
-              "width": 1400,
-              "height": 700
-            }
-          }
-        }
-      }
+      "description": "Leer meer over onze informatievoorziening en bewustwordingscampagnes"
     },
     "projectProgress": {
-      "progressie": 8500,
-      "target": 15000
+      "progressie": 15000,
+      "target": 25000
     },
     "hero": {
       "title": "Informatievoorziening & bewustwording",
@@ -674,8 +647,8 @@
       }
     },
     "projectProgress": {
-      "progressie": 12000,
-      "target": 20000
+      "progressie": 30000,
+      "target": 75000
     },
     "hero": {
       "title": "Verbetering inzet zorg",
