@@ -98,24 +98,6 @@ export const query = graphql`
     page: wordpressDataJson(id: {eq: $id}) {
       uri
       title
-      content
-      hero {
-        title
-        description
-        image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData {
-                images {
-                  fallback {
-                    src
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
       videoSection {
         introductiontext
         videolink {
@@ -134,19 +116,6 @@ export const query = graphql`
           pagelink {
             uri
           }
-          image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData {
-                  images {
-                    fallback {
-                      src
-                    }
-                  }
-                }
-              }
-            }
-          }
         }
         projectb {
           title
@@ -157,19 +126,6 @@ export const query = graphql`
           pagelink {
             uri
           }
-          image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData {
-                  images {
-                    fallback {
-                      src
-                    }
-                  }
-                }
-              }
-            }
-          }
         }
         projectc {
           title
@@ -179,19 +135,6 @@ export const query = graphql`
           progress
           pagelink {
             uri
-          }
-          image {
-            localFile {
-              childImageSharp {
-                gatsbyImageData {
-                  images {
-                    fallback {
-                      src
-                    }
-                  }
-                }
-              }
-            }
           }
         }
       }
