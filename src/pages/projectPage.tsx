@@ -220,8 +220,6 @@ export const query = graphql`
     page: wordpressDataJson(id: { eq: $id }) {
       uri
       title
-
-  
       projectProgress {
         target
         progressie
