@@ -20,9 +20,9 @@ const ProjectInfoCard = ({
 }: ProjectItemDataModel): JSX.Element => {
   // Select the appropriate image based on the project title
   const getProjectImage = () => {
-    if (title === "Informatievoorziening & Bewustwording") return informatievoorziening
-    if (title === "Ondersteunen van Wetenschappelijk Onderzoek") return wetenschappelijkonderzoek
-    if (title === "Verbetering Inzet Zorg") return zorg
+    if (title === "Informatievoorziening & bewustwording") return informatievoorziening
+    if (title === "Ondersteunen van wetenschappelijk onderzoek") return wetenschappelijkonderzoek
+    if (title === "Verbetering inzet zorg") return zorg
     return null
   }
   

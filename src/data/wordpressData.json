@@ -69,11 +69,11 @@
     },
     "listOfProjects": {
       "projecta": {
-        "title": "Informatievoorziening & Bewustwording",
-        "description": "Vergroten van kennis en bewustwording over PTO door middel van voorlichtingscampagnes en educatief materiaal.",
+        "title": "Informatievoorziening & bewustwording",
+        "description": "Primaire tumor onbekend is een relatief onbekende kankerdiagnose, juist omdat er geen complete diagnose gegeven kan worden. Echter hebben deze mensen wel te maken met uitgezaaide kanker. Missie Tumor Onbekend wil graag dat alle patiënten, naasten, zorgverleners en onderzoekers goed op de hoogte blijven van de laatste kennis en vooruitgang, en ontwikkelt materialen ten behoeve hiervan. Daarnaast werkt Missie Tumor Onbekend ook aan bredere maatschappelijke awareness en bewustwording, zodat PTO-patiënten zich meer gesteund voelen. Meer bekendheid creëert ook nieuwe mogelijkheden om meer projecten voor PTO-patiënten te realiseren.",
         "buttontitle": "Steun dit project",
-        "target": 15000,
-        "progress": 8500,
+        "target": 25000,
+        "progress": 15000,
         "pagelink": {
           "uri": "/informatievoorziening-bewustwording"
         },
@@ -105,11 +105,11 @@
         }
       },
       "projectb": {
-        "title": "Ondersteunen van Wetenschappelijk Onderzoek",
-        "description": "Ondersteunen van wetenschappelijk onderzoek naar de diagnose en behandeling van Primaire Tumor Onbekend (PTO).",
+        "title": "Ondersteunen van wetenschappelijk onderzoek",
+        "description": "Missie Tumor Onbekend steunt wetenschappers en zorgverleners graag in relevante onderzoeken naar betere diagnostiek, geneesmiddelen, tumorgerichte behandelingen en palliatieve zorg voor een onbekende primaire tumor. Door nieuwe inzichten kan de schrijnende lage overleving van een PTO verbeteren en de kwaliteit van leven voor de patiënt vooruit. Daarnaast neemt Missie Tumor Onbekend ook zelf het voortouw in het bijeenbrengen van coalities om gezamenlijk wetenschappelijk onderzoek uit te voeren dat in het belang van de PTO-patiënt is. Bij het beoordelen van wetenschappelijk onderzoeksvoorstellen krijgt Missie Tumor Onbekend steun van CUPP-NL, de landelijke beroepsvereniging met expertise over PTO.",
         "buttontitle": "Steun dit project",
-        "target": 15000,
-        "progress": 8000,
+        "target": 100000,
+        "progress": 25000,
         "pagelink": {
           "uri": "/ondersteunen-van-wetenschappelijk-onderzoek"
         },
@@ -141,11 +141,11 @@
         }
       },
       "projectc": {
-        "title": "Verbetering Inzet Zorg",
-        "description": "Verbetering van de zorg voor patiënten met Primaire Tumor Onbekend door optimalisatie van zorgprocessen en behandelprotocollen.",
+        "title": "Verbetering inzet zorg",
+        "description": "Momenteel wordt twee-derde van de PTO-patiënten niet behandeld. Missie Tumor Onbekend werkt samen met zorgverleners hard aan het vergroten van de toegang tot diagnostiek, tumorgerichte behandelingen, palliatieve zorg en psychosociale steun. Missie Tumor Onbekend is betrokken bij de inrichting van het landelijke zorgpad voor PTO en vernieuwingen van de landelijke klinische richtlijn, en steunt projecten die de implementatie en inzet hiervan vergroten.",
         "buttontitle": "Steun dit project",
-        "target": 20000,
-        "progress": 12000,
+        "target": 75000,
+        "progress": 30000,
         "pagelink": {
           "uri": "/verbetering-inzet-zorg"
         },
@@ -290,8 +290,8 @@
     },
     "listOfProjects": {
       "projecta": {
-        "title": "Informatievoorziening & Bewustwording",
-        "description": "Vergroten van kennis en bewustwording over PTO door middel van voorlichtingscampagnes en educatief materiaal.",
+        "title": "Informatievoorziening & bewustwording",
+        "description": "Primaire tumor onbekend is een relatief onbekende kankerdiagnose, juist omdat er geen complete diagnose gegeven kan worden. Echter hebben deze mensen wel te maken met uitgezaaide kanker. Missie Tumor Onbekend wil graag dat alle patiënten, naasten, zorgverleners en onderzoekers goed op de hoogte blijven van de laatste kennis en vooruitgang, en ontwikkelt materialen ten behoeve hiervan. Daarnaast werkt Missie Tumor Onbekend ook aan bredere maatschappelijke awareness en bewustwording, zodat PTO-patiënten zich meer gesteund voelen. Meer bekendheid creëert ook nieuwe mogelijkheden om meer projecten voor PTO-patiënten te realiseren.",
         "buttontitle": "Steun dit project",
         "target": 15000,
         "progress": 8500,
@@ -326,8 +326,8 @@
         }
       },
       "projectb": {
-        "title": "Ondersteunen van Wetenschappelijk Onderzoek",
-        "description": "Ondersteunen van wetenschappelijk onderzoek naar de diagnose en behandeling van Primaire Tumor Onbekend (PTO).",
+        "title": "Ondersteunen van wetenschappelijk onderzoek",
+        "description": "Missie Tumor Onbekend steunt wetenschappers en zorgverleners graag in relevante onderzoeken naar betere diagnostiek, geneesmiddelen, tumorgerichte behandelingen en palliatieve zorg voor een onbekende primaire tumor. Door nieuwe inzichten kan de schrijnende lage overleving van een PTO verbeteren en de kwaliteit van leven voor de patiënt vooruit. Daarnaast neemt Missie Tumor Onbekend ook zelf het voortouw in het bijeenbrengen van coalities om gezamenlijk wetenschappelijk onderzoek uit te voeren dat in het belang van de PTO-patiënt is. Bij het beoordelen van wetenschappelijk onderzoeksvoorstellen krijgt Missie Tumor Onbekend steun van CUPP-NL, de landelijke beroepsvereniging met expertise over PTO.",
         "buttontitle": "Steun dit project",
         "target": 15000,
         "progress": 8000,
@@ -362,8 +362,8 @@
         }
       },
       "projectc": {
-        "title": "Verbetering Inzet Zorg",
-        "description": "Verbetering van de zorg voor patiënten met Primaire Tumor Onbekend door optimalisatie van zorgprocessen en behandelprotocollen.",
+        "title": "Verbetering inzet zorg",
+        "description": "Momenteel wordt twee-derde van de PTO-patiënten niet behandeld. Missie Tumor Onbekend werkt samen met zorgverleners hard aan het vergroten van de toegang tot diagnostiek, tumorgerichte behandelingen, palliatieve zorg en psychosociale steun. Missie Tumor Onbekend is betrokken bij de inrichting van het landelijke zorgpad voor PTO en vernieuwingen van de landelijke klinische richtlijn, en steunt projecten die de implementatie en inzet hiervan vergroten.",
         "buttontitle": "Steun dit project",
         "target": 20000,
         "progress": 12000,
@@ -438,10 +438,10 @@
     "nodeType": "WpPage",
     "id": "page-4",
     "uri": "/informatievoorziening-bewustwording",
-    "title": "Informatievoorziening & Bewustwording",
+    "title": "Informatievoorziening & bewustwording",
     "content": "<p>Het project Informatievoorziening & Bewustwording is gericht op het verbeteren van de kennis en bewustwording over Primaire Tumor Onbekend (PTO). Door middel van voorlichtingscampagnes, informatiebijeenkomsten en educatief materiaal willen we zowel patiënten, zorgverleners als het algemene publiek beter informeren over deze zeldzame vorm van kanker.</p><p>Onze doelstellingen zijn:</p><ul><li>Het vergroten van de bekendheid van PTO bij het algemene publiek</li><li>Het verbeteren van de informatievoorziening voor patiënten en hun naasten</li><li>Het ondersteunen van zorgverleners met up-to-date informatie over diagnostiek en behandelopties</li></ul><p>Met uw steun kunnen we deze belangrijke doelstellingen realiseren.</p>",
     "heroSmall": {
-      "title": "Informatievoorziening & Bewustwording",
+      "title": "Informatievoorziening & bewustwording",
       "subtitle": "Verbeteren van kennis en bewustwording",
       "description": "Leer meer over onze informatievoorziening en bewustwordingscampagnes",
       "image": {
@@ -476,7 +476,7 @@
       "target": 15000
     },
     "hero": {
-      "title": "Informatievoorziening & Bewustwording",
+      "title": "Informatievoorziening & bewustwording",
       "subtitle": "Verbeteren van kennis en bewustwording",
       "description": "Leer meer over onze informatievoorziening en bewustwordingscampagnes",
       "image": {
@@ -539,10 +539,10 @@
     "nodeType": "WpPage",
     "id": "page-5",
     "uri": "/ondersteunen-van-wetenschappelijk-onderzoek",
-    "title": "Ondersteunen van Wetenschappelijk Onderzoek",
+    "title": "Ondersteunen van wetenschappelijk onderzoek",
     "content": "<p>Het project Ondersteunen van Wetenschappelijk Onderzoek richt zich op het financieren en faciliteren van wetenschappelijk onderzoek naar de diagnose en behandeling van Primaire Tumor Onbekend (PTO).</p><p>Onze doelstellingen zijn:</p><ul><li>Het financieren van innovatief onderzoek naar nieuwe diagnostische methoden</li><li>Het ondersteunen van klinische studies naar behandelopties voor PTO-patiënten</li><li>Het stimuleren van samenwerking tussen onderzoeksinstellingen</li></ul><p>Met uw steun kunnen we doorbraken realiseren in de strijd tegen deze complexe vorm van kanker.</p>",
     "heroSmall": {
-      "title": "Ondersteunen van Wetenschappelijk Onderzoek",
+      "title": "Ondersteunen van wetenschappelijk onderzoek",
       "subtitle": "Innovatief onderzoek naar PTO",
       "description": "Leer meer over ons wetenschappelijk onderzoek naar PTO",
       "image": {
@@ -577,7 +577,7 @@
       "target": 15000
     },
     "hero": {
-      "title": "Ondersteunen van Wetenschappelijk Onderzoek",
+      "title": "Ondersteunen van wetenschappelijk onderzoek",
       "subtitle": "Innovatief onderzoek naar PTO",
       "description": "Leer meer over ons wetenschappelijk onderzoek naar PTO",
       "image": {
@@ -640,10 +640,10 @@
     "nodeType": "WpPage",
     "id": "page-6",
     "uri": "/verbetering-inzet-zorg",
-    "title": "Verbetering Inzet Zorg",
+    "title": "Verbetering inzet zorg",
     "content": "<p>Het project Verbetering Inzet Zorg richt zich op het optimaliseren van zorgprocessen en behandelprotocollen voor patiënten met Primaire Tumor Onbekend (PTO).</p><p>Onze doelstellingen zijn:</p><ul><li>Het verbeteren van de coördinatie tussen verschillende zorgverleners</li><li>Het ontwikkelen van gespecialiseerde zorgpaden voor PTO-patiënten</li><li>Het verkorten van de tijd tussen diagnose en behandeling</li><li>Het verbeteren van de kwaliteit van leven tijdens en na behandeling</li></ul><p>Met uw steun kunnen we de zorg voor PTO-patiënten substantieel verbeteren.</p>",
     "heroSmall": {
-      "title": "Verbetering Inzet Zorg",
+      "title": "Verbetering inzet zorg",
       "subtitle": "Optimalisatie van zorgprocessen",
       "description": "Leer meer over onze initiatieven voor betere zorg bij PTO",
       "image": {
@@ -678,7 +678,7 @@
       "target": 20000
     },
     "hero": {
-      "title": "Verbetering Inzet Zorg",
+      "title": "Verbetering inzet zorg",
       "subtitle": "Optimalisatie van zorgprocessen",
       "description": "Leer meer over onze initiatieven voor betere zorg bij PTO",
       "image": {
