@@ -11,6 +11,7 @@ import { DonatePageDataModel } from "../models/pages/donatePageData.model"
 import { ProjectItemDataModel } from "../models/projectItemData.model"
 import PatientStoriesSection from "../components/patientStoriesSection"
 import PageHero from "../components/pageHero"
+import YouTubeCarousel from "../components/YouTubeCarousel"
 
 const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   // Add null checks to prevent errors
@@ -50,7 +51,23 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
           Doordat de bron van de uitzaaiingen onbekend is, is het moeilijk een
           goede behandeling te vinden.
         </p>
-        <div className="text-center">
+
+        <h3 className="text-2xl font-bold text-center mt-8 mb-6">Bekijk onze video's</h3>
+        
+        <YouTubeCarousel 
+          videos={[
+            "yBsA7BGOYFE",
+            "SO_OOrSfs68",
+            "7AR89PinbEc"
+          ]}
+          names={[
+            "Hedwig",
+            "Peter",
+            "Inke"
+          ]}
+        />
+      
+        <div className="text-center mt-8">
           <a href="https://www.missietumoronbekend.nl/pto/" target="_blank">
             Meer informatie over PTO
           </a>
