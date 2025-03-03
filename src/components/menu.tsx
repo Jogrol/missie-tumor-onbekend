@@ -37,7 +37,7 @@ const Menu = (): JSX.Element => {
               <MenuIcon className="h-6 w-6 text-blue-600" />
             </label>
           </div>
-          <div className="drawer-side">
+          <div className="drawer-side z-20">
             <label
               htmlFor="menu"
               className="drawer-overlay absolute top-0 left-0 w-screen h-screen"
