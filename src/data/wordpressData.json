@@ -579,34 +579,6 @@
           }
         }
       }
-    },
-    "project": {
-      "projectimage": {
-        "localFile": {
-          "childImageSharp": {
-            "gatsbyImageData": {
-              "layout": "constrained",
-              "backgroundColor": "#f8f8f8",
-              "images": {
-                "fallback": {
-                  "src": "/static/project-b-large.jpg",
-                  "srcSet": "/static/project-b-large.jpg 1x",
-                  "sizes": "(min-width: 800px) 800px, 100vw"
-                },
-                "sources": [
-                  {
-                    "srcSet": "/static/project-b-large.webp 1x",
-                    "type": "image/webp",
-                    "sizes": "(min-width: 800px) 800px, 100vw"
-                  }
-                ]
-              },
-              "width": 800,
-              "height": 600
-            }
-          }
-        }
-      }
     }
   },
   {
@@ -618,33 +590,7 @@
     "heroSmall": {
       "title": "Verbetering inzet zorg",
       "subtitle": "Optimalisatie van zorgprocessen",
-      "description": "Leer meer over onze initiatieven voor betere zorg bij PTO",
-      "image": {
-        "localFile": {
-          "childImageSharp": {
-            "gatsbyImageData": {
-              "layout": "constrained",
-              "backgroundColor": "#f8f8f8",
-              "images": {
-                "fallback": {
-                  "src": "/static/hero-small-6.jpg",
-                  "srcSet": "/static/hero-small-6.jpg 1x",
-                  "sizes": "(min-width: 1400px) 1400px, 100vw"
-                },
-                "sources": [
-                  {
-                    "srcSet": "/static/hero-small-6.webp 1x",
-                    "type": "image/webp",
-                    "sizes": "(min-width: 1400px) 1400px, 100vw"
-                  }
-                ]
-              },
-              "width": 1400,
-              "height": 700
-            }
-          }
-        }
-      }
+      "description": "Leer meer over onze initiatieven voor betere zorg bij PTO"
     },
     "projectProgress": {
       "progressie": 30000,
@@ -653,7 +599,19 @@
     "hero": {
       "title": "Verbetering inzet zorg",
       "subtitle": "Optimalisatie van zorgprocessen",
-      "description": "Leer meer over onze initiatieven voor betere zorg bij PTO",
+      "description": "Leer meer over onze initiatieven voor betere zorg bij PTO"
+    }
+  },
+  {
+    "nodeType": "WpPage",
+    "id": "page-7",
+    "uri": "/bedankt-voor-uw-donatie",
+    "title": "Bedankt voor uw donatie",
+    "content": "<h1>Bedankt voor uw donatie</h1>\n<p>Hartelijk dank voor uw genereuze bijdrage aan Missie Tumor Onbekend. Uw steun helpt ons om patiënten met kanker van onbekende oorsprong te helpen.</p>\n<p>Dankzij donaties zoals die van u kunnen wij ons blijven inzetten voor:</p>\n<ul>\n<li>Betere informatievoorziening voor patiënten en hun naasten</li>\n<li>Het ondersteunen van wetenschappelijk onderzoek naar betere diagnostiek en behandelingen</li>\n<li>Het verbeteren van de zorg voor patiënten met een primaire tumor onbekend (PTO)</li>\n</ul>\n<p>Uw bijdrage maakt echt verschil in het leven van mensen die getroffen zijn door deze zeldzame en complexe vorm van kanker.</p>\n<p>Heeft u vragen over uw donatie of wilt u meer informatie over ons werk? Neem dan gerust contact met ons op.</p>",
+    "heroSmall": {
+      "title": "Bedankt voor uw donatie",
+      "subtitle": "Uw steun is van onschatbare waarde",
+      "description": "Samen maken we het verschil voor patiënten met kanker van onbekende oorsprong",
       "image": {
         "localFile": {
           "childImageSharp": {
@@ -662,13 +620,13 @@
               "backgroundColor": "#f8f8f8",
               "images": {
                 "fallback": {
-                  "src": "/static/hero-6.jpg",
-                  "srcSet": "/static/hero-6.jpg 1x",
+                  "src": "/static/hero-small-1.jpg",
+                  "srcSet": "/static/hero-small-1.jpg 1x",
                   "sizes": "(min-width: 1400px) 1400px, 100vw"
                 },
                 "sources": [
                   {
-                    "srcSet": "/static/hero-6.webp 1x",
+                    "srcSet": "/static/hero-small-1.webp 1x",
                     "type": "image/webp",
                     "sizes": "(min-width: 1400px) 1400px, 100vw"
                   }
@@ -680,9 +638,19 @@
           }
         }
       }
-    },
-    "project": {
-      "projectimage": {
+    }
+  },
+  {
+    "nodeType": "WpPage",
+    "id": "page-8",
+    "uri": "/privacy-cookie-verklaring",
+    "title": "Privacy & cookie verklaring",
+    "content": "<h1>Privacy & cookie verklaring</h1>\n<p>Bij Missie Tumor Onbekend hechten wij grote waarde aan de privacy van onze websitebezoekers en donateurs. In deze verklaring leggen wij uit welke gegevens wij verzamelen, waarom wij deze verzamelen en hoe wij deze gebruiken.</p>\n<h2>Persoonsgegevens die wij verwerken</h2>\n<p>Missie Tumor Onbekend verwerkt uw persoonsgegevens wanneer u gebruik maakt van onze diensten en/of wanneer u deze zelf aan ons verstrekt. Hieronder vindt u een overzicht van de persoonsgegevens die wij verwerken:</p>\n<ul>\n<li>Voor- en achternaam</li>\n<li>Adresgegevens</li>\n<li>Telefoonnummer</li>\n<li>E-mailadres</li>\n<li>Bankrekeningnummer (in geval van donaties)</li>\n</ul>\n<h2>Cookies</h2>\n<p>Missie Tumor Onbekend gebruikt alleen technische, functionele en analytische cookies die geen inbreuk maken op uw privacy. Een cookie is een klein tekstbestand dat bij het eerste bezoek aan deze website wordt opgeslagen op uw computer, tablet of smartphone. De cookies die wij gebruiken zijn noodzakelijk voor de technische werking van de website en uw gebruiksgemak.</p>\n<h2>Wijzigingen in deze verklaring</h2>\n<p>Wij behouden ons het recht voor om wijzigingen aan te brengen in deze privacyverklaring. Het verdient aanbeveling om deze privacyverklaring geregeld te raadplegen, zodat u van deze wijzigingen op de hoogte bent.</p>",
+    "heroSmall": {
+      "title": "Privacy & cookie verklaring",
+      "subtitle": "Hoe wij omgaan met uw gegevens",
+      "description": "Transparantie en zorgvuldigheid staan voorop bij het verwerken van uw persoonsgegevens",
+      "image": {
         "localFile": {
           "childImageSharp": {
             "gatsbyImageData": {
@@ -690,20 +658,58 @@
               "backgroundColor": "#f8f8f8",
               "images": {
                 "fallback": {
-                  "src": "/static/project-c-large.jpg",
-                  "srcSet": "/static/project-c-large.jpg 1x",
-                  "sizes": "(min-width: 800px) 800px, 100vw"
+                  "src": "/static/hero-small-1.jpg",
+                  "srcSet": "/static/hero-small-1.jpg 1x",
+                  "sizes": "(min-width: 1400px) 1400px, 100vw"
                 },
                 "sources": [
                   {
-                    "srcSet": "/static/project-c-large.webp 1x",
+                    "srcSet": "/static/hero-small-1.webp 1x",
                     "type": "image/webp",
-                    "sizes": "(min-width: 800px) 800px, 100vw"
+                    "sizes": "(min-width: 1400px) 1400px, 100vw"
                   }
                 ]
               },
-              "width": 800,
-              "height": 600
+              "width": 1400,
+              "height": 700
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "nodeType": "WpPage",
+    "id": "page-9",
+    "uri": "/fondsenwervingsbeleid",
+    "title": "Fondsenwervingsbeleid",
+    "content": "<h1>Fondsenwervingsbeleid</h1>\n<p>Missie Tumor Onbekend zet zich in voor patiënten met kanker van onbekende oorsprong. Om onze doelstellingen te bereiken, werven wij fondsen via verschillende kanalen. In dit beleidsdocument leggen wij uit hoe wij dit doen.</p>\n<h2>Onze uitgangspunten</h2>\n<p>Bij onze fondsenwerving hanteren wij de volgende uitgangspunten:</p>\n<ul>\n<li>Transparantie: wij zijn open over hoe wij fondsen werven en besteden</li>\n<li>Integriteit: wij gaan zorgvuldig om met donaties en respecteren de wensen van donateurs</li>\n<li>Efficiëntie: wij streven ernaar de kosten voor fondsenwerving zo laag mogelijk te houden</li>\n<li>Doelgerichtheid: alle geworven fondsen komen ten goede aan onze missie</li>\n</ul>\n<h2>Methoden van fondsenwerving</h2>\n<p>Wij werven fondsen via de volgende methoden:</p>\n<ul>\n<li>Donaties van particulieren (eenmalig of periodiek)</li>\n<li>Donaties van bedrijven en instellingen</li>\n<li>Subsidies van overheden en fondsen</li>\n<li>Evenementen en acties</li>\n<li>Nalatenschappen</li>\n</ul>\n<h2>Besteding van fondsen</h2>\n<p>De geworven fondsen worden besteed aan:</p>\n<ul>\n<li>Informatievoorziening & bewustwording</li>\n<li>Ondersteunen van wetenschappelijk onderzoek</li>\n<li>Verbetering inzet zorg</li>\n<li>Organisatiekosten (maximaal 15% van de totale inkomsten)</li>\n</ul>\n<p>Jaarlijks leggen wij verantwoording af over de besteding van de fondsen in ons jaarverslag.</p>",
+    "heroSmall": {
+      "title": "Fondsenwervingsbeleid",
+      "subtitle": "Hoe wij fondsen werven en besteden",
+      "description": "Transparantie en integriteit staan centraal bij onze fondsenwerving",
+      "image": {
+        "localFile": {
+          "childImageSharp": {
+            "gatsbyImageData": {
+              "layout": "constrained",
+              "backgroundColor": "#f8f8f8",
+              "images": {
+                "fallback": {
+                  "src": "/static/hero-small-1.jpg",
+                  "srcSet": "/static/hero-small-1.jpg 1x",
+                  "sizes": "(min-width: 1400px) 1400px, 100vw"
+                },
+                "sources": [
+                  {
+                    "srcSet": "/static/hero-small-1.webp 1x",
+                    "type": "image/webp",
+                    "sizes": "(min-width: 1400px) 1400px, 100vw"
+                  }
+                ]
+              },
+              "width": 1400,
+              "height": 700
             }
           }
         }

@@ -48,9 +48,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
         const pageType = {
           "Steun Missie Tumor Onbekend": resolve(`./src/pages/donatePage.tsx`),
-          "Home": resolve(`./src/pages/donatePage.tsx`),
-          "Over Ons": resolve(`./src/pages/defaultPage.tsx`),
-          "Doneer": resolve(`./src/pages/donatePage.tsx`),
           "Informatievoorziening & bewustwording": resolve(`./src/pages/projectPage.tsx`),
           "Ondersteunen van wetenschappelijk onderzoek": resolve(`./src/pages/projectPage.tsx`),
           "Verbetering inzet zorg": resolve(`./src/pages/projectPage.tsx`),
