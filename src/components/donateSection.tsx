@@ -10,7 +10,7 @@ const DonateSection = info => {
   return (
     <div>
       <p className="container sm:max-w-screen-md mb-4">
-        Informeer u <Link to="/fondsenwerveringsbeleid/">hier</Link> over ons
+        Informeer u <Link to="/fondsenwervingsbeleid/">hier</Link> over ons
         beleid ten aanzien van het werven van fondsen, donateurs en sponsoring.
       </p>
       <DonateWidget donateOptions={donateWidgetConfig} />

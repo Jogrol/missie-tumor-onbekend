@@ -77,8 +77,8 @@ const Footer = (): JSX.Element => {
           >
             Actueel
           </a>
-          <Link className="link link-hover" to="/fondsenwerveringsbeleid/">
-            Fondsenwerveringsbeleid
+          <Link className="link link-hover" to="/fondsenwervingsbeleid/">
+          Fondsenwervingsbeleid
           </Link>
           <Link className="link link-hover" to="/privacy-cookie-verklaring/">
             Privacy verklaring
