@@ -37,8 +37,6 @@ const ProjectPage = ({ data }: ProjectPageDataModel): JSX.Element => {
   }
 
   const pageTitle = data.page.title || "Project Page"
-  const pageContent = data.page.content || ""
-  const pageHero = data.page.heroSmall || null
   const projectProgress = data.page.projectProgress || {
     progressie: 0,
     target: 100,
