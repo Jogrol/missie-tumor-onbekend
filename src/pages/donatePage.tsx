@@ -85,7 +85,7 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
       <PageSection width="sm" color="bg-white-200">
         <div className="aspect-w-16 aspect-h-9">
           <iframe
-            src="https://www.youtube.com/embed/pOFXZT6j8S0"
+            src="https://www.youtube-nocookie.com/embed/pOFXZT6j8S0"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

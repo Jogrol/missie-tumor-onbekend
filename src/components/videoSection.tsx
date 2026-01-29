@@ -12,7 +12,7 @@ const VideoSection = ({
       <div className="w-full px-4 sm-px-0 md:w-2/3">
       <div className="aspect-w-16 aspect-h-9">
         <iframe
-          src="https://www.youtube.com/embed/KowXBc6nDnI"
+          src="https://www.youtube-nocookie.com/embed/KowXBc6nDnI"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

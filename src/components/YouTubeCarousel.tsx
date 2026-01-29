@@ -15,7 +15,7 @@ const YouTubeCarousel: React.FC<YouTubeCarouselProps> = ({ videos, names = [] })
         <div className="w-full max-w-3xl aspect-w-16 aspect-h-9">
           <iframe
             key={videos[activeIndex]}
-            src={`https://www.youtube.com/embed/${videos[activeIndex]}`}
+            src={`https://www.youtube-nocookie.com/embed/${videos[activeIndex]}`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
