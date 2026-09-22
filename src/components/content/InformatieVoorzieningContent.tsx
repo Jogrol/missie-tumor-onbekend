@@ -4,7 +4,7 @@ const InformatieVoorzieningContent: React.FC = () => {
   return (
     <div className="col-span-4 sm:col-span-2">
       <h3>
-        <strong>Doel: €11.000</strong>
+        <strong>Doel: €25.000</strong>
       </h3>
 
       <p>
@@ -28,11 +28,6 @@ const InformatieVoorzieningContent: React.FC = () => {
 
       <ul>
         <li>
-          Ontwikkelen van nieuwe informatiefilmpjes- en materialen naar
-          aanleiding van de ge-update klinische richtlijn (de richtlijn wordt
-          eind 2025 verwacht)
-        </li>
-        <li>
           Organisatie van een landelijk (twee)jaarlijks wetenschappelijk
           symposium voor zorgverleners, wetenschappers en patiënten. Het
           symposium zal in samenwerking met{" "}
@@ -43,18 +38,20 @@ const InformatieVoorzieningContent: React.FC = () => {
           >
             CUPP-NL
           </a>{" "}
-          georganiseerd worden (eind 2025/begin 2026 naar verwachting een
-          volgend symposium)
+          georganiseerd worden (januari 2027 is het volgende symposium)
         </li>
         <li>
-          Onderhoud van en verdere verspreiding van de PTO-informatiefolder voor
-          patiënten en naasten
+          Onderhoud van en verdere verspreiding van de PTO-informatiefolder, en
+          de klinische richtlijn voor patiënten, naasten en zorgprofessionals
         </li>
         <li>
-          Onderhoud van de PTO-website &amp; nieuwsbrief met informatie voor
-          patiënten en naasten
+          Optekenen van diverse patiënten ervaringsverhalen &amp; nieuwsbrief met
+          informatie voor patiënten en naasten
         </li>
-        <li>Internationale samenwerking</li>
+        <li>
+          Internationale samenwerking, via onze samenwerking met de World CUP
+          Alliance
+        </li>
       </ul>
     </div>
   )

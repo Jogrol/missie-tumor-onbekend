@@ -34,20 +34,24 @@ const WetenschappelijkOnderzoekContent: React.FC = () => {
       </p>
       <ul>
         <li>
-          Ondersteunen van een de PHD-student die zich volledig richt op
-          PTO-onderzoek de komende jaren met diverse onderzoeksonderwerpen
+          Ondersteunen van een of meerdere PHD-studenten die zich volledig
+          richten op PTO-onderzoek met diverse onderzoeksonderwerpen
         </li>
         <li>
-          Actieve bijdrage leveren aan de openstaande FAPI-PET studie bij PTO,
+          Actieve bijdrage leveren aan de [18F]F-FAPI PET/CT studie bij PTO,
           meer informatie vindt u hier:{" "}
           <a href="https://www.kanker.nl/trials/1403-fapi-for-cup-studie-primaire-tumor-onbekend-pto">
             FAPI for CUP-studie (Primaire Tumor Onbekend (PTO)) | Kanker.nl
           </a>
         </li>
-
         <li>
-          Onderzoek faciliteren naar nieuwe diagnostische methoden en
-          behandelingen
+          Klinisch onderzoek faciliteren en ondersteunen naar nieuwe
+          diagnostische methoden en behandelingen
+        </li>
+        <li>
+          Internationale samenwerking en uitwisseling faciliteren tussen teams
+          die onderzoek naar PTO doen. Dat doen we via onze samenwerking met de
+          World CUP Alliance
         </li>
       </ul>
     </div>
