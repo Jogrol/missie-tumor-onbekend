@@ -38,11 +38,11 @@ const WetenschappelijkOnderzoekContent: React.FC = () => {
           richten op PTO-onderzoek met diverse onderzoeksonderwerpen
         </li>
         <li>
-          Actieve bijdrage leveren aan de [18F]F-FAPI PET/CT studie bij PTO,
-          meer informatie vindt u hier:{" "}
-          <a href="https://www.kanker.nl/trials/1403-fapi-for-cup-studie-primaire-tumor-onbekend-pto">
-            FAPI for CUP-studie (Primaire Tumor Onbekend (PTO)) | Kanker.nl
-          </a>
+          Actieve bijdrage leveren aan de{" "}
+          <a href="https://cupp-nl.eu/research-and-clinical-projects/18f-f-fapi-petct-to-identify-carcinoma-of-hitherto-unknown-primary-origin-improving-minimally-invasive-cancer-diagnostics/">
+            [18F]F-FAPI PET/CT
+          </a>{" "}
+          studie bij PTO
         </li>
         <li>
           Klinisch onderzoek faciliteren en ondersteunen naar nieuwe

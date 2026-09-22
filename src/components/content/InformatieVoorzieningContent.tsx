@@ -42,7 +42,11 @@ const InformatieVoorzieningContent: React.FC = () => {
         </li>
         <li>
           Onderhoud van en verdere verspreiding van de PTO-informatiefolder, en
-          de klinische richtlijn voor patiënten, naasten en zorgprofessionals
+          de klinische{" "}
+          <a href="https://richtlijnendatabase.nl/richtlijn/primaire_tumor_onbekend/primaire_tumor_onbekend_-_startpagina.html">
+            richtlijn
+          </a>{" "}
+          voor patiënten, naasten en zorgprofessionals
         </li>
         <li>
           Optekenen van diverse patiënten ervaringsverhalen &amp; nieuwsbrief met
