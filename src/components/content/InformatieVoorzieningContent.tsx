@@ -53,8 +53,8 @@ const InformatieVoorzieningContent: React.FC = () => {
           informatie voor patiënten en naasten
         </li>
         <li>
-          Internationale samenwerking, via onze samenwerking met de World CUP
-          Alliance
+          Internationale samenwerking, via onze samenwerking met de{" "}
+          <a href="https://www.worldcupawareness.org/">World CUP Alliance</a>
         </li>
       </ul>
     </div>

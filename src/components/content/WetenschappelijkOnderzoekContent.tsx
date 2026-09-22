@@ -50,8 +50,8 @@ const WetenschappelijkOnderzoekContent: React.FC = () => {
         </li>
         <li>
           Internationale samenwerking en uitwisseling faciliteren tussen teams
-          die onderzoek naar PTO doen. Dat doen we via onze samenwerking met de
-          World CUP Alliance
+          die onderzoek naar PTO doen. Dat doen we via onze samenwerking met de{" "}
+          <a href="https://www.worldcupawareness.org/">World CUP Alliance</a>
         </li>
       </ul>
     </div>
