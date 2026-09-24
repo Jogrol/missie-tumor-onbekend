@@ -4,7 +4,7 @@ const VerbeteringZorgContent: React.FC = () => {
   return (
     <div className="col-span-4 sm:col-span-2">
       <h3>
-        <strong>Doel: €50.000</strong>
+        <strong>Doel: €125.000</strong>
       </h3>
 
       <p>
@@ -12,9 +12,11 @@ const VerbeteringZorgContent: React.FC = () => {
         vergroten van de toegang tot diagnostiek, tumorgerichte behandelingen,
         palliatieve zorg en psychosociale steun voor alle PTO- patiënten. Zo is
         Missie Tumor Onbekend actief betrokken bij de inrichting van het
-        landelijke zorgpad voor PTO, de vernieuwing van de landelijke klinische
-        richtlijn, en steunt projecten die de implementatie en inzet hiervan
-        vergroten.
+        landelijke zorgpad voor PTO, de inzet van de landelijke klinische{" "}
+        <a href="https://richtlijnendatabase.nl/richtlijn/primaire_tumor_onbekend/primaire_tumor_onbekend_-_startpagina.html">
+          richtlijn
+        </a>
+        , en steunt projecten die de implementatie hiervan vergroten.
       </p>
 
       <p>
@@ -27,10 +29,10 @@ const VerbeteringZorgContent: React.FC = () => {
 
       <ul>
         <li>
-          Het helpen opzetten van een landelijke database van klinische
-          geanonimiseerde data van PTO-patiënten om zo patienten en hun zorg in
-          kaart te brengen, beter te volgen voor zorgverbeteringen en ook
-          toekomstig wetenschappelijk onderzoek te faciliteren
+          Het helpen opzetten van een landelijke database van klinische en
+          genomische geanonimiseerde data van PTO-patiënten om zo patiënten en
+          hun zorg in kaart te brengen, beter te volgen voor zorgverbeteringen
+          en ook toekomstig wetenschappelijk onderzoek te faciliteren
         </li>
         <li>
           Ontwikkelen van passende ondersteuning voor naasten en nabestaanden

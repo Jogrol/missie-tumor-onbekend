@@ -60,9 +60,11 @@ const PatientStoriesSection = (): JSX.Element => {
             </div>
             <div>
                 <div className="container sm:max-w-screen-md py-8">
-                    <p>Missie Tumor Onbekend, de patiëntenorganisatie voor primaire tumor onbekend (PTO) patiënten, is
-                        actief betrokken bij het landelijke PTO zorgpad en werkt samen met zorgverleners in het hele
-                        land om zo de beste zorg voor deze patiënten te realiseren.</p>
+                    <p>Missie Tumor Onbekend, de patiënten- en belangenorganisatie voor primaire tumor onbekend (PTO)
+                        patiënten, is actief betrokken bij de uitrol van het PTO zorgpad en de inzet van de landelijke{" "}
+                        <a href="https://richtlijnendatabase.nl/richtlijn/primaire_tumor_onbekend/primaire_tumor_onbekend_-_startpagina.html">richtlijn</a>,
+                        en werkt samen met zorgverleners in het hele land om zo de beste zorg voor deze
+                        patiënten te realiseren.</p>
 
 
                     <p>Als patiënt of naaste met PTO te maken krijgen voelt vaak als onduidelijk traject, waarbij je je
@@ -75,8 +77,10 @@ const PatientStoriesSection = (): JSX.Element => {
                         steun en herkenning te bieden.</p>
 
                     <p>En om ook met jullie hulp suggesties voor het verbeteren van de patiënten route in kaart te
-                        brengen, die we dan ook kunnen terugkoppelen aan zorgverleners binnen het landelijke PTO
-                        zorgpad.</p>
+                        brengen, die we dan ook kunnen terugkoppelen aan zorgverleners werkzaam in de{" "}
+                        <a href="https://www.missietumoronbekend.nl/tips/">PTO-poliklinieken</a> of betrokken bij de
+                        uitvoer van de{" "}
+                        <a href="https://richtlijnendatabase.nl/richtlijn/primaire_tumor_onbekend/primaire_tumor_onbekend_-_startpagina.html">richtlijn</a>.</p>
                 </div>
                 <div className="flex sm:justify-center">
                     <a

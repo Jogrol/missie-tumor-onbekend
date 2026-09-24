@@ -12,6 +12,7 @@ import { ProjectItemDataModel } from "../models/projectItemData.model"
 import PatientStoriesSection from "../components/patientStoriesSection"
 import PageHero from "../components/pageHero"
 import YouTubeCarousel from "../components/YouTubeCarousel"
+import InfoIcon from "../assets/infoIcon.svg"
 
 const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
   // Add null checks to prevent errors
@@ -45,28 +46,33 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
       <PageSection width="sm" color="bg-gray-100">
         <h2 className="pb-8 font-black text-center">Wat is PTO?</h2>
         <p>
-          In Nederland krijgen jaarlijkse ongeveer 1.500 patiënten de diagnose
+          In Nederland krijgen jaarlijks ongeveer 1.000 patiënten de diagnose
           'primaire tumor onbekend' (PTO). Dit betekent dat er sprake is van
           uitgezaaide kanker, zonder dat de bron (de primaire tumor) bekend is.
           Doordat de bron van de uitzaaiingen onbekend is, is het moeilijk een
           goede behandeling te vinden.
         </p>
 
+        <a
+          className="flex items-center gap-4 p-4 mt-8 bg-white rounded-lg shadow-lg hover:no-underline"
+          href="https://www.missietumoronbekend.nl/wordpress/wp-content/uploads/2026/02/Folder_MTO_021225_nieuwe-kleuren_2026.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <InfoIcon className="w-10 h-10 text-blue-600 flex-shrink-0" />
+          <span className="flex flex-col">
+            <span className="font-bold">Patiëntenfolder PTO</span>
+            <span className="text-sm font-normal">Download de folder (PDF)</span>
+          </span>
+        </a>
+
         <h3 className="text-2xl font-bold text-center mt-8 mb-6">Bekijk onze video's</h3>
-        
-        <YouTubeCarousel 
-          videos={[
-            "yBsA7BGOYFE",
-            "SO_OOrSfs68",
-            "7AR89PinbEc"
-          ]}
-          names={[
-            "Hedwig",
-            "Peter",
-            "Inke"
-          ]}
+
+        <YouTubeCarousel
+          videos={["yBsA7BGOYFE", "7AR89PinbEc", "SO_OOrSfs68"]}
+          names={["Hedwig", "Inke", "Peter"]}
         />
-      
+
         <div className="text-center mt-8">
           <a href="https://www.missietumoronbekend.nl/pto/" target="_blank">
             Meer informatie over PTO
@@ -86,6 +92,8 @@ const DonatePage = ({ data }: DonatePageDataModel): JSX.Element => {
         <div className="aspect-w-16 aspect-h-9">
           <iframe
             src="https://www.youtube.com/embed/pOFXZT6j8S0"
+            title="Missie Tumor Onbekend: een medische cold-case"
+            referrerPolicy="strict-origin-when-cross-origin"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

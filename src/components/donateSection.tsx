@@ -15,18 +15,18 @@ const DonateSection = info => {
       </p>
       <DonateWidget donateOptions={donateWidgetConfig} />
       <p className="container sm:max-w-screen-md mt-8 text-sm">
-        *Missie Tumor Onbekend is het samenwerkingsverband tussen Stichting
-        Sterren en Stichting Vrienden van Hederik. Stichting Vrienden van
-        Hederik werft namens de samenwerkende stichtingen binnen Missie Tumor
-        Onbekend fondsen bij particulieren, bedrijven en instanties. U zult
-        daarom op uw bankafschrift Stichting Vrienden van Hederik zien als
-        vertegenwoordiger van Missie Tumor Onbekend. De beide stichtingen zijn
-        opgericht door nabestaanden van PTO-patiënten en werken samen om o.a.
-        betere zorg, meer onderzoek en meer kennis en bewustwording over PTO te
-        bewerkstelligen. Missie Tumor Onbekend is aangesloten bij het Platform
-        Zeldzame Kankers van de NFK. &nbsp;
-        <a href="https://www.missietumoronbekend.nl/info/">
-          Info | Missie Tumor Onbekend
+        *Missie Tumor Onbekend is opgericht als een samenwerking tussen de
+        voormalige Stichting Sterren, Stichting Vrienden van Hederik en de
+        Nederlandse Federatie van Kankerpatiënten organisaties (NFK). Stichting
+        Vrienden van Hederik werft binnen Missie Tumor Onbekend fondsen bij
+        particulieren, bedrijven en instanties. U zult daarom op uw
+        bankafschrift Stichting Vrienden van Hederik zien als vertegenwoordiger
+        van Missie Tumor Onbekend. De beide stichtingen zijn opgericht door
+        nabestaanden van PTO-patiënten en werken samen om o.a. betere zorg, meer
+        onderzoek en meer kennis en bewustwording over PTO te bewerkstelligen.
+        Lees meer:{" "}
+        <a href="https://www.missietumoronbekend.nl/overons/">
+          Over ons - Missie Tumor Onbekend
         </a>
       </p>
     </div>

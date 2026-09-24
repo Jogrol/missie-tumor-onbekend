@@ -2,7 +2,6 @@ import React from "react"
 import CbfLogoIcon from "../assets/cbfErkendBlackIcon.svg"
 import MtoLogoBlackIcon from "../assets/mtoLogoBlackIcon.svg"
 import FacebookIcon from "../assets/facebookIcon.svg"
-import TwitterIcon from "../assets/twitterIcon.svg"
 import LinkedinIcon from "../assets/linkedinIcon.svg"
 import InstagramIcon from "../assets/instagramIcon.svg"
 import CbfLogoZw from "../images/CBF_LOGO_ZW.png"
@@ -41,7 +40,7 @@ const Footer = (): JSX.Element => {
             href="https://zeldzamekankers.nl"
             target="_blank"
           >
-            NFK Patiëntenplatform Zeldzame Kankers
+            NFK
           </a>
           <a
             className="link link-hover"
@@ -65,7 +64,7 @@ const Footer = (): JSX.Element => {
           <span className="footer-title">Informatie</span>
           <a
             className="link link-hover"
-            href="https://www.missietumoronbekend.nl/info/"
+            href="https://www.missietumoronbekend.nl/overons/"
             target="_blank"
           >
             Over ons
@@ -87,9 +86,6 @@ const Footer = (): JSX.Element => {
         <div className="flex flex-col col-span-1 pt-6 sm:pt-0">
           <span className="footer-title">Volg ons</span>
           <div className="flex gap-6">
-            <a href="https://twitter.com/tumoronbekend?lang=nl" target="_blank">
-              <TwitterIcon className="w-8 h-8" />
-            </a>
             <a
               href="https://www.linkedin.com/company/missie-tumor-onbekend/"
               target="_blank"
