@@ -61,13 +61,5 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
-    {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "GTM-NFS3PP9",
-        includeInDevelopment: false,
-        dataLayerName: "dataLayer",
-      },
-    },
   ],
 }
